@@ -1,6 +1,7 @@
 body {
   background-color: #fefdfb;
   font-family: 'Merriweather', serif;
+  padding: 2em;
 }
 
 h1 {
@@ -11,11 +12,10 @@ h1 {
 h2 {
   font-size: 4em;
   color: #1b2733;
-
 }
 
 h3 {
-  font-size: 2.2em;
+  font-size: 2em;
   color: #1b2733;
 }
 
@@ -25,7 +25,7 @@ h5 {
 
 p {
   color: #647382;
-  font-size: 1.3em;
+  font-size: 2em;
 }
 
 hr {
@@ -50,13 +50,16 @@ section {
 }
 
 #intro-message {
-  margin-left: 4em;
+  text-align: center;
 }
 
 .intro-text {
   line-height: 135%;
 }
 
+.responsive-br {
+  display: none;
+}
 
 .btn {
   background-color: #28c3b5;
@@ -76,6 +79,7 @@ section {
 
 .center-block {
   width: 50%;
+  text-align: center;
 }
 
 .emails {
@@ -140,8 +144,38 @@ section {
   vertical-align: middle;
 }
 
-@media (max-width: @screen-xs) {
+@media(min-width:800px) {
+  body {
+    padding: 0;
+  };
+
+  h1 {
+    font-size: 5em;
+    color: #1b2733;
+  }
+
+  h2 {
+    font-size: 4em;
+    color: #1b2733;
+  }
+
   h3 {
-    font-size: 2em;
+    font-size: 2.2em;
+  }
+
+  h5 {
+    font-size: 1.4em;
+  }
+
+  p {
+    font-size: 1.3em;
+  }
+
+  #intro-message {
+    text-align: left;
+  }
+
+  .responsive-br {
+    display: inline;
   }
 }
