@@ -1,6 +1,6 @@
 var $window = $(window);
 var $animation_elements = $('.emails');
-
+ 
 var email1,
     email2,
     email3,
