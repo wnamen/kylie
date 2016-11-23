@@ -78,6 +78,12 @@ section {
   border: 1px solid #7f5dfc;
   padding: 15px;
   z-index: 1;
+  transform: translateY(0px);
+}
+
+.email-imgs {
+  z-index: 1;
+  transform: translateY(0px);  
 }
 
 .email-titles {
@@ -88,4 +94,36 @@ section {
   border-color: #7f5dfc;
   width: 100%;
   margin-top: 0;
+}
+
+#email-1 {
+  transform: translateY(200px);
+}
+
+#email-img-1 {
+  transform: translateY(250px);
+}
+
+#email-2 {
+  transform: translateY(300px);
+}
+
+#email-3 {
+  transform: translateY(400px);
+}
+
+#email-img-2 {
+  transform: translateY(450px);
+}
+
+#email-4 {
+  transform: translateY(500px);
+}
+
+#email-5 {
+  transform: translateY(600px);
+}
+
+#email-img-3 {
+  transform: translateY(650px);
 }
