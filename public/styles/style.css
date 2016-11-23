@@ -17,16 +17,23 @@ h2 {
 h3 {
   font-size: 2.2em;
   color: #1b2733;
+}
 
+h5 {
+  font-size: 1.4em;
 }
 
 p {
   color: #647382;
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 
 hr {
   width: 70%;
+}
+
+strong {
+  color: #7f5dfc;
 }
 
 section {
@@ -65,4 +72,20 @@ section {
 
 .center-block {
   width: 50%;
+}
+
+.emails {
+  border: 1px solid #7f5dfc;
+  padding: 15px;
+  z-index: 1;
+}
+
+.email-titles {
+  display: inline-block;
+}
+
+.email-hr {
+  border-color: #7f5dfc;
+  width: 100%;
+  margin-top: 0;
 }
