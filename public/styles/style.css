@@ -69,7 +69,7 @@ section {
 }
 
 #intro-btn {
-  font-size: 2.2em;
+  font-size: 1.5em;
   margin-top: 1em;
 }
 
@@ -87,6 +87,7 @@ section {
   padding: 15px;
   z-index: 1;
   transform: translateY(0px);
+  background-color: white;
 }
 
 .email-imgs {
@@ -142,6 +143,11 @@ section {
 
 .feature-text {
   vertical-align: middle;
+  text-align: center;
+}
+
+.testimonial {
+  text-align: center;
 }
 
 @media(min-width:800px) {
@@ -177,5 +183,9 @@ section {
 
   .responsive-br {
     display: inline;
+  }
+
+  .testimonial {
+    padding:0 17em;
   }
 }
