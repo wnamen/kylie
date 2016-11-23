@@ -26,6 +26,7 @@ h5 {
 p {
   color: #647382;
   font-size: 2em;
+  font-weight: 300;
 }
 
 hr {
@@ -138,11 +139,19 @@ section {
 }
 
 .features {
-  padding: 1em 0;
+  padding: 2em 0;
 }
 
 .feature-text {
   vertical-align: middle;
+  text-align: center;
+}
+
+.feat-left {
+  text-align: center;
+}
+
+.feat-right {
   text-align: center;
 }
 
@@ -174,7 +183,7 @@ section {
   }
 
   p {
-    font-size: 1.3em;
+    font-size: 1.2em;
   }
 
   #intro-message {
@@ -183,6 +192,15 @@ section {
 
   .responsive-br {
     display: inline;
+  }
+
+  .feat-left {
+    text-align: right;
+  }
+
+  .feat-right {
+    text-align: left;
+    padding-top: 2em;
   }
 
   .testimonial {
