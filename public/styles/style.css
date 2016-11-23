@@ -36,6 +36,11 @@ strong {
   color: #7f5dfc;
 }
 
+img {
+  max-width:100%;
+  max-height:100%;
+}
+
 section {
   margin: 5em auto;
 }
@@ -67,7 +72,6 @@ section {
 
 #end-btn {
   font-size: 1.5em;
-  margin-top: .5em;
 }
 
 .center-block {
@@ -83,7 +87,7 @@ section {
 
 .email-imgs {
   z-index: 1;
-  transform: translateY(0px);  
+  transform: translateY(0px);
 }
 
 .email-titles {
@@ -105,25 +109,39 @@ section {
 }
 
 #email-2 {
-  transform: translateY(300px);
+  transform: translateY(200px);
 }
 
 #email-3 {
-  transform: translateY(400px);
+  transform: translateY(200px);
 }
 
 #email-img-2 {
-  transform: translateY(450px);
+  transform: translateY(300px);
 }
 
 #email-4 {
-  transform: translateY(500px);
+  transform: translateY(200px);
 }
 
 #email-5 {
-  transform: translateY(600px);
+  transform: translateY(200px);
 }
 
 #email-img-3 {
-  transform: translateY(650px);
+  transform: translateY(300px);
+}
+
+.features {
+  padding: 1em 0;
+}
+
+.feature-text {
+  vertical-align: middle;
+}
+
+@media (max-width: @screen-xs) {
+  h3 {
+    font-size: 2em;
+  }
 }
