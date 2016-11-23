@@ -1,0 +1,23 @@
+{
+  "name": "kylie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "ls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wnamen/kylie.git"
+  },
+  "author": "William Namen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wnamen/kylie/issues"
+  },
+  "homepage": "https://github.com/wnamen/kylie#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  }
+}

@@ -1,0 +1,68 @@
+body {
+  background-color: #fefdfb;
+  font-family: 'Merriweather', serif;
+}
+
+h1 {
+  font-size: 5em;
+  color: #1b2733;
+}
+
+h2 {
+  font-size: 4em;
+  color: #1b2733;
+
+}
+
+h3 {
+  font-size: 2.2em;
+  color: #1b2733;
+
+}
+
+p {
+  color: #647382;
+  font-size: 1.2em;
+}
+
+hr {
+  width: 70%;
+}
+
+section {
+  margin: 5em auto;
+}
+
+.sec-titles {
+  margin-bottom: 1em;
+}
+
+#intro-message {
+  margin-left: 4em;
+}
+
+.intro-text {
+  line-height: 135%;
+}
+
+
+.btn {
+  background-color: #28c3b5;
+  border: none;
+  border-radius: 50px;
+  padding: .5em 2em;
+}
+
+#intro-btn {
+  font-size: 2.2em;
+  margin-top: 1em;
+}
+
+#end-btn {
+  font-size: 1.5em;
+  margin-top: .5em;
+}
+
+.center-block {
+  width: 50%;
+}
