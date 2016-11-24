@@ -25,7 +25,7 @@ h5 {
 
 p {
   color: #647382;
-  font-size: 2em;
+  font-size: 1.3em;
   font-weight: 300;
 }
 
@@ -83,17 +83,23 @@ section {
   text-align: center;
 }
 
+#emails-container {
+  height: 100em;
+}
+
 .emails {
   border: 1px solid #7f5dfc;
   padding: 15px;
   z-index: 1;
   transform: translateY(0px);
   background-color: white;
+  position: absolute;
 }
 
 .email-imgs {
   z-index: 1;
   transform: translateY(0px);
+  position: absolute;
 }
 
 .email-titles {
@@ -111,31 +117,32 @@ section {
 }
 
 #email-img-1 {
-  transform: translateY(250px);
+  transform: translateY(500px);
+  width: 11%;
 }
 
 #email-2 {
-  transform: translateY(200px);
+  transform: translateY(500px);
 }
 
 #email-3 {
-  transform: translateY(200px);
+  transform: translateY(800px);
 }
 
 #email-img-2 {
-  transform: translateY(300px);
+  transform: translateY(1000px);
 }
 
 #email-4 {
-  transform: translateY(200px);
+  transform: translateY(1000px);
 }
 
 #email-5 {
-  transform: translateY(200px);
+  transform: translateY(1200px);
 }
 
 #email-img-3 {
-  transform: translateY(300px);
+  transform: translateY(1300px);
 }
 
 .features {
@@ -184,6 +191,10 @@ section {
 
   p {
     font-size: 1.2em;
+  }
+
+  #intro {
+    margin-top: 5em;
   }
 
   #intro-message {
