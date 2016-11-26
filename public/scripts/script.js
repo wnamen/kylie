@@ -17,20 +17,22 @@ $(document).ready(function() {
 
 function emailAnimate() {
 
-  if ($window.scrollTop() > 300) {
+  console.log($window.scrollTop());
+
+  if ($window.scrollTop() > 350) {
     email1 = (parseInt($('#email-1').css('transform').split(',')[5]))-5;
     img1 = (parseInt($('#email-img-1').css('transform').split(',')[5]))-10;
 
-    if (email1 > 0) {
+    if (email1 >= 0) {
       $('#email-1').css("transform", "translateY(" + email1 + "px)");
     };
 
-    if (img1 > 220) {
+    if (img1 >= 220) {
       $('#email-img-1').css("transform", "translateY(" + img1 + "px)");
     };
   };
 
-  if ($window.scrollTop() > 340) {
+  if ($window.scrollTop() > 600) {
     email2 = (parseInt($('#email-2').css('transform').split(',')[5]))-10;
 
     if (email2 >= 200) {
@@ -38,7 +40,7 @@ function emailAnimate() {
     };
   };
 
-  if ($window.scrollTop() > 390) {
+  if ($window.scrollTop() > 770) {
     email3 = (parseInt($('#email-3').css('transform').split(',')[5]))-5;
     img2 = (parseInt($('#email-img-2').css('transform').split(',')[5]))-10;
 
@@ -51,7 +53,7 @@ function emailAnimate() {
     };
   };
 
-  if ($window.scrollTop() > 430) {
+  if ($window.scrollTop() > 900) {
     email4 = (parseInt($('#email-4').css('transform').split(',')[5]))-5;
 
     if (email4 >= 635) {
@@ -59,7 +61,7 @@ function emailAnimate() {
     };
   };
 
-  if ($window.scrollTop() > 480) {
+  if ($window.scrollTop() > 1200) {
     email5 = (parseInt($('#email-5').css('transform').split(',')[5]))-5;
     img3 = (parseInt($('#email-img-3').css('transform').split(',')[5]))-10;
 

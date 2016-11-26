@@ -117,12 +117,12 @@ section {
 }
 
 #email-img-1 {
-  transform: translateY(500px);
+  transform: translateY(650px);
   width: 11%;
 }
 
 #email-2 {
-  transform: translateY(500px);
+  transform: translateY(600px);
 }
 
 #email-3 {
@@ -130,19 +130,19 @@ section {
 }
 
 #email-img-2 {
-  transform: translateY(1000px);
+  transform: translateY(1400px);
 }
 
 #email-4 {
-  transform: translateY(1000px);
-}
-
-#email-5 {
   transform: translateY(1200px);
 }
 
-#email-img-3 {
+#email-5 {
   transform: translateY(1300px);
+}
+
+#email-img-3 {
+  transform: translateY(2000px);
 }
 
 .features {
@@ -194,7 +194,7 @@ section {
   }
 
   #intro {
-    margin-top: 5em;
+    margin: 5em auto;
   }
 
   #intro-message {
