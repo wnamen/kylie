@@ -118,7 +118,7 @@ section {
 
 #email-img-1 {
   transform: translateY(650px);
-  width: 11%;
+  width: 17%;
 }
 
 #email-2 {
@@ -203,6 +203,10 @@ section {
 
   .responsive-br {
     display: inline;
+  }
+
+  #email-img-1 {
+    width: 11%;
   }
 
   .feat-left {
