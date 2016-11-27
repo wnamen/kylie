@@ -14,18 +14,20 @@ var img1,
     img3Pos = 1060;
 
 function detectmob() {
-   if($window.innerWidth <= 800 && $window.innerHeight <= 600) {
+   if($window.innerWidth() <= 800 && $window.innerHeight() <= 600) {
+     console.log(true);
      return true;
    } else {
+     console.log(false);
      return false;
    }
 }
 
 function imgPosCheck(){
   if (detectmob() == true) {
-    img1Pos = 240;
-    img2Pos = 710;
-    img3Pos = 1150;
+    img1Pos = 260;
+    img2Pos = 690;
+    img3Pos = 1130;
     console.log(img1Pos);
   }
 }
@@ -36,8 +38,8 @@ $(document).ready(function() {
 });
 
 function webAnimate() {
-  imgPosCheck();
 
+  imgPosCheck();
   if ($window.scrollTop() > 350) {
     email1 = (parseInt($('#email-1').css('transform').split(',')[5]))-5;
     img1 = (parseInt($('#email-img-1').css('transform').split(',')[5]))-10;
