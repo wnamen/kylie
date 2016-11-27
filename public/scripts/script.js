@@ -25,9 +25,9 @@ function detectmob() {
 
 function imgPosCheck(){
   if (detectmob() == true) {
-    img1Pos = 200;
-    img2Pos = 640;
-    img3Pos = 1080;
+    img1Pos = 170;
+    img2Pos = 600;
+    img3Pos = 1040;
     console.log(img1Pos);
   } else {
     img1Pos = 220;

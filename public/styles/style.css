@@ -66,7 +66,6 @@ section {
 
 .emails {
   border: 1px solid #7f5dfc;
-  padding: 15px;
   z-index: 1;
   transform: translateY(0px);
   background-color: white;
@@ -163,12 +162,16 @@ section {
 
   p {
     color: #647382;
-    font-size: 0.9em;
+    font-size: 0.8em;
     font-weight: 300;
   }
 
   #emails-container {
-    height: 90em;
+    height: 85em;
+  }
+
+  .emails {
+    padding: 5px;
   }
 
   span {
@@ -228,6 +231,10 @@ section {
 
   #emails-container {
     height: 100em;
+  }
+
+  .emails {
+    padding: 15px;
   }
 
   #email-img-1 {
