@@ -14,7 +14,7 @@ var img1,
     img3Pos;
 
 function detectmob() {
-   if($window.innerWidth() <= 800 && $window.innerHeight() <= 600) {
+   if($window.innerWidth() <= 768) {
      console.log(true);
      return true;
    } else {
@@ -25,30 +25,28 @@ function detectmob() {
 
 function imgPosCheck(){
   if (detectmob() == true) {
-    img1Pos = 260;
-    img2Pos = 690;
-    img3Pos = 1130;
+    img1Pos = 200;
+    img2Pos = 640;
+    img3Pos = 1080;
     console.log(img1Pos);
   } else {
-    img1Pos = 220,
-    img2Pos = 620,
+    img1Pos = 220;
+    img2Pos = 620;
     img3Pos = 1060;
   }
 }
 
 $(document).ready(function() {
 
-  $window.on('scroll', webAnimate);
+  $window.on('scroll', emailAnimate);
 });
 
-function webAnimate() {
+function emailAnimate() {
 
   imgPosCheck();
   if ($window.scrollTop() > 350) {
     email1 = (parseInt($('#email-1').css('transform').split(',')[5]))-5;
     img1 = (parseInt($('#email-img-1').css('transform').split(',')[5]))-10;
-
-    console.log(img1Pos);
 
     if (email1 >= 0) {
       $('#email-1').css("transform", "translateY(" + email1 + "px)");

@@ -62,10 +62,6 @@ section {
   text-align: center;
 }
 
-#emails-container {
-  height: 100em;
-}
-
 .emails {
   border: 1px solid #7f5dfc;
   padding: 15px;
@@ -97,7 +93,6 @@ section {
 
 #email-img-1 {
   transform: translateY(650px);
-  width: 17%;
 }
 
 #email-2 {
@@ -170,6 +165,10 @@ section {
     font-weight: 300;
   }
 
+  #emails-container {
+    height: 90em;
+  }
+
 }
 
 
@@ -210,6 +209,10 @@ section {
 
   .responsive-br {
     display: inline;
+  }
+
+  #emails-container {
+    height: 100em;
   }
 
   #email-img-1 {
