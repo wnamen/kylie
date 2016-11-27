@@ -74,6 +74,10 @@ section {
   margin-top: 1em;
 }
 
+#end-container {
+  margin-bottom: 4em; 
+}
+
 #end-btn {
   font-size: 1.5em;
 }

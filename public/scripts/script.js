@@ -1,5 +1,4 @@
 var $window = $(window);
-var $animation_elements = $('.emails');
 
 var email1,
     email2,
@@ -9,25 +8,47 @@ var email1,
 
 var img1,
     img2,
-    img3;
+    img3,
+    img1Pos = 220,
+    img2Pos = 620,
+    img3Pos = 1060;
+
+function detectmob() {
+   if($window.innerWidth <= 800 && $window.innerHeight <= 600) {
+     return true;
+   } else {
+     return false;
+   }
+}
+
+function imgPosCheck(){
+  if (detectmob() == true) {
+    img1Pos = 240;
+    img2Pos = 710;
+    img3Pos = 1150;
+    console.log(img1Pos);
+  }
+}
 
 $(document).ready(function() {
-  $window.on('scroll', emailAnimate);
+
+  $window.on('scroll', webAnimate);
 });
 
-function emailAnimate() {
-
-  console.log($window.scrollTop());
+function webAnimate() {
+  imgPosCheck();
 
   if ($window.scrollTop() > 350) {
     email1 = (parseInt($('#email-1').css('transform').split(',')[5]))-5;
     img1 = (parseInt($('#email-img-1').css('transform').split(',')[5]))-10;
 
+    console.log(img1Pos);
+
     if (email1 >= 0) {
       $('#email-1').css("transform", "translateY(" + email1 + "px)");
     };
 
-    if (img1 >= 220) {
+    if (img1 >= img1Pos) {
       $('#email-img-1').css("transform", "translateY(" + img1 + "px)");
     };
   };
@@ -48,7 +69,7 @@ function emailAnimate() {
       $('#email-3').css("transform", "translateY(" + email3 + "px)");
     };
 
-    if (img2 >= 620) {
+    if (img2 >= img2Pos) {
       $('#email-img-2').css("transform", "translateY(" + img2 + "px)");
     };
   };
@@ -69,7 +90,7 @@ function emailAnimate() {
       $('#email-5').css("transform", "translateY(" + email5 + "px)");
     };
 
-    if (img3 >= 1060) {
+    if (img3 >= img3Pos) {
       $('#email-img-3').css("transform", "translateY(" + img3 + "px)");
     };
   };
