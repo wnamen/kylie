@@ -8,6 +8,12 @@ hr {
   width: 70%;
 }
 
+span {
+  color: #fcdd8d;
+  font-size: 1.3em;
+  padding-left: 3em;
+}
+
 strong {
   color: #7f5dfc;
 }
@@ -104,7 +110,7 @@ section {
 }
 
 #email-img-2 {
-  transform: translateY(1400px);
+  transform: translateY(800px);
 }
 
 #email-4 {
@@ -116,7 +122,7 @@ section {
 }
 
 #email-img-3 {
-  transform: translateY(2000px);
+  transform: translateY(1300px);
 }
 
 .features {
@@ -167,6 +173,11 @@ section {
 
   #emails-container {
     height: 90em;
+  }
+
+  span {
+    font-size: 1em;
+    padding-left: 3em;
   }
 
 }
