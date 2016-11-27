@@ -4,31 +4,6 @@ body {
   padding: 2em;
 }
 
-h1 {
-  font-size: 5em;
-  color: #1b2733;
-}
-
-h2 {
-  font-size: 4em;
-  color: #1b2733;
-}
-
-h3 {
-  font-size: 2em;
-  color: #1b2733;
-}
-
-h5 {
-  font-size: 1.4em;
-}
-
-p {
-  color: #647382;
-  font-size: 1.3em;
-  font-weight: 300;
-}
-
 hr {
   width: 70%;
 }
@@ -169,11 +144,39 @@ section {
 .testimonial {
   text-align: center;
 }
+@media screen and (max-width:768px) {
+  h1 {
+    font-size: 4em;
+    color: #1b2733;
+  }
 
-@media(min-width:800px) {
+  h2 {
+    font-size: 3em;
+    color: #1b2733;
+  }
+
+  h3 {
+    font-size: 2em;
+    color: #1b2733;
+  }
+
+  h5 {
+    font-size: 1.4em;
+  }
+
+  p {
+    color: #647382;
+    font-size: 1.3em;
+    font-weight: 300;
+  }
+
+}
+
+
+@media screen and (min-width:768px) {
   body {
     padding: 0;
-  };
+  }
 
   h1 {
     font-size: 5em;
