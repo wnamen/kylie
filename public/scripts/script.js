@@ -9,9 +9,9 @@ var email1,
 var img1,
     img2,
     img3,
-    img1Pos = 220,
-    img2Pos = 620,
-    img3Pos = 1060;
+    img1Pos,
+    img2Pos,
+    img3Pos;
 
 function detectmob() {
    if($window.innerWidth() <= 800 && $window.innerHeight() <= 600) {
@@ -29,6 +29,10 @@ function imgPosCheck(){
     img2Pos = 690;
     img3Pos = 1130;
     console.log(img1Pos);
+  } else {
+    img1Pos = 220,
+    img2Pos = 620,
+    img3Pos = 1060;
   }
 }
 
