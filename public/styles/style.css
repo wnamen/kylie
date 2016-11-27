@@ -146,27 +146,27 @@ section {
 }
 @media screen and (max-width:768px) {
   h1 {
-    font-size: 4em;
+    font-size: 2.5em;
     color: #1b2733;
   }
 
   h2 {
-    font-size: 3em;
+    font-size:2em;
     color: #1b2733;
   }
 
   h3 {
-    font-size: 2em;
+    font-size: 1.5em;
     color: #1b2733;
   }
 
   h5 {
-    font-size: 1.4em;
+    font-size: 1.2em;
   }
 
   p {
     color: #647382;
-    font-size: 1.3em;
+    font-size: 0.9em;
     font-weight: 300;
   }
 
