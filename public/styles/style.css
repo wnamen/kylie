@@ -70,6 +70,9 @@ section {
   transform: translateY(0px);
   background-color: white;
   position: absolute;
+  transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -webkit-transition: 1s ease-in-out;
 }
 
 .email-imgs {
@@ -118,6 +121,43 @@ section {
 
 #email-img-3 {
   transform: translateY(1300px);
+}
+
+.slide {
+  transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -webkit-transition: 1s ease-in-out;
+}
+
+#email-1.slide {
+  transform: translateY(0px);
+}
+
+#email-2.slide {
+  transform: translateY(195px);
+}
+
+#email-3.slide {
+  transform: translateY(440px);
+}
+
+#email-4.slide {
+  transform: translateY(635px);
+}
+
+#email-5.slide {
+  transform: translateY(880px);
+}
+#email-img-1.slide {
+  transform: translateY(220px);
+}
+
+#email-img-2.slide {
+  transform: translateY(620px);
+}
+
+#email-img-3.slide {
+  transform: translateY(1060px);
 }
 
 .features {
