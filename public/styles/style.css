@@ -103,6 +103,10 @@ section {
   text-align: center;
 }
 
+.fa-star {
+  color: #28c3b5;
+}
+
 /* MOBILE RESPONSIVENESS */
 
 @media screen and (max-width:400px) {
