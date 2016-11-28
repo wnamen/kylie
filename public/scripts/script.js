@@ -42,7 +42,7 @@ $(document).ready(function() {
     var email1Position = $('#email-1').position();
     var email1Height = $('#email-1').height();
 
-    if (position > (email1Position.top - email1Height + 100)) {
+    if (position > (email1Position.top - email1Height + 200)) {
       $('#email-2').addClass('email-slide');
     } else {
       $('#email-2').removeClass('email-slide');
@@ -51,7 +51,7 @@ $(document).ready(function() {
     var email2Position = $('#email-2').position();
     var email2Height = $('#email-2').height();
 
-    if (position > (email2Position.top - email2Height + 100)) {
+    if (position > (email2Position.top - email2Height + 200)) {
       $('#email-3').addClass('email-slide');
       $('#email-img-2').addClass('img-slide');
     } else {
@@ -62,7 +62,7 @@ $(document).ready(function() {
     var email3Position = $('#email-3').position();
     var email3Height = $('#email-3').height();
 
-    if (position > (email3Position.top - email3Height + 100)) {
+    if (position > (email3Position.top - email3Height + 200)) {
       $('#email-4').addClass('email-slide');
     } else {
       $('#email-4').removeClass('email-slide');
@@ -71,7 +71,7 @@ $(document).ready(function() {
     var email4Position = $('#email-4').position();
     var email4Height = $('#email-4').height();
 
-    if (position > (email4Position.top - email4Height + 100)) {
+    if (position > (email4Position.top - email4Height + 200)) {
       $('#email-5').addClass('email-slide');
       $('#email-img-3').addClass('img-slide');
     } else {
