@@ -43,6 +43,10 @@ section {
   display: none;
 }
 
+.logo-image {
+  filter: grayscale(100%);
+}
+
 #end-container {
   margin-bottom: 4em;
 }
@@ -135,6 +139,10 @@ section {
     font-weight: 300;
   }
 
+  .image-hide {
+    display: none;
+  }
+
   #emails-container {
     height: 85em;
   }
@@ -193,6 +201,10 @@ section {
   #intro-image {
     width: 75%;
     margin-left: 13%;
+  }
+
+  .image-hide {
+    display: none;
   }
 
   #emails-container {
