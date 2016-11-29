@@ -45,6 +45,7 @@ section {
 
 .logo-image {
   filter: grayscale(100%);
+  opacity: 0.3;
 }
 
 #end-container {
@@ -68,7 +69,7 @@ section {
 }
 
 .email-imgs {
-  z-index: 2;
+  z-index: 1;
   transform: translateY(0px);
   position: absolute;
   transition: 1s ease-in-out;
@@ -103,9 +104,6 @@ section {
   text-align: center;
 }
 
-.testimonial {
-  text-align: center;
-}
 
 .fa-star {
   color: #28c3b5;
@@ -113,7 +111,7 @@ section {
 
 /* MOBILE RESPONSIVENESS */
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:500px) {
   h1 {
     font-size: 2.5em;
     color: #1b2733;
@@ -137,10 +135,6 @@ section {
     color: #647382;
     font-size: 0.8em;
     font-weight: 300;
-  }
-
-  .image-hide {
-    display: none;
   }
 
   #emails-container {
@@ -167,10 +161,7 @@ section {
 }
 /* SMALL SCREEN RESPONSIVENESS */
 
-@media screen and (min-width:400px) and (max-width:990px) {
-  body {
-    padding: 0;
-  }
+@media screen and (min-width:500px) and (max-width:990px) {
 
   h1 {
     font-size: 5em;
@@ -201,10 +192,6 @@ section {
   #intro-image {
     width: 75%;
     margin-left: 13%;
-  }
-
-  .image-hide {
-    display: none;
   }
 
   #emails-container {
@@ -294,10 +281,6 @@ section {
   .feat-right {
     text-align: left;
     padding-top: 2em;
-  }
-
-  .testimonial {
-    padding:0 17em;
   }
 }
 
