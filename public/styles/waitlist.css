@@ -1,0 +1,28 @@
+p {
+  font-family: 'Open Sans', helvetica, sans-serif;
+
+}
+
+.container {
+  padding: 4em;
+}
+
+#waitlist-title {
+  margin-bottom: 0.5em;
+}
+
+#waitlist-text {
+  margin: 1em auto;
+}
+
+#waitlist {
+  color: #7f5dfc;
+  font-size: 3em;
+  font-family: 'Merriweather', garamond, serif;
+  font-weight: 400;
+}
+
+.waitlist-image {
+  margin: 0 auto;
+  float: none;
+}

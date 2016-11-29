@@ -6,7 +6,7 @@ body {
   padding: 2em;
 }
 
-span {
+.draft {
   color: #fb615d;
   font-size: 1.3em;
   padding-left: 3em;
@@ -149,7 +149,7 @@ section {
     padding: none;
   }
 
-  span {
+  .draft {
     font-size: 1em;
     padding-left: 3em;
   }
