@@ -2,7 +2,7 @@
   "name": "kylie",
   "version": "1.0.0",
   "description": "",
-  "main": "views/index.html",
+  "main": ".views/index.html",
   "scripts": {
     "test": "ls"
   },
