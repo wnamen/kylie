@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Kylie.ai</title>
+
+    <!-- STYLES -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400|Open+Sans:300,400" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../public/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../public/node_modules/materialize-css/dist/css/materialize.min.css" rel="stylesheet">
+    <link href="../public/styles/welcome.css" rel="stylesheet">
+
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="../public/node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../public/node_modules/materialize-css/dist/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../public/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../public/scripts/welcome.js"></script>
+  </head>
+  <body>
+    <div class="container">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-container">
+          <h1 class="welcome-title">Welcome!</h1>
+        </div>
+        <div class="text-container">
+          <p class="welcome-text">
+            Before I draft up some emails, tell me more about yourself.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="form-1" class="row">
+      <div class="welcome-form col-md-8 col-sm-8 col-xs-10">
+          <div class="welcome-container">
+
+            <p class="form-text">
+              What is your role at your current company?
+            </p>
+
+            <p>
+              <input name="question1" type="radio" id="q1-option1" />
+              <label for="q1-option1">Sales/Marketing</label>
+            </p>
+            <p>
+              <input name="question1" type="radio" id="q1-option2" />
+              <label for="q1-option2">IT/Security</label>
+            </p>
+            <p>
+              <input name="question1" type="radio" id="q1-option3" />
+              <label for="q1-option3">Customer Support</label>
+            </p>
+            <p>
+              <input name="question1" type="radio" id="q1-option4" />
+              <label for="q1-option4">Engineering</label>
+            </p>
+
+            <div class="btns">
+              <button type="button" id="form-1-btn" class="btn waves-effect waves-light waves-ripple">Next</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div id="form-2" class="row form-hide">
+      <div class="welcome-form col-md-8 col-sm-8 col-xs-10">
+          <div class="welcome-container">
+            <p class="form-text">
+              What's your name?
+            </p>
+            <div class="input-field">
+              <input id="name" type="text" class="validate">
+              <label for="name">Name</label>
+            </div>
+
+            <div class="btns">
+              <button type="button" id="form-2-back" class="btn waves-effect waves-light waves-ripple">Back</button>
+              <button type="button" id="form-2-btn" class="btn waves-effect waves-light waves-ripple">Next</button>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div id="form-3" class="row form-hide">
+      <div class="welcome-form col-md-8 col-sm-8 col-xs-10">
+          <div class="welcome-container">
+
+            <p class="form-text">
+              What's your email?
+            </p>
+
+            <div class="input-field">
+              <input id="email" type="text" class="validate">
+              <label for="email">Email</label>
+            </div>
+
+            <div class="btns">
+              <button type="button" id="form-3-back" class="btn waves-effect waves-light waves-ripple">Back</button>
+              <button type="button" id="form-3-btn" class="btn waves-effect waves-light waves-ripple">Done</button>
+            </div>
+
+          </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="container pagination-container">
+        <ul class="pagination">
+          <i id="form-1-circle" class="fa fa-circle" aria-hidden="true"></i>
+          <i id="form-2-circle" class="fa fa-circle-o" aria-hidden="true"></i>
+          <i id="form-3-circle" class="fa fa-circle-o" aria-hidden="true"></i>
+
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  </body>
+</html>
