@@ -11,15 +11,15 @@ $(document).ready(function() {
       data: {
         labels: ["M", "", "", "", "", "", "S"],
         datasets: [
+          {
+            data: [12, 19, 14, 10, 4, 7, 2],
+            borderColor: "rgba(40,195,181,1)",
+            backgroundColor: "rgba(40,195,181,0.2)"
+          },
         {
           data: [2, 29, 5, 5, 2, 3, 10],
-          borderColor: "rgba(100,115,130,1)",
-          backgroundColor: "rgba(100,115,130,0.2)"
-        },
-        {
-          data: [12, 19, 14, 10, 4, 7, 2],
-          borderColor: "rgba(40,195,181,1)",
-          backgroundColor: "rgba(40,195,181,0.2)"
+          borderColor: "rgba(100,115,130,0)",
+          backgroundColor: "rgba(100,115,130,0.1)"
         }]
       },
       options: {
@@ -58,16 +58,17 @@ $(document).ready(function() {
       data: {
         labels: ["M", "", "", "", "", "", "S"],
         datasets: [
-        {
-          data: [2, 29, 5, 5, 2, 3, 10],
-          borderColor: "rgba(100,115,130,1)",
-          backgroundColor: "rgba(100,115,130,0.2)"
-        },
-        {
-          data: [12, 19, 14, 10, 4, 7, 2],
-          borderColor: "rgba(251,97,93,1)",
-          backgroundColor: "rgba(251,97,93,0.2)"
-        }]
+          {
+            data: [12, 19, 14, 10, 4, 7, 2],
+            borderColor: "rgba(251,97,93,1)",
+            backgroundColor: "rgba(251,97,93,0.2)"
+          },
+          {
+            data: [2, 29, 5, 5, 2, 3, 10],
+            borderColor: "rgba(100,115,130,0)",
+            backgroundColor: "rgba(100,115,130,0.1)"
+          }
+        ]
       },
       options: {
         legend: {
