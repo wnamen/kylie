@@ -10,13 +10,16 @@ $(document).ready(function() {
       type: 'line',
       data: {
         labels: ["M", "", "", "", "", "", "S"],
-        datasets: [{
-          data: [12, 19, 14, 10, 4, 7, 2],
-          borderColor: "rgba(75,192,192,1)"
+        datasets: [
+        {
+          data: [2, 29, 5, 5, 2, 3, 10],
+          borderColor: "rgba(100,115,130,1)",
+          backgroundColor: "rgba(100,115,130,0.2)"
         },
         {
-        data: [2, 29, 5, 5, 2, 3, 10],
-        backgroundColor: "rgba(255,153,0,0.4)"
+          data: [12, 19, 14, 10, 4, 7, 2],
+          borderColor: "rgba(40,195,181,1)",
+          backgroundColor: "rgba(40,195,181,0.2)"
         }]
       },
       options: {
@@ -54,13 +57,16 @@ $(document).ready(function() {
       type: 'line',
       data: {
         labels: ["M", "", "", "", "", "", "S"],
-        datasets: [{
-          data: [12, 19, 14, 10, 4, 7, 2],
-          borderColor: "rgba(75,192,192,1)"
+        datasets: [
+        {
+          data: [2, 29, 5, 5, 2, 3, 10],
+          borderColor: "rgba(100,115,130,1)",
+          backgroundColor: "rgba(100,115,130,0.2)"
         },
         {
-        data: [2, 29, 5, 5, 2, 3, 10],
-        backgroundColor: "rgba(255,153,0,0.4)"
+          data: [12, 19, 14, 10, 4, 7, 2],
+          borderColor: "rgba(251,97,93,1)",
+          backgroundColor: "rgba(251,97,93,0.2)"
         }]
       },
       options: {
@@ -99,14 +105,14 @@ $(document).ready(function() {
       data: {
           labels: ["", ""],
           datasets: [{
-              data: [12, 19],
+              data: [19, 10],
               backgroundColor: [
-                  'rgba(255, 99, 132, 0.2)',
-                  'rgba(54, 162, 235, 0.2)'
+                  'rgba(100,115,130,0.2)',
+                  'rgba(40,195,181,0.2)'
               ],
               borderColor: [
-                  'rgba(255,99,132,1)',
-                  'rgba(54, 162, 235, 1)'
+                  'rgba(100,115,130,1)',
+                  'rgba(40,195,181,1)'
               ],
               borderWidth: 1
           }]
@@ -149,14 +155,14 @@ $(document).ready(function() {
     data: {
         labels: ["", ""],
         datasets: [{
-            data: [12, 19],
+            data: [19, 10],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)'
+              'rgba(100,115,130,0.2)',
+              'rgba(127,93,252,0.2)'
             ],
             borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)'
+              'rgba(100,115,130,1)',
+              'rgba(127,93,252,1)'
             ],
             borderWidth: 1
         }]
