@@ -1,0 +1,62 @@
+body {
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
+  padding: 4em 0;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+p {
+  color: #647382;
+}
+
+.row {
+  padding: 2em 0;
+}
+
+.text-container {
+  display: flex;
+  float: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-title {
+  font-weight: 400;
+}
+
+.stats-head {
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 300;
+}
+
+#dates {
+  font-size: 2.5em;
+  color: #7f5dfc;
+}
+
+.card {
+  border: 2px solid #7f5dfc;
+}
+
+.card-title {
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.card-dates {
+  color: #28c3b5;
+  padding: 10px 20px;
+}
+
+.pending {
+  color: #fb615d;
+  display: block;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 0;
+}

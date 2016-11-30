@@ -8,16 +8,155 @@
     <!-- STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400|Open+Sans:300,400" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="public/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="public/styles/connect.css" rel="stylesheet">
+    <link href="../public/node_modules/materialize-css/dist/css/materialize.min.css" rel="stylesheet">
+    <link href="../public/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../public/styles/stats.css" rel="stylesheet">
 
     <!-- SCRIPTS -->
-    <script type="text/javascript" src="public/node_modules/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="public/node_modules/materialize-css/dist/js/materialize.min.js"></script>
-    <script type="text/javascript" src="public/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="public/scripts/connect.js"></script>
+    <script type="text/javascript" src="../public/node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../public/node_modules/chart.js/dist/chart.min.js"></script>
+    <script type="text/javascript" src="../public/node_modules/materialize-css/dist/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../public/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../public/scripts/stats.js"></script>
   </head>
   <body>
+  <div class="container">
+    <div class="container text-container">
+      <div class="col-md-8">
+
+          <h1 class="stats-head">Your Stats This Week</h1>
+          <h3 id="dates" class="stats-head">11/20 - 11/26</h3>
+          <p class="stats-head">compared to last week</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="container">
+        <div class="col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-6">
+          <canvas id="emails-received-canvas"></canvas>
+          <div class="text-container section-title">
+            <p>Emails Received</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-xs-6">
+          <canvas id="emails-sent-canvas"></canvas>
+          <div class="text-container section-title">
+            <p>Emails Sent</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="container">
+        <div class="col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-6">
+          <canvas id="response-time-canvas"></canvas>
+          <div class="text-container section-title">
+            <p>Avg. Response Time</p>
+          </div>
+        </div>
+        <div class="col-md-4 col-md-offset-2 col-sm-4 col-sm-offset-2 col-xs-6">
+          <canvas id="email-to-meeting-canvas"></canvas>
+          <div class="text-container section-title">
+            <p>Avg. Emails to Meeting</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-md-2 col-sm-2 col-xs-2 section-title">
+        <p>
+          Booked Meetings
+        </p>
+      </div>
+      <div class="col-md-10 col-sm-10 col-xs-10">
+        <div class="col-md-4 col-sm-4 col-xs-6">
+          <div class="card">
+            <div class="card-content">
+              <h5 class="card-title">Aram Brady</h5>
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <p class="card-dates">@ Wed Nov 30, 2016</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-6">
+          <div class="card">
+            <div class="card-content">
+              <h5 class="card-title">Aram Brady</h5>
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <p class="card-dates">@ Wed Nov 30, 2016</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 col-sm-4 col-xs-6">
+          <div class="card">
+            <div class="card-content">
+              <h5 class="card-title">Aram Brady</h5>
+              <p>I am a very simple card. I am good at containing small bits of information.
+              I am convenient because I require little markup to use effectively.</p>
+            </div>
+            <p class="card-dates">@ Wed Nov 30, 2016</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-md-2 col-sm-2 col-xs-2 section-title">
+      <p>
+        Pending Invites
+      </p>
+    </div>
+    <div class="col-md-10 col-sm-10 col-xs-10">
+      <div class="col-md-4 col-sm-4 col-xs-6">
+        <div class="card">
+          <div class="card-content">
+            <h5 class="card-title">Aram Brady<span class="pending">Pending</span></h5>
+            <p>I am a very simple card. I am good at containing small bits of information.
+            I am convenient because I require little markup to use effectively.</p>
+          </div>
+          <p class="card-dates">@ Wed Nov 30, 2016</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-4 col-xs-6">
+        <div class="card">
+          <div class="card-content">
+            <h5 class="card-title">Aram Brady<span class="pending">Pending</span></h5>
+            <p>I am a very simple card. I am good at containing small bits of information.
+            I am convenient because I require little markup to use effectively.</p>
+          </div>
+          <p class="card-dates">@ Wed Nov 30, 2016</p>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-4 col-xs-6">
+        <div class="card">
+          <div class="card-content">
+            <h5 class="card-title">Aram Brady<span class="pending">Pending</span></h5>
+            <p>I am a very simple card. I am good at containing small bits of information.
+            I am convenient because I require little markup to use effectively.</p>
+          </div>
+          <p class="card-dates">@ Wed Nov 30, 2016</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
 
   </body>
 </html>

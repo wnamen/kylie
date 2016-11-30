@@ -80,7 +80,7 @@ input[type=text], input[type=text].valid {
 }
 
 input[type=text]:focus:not([readonly]) {
-  border: 1px solid #2bbbad;
+  border: 1px solid #28c3b5;
   box-shadow: none;
 }
 
