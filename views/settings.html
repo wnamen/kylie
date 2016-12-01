@@ -68,10 +68,10 @@
               </div>
 
               <div class="col-md-3">
-                <label>
+                <label class="">
                   Off
                   <input type="checkbox">
-                  <span class="lever"></span>
+                  <span class="lever purple-border"></span>
                   On
                 </label>
               </div>
@@ -93,7 +93,7 @@
                 <label>
                   Off
                   <input type="checkbox">
-                  <span class="lever"></span>
+                  <span class="lever purple-border"></span>
                   On
                 </label>
               </div>
@@ -115,7 +115,7 @@
                 <label>
                   Off
                   <input type="checkbox">
-                  <span class="lever"></span>
+                  <span class="lever purple-border"></span>
                   On
                 </label>
               </div>
@@ -137,7 +137,7 @@
                 <label>
                   Off
                   <input type="checkbox">
-                  <span class="lever"></span>
+                  <span class="lever green-background purple-border"></span>
                   On
                 </label>
               </div>
@@ -159,7 +159,7 @@
                 <label>
                   Off
                   <input type="checkbox">
-                  <span class="lever"></span>
+                  <span class="lever purple-border"></span>
                   On
                 </label>
               </div>
@@ -181,7 +181,7 @@
                 <label>
                   Off
                   <input type="checkbox">
-                  <span class="lever"></span>
+                  <span class="lever purple-border"></span>
                   On
                 </label>
               </div>
@@ -204,7 +204,7 @@
 
         <div class="row">
           <div class="container">
-            <div class="switch col-md-12">
+            <div class="switch col-md-12 small-margin-top medium-margin-bottom">
 
               <div class="col-md-9">
                 <p class="setting-text">Model 1 <span class="green-font">(jrodri25@jhu.edu)</span></p>
@@ -220,7 +220,7 @@
               </div>
             </div>
 
-            <div class="switch col-md-12">
+            <div class="switch col-md-12 medium-margin-bottom">
 
               <div class="col-md-9">
                 <p class="setting-text">Model 2 <span class="green-font">(jamasen@jamacocoa.com)</span></p>
@@ -236,7 +236,7 @@
               </div>
             </div>
 
-            <div class="switch col-md-12">
+            <div class="switch col-md-12 small-margin-bottom">
 
               <div class="col-md-9">
                 <p class="setting-text">Model 3 <span class="green-font">(jamasen@legionanalytics.com)</span></p>
@@ -258,24 +258,105 @@
 
         <div class="row">
           <div class="container">
-            <h4 class="setting-title">Your Calendar</h4>
-            <p>Do you have acalendar link where recipitents can book a time with you? Add your unique link below and Kylie will use it in future drafts!</p>
+            <h4 class="setting-title">Email Preferences</h4>
+          </div>
+        </div>
 
-            <div class="col-md-12">
-            <div class="col-md-6">
-              <div class="input-field">
-                <input id="name-on-card" type="text" class="validate">
-                <label for="name-on-card">Name On Card</label>
+        <hr>
+
+        <div class="row">
+          <div class="container">
+            <div class="switch col-md-12 small-margin-top medium-margin-bottom">
+
+              <div class="col-md-9">
+                <p class="setting-text">Weekly Stats</p>
+              </div>
+
+              <div class="col-md-3">
+                <label>
+                  Off
+                  <input type="checkbox">
+                  <span class="lever"></span>
+                  On
+                </label>
               </div>
             </div>
 
-            <div class="col-md-6">
-              <p>or <span class="green-font">Create a calendar link</span></p>
+            <div class="switch col-md-12 medium-margin-bottom">
+
+              <div class="col-md-9">
+                <p class="setting-text">Monthly Reports</p>
+              </div>
+
+              <div class="col-md-3">
+                <label>
+                  Off
+                  <input type="checkbox">
+                  <span class="lever"></span>
+                  On
+                </label>
+              </div>
+            </div>
+
+            <div class="switch col-md-12 medium-margin-bottom">
+
+              <div class="col-md-9">
+                <p class="setting-text">Educational</p>
+              </div>
+
+              <div class="col-md-3">
+                <label>
+                  Off
+                  <input type="checkbox">
+                  <span class="lever"></span>
+                  On
+                </label>
+              </div>
+            </div>
+
+            <div class="switch col-md-12 small-margin-bottom">
+
+              <div class="col-md-9">
+                <p class="setting-text">Promotional</p>
+              </div>
+
+              <div class="col-md-3">
+                <label>
+                  Off
+                  <input type="checkbox">
+                  <span class="lever"></span>
+                  On
+                </label>
+              </div>
             </div>
           </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="container">
+            <h4 class="setting-title">Your Calendar</h4>
+            <p>Do you have a calendar link where recipitents can book a time with you? Add your unique link below and Kylie will use it in future drafts!</p>
+
+            <div class="col-md-12 no-padding-left small-margin-top">
+              <div class="col-md-5 no-padding-left">
+                <div class="input-field no-margin-top">
+                  <input id="new-calendar-link" type="text" class="validate">
+                  <label for="new-calendar-link"></label>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <button type="button" id="form-1-btn" class="btn waves-effect waves-light waves-ripple">Add Link</button>
+              </div>
+
+              <div class="col-md-4">
+                <p id="calendar-text">or  <a href="" class="green-font">Create a calendar link</a></p>
+              </div>
+            </div>
 
 
-            <p>Your current calendar: <span class="green-font">https://calendly.com/jamasenr</span>
+            <p>Your current calendar: <a href="" class="green-font">https://calendly.com/jamasenr</a>
           </div>
         </div>
 
@@ -284,24 +365,24 @@
         <div class="row">
           <div class="container">
             <h4 class="setting-title">Billing</h4>
-            <div class="col-md-6">
-              <div class="input-field">
+            <div class="col-md-6 no-padding-left">
+              <div class="input-field no-margin-top">
                 <input id="name-on-card" type="text" class="validate">
                 <label for="name-on-card">Name On Card</label>
               </div>
-              <div class="input-field">
+              <div class="input-field no-margin-top">
                 <input id="card-number" type="text" class="validate">
                 <label for="card-number">Card Number</label>
               </div>
-              <div class="input-field">
+              <div class="input-field no-margin-top">
                 <input id="address-1" type="text" class="validate">
                 <label for="address-1">Address Line 1</label>
               </div>
-              <div class="input-field">
+              <div class="input-field no-margin-top">
                 <input id="address-2" type="text" class="validate">
                 <label for="address-2">Address Line 2</label>
               </div>
-              <div class="input-field">
+              <div class="input-field no-margin-top">
                 <input id="zip-code" type="text" class="validate">
                 <label for="zip-code">Zip Code</label>
               </div>
@@ -310,17 +391,17 @@
 
             </div>
             <div class="col-md-5 col-md-offset-1">
-              <div class="container small-margin-bottom">
+              <div class="container medium-margin-bottom">
                 <p class="no-margins">Your current card on file: </p>
                 <span class="purple-font">XXXX XXXX XXXX 3147</span>
               </div>
 
-              <div class="container small-margin-bottom">
+              <div class="container medium-margin-bottom">
                 <p class="no-margins">Your current plan:</p>
                 <span class="span-text">Free</span>
               </div>
 
-              <div class="container small-margin-bottom">
+              <div class="container medium-margin-bottom">
                 <p class="no-margins">Invoices:</p>
                 <a class="green-font span-text" href="#">Invoice 08/11/16</a>
                 <a class="green-font span-text" href="#">Invoice 07/11/16</a>

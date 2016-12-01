@@ -54,9 +54,9 @@ p {
 }
 
 input[type=text], .input-field label, [type="radio"]:not(:checked)+label, [type="radio"]:checked+label {
-  font-size: 1.5em;
   font-weight: 300;
   color: #7f5dfc;
+  height: 2.5em;
 }
 
 [type="radio"]:not(:checked)+label:before, [type="radio"]:not(:checked)+label:after {
@@ -64,8 +64,8 @@ input[type=text], .input-field label, [type="radio"]:not(:checked)+label, [type=
 }
 
 .input-field label {
-  font-size: 1.4em;
-  left: 10px;
+  font-size: 0.9em;
+  left: 20px;
 }
 
 .input-field label.active {
