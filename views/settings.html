@@ -22,8 +22,20 @@
 
   <body>
   <div class="container">
+    <div id="nav-spy"class="col hide-on-small-only m3 l2">
+      <ul class="section table-of-contents">
+        <li><a href="#configuration">Configuration</a></li>
+        <li><a href="#settings">Settings</a></li>
+        <li><a href="#auto-pilot">- Auto-Pilot</a></li>
+        <li><a href="#your-models">- Your Models</a></li>
+        <li><a href="#email-preferences">- Email Preferences</a></li>
+        <li><a href="#your-calendar">- Your Calendar</a></li>
+        <li><a href="#billing">- Billing</a></li>
+      </ul>
+    </div>
+
     <div class="col-md-12">
-    <div class="row text-container">
+    <div id="configuration" class="row text-container scrollspy">
       <h1 class="section-title">Configuration</h1>
 
     </div>
@@ -31,12 +43,12 @@
     <hr>
 
       <div class="container text-container">
-        <div class="col-md-8">
+        <div id="settings" class="col-md-8 scrollspy">
 
         <h1 class="section-title text-container">Settings</h1>
 
         <div class="row">
-          <div class="container">
+          <div id="auto-pilot" class="container scrollspy">
             <h4 class="setting-title">Auto-Pilot</h4>
             <p>Set the following conversations to autopilot to allow Kylie to automatically respoond to the most repetitive of your emails</p>
             <p>Change the confidence level to adjust when Kylie is able to respond depending on her confidence of her response</p>
@@ -62,7 +74,7 @@
               </div>
 
               <div class="col-md-2 no-padding-left">
-                <p class="confidence-level green-font">| % confidence</p>
+                <p class="confidence-level green-font">| <span class="value"></span>% confidence</p>
               </div>
 
               <div class="col-md-2">
@@ -210,7 +222,7 @@
         <hr>
 
         <div class="row">
-          <div class="container">
+          <div id="your-models" class="container scrollspy">
             <h4 class="setting-title">Your Models</h4>
             <p>In the following models you have spoken in unique ways and answered similar and different questions across different jobs. Models are ways for you to control how I respond to future emails. Want me to respond based only on how you've answered emails in your current job? Only turn on your latest model. Want me to use all my knowledge about how you sell? Turn on all the following models.</p>
           </div>
@@ -267,7 +279,7 @@
         <hr>
 
         <div class="row">
-          <div class="container">
+          <div id="email-preferences" class="container scrollspy">
             <h4 class="setting-title">Email Preferences</h4>
           </div>
         </div>
@@ -337,7 +349,7 @@
         <hr>
 
         <div class="row">
-          <div class="container">
+          <div id="your-calendar" class="container scrollspy">
             <h4 class="setting-title">Your Calendar</h4>
             <p>Do you have a calendar link where recipitents can book a time with you? Add your unique link below and Kylie will use it in future drafts!</p>
 
@@ -365,7 +377,7 @@
         <hr>
 
         <div class="row">
-          <div class="container">
+          <div id="billing" class="container scrollspy">
             <h4 class="setting-title">Billing</h4>
             <div class="col-md-6 no-padding-left">
               <div class="input-field no-margin-top">

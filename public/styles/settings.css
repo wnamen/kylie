@@ -6,6 +6,15 @@ p {
   color: #647382;
 }
 
+#nav-spy {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  border-top: 0;
+}
+
 .section-title {
   font-family: 'Open Sans', helvetica, sans-serif;
   font-weight: 300;
