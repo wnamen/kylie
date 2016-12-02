@@ -40,6 +40,7 @@ $(document).ready(function() {
     $('.userCompany').html(userInfo.company);
   };
 
+  $(".welcome-btn").click(welcomeRedirect);
 
   $window.scroll(function () {
 
@@ -116,3 +117,7 @@ $(document).ready(function() {
     }
   });
 });
+
+function welcomeRedirect(){
+  location.href = "./welcome.html";
+}
