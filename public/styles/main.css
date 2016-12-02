@@ -4,6 +4,18 @@ body {
   background-color: #fefdfb;
   font-family: 'Merriweather', garamond, serif;
   padding: 2em;
+  padding-bottom: 10em;
+}
+
+.nav {
+  float: right;
+  margin:auto 10%;
+  /*font-size: 2em;*/
+}
+
+.nav li a:hover {
+  background: none;
+  text-decoration: underline;
 }
 
 .draft {
@@ -67,6 +79,7 @@ section {
   transform: translateY(0px);
   background-color: white;
   position: absolute;
+  opacity: 0;
   transition: 0.7s ease-in-out;
   -moz-transition: 0.7s ease-in-out;
   -webkit-transition: 0.7s ease-in-out;
@@ -76,9 +89,18 @@ section {
   z-index: 1;
   transform: translateY(0px);
   position: absolute;
+  opacity: 0;
   transition: 1s ease-in-out;
   -moz-transition: 1s ease-in-out;
   -webkit-transition: 1s ease-in-out;
+}
+
+.email-text {
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -webkit-transition-delay:0.7s;
 }
 
 .email-titles {
@@ -116,6 +138,10 @@ section {
 /* MOBILE RESPONSIVENESS */
 
 @media screen and (max-width:500px) {
+  .nav {
+    margin:auto 4%;
+  }
+
   h1 {
     font-size: 2.5em;
     color: #1b2733;
@@ -224,7 +250,7 @@ section {
 
 @media screen and (min-width:991px) {
   body {
-    padding: 0;
+    padding-top: 2em;
   }
 
   h1 {
@@ -323,15 +349,25 @@ section {
 }
 
 .img-slide {
+  opacity: 1;
   transition: 1s ease-in-out;
   -moz-transition: 1s ease-in-out;
   -webkit-transition: 1s ease-in-out;
 }
 
 .email-slide {
+  opacity: 1;
   transition: 0.7s ease-in-out;
   -moz-transition: 0.7s ease-in-out;
   -webkit-transition: 0.7s ease-in-out;
+}
+
+.text-fade {
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -webkit-transition-delay:0.7s;
 }
 
 #email-1.email-slide {

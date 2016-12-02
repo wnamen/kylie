@@ -1,0 +1,21 @@
+.black-font {
+  color: #647382;  
+}
+
+.green-font {
+  color: #28c3b5;
+  font-weight: 300;
+}
+
+.green-background {
+  background-color: #28c3b5;
+}
+
+.purple-font {
+  color: #7f5dfc;
+}
+
+.purple-border {
+  border: 2px solid #7f5dfc;
+
+}
