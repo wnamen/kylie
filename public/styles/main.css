@@ -10,7 +10,6 @@ body {
 .nav {
   float: right;
   margin:auto 10%;
-  /*font-size: 2em;*/
 }
 
 .nav li a:hover {
