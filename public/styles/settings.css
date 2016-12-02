@@ -37,16 +37,6 @@ p {
   margin-top: 8px;
 }
 
-.slider, input[type=range] {
-  height: 100%;
-}
-
-.switch {
-  width: 100%;
-  border-radius: 100px;
-  padding-top: 10px;
-}
-
 .green-font {
   color: #28c3b5;
   font-weight: 300;
@@ -113,6 +103,17 @@ p {
   width: 100%;
 }
 
+.slider, input[type=range] {
+  height: 100%;
+}
+
+.switch {
+  width: 100%;
+  border-radius: 100px;
+  padding-top: 10px;
+  line-height: 1;
+}
+
 .range-field {
   display: none;
   font-size: 0.9em;
@@ -121,7 +122,6 @@ p {
 .switch:hover {
   background-color: #f8f8f6;
   border-radius: 100px;
-  padding-top: 10px;
 }
 
 .switch:hover .setting-text{
@@ -135,7 +135,7 @@ p {
 
 input[type=range] {
   border: none;
-  margin: 7px 0;
+  margin: 4px 0;
   display: inline-block;
   width: 65%;
   padding-bottom: 3px;
@@ -173,7 +173,7 @@ input[type=range] + .thumb.active {
   width: 31px;
   height: 19px;
   box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.4);
-  left: -5px;
+  left: -3px;
   top: -2px;
   padding-top: 3px;
 }
