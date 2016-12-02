@@ -15,18 +15,19 @@
 
     <!-- SCRIPTS -->
     <script type="text/javascript" src="../public/node_modules/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="../public/node_modules/materialize-css/dist/js/materialize.min.js"></script>
+
     <script type="text/javascript" src="../public/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../public/node_modules/materialize-css/dist/js/materialize.min.js"></script>
     <script type="text/javascript" src="../public/scripts/settings.js"></script>
   </head>
 
   <body>
   <div class="container">
-    <div id="nav-spy"class="col hide-on-small-only m3 l2">
-      <ul class="section table-of-contents">
-        <li><a href="#configuration">Configuration</a></li>
+    <div id="nav-spy" class="col-md-3 col-sm-2 hide-on-small-only">
+      <ul class="table-of-contents">
+        <!-- <li><a href="#configuration">Configuration</a></li> -->
         <li><a href="#settings">Settings</a></li>
-        <li><a href="#auto-pilot">- Auto-Pilot</a></li>
+        <li><a href="#autopilot">- Autopilot</a></li>
         <li><a href="#your-models">- Your Models</a></li>
         <li><a href="#email-preferences">- Email Preferences</a></li>
         <li><a href="#your-calendar">- Your Calendar</a></li>
@@ -34,22 +35,22 @@
       </ul>
     </div>
 
-    <div class="col-md-12">
-    <div id="configuration" class="row text-container scrollspy">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+    <!-- <div id="configuration" class="row text-container scrollspy">
       <h1 class="section-title">Configuration</h1>
 
     </div>
 
-    <hr>
+    <hr> -->
 
-      <div class="container text-container">
-        <div id="settings" class="col-md-8 scrollspy">
+      <div class="text-container">
+        <div id="settings" class="col-md-8 col-sm-10 scrollspy">
 
         <h1 class="section-title text-container">Settings</h1>
 
         <div class="row">
-          <div id="auto-pilot" class="container scrollspy">
-            <h4 class="setting-title">Auto-Pilot</h4>
+          <div id="autopilot" class="container scrollspy">
+            <h4 class="setting-title">Autopilot</h4>
             <p>Set the following conversations to autopilot to allow Kylie to automatically respoond to the most repetitive of your emails</p>
             <p>Change the confidence level to adjust when Kylie is able to respond depending on her confidence of her response</p>
           </div>
@@ -60,157 +61,130 @@
         <div class="row">
           <div class="container">
 
-          <div class="col-md-12">
-            <div class="switch small-margin-bottom col-md-12">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="switch small-margin-bottom col-md-12 col-sm-12 col-xs-12">
 
-              <div class="col-md-2">
-                <p class="setting-text">Interested</p>
+              <div class="col-md-2 col-sm-2 col-xs-12">
+                <p disabled class="setting-text">Interested</p>
               </div>
 
-              <div class="col-md-6 no-padding-right">
+              <div class="col-md-8 col-sm-8 col-xs-10 no-padding-right">
                 <p class="range-field">
-                  <input type="range" class="slider" min="0" max="100" />
+                  <input disabled type="range" class="slider" min="0" max="100" />
+                  <span disabled class="green-font">| <span class="confidence-value"></span>% confidence</span>
                 </p>
               </div>
 
-              <div class="col-md-2 no-padding-left">
-                <p class="confidence-level green-font">| <span class="value"></span>% confidence</p>
-              </div>
 
-              <div class="col-md-2">
+              <div class="col-md-2 col-sm-2 col-xs-1">
                 <label>
-                  <input type="checkbox">
-                  <span class="lever purple-border"></span>
+                  <input disabled type="checkbox">
+                  <span disabled class="lever purple-border"></span>
                 </label>
               </div>
             </div>
 
-            <div class="switch small-margin-bottom col-md-12">
+            <div class="switch small-margin-bottom col-md-12 col-sm-12 col-xs-12">
 
-              <div class="col-md-2">
-                <p class="setting-text">Not Interested</p>
+              <div class="col-md-2 col-sm-2 col-xs-12">
+                <p disabled class="setting-text">Not Interested</p>
               </div>
 
-              <div class="col-md-6 no-padding-right">
+              <div class="col-md-8 col-sm-8 col-xs-10 no-padding-right">
                 <p class="range-field">
-                  <input type="range" class="slider" min="0" max="100" />
+                  <input disabled type="range" class="slider" min="0" max="100" />
+                  <span disabled class="green-font">| <span class="confidence-value"></span>% confidence</span>
                 </p>
               </div>
 
-              <div class="col-md-2 no-padding-left">
-                <p class="confidence-level green-font">
-                  | % confidence
-                </p>
-              </div>
-
-              <div class="col-md-2">
+              <div class="col-md-2 col-sm-2 col-xs-2">
                 <label>
-                  <input type="checkbox">
-                  <span class="lever purple-border"></span>
+                  <input disabled type="checkbox">
+                  <span disabled class="lever purple-border"></span>
                 </label>
               </div>
             </div>
 
-            <div class="switch small-margin-bottom col-md-12">
+            <div class="switch small-margin-bottom col-md-12 col-sm-12 col-xs-12">
 
-              <div class="col-md-2">
-                <p class="setting-text">Pricing</p>
+              <div class="col-md-2 col-sm-2 col-xs-12">
+                <p disabled class="setting-text">Pricing</p>
               </div>
 
-              <div class="col-md-6 no-padding-right">
+              <div class="col-md-8 col-sm-8 col-xs-10 no-padding-right">
                 <p class="range-field">
-                  <input type="range" class="slider" min="0" max="100" />
+                  <input disabled type="range" class="slider" min="0" max="100" />
+                  <span disabled class="green-font">| <span class="confidence-value"></span>% confidence</span>
                 </p>
               </div>
 
-              <div class="col-md-2 no-padding-left">
-                <p class="confidence-level green-font">
-                  | % confidence
-                </p>
-              </div>
-
-              <div class="col-md-2">
+              <div class="col-md-2 col-sm-2 col-xs-2">
                 <label>
-                  <input type="checkbox">
-                  <span class="lever purple-border"></span>
+                  <input disabled type="checkbox">
+                  <span disabled class="lever purple-border"></span>
                 </label>
               </div>
             </div>
 
-            <div class="switch small-margin-bottom col-md-12">
+            <div class="switch small-margin-bottom col-md-12 col-sm-12 col-xs-12">
 
-              <div class="col-md-2">
-                <p class="setting-text">Trials</p>
+              <div class="col-md-2 col-sm-2 col-xs-12">
+                <p disabled class="setting-text">Trials</p>
               </div>
 
-              <div class="col-md-6 no-padding-right">
+              <div class="col-md-8 col-sm-8 col-xs-10 no-padding-right">
                 <p class="range-field">
-                  <input type="range" class="slider" min="0" max="100" />
+                  <input disabled type="range" class="slider" min="0" max="100" />
+                  <span disabled class="green-font">| <span class="confidence-value"></span>% confidence</span>
                 </p>
               </div>
 
-              <div class="col-md-2 no-padding-left">
-                <p class="confidence-level green-font">
-                  | % confidence
-                </p>
-              </div>
-
-              <div class="col-md-2">
+              <div class="col-md-2 col-sm-2 col-xs-2">
                 <label>
-                  <input type="checkbox">
-                  <span class="lever purple-border"></span>
+                  <input disabled type="checkbox">
+                  <span disabled class="lever purple-border"></span>
                 </label>
               </div>
             </div>
 
-            <div class="switch small-margin-bottom col-md-12">
+            <div class="switch small-margin-bottom col-md-12 col-sm-12 col-xs-12">
 
-              <div class="col-md-2">
-                <p class="setting-text">More Info</p>
+              <div class="col-md-2 col-sm-2 col-xs-12">
+                <p disabled class="setting-text">More Info</p>
               </div>
 
-              <div class="col-md-6 no-padding-right">
+              <div class="col-md-8 col-sm-8 col-xs-10 no-padding-right">
                 <p class="range-field">
-                  <input type="range" class="slider" min="0" max="100" />
+                  <input disabled type="range" class="slider" min="0" max="100" />
+                  <span disabled class="green-font">| <span class="confidence-value"></span>% confidence</span>
                 </p>
               </div>
 
-              <div class="col-md-2 no-padding-left">
-                <p class="confidence-level green-font">
-                  | % confidence
-                </p>
-              </div>
-
-              <div class="col-md-2">
+              <div class="col-md-2 col-sm-2 col-xs-2">
                 <label>
-                  <input type="checkbox">
-                  <span class="lever purple-border"></span>
+                  <input disabled type="checkbox">
+                  <span disabled class="lever purple-border"></span>
                 </label>
               </div>
             </div>
 
-            <div class="switch small-margin-bottom col-md-12">
+            <div class="switch small-margin-bottom col-md-12 col-sm-12 col-xs-12">
 
-              <div class="col-md-2">
-                <p class="setting-text">Set Up Calendar Invite</p>
+              <div class="col-md-2 col-sm-2 col-xs-12">
+                <p disabled class="setting-text">Set Up Calendar Invite</p>
               </div>
 
-              <div class="col-md-6 no-padding-right">
+              <div class="col-md-8 col-sm-8 col-xs-10 no-padding-right">
                 <p class="range-field">
-                  <input type="range" class="slider" min="0" max="100" />
+                  <input disabled type="range" class="slider" min="0" max="100" />
+                  <span disabled class="green-font">| <span class="confidence-value"></span>% confidence</span>
                 </p>
               </div>
 
-              <div class="col-md-2 no-padding-left">
-                <p class="confidence-level green-font">
-                  | % confidence
-                </p>
-              </div>
-
-              <div class="col-md-2">
+              <div class="col-md-2 col-sm-2 col-xs-2">
                 <label>
-                  <input type="checkbox">
-                  <span class="lever purple-border"></span>
+                  <input disabled type="checkbox">
+                  <span disabled class="lever purple-border"></span>
                 </label>
               </div>
             </div>
@@ -232,13 +206,13 @@
 
         <div class="row">
           <div class="container">
-            <div class="switch col-md-12 small-margin-top medium-margin-bottom">
+            <div class="switch col-md-12 col-sm-12 col-xs-12 small-margin-top medium-margin-bottom">
 
-              <div class="col-md-10">
+              <div class="col-md-10 col-sm-10 col-xs-10">
                 <p class="setting-text">Model 1 <span class="purple-font">(jrodri25@jhu.edu)</span></p>
               </div>
 
-              <div class="col-md-2">
+              <div class="col-md-2 col-sm-2 col-xs-2">
                 <label>
                   <input type="checkbox">
                   <span class="lever purple-border"></span>
@@ -246,13 +220,13 @@
               </div>
             </div>
 
-            <div class="switch col-md-12 medium-margin-bottom">
+            <!-- <div class="switch col-md-12 col-sm-12 col-xs-12 medium-margin-bottom">
 
-              <div class="col-md-10">
+              <div class="col-md-10 col-sm-10 col-xs-10">
                 <p class="setting-text">Model 2 <span class="purple-font">(jamasen@jamacocoa.com)</span></p>
               </div>
 
-              <div class="col-md-2">
+              <div class="col-md-2 col-sm-2 col-xs-2">
                 <label>
                   <input type="checkbox">
                   <span class="lever purple-border"></span>
@@ -260,19 +234,19 @@
               </div>
             </div>
 
-            <div class="switch col-md-12 small-margin-bottom">
+            <div class="switch col-md-12 col-sm-12 col-xs-12 small-margin-bottom">
 
-              <div class="col-md-10">
+              <div class="col-md-10 col-sm-10 col-xs-10">
                 <p class="setting-text">Model 3 <span class="purple-font">(jamasen@legionanalytics.com)</span></p>
               </div>
 
-              <div class="col-md-2">
+              <div class="col-md-2 col-sm-2 col-xs-2">
                 <label>
                   <input type="checkbox">
                   <span class="lever purple-border"></span>
                 </label>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
 
@@ -288,13 +262,13 @@
 
         <div class="row">
           <div class="container">
-            <div class="switch col-md-12 small-margin-top medium-margin-bottom">
+            <div class="switch col-md-12 col-sm-12 col-xs-12 small-margin-top medium-margin-bottom">
 
-              <div class="col-md-10">
+              <div class="col-md-10 col-sm-10 col-xs-10">
                 <p class="setting-text">Weekly Stats</p>
               </div>
 
-              <div class="col-md-2">
+              <div class="col-md-2 col-sm-2 col-xs-2">
                 <label>
                   <input type="checkbox">
                   <span class="lever purple-border"></span>
@@ -302,13 +276,13 @@
               </div>
             </div>
 
-            <div class="switch col-md-12 medium-margin-bottom">
+            <div class="switch col-md-12 col-sm-12 col-xs-12 medium-margin-bottom">
 
-              <div class="col-md-10">
+              <div class="col-md-10 col-sm-10 col-xs-10">
                 <p class="setting-text">Monthly Reports</p>
               </div>
 
-              <div class="col-md-2">
+              <div class="col-md-2 col-sm-2 col-xs-2">
                 <label>
                   <input type="checkbox">
                   <span class="lever purple-border"></span>
@@ -316,13 +290,13 @@
               </div>
             </div>
 
-            <div class="switch col-md-12 medium-margin-bottom">
+            <div class="switch col-md-12 col-sm-12 col-xs-12 medium-margin-bottom">
 
-              <div class="col-md-10">
+              <div class="col-md-10 col-sm-10 col-xs-10">
                 <p class="setting-text">Educational</p>
               </div>
 
-              <div class="col-md-2">
+              <div class="col-md-2 col-sm-2 col-xs-2">
                 <label>
                   <input type="checkbox">
                   <span class="lever purple-border"></span>
@@ -330,13 +304,13 @@
               </div>
             </div>
 
-            <div class="switch col-md-12 small-margin-bottom">
+            <div class="switch col-md-12 col-sm-12 col-xs-12 small-margin-bottom">
 
-              <div class="col-md-10">
+              <div class="col-md-10 col-sm-10 col-xs-10">
                 <p class="setting-text">Promotional</p>
               </div>
 
-              <div class="col-md-2">
+              <div class="col-md-2 col-sm-2 col-xs-2">
                 <label>
                   <input type="checkbox">
                   <span class="lever purple-border"></span>
@@ -353,18 +327,18 @@
             <h4 class="setting-title">Your Calendar</h4>
             <p>Do you have a calendar link where recipitents can book a time with you? Add your unique link below and Kylie will use it in future drafts!</p>
 
-            <div class="col-md-12 no-padding-left small-margin-top">
-              <div class="col-md-5 no-padding-left">
+            <div class="col-md-12 col-sm-12 col-xs-12 no-padding-left small-margin-top">
+              <div class="col-md-5 col-sm-5 col-xs-8 no-padding-left">
                 <div class="input-field no-margin-top">
                   <input id="new-calendar-link" type="text" class="validate">
                   <label for="new-calendar-link"></label>
                 </div>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-2 col-sm-2 col-xs-2">
                 <button type="button" id="form-1-btn" class="btn waves-effect waves-light waves-ripple">Add Link</button>
               </div>
 
-              <div class="col-md-4">
+              <div class="col-md-4 col-sm-4 col-xs-12">
                 <p id="calendar-text">or  <a href="" class="green-font">Create a calendar link</a></p>
               </div>
             </div>
@@ -379,7 +353,7 @@
         <div class="row">
           <div id="billing" class="container scrollspy">
             <h4 class="setting-title">Billing</h4>
-            <div class="col-md-6 no-padding-left">
+            <div class="col-md-6 col-sm-6 col-xs-12 no-padding-left">
               <div class="input-field no-margin-top">
                 <input id="name-on-card" type="text" class="validate">
                 <label for="name-on-card">Name On Card</label>
@@ -390,15 +364,15 @@
               </div>
 
               <div class="row no-margin-bottom">
-                <div class="input-field no-margin-top no-margin-bottom col-md-4">
+                <div class="input-field no-margin-top no-margin-bottom col-md-4 col-xs-4">
                   <input id="expiration-month" type="text" class="validate">
                   <label class="billing-info" for="expiration-month">Month</label>
                 </div>
-                <div class="input-field no-margin-top no-margin-bottom col-md-4">
+                <div class="input-field no-margin-top no-margin-bottom col-md-4 col-xs-4">
                   <input id="expiration-year" type="text" class="validate">
                   <label class="billing-info" for="expiration-year">Year</label>
                 </div>
-                <div class="input-field no-margin-top no-margin-bottom col-md-4">
+                <div class="input-field no-margin-top no-margin-bottom col-md-4 col-xs-4">
                   <input id="cvv-code" type="text" class="validate">
                   <label class="billing-info" for="cvv-code">CVV</label>
                 </div>
@@ -420,23 +394,26 @@
               <button type="button" id="form-1-btn" class="btn waves-effect waves-light waves-ripple">Add Card</button>
 
             </div>
-            <div class="col-md-5 col-md-offset-1">
-              <div class="container medium-margin-bottom">
-                <p class="no-margins">Your current card on file: </p>
-                <span class="purple-font">XXXX XXXX XXXX 3147</span>
-              </div>
+            <div class="col-md-5 col-sm-5 col-xs-12 col-md-offset-1">
+              <div class="col-md-12 col-sm-12 col-xs-6 no-padding-right">
+                <div class="container medium-margin-bottom">
+                  <p class="no-margins">Your current card on file: </p>
+                  <span class="purple-font">XXXX XXXX XXXX 3147</span>
+                </div>
 
-              <div class="container medium-margin-bottom">
-                <p class="no-margins">Your current plan:</p>
-                <span class="span-text">Free</span>
+                <div class="container medium-margin-bottom">
+                  <p class="no-margins">Your current plan:</p>
+                  <span class="span-text">Free</span>
+                </div>
               </div>
-
-              <div class="container medium-margin-bottom">
-                <p class="no-margins">Invoices:</p>
-                <a class="green-font span-text" href="#">Invoice 08/11/16</a>
-                <a class="green-font span-text" href="#">Invoice 07/11/16</a>
-                <a class="green-font span-text" href="#">Invoice 06/11/16</a>
-                <a class="green-font span-text" href="#">Invoice 05/11/16</a>
+              <div class="col-md-12 col-sm-12 col-xs-6 no-padding-right">
+                <div class="container medium-margin-bottom no-padding-right">
+                  <p class="no-margins">Invoices:</p>
+                  <a class="green-font span-text" href="#">Invoice 08/11/16</a>
+                  <a class="green-font span-text" href="#">Invoice 07/11/16</a>
+                  <a class="green-font span-text" href="#">Invoice 06/11/16</a>
+                  <a class="green-font span-text" href="#">Invoice 05/11/16</a>
+                </div>
               </div>
             </div>
           </div>

@@ -1,0 +1,489 @@
+/* GENERAL STYLING */
+
+body {
+  background-color: #fefdfb;
+  font-family: 'Merriweather', garamond, serif;
+  padding: 2em;
+}
+
+.draft {
+  color: #fb615d;
+  font-size: 1.3em;
+  padding-left: 3em;
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
+}
+
+strong {
+  color: #7f5dfc;
+}
+
+img {
+  max-width:100%;
+  max-height:100%;
+}
+
+section {
+  margin: 5em auto;
+}
+
+.sec-titles {
+  margin-bottom: 1em;
+}
+
+#intro-message {
+  text-align: center;
+}
+
+.intro-text {
+  line-height: 135%;
+}
+
+.responsive-br {
+  display: none;
+}
+
+.logo-image {
+  filter: grayscale(100%);
+  opacity: 0.3;
+}
+
+#end-container {
+  margin-bottom: 4em;
+}
+
+.center-block {
+  width: 50%;
+  text-align: center;
+}
+
+.emails {
+  border: 1px solid #7f5dfc;
+  z-index: 1;
+  transform: translateY(0px);
+  background-color: white;
+  position: absolute;
+  transition: 0.7s ease-in-out;
+  -moz-transition: 0.7s ease-in-out;
+  -webkit-transition: 0.7s ease-in-out;
+}
+
+.email-imgs {
+  z-index: 1;
+  transform: translateY(0px);
+  position: absolute;
+  transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -webkit-transition: 1s ease-in-out;
+}
+
+.email-titles {
+  display: inline-block;
+}
+
+.email-hr {
+  border-color: #7f5dfc;
+  width: 100%;
+  margin-top: 0;
+}
+
+.features {
+  padding: 2em 0;
+}
+
+.feature-text {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.feat-left {
+  text-align: center;
+}
+
+.feat-right {
+  text-align: center;
+}
+
+
+.fa-star {
+  color: #28c3b5;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media screen and (max-width:500px) {
+  h1 {
+    font-size: 2.5em;
+    color: #1b2733;
+  }
+
+  h2 {
+    font-size:2.2em;
+    color: #1b2733;
+  }
+
+  h3 {
+    font-size: 1.5em;
+    color: #1b2733;
+  }
+
+  h5 {
+    font-size: 1.2em;
+  }
+
+  p {
+    color: #647382;
+    font-size: 0.8em;
+    font-weight: 300;
+  }
+
+  #emails-container {
+    height: 85em;
+  }
+
+  .emails {
+    padding: 5px;
+  }
+
+  #email-img-1 {
+    padding: none;
+  }
+
+  .draft {
+    font-size: 1em;
+    padding-left: 3em;
+  }
+
+  hr {
+    width: 80%;
+  }
+
+}
+/* SMALL SCREEN RESPONSIVENESS */
+
+@media screen and (min-width:500px) and (max-width:990px) {
+
+  h1 {
+    font-size: 5em;
+    color: #1b2733;
+  }
+
+  h2 {
+    font-size: 4em;
+    color: #1b2733;
+  }
+
+  h3 {
+    font-size: 2.2em;
+  }
+
+  h5 {
+    font-size: 1.4em;
+  }
+
+  p {
+    font-weight: 300;
+  }
+
+  hr {
+    width: 70%;
+  }
+
+  #intro-image {
+    width: 75%;
+    margin-left: 13%;
+  }
+
+  #emails-container {
+    height: 100em;
+  }
+
+  .emails {
+    padding: 15px;
+  }
+
+  #email-img-1 {
+  }
+
+  .feature-text {
+    width: 75%;
+    margin-left: 11%;
+  }
+
+  .feature-images {
+    width: 75%;
+    margin-left: 11%;
+  }
+}
+
+/* LARGE SCREEN RESPONSIVENESS */
+
+@media screen and (min-width:991px) {
+  body {
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 5em;
+    color: #1b2733;
+  }
+
+  h2 {
+    font-size: 4em;
+    color: #1b2733;
+  }
+
+  h3 {
+    font-size: 2.2em;
+  }
+
+  h5 {
+    font-size: 1.4em;
+  }
+
+  p {
+    font-size: 1.2em;
+    font-weight: 300;
+  }
+
+  hr {
+    width: 70%;
+  }
+
+  #intro {
+    margin: 5em auto;
+  }
+
+  #intro-message {
+    text-align: left;
+  }
+
+  .responsive-br {
+    display: inline;
+  }
+
+  #emails-container {
+    height: 100em;
+  }
+
+  .emails {
+    padding: 15px;
+  }
+
+  #email-img-1 {
+    width: 11%;
+  }
+
+  .feat-left {
+    text-align: right;
+  }
+
+  .feat-right {
+    text-align: left;
+    padding-top: 2em;
+  }
+}
+
+/* ANIMATION */
+
+#email-1 {
+  transform: translateY(200px);
+}
+
+#email-img-1 {
+  transform: translateY(650px);
+}
+
+#email-2 {
+  transform: translateY(550px);
+}
+
+#email-3 {
+  transform: translateY(800px);
+}
+
+#email-img-2 {
+  transform: translateY(1000px);
+}
+
+#email-4 {
+  transform: translateY(1000px);
+}
+
+#email-5 {
+  transform: translateY(1200px);
+}
+
+#email-img-3 {
+  transform: translateY(1400px);
+}
+
+.img-slide {
+  transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -webkit-transition: 1s ease-in-out;
+}
+
+.email-slide {
+  transition: 0.7s ease-in-out;
+  -moz-transition: 0.7s ease-in-out;
+  -webkit-transition: 0.7s ease-in-out;
+}
+
+#email-1.email-slide {
+  transform: translateY(0px);
+}
+
+#email-2.email-slide {
+  transform: translateY(195px);
+}
+
+#email-3.email-slide {
+  transform: translateY(440px);
+}
+
+#email-4.email-slide {
+  transform: translateY(635px);
+}
+
+#email-5.email-slide {
+  transform: translateY(880px);
+}
+#email-img-1.img-slide {
+  transform: translateY(220px);
+}
+
+#email-img-2.img-slide {
+  transform: translateY(620px);
+}
+
+#email-img-3.img-slide {
+  transform: translateY(1060px);
+}
+
+/*!
+ * Waves v0.6.0
+ * http://fian.my.id/Waves
+ *
+ * Copyright 2014 Alfiana E. Sibuea and other contributors
+ * Released under the MIT license
+ * https://github.com/fians/Waves/blob/master/LICENSE
+ */
+.waves-effect {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  vertical-align: middle;
+  z-index: 1;
+  will-change: opacity, transform;
+  transition: .3s ease-out;
+}
+
+.waves-effect .waves-ripple {
+  position: absolute;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.2);
+  transition: all 0.7s ease-out;
+  transition-property: opacity, -webkit-transform;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  pointer-events: none;
+}
+
+.waves-effect.waves-light .waves-ripple {
+  background-color: rgba(255, 255, 255, 0.45);
+}
+
+.waves-effect.waves-purple .waves-ripple {
+  background-color: #7f5dfc;
+}
+
+.waves-effect input[type="button"], .waves-effect input[type="reset"], .waves-effect input[type="submit"] {
+  border: 0;
+  font-style: normal;
+  font-size: inherit;
+  text-transform: inherit;
+  background: none;
+}
+
+.waves-effect img {
+  position: relative;
+  z-index: -1;
+}
+
+.waves-notransition {
+  transition: none !important;
+}
+
+.waves-circle {
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+}
+
+.waves-input-wrapper {
+  border-radius: 0.2em;
+  vertical-align: bottom;
+}
+
+.waves-input-wrapper .waves-button-input {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.waves-circle {
+  text-align: center;
+  width: 2.5em;
+  height: 2.5em;
+  line-height: 2.5em;
+  border-radius: 50%;
+  -webkit-mask-image: none;
+}
+
+.waves-block {
+  display: block;
+}
+
+/* Firefox Bug: link not triggered */
+.waves-effect .waves-ripple {
+  z-index: -1;
+}
+
+.btn {
+  background-color: #28c3b5;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: .5em 2em;
+  outline:0;
+}
+
+.btn.focus, .btn:focus, .btn:hover {
+    color: white;
+    text-decoration: none;
+    outline: none;
+}
+
+#intro-btn {
+  font-size: 1.5em;
+  margin-top: 1em;
+}
+
+#end-btn {
+  font-size: 1.5em;
+}

@@ -113,7 +113,7 @@ p {
   width: 100%;
 }
 
-.range-field {
+.confidence-level, .range-field {
   display: none;
   font-size: 0.9em;
 }
@@ -129,6 +129,11 @@ p {
   overflow: hidden;
 }
 
+.switch:hover .confidence-level {
+  display: block;
+  font-size: 0.9em;
+}
+
 .switch:hover .range-field {
   display: block;
 }
@@ -136,12 +141,6 @@ p {
 input[type=range] {
   border: none;
   margin: 7px 0;
-  display: inline-block;
-  width: 65%;
-  padding-bottom: 3px;
-}
-p[disabled], span[disabled], input[type=range][disabled]::-webkit-slider-runnable-track, input[type=range][disabled]::-webkit-slider-thumb {
-  opacity: 0.5;
 }
 
 input[type=range]::-webkit-slider-runnable-track {
@@ -175,7 +174,7 @@ input[type=range] + .thumb.active {
   box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.4);
   left: -5px;
   top: -2px;
-  padding-top: 3px;
+  padding-top: 1px;
 }
 
 .switch label .lever {
@@ -202,11 +201,6 @@ input[type=text], .input-field label, [type="radio"]:not(:checked)+label, [type=
 
 [type="radio"]:not(:checked)+label:before, [type="radio"]:not(:checked)+label:after {
   border: 2px solid #7f5dfc;
-}
-
-.switch label input[type=checkbox][disabled]+.lever:after, .switch label input[type=checkbox][disabled]:checked+.lever:after {
-  background-color: #7f5dfc;
-  opacity: 0.5;
 }
 
 .input-field label {
