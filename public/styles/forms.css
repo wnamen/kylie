@@ -1,0 +1,44 @@
+input[type=text], .input-field label, [type="radio"]:not(:checked)+label, [type="radio"]:checked+label {
+  font-weight: 300;
+  color: #7f5dfc;
+  height: 2.5em;
+}
+
+[type="radio"]:not(:checked)+label:before, [type="radio"]:not(:checked)+label:after {
+  border: 2px solid #7f5dfc;
+}
+
+.input-field label {
+  font-size: 0.9em;
+  left: 20px;
+}
+
+.input-field label.active {
+  top: 5px;
+}
+
+input[type=text], input[type=text].valid {
+  border: 1px solid #7f5dfc;
+  box-shadow: none;
+  border-radius: 100px;
+  text-indent: 10px;
+}
+
+input[type=text]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+  border: 1px solid #28c3b5;
+  box-shadow: none;
+  font-size: 1em
+
+}
+
+textarea.materialize-textarea:focus:not([readonly]) {
+  height: 85%;
+}
+
+textarea.materialize-textarea {
+  border: 1px solid #7f5dfc;
+  color: #7f5dfc;
+  height: 85%;
+  padding: 0.5em 0 0.5em 0.5em;
+  font-size: 1em
+}

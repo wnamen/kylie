@@ -1,5 +1,5 @@
 .black-font {
-  color: #647382;  
+  color: #647382;
 }
 
 .green-font {
@@ -18,4 +18,37 @@
 .purple-border {
   border: 2px solid #7f5dfc;
 
+}
+
+
+.no-margins {
+  margin: 0;
+}
+
+.no-margin-top {
+  margin-top: 0;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+.no-padding-left {
+  padding-left: 0;
+}
+
+.no-padding-right {
+  padding-right: 0;
+}
+
+.small-margin-top {
+  margin-top: 1em;
+}
+
+.small-margin-bottom {
+  margin-bottom: 1em;
+}
+
+.medium-margin-bottom {
+  margin-bottom: 2em;
 }

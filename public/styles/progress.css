@@ -5,6 +5,10 @@
   justify-content: center;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+}
 
 #progress-text {
   margin: 1em auto;
@@ -12,6 +16,13 @@
   font-family: 'Open Sans', helvetica, sans-serif;
   font-size: 2em;
   font-weight: 300;
+}
+
+#referral-text {
+  margin-top: 0;
+  font-weight: 300;
+  font-family: 'Merriweather', garamond, serif;
+  text-align: center;
 }
 
 .progress {
@@ -40,4 +51,35 @@
   align-items: center;
   margin: 0 auto;
   float: none;
+}
+
+#referral-container {
+  margin: 0 auto;
+  float: none;
+}
+
+.email-input {
+  display: inline-block;
+  width: 60% !important;
+}
+
+input[type=text] {
+  height: 3rem;
+  text-indent: 20px;
+  margin-bottom: 0;
+}
+
+.input-field label{
+  height: 1.5rem;
+}
+
+.company-email {
+  display: inline-block;
+}
+
+#referral-btn {
+  width: 100%;
+  border-radius: 100px;
+  font-family: 'Merriweather', garamond, serif;
+  font-weight: 300;
 }
