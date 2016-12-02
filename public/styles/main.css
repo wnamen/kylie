@@ -14,6 +14,10 @@ body {
   font-weight: 300;
 }
 
+.light-purple-background {
+  background-color: #e5ddfb;
+}
+
 strong {
   color: #7f5dfc;
 }
@@ -195,7 +199,7 @@ section {
   }
 
   #emails-container {
-    height: 100em;
+    height: 85em;
   }
 
   .emails {
@@ -263,7 +267,7 @@ section {
   }
 
   #emails-container {
-    height: 100em;
+    height: 85em;
   }
 
   .emails {
@@ -347,10 +351,10 @@ section {
 }
 
 #email-5.email-slide {
-  transform: translateY(880px);
+  transform: translateY(820px);
 }
 #email-img-1.img-slide {
-  transform: translateY(220px);
+  transform: translateY(200px);
 }
 
 #email-img-2.img-slide {
@@ -358,7 +362,7 @@ section {
 }
 
 #email-img-3.img-slide {
-  transform: translateY(1060px);
+  transform: translateY(940px);
 }
 
 /*!

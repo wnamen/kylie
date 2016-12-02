@@ -1,25 +1,44 @@
-// OPTIONAL IMG POSITIONING
-//
-// function detectMobile() {
-//   $window.innerWidth() <= 768;
-// }
-//
-// function imgPosCheck(){
-//   if (detectMobile() == true) {
-//     img1Pos = 170;
-//     img2Pos = 600;
-//     img3Pos = 1040;
-//   } else {
-//     img1Pos = 220;
-//     img2Pos = 620;
-//     img3Pos = 1060;
-//   }
-// }
-//
-
 var $window = $(window);
 
+var userInfo;
+var url;
+
+function urlParser(url){
+  var query = (url.slice(url.indexOf('?')+1)).split('&');
+
+  return userInfo = {
+    'name': userName(query[1]),
+    'email': userEmail(query[2]),
+    'company': userCompany(query[2]),
+    'reference': userReference(query[0])
+  };
+}
+
+function userReference(query) {
+  return query.slice(query.indexOf('ref=')+4);
+}
+
+function userName(query){
+  return query.indexOf("%20") === -1 ? query.slice(query.indexOf('name=')+5) : query.slice(query.indexOf('name=')+5, query.indexOf('%20'));
+}
+
+function userEmail(query){
+  return query.slice(query.indexOf('email=')+6);
+}
+
+function userCompany(query){
+  return query.slice(query.indexOf('@')+1, query.indexOf('.com'));
+}
+
 $(document).ready(function() {
+
+  url = $(location).attr('href');
+  urlParser(url);
+
+  $('#personal-greeting').html("Hi " + userInfo.name);
+  $('.userName').html(userInfo.name);
+  $('.userEmail').html('(' + userInfo.email + ')');
+  $('.userCompany').html(userInfo.company);
 
   $window.scroll(function () {
 
