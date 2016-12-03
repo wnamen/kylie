@@ -10,6 +10,7 @@ p {
 #nav-spy {
   position: fixed;
   z-index: 100;
+  padding: 0;
 }
 
 #nav-spy .table-of-contents {
@@ -30,6 +31,11 @@ p {
   color: #1b2733;
   white-space: nowrap;
   margin-bottom: 0;
+}
+
+#paid-only {
+  color: #647382;
+  font-size: 0.6em;
 }
 
 #calendar-text {
@@ -119,17 +125,17 @@ p {
   font-size: 0.9em;
 }
 
-.switch:hover {
+.autpilot:hover {
   background-color: #f8f8f6;
   border-radius: 100px;
 }
 
-.switch:hover .setting-text{
+.autpilot:hover .setting-text{
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
-.switch:hover .range-field {
+.autpilot:hover .range-field {
   display: block;
 }
 
@@ -231,11 +237,11 @@ input[type=text]:focus:not([readonly]) {
 }
 
 .input-field label.billing-info {
-  left: 30px;
+  left: 25px;
 }
 
 input[type=text], input[type=text].valid.billing-info {
-  text-indent: 15px;
+  text-indent: 10px;
 }
 
 .btns {
