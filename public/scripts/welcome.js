@@ -6,13 +6,17 @@ var
 
 $(document).ready(function(){
 
-
+  $("input[name=question1]").on("click",function(){
+    $("#form-1-btn").removeAttr("disabled");
+  })
   $('#form-1-btn').click(form1capture);
   $('#form-2-btn').click(form2Transition);
 
   $('#form-2-back').click(form2BackTransition);
   $('#form-3-back').click(form3BackTransition);
+
 });
+
 
 function form1capture(){
   if(document.getElementById('q1-option1').checked){
@@ -28,6 +32,7 @@ function form1capture(){
       role = $("#q1-option4").val();
       form1Transition();
     }
+
 }
 function form1Transition (){
     $('#form-1').addClass('form-hide');
