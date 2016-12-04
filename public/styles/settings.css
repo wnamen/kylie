@@ -171,33 +171,33 @@ input[type=range] + .thumb.active {
 }
 
 .switch label .lever:after {
-  content: "Off";
+  content: "On";
   text-align: center;
   font-weight: 300;
   color: white;
-  background-color: #7f5dfc;
+  background-color: #28c3b5;
   width: 31px;
   height: 19px;
   box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.4);
-  left: -3px;
+  left: 38px;
   top: -2px;
   padding-top: 3px;
 }
 
 .switch label .lever {
-  background-color: #fefdfb;
+  background-color: #e5ddfb;
   width: 70px;
   height: 19px;
 }
 
 .switch label input[type=checkbox]:checked+.lever {
-  background-color: #e5ddfb;
+  background-color: #fefdfb;
 }
 
 .switch label input[type=checkbox]:checked+.lever:after {
-  content: "On";
-  background-color: #28c3b5;
-  left: 38px;
+  content: "Off";
+  background-color: #7f5dfc;
+  left: -3px;
 }
 
 input[type=text], .input-field label, [type="radio"]:not(:checked)+label, [type="radio"]:checked+label {
