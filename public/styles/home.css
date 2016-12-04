@@ -1,0 +1,87 @@
+body {
+  padding: 4em 0;
+}
+
+.text-container {
+  display: flex;
+  float: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+#home-text {
+  font-size: 5em;
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
+}
+
+#referral-text {
+  margin-top: 0;
+  font-weight: 300;
+  font-family: 'Merriweather', garamond, serif;
+  text-align: center;
+}
+
+.progress {
+  position: relative;
+  height: 8px;
+  display: block;
+  background-color: #e5ddfb;
+  border-radius: -5%;
+  margin: 0.5rem 0 1rem 0;
+  overflow: hidden;
+}
+
+.progress .determinate {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #7f5dfc;
+  transition: width .3s linear;
+}
+
+
+.progress-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  float: none;
+}
+
+#referral-container {
+  margin: 0 auto;
+  float: none;
+}
+
+.email-input {
+  display: inline-block;
+  width: 60% !important;
+}
+
+input[type=text] {
+  height: 3rem;
+  text-indent: 20px;
+  margin-bottom: 0;
+}
+
+.input-field label{
+  height: 1.5rem;
+}
+
+.company-email {
+  display: inline-block;
+}
+
+#referral-btn {
+  width: 100%;
+  border-radius: 100px;
+  font-family: 'Merriweather', garamond, serif;
+  font-weight: 300;
+}

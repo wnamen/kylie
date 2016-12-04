@@ -20,7 +20,6 @@
 
 }
 
-
 .no-margins {
   margin: 0;
 }
@@ -47,6 +46,10 @@
 
 .small-margin-bottom {
   margin-bottom: 1em;
+}
+
+.medium-margin-top {
+  margin-top: 3em;
 }
 
 .medium-margin-bottom {
