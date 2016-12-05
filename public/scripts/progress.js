@@ -2,21 +2,20 @@ var referrals,
     referral;
 
 $(document).ready(function(){
-  $('.email-input').change(handleEmailCheck);
+  $('.email-input').focusout(handleEmailCheck);
   $('#referral-btn').click(handleReferrals);
 });
 
 function handleEmailCheck(){
-  // find change event
-  // if val is not blank and a @ symbol is present, slice to the symbol
-  // return new val
-
-  str = $('#email-input').val().match(/^(.+@.+)$/);
-  if ( str === null){
-    $(this).css('border', "1px solid black");
-    setTimeout(function(){
-       $(this).css('border', "1px solid red");
-    }, 200);
+  $(this).removeClass("failedValidation");
+  var email = $(this).val();
+  console.log(email);
+  var emailVal = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  var OK = emailVal.exec(email);
+  console.log(OK);
+  if (!OK){
+    $(this).addClass("failedValidation");
+    window.setTimeout(function(){$(this).removeClass("failedValidation")},1000);
   }
 }
 

@@ -70,7 +70,7 @@ input[type=text], .input-field label, [type="radio"]:not(:checked)+label, [type=
 }
 
 .input-field label.active {
-  top: 5px;
+  top: 25px;
 }
 
 input[type=text], input[type=text].valid {
@@ -116,7 +116,7 @@ input[type=text]:focus:not([readonly]) {
     transform: translate3d(-1px, 0, 0);
     border-color:#fb615d;
   }
-  
+
   20%, 80% {
     transform: translate3d(2px, 0, 0);
   }

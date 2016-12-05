@@ -1,3 +1,6 @@
+var current,
+    prior;
+
 
 $(document).ready(function() {
 
@@ -15,15 +18,15 @@ $(document).ready(function() {
   var emailsReceivedChart = new Chart(emailsReceivedCanvas, {
       type: 'line',
       data: {
-        labels: ["M", "T", "W", "T", "F", "S", "S"],
+        labels: ["S", "M", "T", "W", "T", "F", "S"],
         datasets: [
           {
-            data: [40, 56, 26, 13, 24, 10, 2],
+            data: current,
             borderColor: "rgba(40,195,181,1)",
             backgroundColor: "rgba(40,195,181,0.2)"
           },
         {
-          data: [30, 51, 52, 55, 71, 5, 4],
+          data: prior,
           borderColor: "rgba(100,115,130,0)",
           backgroundColor: "rgba(100,115,130,0.1)"
         }]
@@ -33,7 +36,7 @@ $(document).ready(function() {
           display: false
         },
         tooltips: {
-          displayColors: false,
+          mode: 'x-axis',
           callbacks: {
             label: function(tooltipItem) {
               return tooltipItem.yLabel;
@@ -60,10 +63,11 @@ $(document).ready(function() {
       }
   });
 
+
   var emailsSentChart = new Chart(emailsSentCanvas, {
       type: 'line',
       data: {
-        labels: ["M", "", "", "", "", "", "S"],
+        labels: ["S", "M", "T", "W", "T", "F", "S"],
         datasets: [
           {
             data: [12, 19, 14, 10, 4, 7, 2],
@@ -82,7 +86,7 @@ $(document).ready(function() {
           display: false
         },
         tooltips: {
-          displayColors: false,
+          mode: 'x-axis',
           callbacks: {
             label: function(tooltipItem) {
               return tooltipItem.yLabel;
@@ -114,7 +118,7 @@ $(document).ready(function() {
       data: {
         labels: ["", ""],
         datasets: [{
-          data: [19, 10],
+          data: [7, 1],
           backgroundColor: [
               'rgba(100,115,130,0.2)',
               'rgba(40,195,181,0.2)'
@@ -140,11 +144,11 @@ $(document).ready(function() {
             gridLines: {
               display: false,
             },
-            time: {
-              unit: 'hours'
-            }
           }],
           yAxes: [{
+            time: {
+              unit: 'hours'
+            },
             gridLines: {
               display: false,
               drawBorder: false
@@ -161,16 +165,19 @@ $(document).ready(function() {
             var ctx = this.chart.ctx;
             console.log(this.chart);
             console.log(ctx);
-            ctx.font = 'Verdana';
-            ctx.fontColor = '#666';
+            ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, 'normal', Chart.defaults.global.defaultFontFamily);
+            ctx.fillStyle = this.chart.config.options.defaultFontColor;
             ctx.textAlign = "center";
             ctx.textBaseline = "bottom";
 
             this.data.datasets.forEach(function (dataset) {
               dataset.data.forEach(function (bar,idx) {
-                console.log(bar);
-                var model = dataset._meta[Object.keys(dataset._meta)[0]].bar[idx]._model;
-                ctx.fillText(bar, bar.x, bar.y - 5);
+
+              // if(dataset.hidden === true && dataset._meta[Object.keys(dataset._meta)[0]].hidden !== false){ continue; }
+                var model = dataset._meta[Object.keys(dataset._meta)[0]].data[idx]._model;
+                if(dataset.data[idx] !== null){
+                  ctx.fillText(dataset.data[idx], model.x - 1, model.y - 5);
+                }
               });
             })
           }
@@ -183,7 +190,7 @@ $(document).ready(function() {
     data: {
       labels: ["", ""],
       datasets: [{
-        data: [19, 10],
+        data: [7,1],
         backgroundColor: [
           'rgba(100,115,130,0.2)',
           'rgba(127,93,252,0.2)'
@@ -211,6 +218,9 @@ $(document).ready(function() {
           },
         }],
         yAxes: [{
+          time: {
+            unit: 'hours'
+          },
           gridLines: {
             display: false,
             drawBorder: false
@@ -220,6 +230,27 @@ $(document).ready(function() {
             display: false
           }
         }]
+      },
+      animation: {
+        onComplete: function () {
+
+          var ctx = this.chart.ctx;
+          ctx.font = 'Verdana';
+          ctx.fillStyle = this.chart.config.options.defaultFontColor;
+          ctx.textAlign = "center";
+          ctx.textBaseline = "bottom";
+
+          this.data.datasets.forEach(function (dataset) {
+            dataset.data.forEach(function (bar,idx) {
+
+            // if(dataset.hidden === true && dataset._meta[Object.keys(dataset._meta)[0]].hidden !== false){ continue; }
+              var model = dataset._meta[Object.keys(dataset._meta)[0]].data[idx]._model;
+              if(dataset.data[idx] !== null){
+                ctx.fillText(dataset.data[idx], model.x - 1, model.y - 5);
+              }
+            });
+          })
+        }
       }
     }
   });

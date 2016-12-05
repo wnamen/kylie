@@ -13,8 +13,12 @@ $(document).ready(function(){
     level.html(value);
   });
 
+  $('.switch label input').change(function(e){
+    console.log($(this).val());
+  })
+
   $('#calendar-btn').click(addCalendar);
-  $('#billing-form').click(addBilling);
+  $('#billing-form-btn').click(addBilling);
 
 });
 
@@ -25,5 +29,6 @@ function addCalendar(){
 }
 
 function addBilling(){
-
+  var data = $('#billing-form').find('input').val();
+  console.log(data);
 }

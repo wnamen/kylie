@@ -33,68 +33,12 @@ p {
 }
 
 #paid-only {
-  color: #647382;
   font-size: 0.6em;
 }
 
 #calendar-text {
   margin-left: 15px;
   margin-top: 8px;
-}
-
-.green-font {
-  color: #28c3b5;
-  font-weight: 300;
-}
-
-.green-background {
-  background-color: #28c3b5;
-}
-
-.purple-font {
-  color: #7f5dfc;
-}
-
-.purple-border {
-  border: 2px solid #7f5dfc;
-
-}
-
-.span-text {
-  font-size: 1.2em;
-  display: block;
-}
-
-.no-margins {
-  margin: 0;
-}
-
-.no-margin-top {
-  margin-top: 0;
-}
-
-.no-margin-bottom {
-  margin-bottom: 0;
-}
-
-.no-padding-left {
-  padding-left: 0;
-}
-
-.no-padding-right {
-  padding-right: 0;
-}
-
-.small-margin-top {
-  margin-top: 1em;
-}
-
-.small-margin-bottom {
-  margin-bottom: 1em;
-}
-
-.medium-margin-bottom {
-  margin-bottom: 2em;
 }
 
 .text-container {
@@ -124,17 +68,17 @@ p {
   font-size: 0.9em;
 }
 
-.autpilot:hover {
+.autopilot:hover {
   background-color: #f8f8f6;
   border-radius: 100px;
 }
 
-.autpilot:hover .setting-text{
+.autopilot:hover .setting-text{
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
-.autpilot:hover .range-field {
+.autopilot:hover .range-field {
   display: block;
 }
 
@@ -183,6 +127,12 @@ input[type=range] + .thumb.active {
   padding-top: 3px;
 }
 
+.switch label input[type=checkbox]:checked+.lever:after {
+  content: "Off";
+  background-color: #7f5dfc;
+  left: -3px;
+}
+
 .switch label .lever {
   background-color: #e5ddfb;
   width: 70px;
@@ -191,12 +141,6 @@ input[type=range] + .thumb.active {
 
 .switch label input[type=checkbox]:checked+.lever {
   background-color: #fefdfb;
-}
-
-.switch label input[type=checkbox]:checked+.lever:after {
-  content: "Off";
-  background-color: #7f5dfc;
-  left: -3px;
 }
 
 input[type=text], .input-field label, [type="radio"]:not(:checked)+label, [type="radio"]:checked+label {
@@ -258,4 +202,40 @@ input[type=text], input[type=text].valid.billing-info {
   font-size: 16px;
   font-weight: 300;
   border-radius: 100px;
+}
+
+@media screen and (max-width:500px) {
+  .range-field {
+    display: block;
+  }
+
+  .autopilot:hover {
+    background-color: inherit;
+    border-radius: 0;
+  }
+
+  #calendar-btn {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width:501px) {
+  .range-field {
+    display: none;
+    font-size: 0.9em;
+  }
+
+  .autopilot:hover {
+    background-color: #f8f8f6;
+    border-radius: 100px;
+  }
+
+  .autopilot:hover .setting-text{
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .autopilot:hover .range-field {
+    display: block;
+  }
 }

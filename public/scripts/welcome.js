@@ -1,5 +1,5 @@
 
-var 
+var
   name,
   email,
   role;
