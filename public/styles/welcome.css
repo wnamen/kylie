@@ -1,5 +1,6 @@
 body {
   font-family: 'Merriweather', garamond, serif;
+  background-color: #fefdfb;
 }
 
 p {
@@ -106,4 +107,29 @@ input[type=text]:focus:not([readonly]) {
 
 .fa-circle, .fa-circle-o {
   color: #28c3b5;
+}
+@keyframes failedValidation {
+  0%, 100%{
+    border-color:#7f5dfc;
+  }
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+    border-color:#fb615d;
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+.failedValidation{
+  animation: failedValidation 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
 }
