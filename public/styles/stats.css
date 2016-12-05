@@ -1,7 +1,7 @@
 body {
   font-family: 'Open Sans', helvetica, sans-serif;
   font-weight: 300;
-  padding: 4em 0;
+  padding: 2em 0;
   background-color: #fefdfb;
 }
 
@@ -47,7 +47,7 @@ p {
 
 .card {
   border: 2px solid #7f5dfc;
-  margin: 0 15px;
+  margin: 0 11px;
   width: 280px;
   height: 262px;
   display: inline-block;;

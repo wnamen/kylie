@@ -7,6 +7,11 @@ body {
   padding-bottom: 10em;
 }
 
+footer {
+  opacity: 0.4;
+  margin-top: 3em 0;
+}
+
 .nav {
   float: right;
   margin:auto 10%;
@@ -393,7 +398,7 @@ section {
 }
 
 #email-img-2.img-slide {
-  transform: translateY(620px);
+  transform: translateY(670px);
 }
 
 #email-img-3.img-slide {
@@ -526,5 +531,3 @@ section {
 #end-btn {
   font-size: 1.5em;
 }
-
-

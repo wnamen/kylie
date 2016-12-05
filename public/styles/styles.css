@@ -1,3 +1,7 @@
+.background-color {
+  background-color: #fefdfb;
+}
+
 .black-font {
   color: #647382;
 }
@@ -7,17 +11,20 @@
   font-weight: 300;
 }
 
-.green-background {
-  background-color: #28c3b5;
-}
-
 .purple-font {
   color: #7f5dfc;
 }
 
+.red-font {
+  color: #fb615d;
+}
+
+.green-background {
+  background-color: #28c3b5;
+}
+
 .purple-border {
   border: 2px solid #7f5dfc;
-
 }
 
 .no-margins {
@@ -54,4 +61,8 @@
 
 .medium-margin-bottom {
   margin-bottom: 2em;
+}
+
+::selection {
+   background-color: #d3f1ed ;
 }

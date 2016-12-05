@@ -1,5 +1,5 @@
 
-var 
+var
   name,
   email,
   role;
@@ -13,11 +13,11 @@ $(document).ready(function(){
   $('#form-1-btn').click(form1capture);
 
 
-  $("input[name=persons_name]").on("focusout",form2capture);
+  $("input[name=persons_name]").on("keyup",form2capture);
   $('#form-2-btn').click(form2Transition);
   $('#form-2-back').click(form2BackTransition);
   $('#form-3-back').click(form3BackTransition);
-  $("input[name=person_email]").on("focusout",form3capture);
+  $("input[name=person_email]").on("keyup",form3capture);
   $('#form-3-btn').click(form3Transition);
 });
 

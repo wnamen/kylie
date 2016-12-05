@@ -1,6 +1,8 @@
 body{
-background-color: #fefdfb;
+  background-color: #fefdfb;
+  padding: 2em 0;
 }
+
 .text-container {
   display: flex;
   float: none;
@@ -38,13 +40,8 @@ background-color: #fefdfb;
   overflow: hidden;
 }
 
-.progress .determinate {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
+.progress .indeterminate {
   background-color: #7f5dfc;
-  transition: width .3s linear;
 }
 
 
@@ -63,7 +60,6 @@ background-color: #fefdfb;
 
 .email-input {
   display: inline-block;
-  width: 60% !important;
 }
 
 input[type=text] {
@@ -85,4 +81,30 @@ input[type=text] {
   border-radius: 100px;
   font-family: 'Merriweather', garamond, serif;
   font-weight: 300;
+}
+
+@keyframes failedValidation {
+  0%, 100%{
+    border-color:#7f5dfc;
+  }
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+    border-color:#fb615d;
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+.failedValidation{
+  animation: failedValidation 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
 }

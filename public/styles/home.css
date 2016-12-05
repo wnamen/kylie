@@ -1,5 +1,5 @@
 body {
-  padding: 4em 0;
+  padding: 2em 0;
 }
 
 .text-container {
@@ -14,10 +14,21 @@ body {
   justify-content: center;
 }
 
+#home-container {
+  float: none;
+}
+
 #home-text {
-  font-size: 5em;
+  font-size: 1.5em;
   font-family: 'Open Sans', helvetica, sans-serif;
   font-weight: 300;
+  margin: 0;
+}
+
+#referral-container {
+  padding: 0;
+  margin: 0 auto;
+  float: none;
 }
 
 #referral-text {
@@ -25,6 +36,10 @@ body {
   font-weight: 300;
   font-family: 'Merriweather', garamond, serif;
   text-align: center;
+}
+
+#referral-form {
+  padding: 0;
 }
 
 .progress {
@@ -53,16 +68,6 @@ body {
   align-items: center;
   margin: 0 auto;
   float: none;
-}
-
-#referral-container {
-  margin: 0 auto;
-  float: none;
-}
-
-.email-input {
-  display: inline-block;
-  width: 60% !important;
 }
 
 input[type=text] {
