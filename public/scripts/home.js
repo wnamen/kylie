@@ -15,7 +15,7 @@ function handleReferrals(){
     }
   }
 
-  postData(referrals);
+  return referrals;
 }
 
 function referralValidator(row){
