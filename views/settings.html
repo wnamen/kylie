@@ -336,7 +336,7 @@
                 </div>
               </div>
               <div class="col-md-1 col-sm-1 col-xs-2">
-                <button type="button" id="form-1-btn" class="btn waves-effect waves-light waves-ripple">Add Link</button>
+                <button type="button" id="calendar-btn" class="btn waves-effect waves-light waves-ripple">Add Link</button>
               </div>
 
               <div class="col-md-5 col-sm-4 col-sm-offset-1 col-xs-12">
@@ -355,46 +355,48 @@
           <div id="billing" class="container scrollspy">
             <h4 class="setting-title">Billing</h4>
             <div class="col-md-6 col-sm-6 col-xs-12 no-padding-left small-margin-top">
-              <div class="input-field no-margin-top">
-                <input id="name-on-card" type="text" class="validate">
-                <label for="name-on-card">Name On Card</label>
-              </div>
-              <div class="input-field no-margin-top">
-                <input id="card-number" type="text" class="validate">
-                <label for="card-number">Card Number</label>
-              </div>
-
-              <div class="row no-margin-bottom">
-                <div class="input-field no-margin-top no-margin-bottom col-md-4 col-xs-4">
-                  <input id="expiration-month" type="text" class="validate">
-                  <label class="billing-info" for="expiration-month">Month</label>
+              <form id="billing-form">
+                <div class="input-field no-margin-top">
+                  <input id="name-on-card" type="text" class="validate">
+                  <label for="name-on-card">Name On Card</label>
                 </div>
-                <div class="input-field no-margin-top no-margin-bottom col-md-4 col-xs-4">
-                  <input id="expiration-year" type="text" class="validate">
-                  <label class="billing-info" for="expiration-year">Year</label>
+                <div class="input-field no-margin-top">
+                  <input id="card-number" type="text" class="validate">
+                  <label for="card-number">Card Number</label>
                 </div>
-                <div class="input-field no-margin-top no-margin-bottom col-md-4 col-xs-4">
-                  <input id="cvv-code" type="text" class="validate">
-                  <label class="billing-info" for="cvv-code">CVV</label>
+
+                <div class="row no-margin-bottom">
+                  <div class="input-field no-margin-top no-margin-bottom col-md-4 col-xs-4">
+                    <input id="expiration-month" type="text" class="validate">
+                    <label class="billing-info" for="expiration-month">Month</label>
+                  </div>
+                  <div class="input-field no-margin-top no-margin-bottom col-md-4 col-xs-4">
+                    <input id="expiration-year" type="text" class="validate">
+                    <label class="billing-info" for="expiration-year">Year</label>
+                  </div>
+                  <div class="input-field no-margin-top no-margin-bottom col-md-4 col-xs-4">
+                    <input id="cvv-code" type="text" class="validate">
+                    <label class="billing-info" for="cvv-code">CVV</label>
+                  </div>
                 </div>
-              </div>
 
-              <div class="input-field no-margin-top">
-                <input id="address-1" type="text" class="validate">
-                <label for="address-1">Address Line 1</label>
-              </div>
-              <div class="input-field no-margin-top">
-                <input id="address-2" type="text" class="validate">
-                <label for="address-2">Address Line 2</label>
-              </div>
-              <div class="input-field no-margin-top">
-                <input id="zip-code" type="text" class="validate">
-                <label for="zip-code">Zip Code</label>
-              </div>
+                <div class="input-field no-margin-top">
+                  <input id="address-1" type="text" class="validate">
+                  <label for="address-1">Address Line 1</label>
+                </div>
+                <div class="input-field no-margin-top">
+                  <input id="address-2" type="text" class="validate">
+                  <label for="address-2">Address Line 2</label>
+                </div>
+                <div class="input-field no-margin-top">
+                  <input id="zip-code" type="text" class="validate">
+                  <label for="zip-code">Zip Code</label>
+                </div>
 
-              <button type="button" id="form-1-btn" class="btn waves-effect waves-light waves-ripple">Add Card</button>
-
+                <button type="button" id="form-1-btn" class="btn waves-effect waves-light waves-ripple">Add Card</button>
+              </form>
             </div>
+
             <div class="col-md-5 col-sm-5 col-xs-12 col-md-offset-1 small-margin-top">
               <div class="col-md-12 col-sm-12 col-xs-12 no-padding-right">
                 <div class="container medium-margin-bottom">

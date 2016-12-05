@@ -2,8 +2,23 @@ var referrals,
     referral;
 
 $(document).ready(function(){
+  $('.email-input').change(handleEmailCheck);
   $('#referral-btn').click(handleReferrals);
 });
+
+function handleEmailCheck(){
+  // find change event
+  // if val is not blank and a @ symbol is present, slice to the symbol
+  // return new val
+
+  str = $('#email-input').val().match(/^(.+@.+)$/);
+  if ( str === null){
+    $(this).css('border', "1px solid black");
+    setTimeout(function(){
+       $(this).css('border', "1px solid red");
+    }, 200);
+  }
+}
 
 function handleReferrals(){
   var rows = $('.referral-row');
@@ -15,7 +30,7 @@ function handleReferrals(){
     }
   }
 
-  postData(referrals);
+  // postData(referrals);
 }
 
 function referralValidator(row){

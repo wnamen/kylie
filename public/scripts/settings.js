@@ -1,3 +1,6 @@
+var calendarLink;
+var billingInfo;
+
 $(document).ready(function(){
   $('.scrollspy').scrollSpy();
 
@@ -10,4 +13,17 @@ $(document).ready(function(){
     level.html(value);
   });
 
+  $('#calendar-btn').click(addCalendar);
+  $('#billing-form').click(addBilling);
+
 });
+
+function addCalendar(){
+  calendarLink = $('#new-calendar-link').val();
+  $('#new-calendar-link').val('');
+  return calendarLink;
+}
+
+function addBilling(){
+
+}
