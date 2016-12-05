@@ -5,12 +5,32 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Kylie.ai</title>
 
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../public/images/favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../public/images/favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../public/images/favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../public/images/favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../public/images/favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../public/images/favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../public/images/favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../public/images/favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../public/images/favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../public/images/favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../public/images/favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../public/images/favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../public/images/favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="../public/images/favicon.ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff ">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff ">
+
     <!-- STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400|Open+Sans:300,400" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="../public/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../public/node_modules/materialize-css/dist/css/materialize.min.css" rel="stylesheet">
     <link href="../public/styles/bubble_nav.css" rel="stylesheet">
+    <link href="../public/styles/styles.css" rel="stylesheet">
     <link href="../public/styles/main.css" rel="stylesheet">
     <link href="../public/styles/settings.css" rel="stylesheet">
 
@@ -33,7 +53,7 @@
             <span class="hamburger hamburger-2"></span>
             <span class="hamburger hamburger-3"></span>
           </label>
-          
+
           <a href="/stats.html" class="menu-item" id="statToggle"> <i class="fa fa-bar-chart"></i> </a>
           <a href="/progress.html" class="menu-item" id="homeToggle"> <i class="fa fa-home"></i> </a>
           <a href="https://twitter.com/intent/tweet?text=Just%20signed%20up%20for%20the%20early%20release%20of%20@AiKylie!%20Alan%20Turing%20would%20be%20proud%20:)%20@legionanalytics." target="_blank" class="menu-item"> <i class="fa fa-twitter"></i> </a>
@@ -43,7 +63,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
             <defs>
               <filter id="shadowed-goo">
-                  
+
                   <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
                   <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
                   <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
@@ -93,7 +113,7 @@
 
         <div class="row">
           <div id="autopilot" class="container scrollspy">
-            <h4 class="setting-title">Autopilot <span id="paid-only">(Paid Only)</span></h4>
+            <h4 class="setting-title">Autopilot <span id="paid-only" class="red-font">(Paid Only)</span></h4>
             <p>Set the following conversations to autopilot to allow Kylie to automatically respoond to the most repetitive of your emails</p>
             <p>Change the confidence level to adjust when Kylie is able to respond depending on her confidence of her response</p>
           </div>
@@ -393,7 +413,7 @@
 
         <hr>
 
-        <div class="row">
+        <!-- <div class="row">
           <div id="billing" class="container scrollspy">
             <h4 class="setting-title">Billing</h4>
             <div class="col-md-6 col-sm-6 col-xs-12 no-padding-left small-margin-top">
@@ -435,7 +455,7 @@
                   <label for="zip-code">Zip Code</label>
                 </div>
 
-                <button type="button" id="form-1-btn" class="btn waves-effect waves-light waves-ripple">Add Card</button>
+                <button type="button" id="billing-form-btn" class="btn waves-effect waves-light waves-ripple">Add Card</button>
               </form>
             </div>
 
@@ -464,7 +484,7 @@
           </div>
         </div>
 
-        <hr>
+        <hr> -->
 
       </div>
 

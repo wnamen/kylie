@@ -5,11 +5,31 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Kylie.ai</title>
 
+    <!-- FAVICON -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../public/images/favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../public/images/favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../public/images/favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../public/images/favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../public/images/favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../public/images/favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../public/images/favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../public/images/favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../public/images/favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../public/images/favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../public/images/favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../public/images/favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../public/images/favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="../public/images/favicon.ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff ">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff ">
+
     <!-- STYLES -->
     <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400|Open+Sans:300,400" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="../public/node_modules/materialize-css/dist/css/materialize.min.css" rel="stylesheet">
     <link href="../public/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../public/styles/bubble_nav.css" rel="stylesheet">
     <link href="../public/styles/stats.css" rel="stylesheet">
 
     <!-- SCRIPTS -->
@@ -21,6 +41,48 @@
   </head>
   <body>
   <div class="container">
+
+    <!-- bubble navigation -->
+  <div class="row in_front">
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="menu">
+          <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+          <label class="menu-open-button" for="menu-open">
+            <span class="hamburger hamburger-1"></span>
+            <span class="hamburger hamburger-2"></span>
+            <span class="hamburger hamburger-3"></span>
+          </label>
+
+          <a href="/stats.html" class="menu-item" id="statToggle"> <i class="fa fa-bar-chart"></i> </a>
+          <a href="/progress.html" class="menu-item" id="homeToggle"> <i class="fa fa-home"></i> </a>
+          <a href="https://twitter.com/intent/tweet?text=Just%20signed%20up%20for%20the%20early%20release%20of%20@AiKylie!%20Alan%20Turing%20would%20be%20proud%20:)%20@legionanalytics." target="_blank" class="menu-item"> <i class="fa fa-twitter"></i> </a>
+          <a href="mailto:support@legionanalytics.com?subject=Support Request:Kylie.ai" target="_blank" class="menu-item"> <i class="fa fa-envelope"></i> </a>
+          <a href="/settings.html" class="menu-item" id="settingsToggle"> <i class="fa fa-cog"></i> </a>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <defs>
+              <filter id="shadowed-goo">
+
+                  <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                  <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
+                  <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
+                  <feOffset in="shadow" dx="1" dy="1" result="shadow" />
+                  <feBlend in2="shadow" in="goo" result="goo" />
+                  <feBlend in2="goo" in="SourceGraphic" result="mix" />
+              </filter>
+              <filter id="goo">
+                  <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                  <feBlend in2="goo" in="SourceGraphic" result="mix" />
+              </filter>
+            </defs>
+        </svg>
+      </div>
+  </div>
+  <!-- bubble navigation -->
+
+
     <div class="container text-container">
       <div class="col-md-8">
 
@@ -166,6 +228,11 @@
   </div>
 
 </div>
+
+<script type="text/javascript">
+    var current = [12, 19, 14, 10, 4, 7, 2];
+    var prior = [12, 1, 14, 11, 3, 6, 20];
+</script>
 
   </body>
 </html>
