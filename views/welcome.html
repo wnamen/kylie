@@ -20,7 +20,7 @@
   </head>
   <body>
     <div class="container">
-
+    
     <div class="row">
       <div class="col-md-12">
         <div class="text-container">
@@ -43,24 +43,24 @@
             </p>
 
             <p>
-              <input name="question1" type="radio" id="q1-option1" />
+              <input name="question1" type="radio" value="Sales/Marketing" id="q1-option1" />
               <label for="q1-option1">Sales/Marketing</label>
             </p>
             <p>
-              <input name="question1" type="radio" id="q1-option2" />
+              <input name="question1" type="radio" value="IT/Security" id="q1-option2" />
               <label for="q1-option2">IT/Security</label>
             </p>
             <p>
-              <input name="question1" type="radio" id="q1-option3" />
+              <input name="question1" type="radio" value="Customer Support" id="q1-option3" />
               <label for="q1-option3">Customer Support</label>
             </p>
             <p>
-              <input name="question1" type="radio" id="q1-option4" />
+              <input name="question1" type="radio" value="Engineering" id="q1-option4" />
               <label for="q1-option4">Engineering</label>
             </p>
 
             <div class="btns">
-              <button type="button" id="form-1-btn" class="btn waves-effect waves-light waves-ripple">Next</button>
+              <button type="button" disabled id="form-1-btn" class="btn waves-effect waves-light waves-ripple">Next</button>
             </div>
           </div>
         </div>
@@ -73,13 +73,13 @@
               What's your name?
             </p>
             <div class="input-field">
-              <input id="name" type="text" class="validate" required>
+              <input id="name" name="persons_name" type="text" class="validate" required>
               <label for="name">Name</label>
             </div>
 
             <div class="btns">
               <button type="button" id="form-2-back" class="btn waves-effect waves-light waves-ripple">Back</button>
-              <button type="button" id="form-2-btn" class="btn waves-effect waves-light waves-ripple">Next</button>
+              <button type="button" id="form-2-btn" disabled class="btn waves-effect waves-light waves-ripple">Next</button>
             </div>
           </div>
       </div>
@@ -94,13 +94,13 @@
             </p>
 
             <div class="input-field">
-              <input id="email" type="text" class="validate" required>
+              <input id="email" type="text" name="person_email" class="validate" required>
               <label for="email">Email</label>
             </div>
 
             <div class="btns">
               <button type="button" id="form-3-back" class="btn waves-effect waves-light waves-ripple">Back</button>
-              <button type="button" id="form-3-btn" class="btn waves-effect waves-light waves-ripple">Done</button>
+              <button type="button" id="form-3-btn" disabled class="btn waves-effect waves-light waves-ripple">Done</button>
             </div>
 
           </div>

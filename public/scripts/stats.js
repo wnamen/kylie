@@ -18,12 +18,12 @@ $(document).ready(function() {
         labels: ["M", "T", "W", "T", "F", "S", "S"],
         datasets: [
           {
-            data: [12, 19, 14, 10, 4, 7, 2],
+            data: [40, 56, 26, 13, 24, 10, 2],
             borderColor: "rgba(40,195,181,1)",
             backgroundColor: "rgba(40,195,181,0.2)"
           },
         {
-          data: [2, 29, 5, 5, 2, 3, 10],
+          data: [30, 51, 52, 55, 71, 5, 4],
           borderColor: "rgba(100,115,130,0)",
           backgroundColor: "rgba(100,115,130,0.1)"
         }]
