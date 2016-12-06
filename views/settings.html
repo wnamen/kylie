@@ -91,7 +91,7 @@
       <li><a href="#your-models">- Your Models</a></li>
       <li><a href="#email-preferences">- Email Preferences</a></li>
       <li><a href="#your-calendar">- Your Calendar</a></li>
-      <li><a href="#billing">- Billing</a></li>
+      <!-- <li><a href="#billing">- Billing</a></li> -->
     </ul>
   </div>
 
@@ -111,7 +111,7 @@
         <div class="row">
           <div id="autopilot" class="container scrollspy">
             <h4 class="setting-title">Autopilot <span id="paid-only" class="red-font">(Paid Only)</span></h4>
-            <p>Set the following conversations to autopilot to allow Kylie to automatically respoond to the most repetitive of your emails</p>
+            <p>Set the following conversations to autopilot to allow Kylie to automatically respond to the most repetitive of your emails</p>
             <p>Change the confidence level to adjust when Kylie is able to respond depending on her confidence of her response</p>
           </div>
         </div>
@@ -136,7 +136,7 @@
 
               <div class="col-md-2 col-sm-2 col-xs-1">
                 <label>
-                  <input disabled type="checkbox">
+                  <input disabled type="checkbox" checked="false">
                   <span disabled class="lever purple-border"></span>
                 </label>
               </div>
@@ -157,7 +157,7 @@
 
               <div class="col-md-2 col-sm-2 col-xs-2">
                 <label>
-                  <input disabled type="checkbox">
+                  <input disabled type="checkbox" checked="false">
                   <span disabled class="lever purple-border"></span>
                 </label>
               </div>
@@ -178,7 +178,7 @@
 
               <div class="col-md-2 col-sm-2 col-xs-2">
                 <label>
-                  <input disabled type="checkbox">
+                  <input disabled type="checkbox" checked="false">
                   <span disabled class="lever purple-border"></span>
                 </label>
               </div>
@@ -199,7 +199,7 @@
 
               <div class="col-md-2 col-sm-2 col-xs-2">
                 <label>
-                  <input disabled type="checkbox">
+                  <input disabled type="checkbox" checked="false">
                   <span disabled class="lever purple-border"></span>
                 </label>
               </div>
@@ -220,7 +220,7 @@
 
               <div class="col-md-2 col-sm-2 col-xs-2">
                 <label>
-                  <input disabled type="checkbox">
+                  <input disabled type="checkbox" checked="false">
                   <span disabled class="lever purple-border"></span>
                 </label>
               </div>
@@ -241,7 +241,7 @@
 
               <div class="col-md-2 col-sm-2 col-xs-2">
                 <label>
-                  <input disabled type="checkbox">
+                  <input disabled type="checkbox" checked="false">
                   <span disabled class="lever purple-border"></span>
                 </label>
               </div>
@@ -266,13 +266,13 @@
             <div class="switch col-md-12 col-sm-12 col-xs-12 small-margin-top medium-margin-bottom">
 
               <div class="col-md-10 col-sm-10 col-xs-12">
-                <p class="setting-text">Model 1 <span class="purple-font">(jrodri25@jhu.edu)</span></p>
+                <p class="setting-text">ai_Model 1 <span class="purple-font">(scotty@mattermark.com)</span></p>
               </div>
 
               <div class="col-md-2 col-md-offset-0 col-sm-2 col-sm-offset-0 col-xs-2 col-xs-offset-3">
                 <label>
-                  <input type="checkbox">
-                  <span class="lever purple-border"></span>
+                  <input disabled type="checkbox" class="model_input" id="model1">
+                  <span disabled class="lever purple-border"></span>
                 </label>
               </div>
             </div>
@@ -280,7 +280,7 @@
             <!-- <div class="switch col-md-12 col-sm-12 col-xs-12 medium-margin-bottom">
 
               <div class="col-md-10 col-sm-10 col-xs-10">
-                <p class="setting-text">Model 2 <span class="purple-font">(jamasen@jamacocoa.com)</span></p>
+                <p class="setting-text">Model 2 <span class="purple-font">(jamasen@kylie.ai)</span></p>
               </div>
 
               <div class="col-md-2 col-md-offset-0 col-sm-2 col-sm-offset-0 col-xs-2 col-xs-offset-3">
@@ -327,8 +327,8 @@
 
               <div class="col-md-2 col-md-offset-0 col-sm-2 col-sm-offset-0 col-xs-2 col-xs-offset-3">
                 <label>
-                  <input type="checkbox">
-                  <span class="lever purple-border"></span>
+                  <input type="checkbox" class="email_pref" id="weeklyStats">
+                  <span class="lever purple-border weeklystats"></span>
                 </label>
               </div>
             </div>
@@ -341,7 +341,7 @@
 
               <div class="col-md-2 col-md-offset-0 col-sm-2 col-sm-offset-0 col-xs-2 col-xs-offset-3">
                 <label>
-                  <input type="checkbox">
+                  <input type="checkbox" class="email_pref" id="monthlyReports">
                   <span class="lever purple-border"></span>
                 </label>
               </div>
@@ -355,7 +355,7 @@
 
               <div class="col-md-2 col-md-offset-0 col-sm-2 col-sm-offset-0 col-xs-2 col-xs-offset-3">
                 <label>
-                  <input type="checkbox">
+                  <input type="checkbox" class="email_pref" id="educational">
                   <span class="lever purple-border"></span>
                 </label>
               </div>
@@ -369,7 +369,7 @@
 
               <div class="col-md-2 col-md-offset-0 col-sm-2 col-sm-offset-0 col-xs-2 col-xs-offset-3">
                 <label>
-                  <input type="checkbox">
+                  <input type="checkbox" class="email_pref" id="promotional">
                   <span class="lever purple-border"></span>
                 </label>
               </div>
@@ -396,12 +396,12 @@
               </div>
 
               <div class="col-md-5 col-sm-4 col-sm-offset-1 col-xs-12">
-                <p id="calendar-text">or  <a href="" class="green-font">Create a calendar link</a></p>
+                <p id="calendar-text">or  <a href="https://calendly.com/" class="green-font">Create a calendar link</a></p>
               </div>
             </div>
 
 
-            <p>Your current calendar: <a href="" class="green-font">https://calendly.com/jamasenr</a>
+            <p>Your current calendar: <a href="https://calendly.com/jamasenr" class="green-font currentCal">https://calendly.com/jamasenr</a>
           </div>
         </div>
 

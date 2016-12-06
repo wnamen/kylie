@@ -1,5 +1,7 @@
 var calendarLink;
 var billingInfo;
+var whichPref;
+var onoroff;
 
 $(document).ready(function(){
   $('.scrollspy').scrollSpy();
@@ -13,19 +15,45 @@ $(document).ready(function(){
     level.html(value);
   });
 
-  $('.switch label input').change(function(e){
-    console.log($(this).val());
-  })
 
-  $('#calendar-btn').click(addCalendar);
+  // $('#calendar-btn').click(addCalendar);
   $('#billing-form-btn').click(addBilling);
 
+
+  $(".email_pref").on("change",function(){
+    whichPref = $(this).attr("id");
+    onoroff = !$("#"+whichPref).prop("checked");
+    console.log(onoroff);
+    $.ajax({
+      type: "post",
+      data: {"emailPreference":whichPref,"state":onoroff}
+    }).done(function(e){
+
+    }).fail(function(e){
+      alert("I'm sorry, but it seems I am having trouble connecting to my servers. Please refresh the page and try again :)")
+    })
+  });
+
+  $("#calendar-btn").on("click",function(){
+    addCalendar();
+    alert(calendarLink)
+    $.ajax({
+      type:"post",
+      data: {"calendarLink":calendarLink}
+    }).done(function(){
+      $(".currentCal").text(calendarLink).attr("href",calendarLink);
+    }).fail(function(e){
+      alert("I'm sorry, but it seems I am having trouble connecting to my servers. Please refresh the page and try again :)")
+    })
+  });
+
+
 });
+
 
 function addCalendar(){
   calendarLink = $('#new-calendar-link').val();
   $('#new-calendar-link').val('');
-  return calendarLink;
 }
 
 function addBilling(){
