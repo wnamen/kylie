@@ -1,5 +1,11 @@
 var current,
-    prior;
+    prior,
+    es_current,
+    es_past
+    rt_past,
+    rt_current,
+    em_past,
+    em_current;
 
 
 $(document).ready(function() {
@@ -83,7 +89,7 @@ $(document).ready(function() {
       },
       options: {
         legend: {
-          display: false
+          display: true
         },
         tooltips: {
           mode: 'x-axis',

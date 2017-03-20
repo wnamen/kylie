@@ -2,10 +2,23 @@ var referrals,
     referral;
 
 $(document).ready(function(){
+  $('.email-input').focusout(handleEmailCheck);
   $('#referral-btn').click(handleReferrals);
 });
 
+function handleEmailCheck(){
+  $(this).removeClass("failedValidation");
+  var email = $(this).val();
+  var emailVal = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  var OK = emailVal.exec(email);
+  if (!OK){
+    $(this).addClass("failedValidation");
+    window.setTimeout(function(){$(".email-input").removeClass("failedValidation")},500);
+  }
+}
+
 function handleReferrals(){
+
   var rows = $('.referral-row');
   referrals = [];
 
@@ -15,7 +28,7 @@ function handleReferrals(){
     }
   }
 
-  return referrals;
+  alert(referrals);
 }
 
 function referralValidator(row){
