@@ -13,13 +13,38 @@ footer {
 }
 
 .nav {
-  float: right;
-  margin:auto 10%;
+  margin:auto 7%;
 }
 
 .nav li a:hover {
   background: none;
   text-decoration: underline;
+}
+
+.nav-list {
+  display: inline-flex;
+  align-items: flex-end;
+  font-size: 1.2em;
+}
+
+.nav-list li a {
+  font-weight: 300;
+}
+
+.nav-bar {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  box-shadow: 0 2px 2px -2px grey;
+  background-color: #fefdfb;
+  z-index: 9999999;
+  padding: 1em 0;
+  font-family: 'Open Sans', helvetica, sans-serif;
+}
+
+.nav-logo {
+  height: 39px;
 }
 
 .draft {
@@ -254,7 +279,7 @@ section {
 
 @media screen and (min-width:991px) {
   body {
-    padding-top: 2em;
+    padding-top: 0.01em;
   }
 
   h1 {
@@ -285,7 +310,7 @@ section {
   }
 
   #intro {
-    margin: 5em auto;
+    margin: 7em auto;
   }
 
   #intro-message {
