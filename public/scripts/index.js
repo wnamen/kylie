@@ -32,12 +32,20 @@ function userCompany(query){
 $(document).ready(function() {
 
   url = $(location).attr('href');
-  if (url.indexOf('?') !== -1) {
+  if ((url.indexOf('name=') !== -1) && (url.indexOf('email=') !== -1)) {
     urlParser(url);
     $('#personal-greeting').html("Hi " + userInfo.name);
     $('.userName').html(userInfo.name);
     $('.userEmail').html('(' + userInfo.email + ')');
     $('.userCompany').html(userInfo.company);
+  } else if ((url.indexOf('name=') === -1) && (url.indexOf('email=') !== -1)) {
+    urlParser(url);
+    $('.userEmail').html('(' + userInfo.email + ')');
+    $('.userCompany').html(userInfo.company);
+  } else if ((url.indexOf('name=') !== -1) && (url.indexOf('email=') === -1)){
+    urlParser(url);
+    $('#personal-greeting').html("Hi " + userInfo.name);
+    $('.userName').html(userInfo.name);
   };
 
   $(".welcome-btn").click(welcomeRedirect);
