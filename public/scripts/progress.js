@@ -9,10 +9,8 @@ $(document).ready(function(){
 function handleEmailCheck(){
   $(this).removeClass("failedValidation");
   var email = $(this).val();
-  console.log(email);
   var emailVal = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   var OK = emailVal.exec(email);
-  console.log(OK);
   if (!OK){
     $(this).addClass("failedValidation");
     window.setTimeout(function(){$(this).removeClass("failedValidation")},1000);
@@ -29,7 +27,7 @@ function handleReferrals(){
     }
   }
 
-  // postData(referrals);
+  postData(referrals);
 }
 
 function referralValidator(row){
@@ -59,7 +57,6 @@ function referralGenerator(row){
 function postData(data){
   $.ajax({
       type: "post",
-      url: "",
       dataType: 'JSON',
       data: data
   }).done(function(res) {

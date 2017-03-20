@@ -106,9 +106,9 @@ function postData(bool){
   })
   .always(function() {
     if (bool == "connect"){
-        window.location.href="file:///Users/jamasenrodriguez/Desktop/kylie/views/connect.html#";
+        window.location.href="/connect.html";
       }else if (bool == "waitlist"){
-        window.location.href="file:///Users/jamasenrodriguez/Desktop/kylie/views/waitlist.html#";
+        window.location.href="/waitlist.html";
       }
   });
 }
