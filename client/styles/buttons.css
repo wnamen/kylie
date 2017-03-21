@@ -1,3 +1,27 @@
+/*Buttons*/
+
+
+.btn {
+  background-color: #28c3b5;
+  color: white;
+  border: none;
+  padding: .5em 2em;
+  outline:0;
+  text-transform: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.btn.focus, .btn:focus, .btn:hover {
+  color: white !important;
+  text-decoration: none !important;
+  outline: none !important;
+  text-transform: none;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: #28c3b5 !important;
+}
+
 /*!
  * Waves v0.6.0
  * http://fian.my.id/Waves
@@ -99,35 +123,4 @@
 /* Firefox Bug: link not triggered */
 .waves-effect .waves-ripple {
   z-index: -1;
-}
-
-.btn {
-  background-color: #28c3b5;
-  color: white;
-  border: none;
-  padding: .5em 2em;
-  outline:0;
-  text-transform: none;
-  border-radius: 0;
-  box-shadow: none;
-}
-
-.btn.focus, .btn:focus, .btn:hover {
-  color: white !important;
-  text-decoration: none !important;
-  outline: none !important;
-  text-transform: none;
-  border-radius: 0;
-  box-shadow: none;
-  background-color: #28c3b5 !important;
-
-}
-
-#intro-btn {
-  font-size: 1.5em;
-  margin-top: 1em;
-}
-
-#end-btn {
-  font-size: 1.5em;
 }

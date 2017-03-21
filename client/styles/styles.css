@@ -2,6 +2,10 @@
   background-color: #fefdfb;
 }
 
+.heavy-black-font {
+  color: #231f20;
+}
+
 .black-font {
   color: #647382;
 }
@@ -21,6 +25,14 @@
 
 .green-background {
   background-color: #28c3b5;
+}
+
+.light-grey-background {
+  background-color: #f8f8f8;
+}
+
+.dark-grey-background {
+  background-color: #647382;
 }
 
 .purple-border {

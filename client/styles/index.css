@@ -10,6 +10,17 @@ footer {
   margin-top: 3em 0;
 }
 
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.page-container {
+  padding: 7em 3em;
+}
+
+/*NAVBAR*/
+
 .nav {
   margin: auto;
 }
@@ -55,6 +66,65 @@ footer {
   padding:0 1vw;
 }
 
+/*INTRO MESSAGE AND HERO IMAGE*/
+
+#intro-image {
+  /*width: 30vw;*/
+}
+
+/*INTRO-BAR*/
+
+#intro-bar {
+  height: 300px;
+  display: flex;
+  align-items: center;
+}
+
+#intro-bar div {
+  display: flex;
+}
+
+#intro-bar div div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 3vw;
+}
+
+#intro-bar, #intro-bar div div h3 {
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight:300;
+}
+
+/*FEATURES*/
+
+.features {
+  padding: 2em 0;
+}
+
+.feature-text {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.feat-left {
+  text-align: center;
+}
+
+.feat-right {
+  text-align: center;
+}
+
+
+.fa-star {
+  color: #28c3b5;
+}
+
+
+/*REQUEST DEMO MODAL AND FORM*/
+
 .modal {
   width: 48%;
   max-height: 100%;
@@ -81,26 +151,4 @@ footer {
 #demo-form .modal-content .btns button {
   margin-top: 3vh;
   font-size: 18px;
-}
-
-.features {
-  padding: 2em 0;
-}
-
-.feature-text {
-  vertical-align: middle;
-  text-align: center;
-}
-
-.feat-left {
-  text-align: center;
-}
-
-.feat-right {
-  text-align: center;
-}
-
-
-.fa-star {
-  color: #28c3b5;
 }

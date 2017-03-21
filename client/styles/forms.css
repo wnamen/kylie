@@ -25,7 +25,6 @@ input[type=text], .input-field label, [type="radio"]:not(:checked)+label, [type=
 input[type=text], input[type=text].valid {
   border: 1px solid #7f5dfc;
   box-shadow: none;
-  border-radius: 100px;
   text-indent: 10px;
 }
 
@@ -180,9 +179,9 @@ select:disabled {
   min-width: 100px;
   max-height: 650px;
   overflow: auto;
+  z-index: 999999;
   opacity: 0;
   position: absolute;
-  z-index: 999999;
   will-change: width, height;
 }
 
@@ -195,6 +194,7 @@ select:disabled {
   width: 100%;
   text-align: left;
   text-transform: none;
+
 }
 
 .dropdown-content li:hover, .dropdown-content li.active, .dropdown-content li.selected {
