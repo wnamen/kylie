@@ -5,7 +5,16 @@
   background-color: #28c3b5;
   color: white;
   border: none;
-  padding: .5em 2em;
+  outline:0;
+  text-transform: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.btn-inverse {
+  border: 1px solid #28c3b5;
+  background-color: white;
+  color: #28c3b5;
   outline:0;
   text-transform: none;
   border-radius: 0;

@@ -10,10 +10,6 @@ img {
   max-height: 100%;
 }
 
-.page-container {
-  padding: 7em 3em;
-}
-
 /*NAVBAR*/
 
 .nav {
@@ -63,8 +59,25 @@ img {
 
 /*INTRO MESSAGE AND HERO IMAGE*/
 
-#intro-image {
-  /*width: 30vw;*/
+#intro-container {
+  padding: 9em 3em 2em 3em;
+  display: flex;
+  align-items: center;
+}
+
+#intro-container div h5 {
+  font-size: 2em;
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
+  margin: 7.5vh auto;
+}
+
+#intro-container div a {
+  font-size: 1.5em;
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
+  height: 2em;
+  line-height: 2em;
 }
 
 /*INTRO-BAR */
