@@ -48,7 +48,9 @@ $(document).ready(function() {
     $('.userName').html(userInfo.name);
   };
 
-  $(".welcome-btn").click(welcomeRedirect);
+  // $(".welcome-btn").click(welcomeRedirect);
+  $('.modal').modal();
+  $('select').material_select();
 
   $window.scroll(function () {
 
@@ -128,4 +130,8 @@ $(document).ready(function() {
 
 function welcomeRedirect(){
   location.href = "./welcome.html";
+}
+
+function handleModal() {
+  $('.modal').modal();
 }
