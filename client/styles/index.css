@@ -180,6 +180,19 @@ img {
   height: 100%;
 }
 
+#integrate-anywhere {
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
+}
+
+#integrate-anywhere span {
+  font-size: 3em;
+}
+
+#integrate-anywhere p {
+  margin: 0;
+}
+
 /*DEMO REQUEST FORM*/
 
 #demo-request-container {
