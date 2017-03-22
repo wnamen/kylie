@@ -145,12 +145,15 @@ img {
 
 /*INTEGRATIONS*/
 
+#integrations-container {
+  padding: 3em 0;
+}
+
 #integrations-container div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 3em 0;
 }
 
 #integrations-container div #integrations-bar, #integrations-container div #integrations-view {
@@ -159,23 +162,30 @@ img {
   justify-content: center;
 }
 
+#integrations-view {
+  height: 25vw;
+}
+
 #integrations-view img, #integrations-view p {
   margin: 1em;
+}
+
+#integrations-view img {
+  max-width: 20%;
+  max-height: 70%;
 }
 
 #integrations-view p {
   font-size: 1.75em;
   font-family: 'Open Sans', helvetica, sans-serif;
   font-weight: 300;
-}
+  max-width: 25%;
 
-#integrations-view img {
-  width: 35%;
-  height: 100%;
 }
 
 #integrations-bar img {
   margin: 1em;
+  padding: 1em;
   width: 7.5%;
   height: 100%;
 }
@@ -191,6 +201,10 @@ img {
 
 #integrate-anywhere p {
   margin: 0;
+}
+
+.integration-highlight {
+  background-color: white;
 }
 
 /*DEMO REQUEST FORM*/
