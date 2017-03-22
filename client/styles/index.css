@@ -10,6 +10,7 @@ img {
   max-height: 100%;
 }
 
+
 /*NAVBAR*/
 
 .nav {
@@ -60,9 +61,7 @@ img {
 /*INTRO MESSAGE AND HERO IMAGE*/
 
 #intro-container {
-  padding: 9em 3em 2em 3em;
-  display: flex;
-  align-items: center;
+  padding: 20vh 8vw 15vh 8vw;
 }
 
 #intro-container div h5 {
@@ -84,7 +83,7 @@ img {
 /*INTRO-BAR */
 
 #intro-bar-container {
-  height: 45vh;
+  height: 100%;
   display: flex;
   align-items: center;
 }
@@ -112,6 +111,14 @@ img {
   transform: scale(1.2);
 }
 
+
+@media only screen and (max-width: 830px) {
+  #intro-bar-container div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 /*SECURITY BAR*/
 
 #security-container {
@@ -122,6 +129,12 @@ img {
   width: 60%;
 }
 
+@media only screen and (max-width: 600px) {
+  #security-container div {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 /*FEATURES*/
 #features-container {
@@ -182,7 +195,7 @@ img {
 }
 
 #integrations-view p {
-  font-size: 1.75em;
+  font-size: 2.2vw;
   font-family: 'Open Sans', helvetica, sans-serif;
   font-weight: 300;
   max-width: 25%;

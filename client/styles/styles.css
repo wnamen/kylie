@@ -23,6 +23,10 @@
   color: #fb615d;
 }
 
+.mustard-font {
+  color: #FBDC92;
+}
+
 .green-background {
   background-color: #28c3b5;
 }
@@ -33,6 +37,10 @@
 
 .dark-grey-background {
   background-color: #647382;
+}
+
+.mustard-background {
+  background-color: #FBDC92;
 }
 
 .purple-border {
