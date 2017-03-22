@@ -150,10 +150,6 @@ img {
   color: white;
 }
 
-#demo-request-container div .input-field input {
-  background-color: white;
-}
-
 #demo-request-container div h5{
   font-size: 1.75em;
 }
@@ -162,6 +158,19 @@ img {
   font-size: 1.5em;
 }
 
+#demo-request-container div .input-field input {
+  background-color: white;
+  border: none;
+}
+
+#demo-request-container div .input-field .select-wrapper .caret {
+  z-index: 9999999;
+}
+
+#demo-request-container div .btns .btn {
+  margin-top: 1em; 
+  width: 100%;
+}
 
 /*REQUEST DEMO MODAL AND FORM*/
 
@@ -188,7 +197,7 @@ img {
   margin: 0;
 }
 
-#demo-form .modal-content .btns button {
+#demo-form .modal-content .btns a {
   margin-top: 3vh;
   font-size: 18px;
 }

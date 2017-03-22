@@ -11,6 +11,7 @@ input[type=text], .input-field label, [type="radio"]:not(:checked)+label, [type=
 .input-field {
   position: relative;
   margin-top: 1rem;
+  height: 100%;  
 }
 
 .input-field label {
