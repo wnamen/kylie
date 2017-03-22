@@ -78,6 +78,7 @@ img {
   font-weight: 300;
   height: 2em;
   line-height: 2em;
+  margin: 0.5em auto;
 }
 
 /*INTRO-BAR */
@@ -104,6 +105,11 @@ img {
 #intro-bar-container, #security-container div div p, #intro-bar-container div div h3, #demo-request-container div p {
   font-family: 'Open Sans', helvetica, sans-serif;
   font-weight: 300;
+  color: black;
+}
+
+#intro-bar-container div div h3:hover {
+  transform: scale(1.2);
 }
 
 /*SECURITY BAR*/
@@ -190,6 +196,11 @@ img {
   height: 100%;
 }
 
+#integrations-bar img:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
 #integrate-anywhere {
   font-family: 'Open Sans', helvetica, sans-serif;
   font-weight: 300;
@@ -220,6 +231,8 @@ img {
 
 #demo-request-container div p {
   font-size: 1.5em;
+  color: white;
+
 }
 
 #demo-request-container div .input-field input {
