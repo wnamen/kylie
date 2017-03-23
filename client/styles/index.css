@@ -105,10 +105,15 @@ img {
   margin: 3vw;
 }
 
-#intro-bar-container, #security-container div div p, #intro-bar-container div div h3, #demo-request-container div p {
+#intro-bar-container, #security-container div div p, #demo-request-container div p {
   font-family: 'Open Sans', helvetica, sans-serif;
   font-weight: 300;
-  color: black;
+}
+
+#intro-bar-container div div h3 {
+  font-family: 'Merriweather', garamond, serif;
+  font-weight: 300;
+
 }
 
 #intro-bar-container div div h3:hover {
@@ -152,6 +157,11 @@ img {
 .feature-text {
   vertical-align: middle;
   text-align: center;
+}
+
+.feature-text p {
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
 }
 
 .feat-left {

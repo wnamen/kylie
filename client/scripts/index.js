@@ -39,7 +39,7 @@ function handleIntegrationsClick() {
     $('#view-img').attr('src', newImg);
     $('#view-text').html(newText);
     $('#integrations-view').children().fadeIn("slow")
-  }, 1000);
+  }, 700);
 }
 //
 // function handleIntegrationsDivClick() {
