@@ -68,6 +68,12 @@ img {
   padding: 20vh 8vw 15vh 8vw;
 }
 
+@media only screen and (max-width: 600px) {
+  #intro-container, .feature-text h3, .feature-text p {
+    text-align: center;
+  }
+}
+
 #intro-container div h5 {
   font-size: 2em;
   font-family: 'Open Sans', helvetica, sans-serif;
@@ -131,7 +137,7 @@ img {
 /*SECURITY BAR*/
 
 #security-container {
-  margin: 3em auto;
+  margin: 20vh auto;
 }
 
 #security-container div div img {
@@ -143,6 +149,10 @@ img {
     display: flex;
     flex-direction: column;
   }
+
+  #security-container div div {
+    margin: 10vh 0;
+  }
 }
 
 /*FEATURES*/
@@ -151,7 +161,7 @@ img {
 }
 
 .features {
-  padding: 2em 0;
+  padding: 6em 0;
 }
 
 .feature-text {
@@ -179,7 +189,7 @@ img {
 /*INTEGRATIONS*/
 
 #integrations-container {
-  padding: 3em 0;
+  padding: 10vh 0;
 }
 
 #integrations-container div {
@@ -223,7 +233,7 @@ img {
   height: 100%;
 }
 
-#integrations-bar img:hover {
+#integrations-bar img:hover, #integrate-anywhere:hover {
   transform: scale(1.2);
   cursor: pointer;
 }
@@ -231,6 +241,7 @@ img {
 #integrate-anywhere {
   font-family: 'Open Sans', helvetica, sans-serif;
   font-weight: 300;
+  cursor: pointer;
 }
 
 #integrate-anywhere span {
@@ -245,10 +256,46 @@ img {
   background-color: white;
 }
 
+@media only screen and (max-width: 900px) {
+  #integrations-bar img {
+    margin: 0;
+    width: 10.5%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #integrations-container div h3 {
+    font-size: 5vw;
+  }
+  #integrations-bar img {
+    margin: 0;
+    width: 14.5%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #integrations-bar {
+    display: none !important;
+  }
+ 
+  #integrations-view {
+    margin: 5vh 0;
+  }
+  #integrations-view img, #integrations-view p {
+    max-width: 50%;
+  }
+  #integrations-view img {
+    max-height: 80%;
+  }
+  #integrations-view p {
+    font-size: 3.6vw;
+  }
+}
+
 /*DEMO REQUEST FORM*/
 
 #demo-request-container {
-  padding: 5vh 5vw;
+  padding: 12vh 5vw;
   color: white;
 }
 
@@ -274,6 +321,9 @@ img {
 #demo-request-container div .btns .btn {
   margin-top: 1em;
   width: 100%;
+  font-size: 1.5em;
+  padding: 1.5em 0;
+  line-height: 0;
 }
 
 /*REQUEST DEMO MODAL AND FORM*/
