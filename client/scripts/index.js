@@ -19,6 +19,7 @@ $(document).ready(function() {
   // $('#integrations-bar div').click(handleIntegrationsDivClick)
 
   // $(".welcome-btn").click(welcomeRedirect);
+  $(".dropdown-button").dropdown();
   $('.modal').modal();
   $('select').material_select();
 });
@@ -40,7 +41,7 @@ function handleIntegrationsClick() {
     $('#integrations-view').children().fadeIn("slow")
   }, 1000);
 }
-// 
+//
 // function handleIntegrationsDivClick() {
 //   $('#integrations-view').children().fadeOut("slow");
 //

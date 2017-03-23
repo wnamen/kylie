@@ -58,6 +58,10 @@ img {
   padding:0 1vw;
 }
 
+.fa-bars {
+  cursor: pointer;
+}
+
 /*INTRO MESSAGE AND HERO IMAGE*/
 
 #intro-container {
