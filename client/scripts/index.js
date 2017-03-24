@@ -16,14 +16,14 @@ var integrationTexts = {
   salesforce: "With Kylie, empower your help desk with automated replies, tagging, and all the wonderful routing your heart desires."
 };
 
-var running = true;
+var isOnAutoPlay;
 
 $(document).ready(function() {
-  
+
   animateIntegrations();
 
   window.onresize = function() {
-    if (!running) {
+    if ((!isOnAutoPlay) && (isSmall())) {
       animateIntegrations();
     }
   }
@@ -59,8 +59,8 @@ function animateIntegrations(position) {
       currentText = integrationTexts[current],
       next = integrations[integrations.indexOf(current) + 1];
 
-  if ($(document).width() <= 600) {
-    running = true;
+  if (isSmall()) {
+    isOnAutoPlay = true;
 
     setTimeout(function() {
       $('#integrations-view').children().fadeOut("slow");
@@ -75,6 +75,14 @@ function animateIntegrations(position) {
 
     }, 3000)
   } else {
-    running = false;
+    isOnAutoPlay = false;
   }
+}
+
+function isSmall() {
+  if ($(window).width() <= 600) {
+    return true;
+  }
+
+  return false;
 }

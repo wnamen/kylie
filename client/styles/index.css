@@ -280,6 +280,9 @@ img {
   width: 48%;
   max-height: 100%;
 }
+#demo-form {
+  top: 5% !important;
+}
 
 #demo-form .modal-content {
   text-align: center;
@@ -299,8 +302,14 @@ img {
   margin: 0;
 }
 
+#demo-form .modal-content .btns {
+  margin: 5vh 2vh;
+}
+
 #demo-form .modal-content .btns a {
-  margin-top: 3vh;
+  width: 100%;
+  height: 3em;
+  line-height: 3em;
   font-size: 18px;
 }
 
