@@ -1,0 +1,17 @@
+/* GENERAL STYLING */
+
+body {
+  background-color: #fefdfb;
+  font-family: 'Merriweather', garamond, serif;
+}
+
+/*PRIVACY*/
+
+#privacy-container {
+  padding: 20vh 10vw;
+}
+
+#privacy-container div ul li {
+  list-style-type: disc;
+  margin-left: 30px;
+}

@@ -10,58 +10,6 @@ img {
   max-height: 100%;
 }
 
-
-/*NAVBAR*/
-
-.nav {
-  margin: auto;
-}
-
-.nav li a:hover {
-  background: none;
-  text-decoration: underline;
-}
-
-.nav-list {
-  display: inline-flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.1em;
-}
-
-.nav-list li a {
-  font-weight: 300;
-  padding:0 1.5vw;
-}
-
-.nav-bar {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  box-shadow: 0 2px 2px -2px grey;
-  background-color: #fefdfb;
-  z-index: 1000;
-  padding: 1em 0;
-  font-family: 'Open Sans', helvetica, sans-serif;
-}
-
-.nav-logo {
-  height: 39px;
-}
-
-.nav-title {
-  font-size: 1.2em;
-  font-weight: 500;
-  font-family: 'Merriweather', garamond, serif;
-  color: black;
-  padding:0 1vw;
-}
-
-.fa-bars {
-  cursor: pointer;
-}
-
 /*INTRO MESSAGE AND HERO IMAGE*/
 
 #intro-container {
@@ -277,7 +225,7 @@ img {
   #integrations-bar {
     display: none !important;
   }
- 
+
   #integrations-view {
     margin: 5vh 0;
   }
@@ -355,6 +303,20 @@ img {
   margin-top: 3vh;
   font-size: 18px;
 }
+
+@media only screen and (max-width: 1000px) {
+  #demo-form {
+    width: 70% !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #demo-form {
+    width: 85% !important;
+  }
+}
+
+/*FOOTER*/
 
 #footer-container {
   margin: 10vh auto;
