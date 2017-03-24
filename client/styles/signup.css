@@ -1,0 +1,118 @@
+/* GENERAL STYLING */
+
+body {
+  background-color: #fefdfb;
+  font-family: 'Merriweather', garamond, serif;
+}
+
+/*SIGN UP*/
+
+#signup-container {
+  padding: 20vh 20vw;
+}
+
+#signup-container div h4 {
+  text-align: center;
+  margin-bottom: 5vw;
+}
+
+#signup-container div .btns a {
+  width: 100%;
+  height: 3em;
+  line-height: 3em;
+  font-size: 18px;
+}
+
+/*REQUEST DEMO MODAL AND FORM*/
+
+.modal {
+  width: 48%;
+  max-height: 100%;
+}
+#demo-form {
+  top: 5% !important;
+}
+
+#demo-form .modal-content {
+  text-align: center;
+  padding: 7vh 7vw;
+}
+
+#demo-form .modal-content h3 {
+  margin-bottom: 5vh
+}
+
+#demo-form .modal-content .input-field {
+  margin: 2vh;
+}
+
+#demo-form .modal-content .input-field input{
+  width: 100%;
+  margin: 0;
+}
+
+#demo-form .modal-content .btns {
+  margin: 5vh 2vh;
+}
+
+#demo-form .modal-content .btns a {
+  width: 100%;
+  height: 3em;
+  line-height: 3em;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 1000px) {
+  #demo-form {
+    width: 70% !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #demo-form {
+    width: 85% !important;
+  }
+}
+
+/* SIGN IN MODAL AND FORM*/
+
+#sign-in-form .modal-content {
+  text-align: center;
+  padding: 7vh 7vw;
+}
+
+#sign-in-form .modal-content h3 {
+  margin-bottom: 10vw;
+}
+
+#sign-in-form .modal-content .input-field {
+  margin: 2vh;
+}
+
+#sign-in-form .modal-content .input-field input{
+  width: 100%;
+  margin: 0;
+}
+
+#sign-in-form .modal-content .btns {
+  margin: 5vh 2vh;
+}
+
+#sign-in-form .modal-content .btns a {
+  width: 100%;
+  height: 3em;
+  line-height: 3em;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 1000px) {
+  #sign-in-form {
+    width: 70% !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #sign-in-form {
+    width: 85% !important;
+  }
+}
