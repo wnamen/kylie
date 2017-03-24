@@ -19,8 +19,7 @@ var integrationTexts = {
 var running = true;
 
 $(document).ready(function() {
-  console.log($(document).width());
-
+  
   animateIntegrations();
 
   window.onresize = function() {
@@ -59,8 +58,6 @@ function animateIntegrations(position) {
       currentImg = integrationImgs[current],
       currentText = integrationTexts[current],
       next = integrations[integrations.indexOf(current) + 1];
-
-      console.log(running);
 
   if ($(document).width() <= 600) {
     running = true;

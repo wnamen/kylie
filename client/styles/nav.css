@@ -1,0 +1,46 @@
+/*NAVBAR*/
+
+.nav {
+  margin: auto;
+}
+
+.nav li a:hover {
+  background: none;
+  text-decoration: underline;
+}
+
+.nav-list {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1em;
+}
+
+.nav-list li a {
+  font-weight: 300;
+  padding:0 1.5vw;
+}
+
+.nav-bar {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  box-shadow: 0 2px 2px -2px grey;
+  background-color: #fefdfb;
+  z-index: 1000;
+  padding: 1em 0;
+  font-family: 'Open Sans', helvetica, sans-serif;
+}
+
+.nav-logo {
+  height: 39px;
+}
+
+.nav-title {
+  font-size: 1.2em;
+  font-weight: 500;
+  font-family: 'Merriweather', garamond, serif;
+  color: black;
+  padding:0 1vw;
+}
