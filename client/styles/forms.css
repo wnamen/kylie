@@ -1,4 +1,4 @@
-input[type=text], .input-field label, [type="radio"]:not(:checked)+label, [type="radio"]:checked+label {
+input[type=text], input[type=email], input[type=password], .input-field label, [type="radio"]:not(:checked)+label, [type="radio"]:checked+label {
   font-weight: 300;
   color: #7f5dfc;
   height: 3.5em;
@@ -23,13 +23,13 @@ input[type=text], .input-field label, [type="radio"]:not(:checked)+label, [type=
   top: 5px;
 }
 
-input[type=text], input[type=text].valid {
+input[type=text], input[type=text].valid, input[type=email], input[type=password], input[type=email].valid, input[type=password].valid {
   border: 1px solid #7f5dfc;
   box-shadow: none;
   text-indent: 10px;
 }
 
-input[type=text]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+input[type=text]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=password]:focus:not([readonly]) {
   border: 1px solid #28c3b5;
   box-shadow: none;
   font-size: 1em

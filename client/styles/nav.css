@@ -1,7 +1,7 @@
 /*NAVBAR*/
 
 .nav {
-  margin: auto;
+  margin: auto 3vw;
 }
 
 .nav li a:hover {
@@ -18,13 +18,14 @@
 
 .nav-list li a {
   font-weight: 300;
-  padding:0 1.5vw;
+  padding:0 1vw;
+  cursor: pointer;
 }
 
 .nav-bar {
   position: fixed;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;;
   width: 100%;
   box-shadow: 0 2px 2px -2px grey;
   background-color: #fefdfb;
