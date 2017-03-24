@@ -15,10 +15,14 @@ var integrationTexts = {
 };
 
 $(document).ready(function() {
-  $('#integrations-bar img').click(handleIntegrationsClick)
-  // $('#integrations-bar div').click(handleIntegrationsDivClick)
+  console.log($(document).width());
 
-  // $(".welcome-btn").click(welcomeRedirect);
+  if ($(document).width() <= 600) {
+    animateIntegrations();
+  }
+
+  $('#integrations-bar img').click(handleIntegrationsClick)
+
   $(".dropdown-button").dropdown();
   $('.modal').modal();
   $('select').material_select();
@@ -41,18 +45,7 @@ function handleIntegrationsClick() {
     $('#integrations-view').children().fadeIn("slow")
   }, 700);
 }
-//
-// function handleIntegrationsDivClick() {
-//   $('#integrations-view').children().fadeOut("slow");
-//
-//   var newView = $(this).data('view');
-//   var newImg = '<div><span>&#43;</span><p>Integrate anywhere</p></div>';
-//   var newText = integrationTexts[newView];
-//
-//   setTimeout(function() {
-//     $('#view-img').attr('src', '');
-//     $('#view-img').html(newImg);
-//     $('#view-text').html(newText);
-//     $('#integrations-view').children().fadeIn("slow")
-//   }, 1000);
-// }
+
+function animateIntegrations() {
+
+}
