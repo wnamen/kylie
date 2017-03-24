@@ -1,3 +1,5 @@
+var integrations = ['zendesk', 'google', 'twitter', 'sap', 'salesforce'];
+
 var integrationImgs = {
   zendesk: "../images/zendesk.svg",
   google: "../images/google.png",
@@ -14,11 +16,17 @@ var integrationTexts = {
   salesforce: "With Kylie, empower your help desk with automated replies, tagging, and all the wonderful routing your heart desires."
 };
 
+var running = true;
+
 $(document).ready(function() {
   console.log($(document).width());
 
-  if ($(document).width() <= 600) {
-    animateIntegrations();
+  animateIntegrations();
+
+  window.onresize = function() {
+    if (!running) {
+      animateIntegrations();
+    }
   }
 
   $('#integrations-bar img').click(handleIntegrationsClick)
@@ -46,6 +54,30 @@ function handleIntegrationsClick() {
   }, 700);
 }
 
-function animateIntegrations() {
+function animateIntegrations(position) {
+  var current = position || 'zendesk',
+      currentImg = integrationImgs[current],
+      currentText = integrationTexts[current],
+      next = integrations[integrations.indexOf(current) + 1];
 
+      console.log(running);
+
+  if ($(document).width() <= 600) {
+    running = true;
+
+    setTimeout(function() {
+      $('#integrations-view').children().fadeOut("slow");
+
+      setTimeout(function() {
+        $('#view-img').attr('src', currentImg);
+        $('#view-text').html(currentText);
+        $('#integrations-view').children().fadeIn("slow")
+
+        return animateIntegrations(next)
+      }, 700)
+
+    }, 3000)
+  } else {
+    running = false;
+  }
 }
