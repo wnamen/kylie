@@ -13,7 +13,7 @@ function handleEmailCheck(){
   var OK = emailVal.exec(email);
   if (!OK){
     $(this).addClass("failedValidation");
-    window.setTimeout(function(){$(this).removeClass("failedValidation")},1000);
+    window.setTimeout(function(){$(".email-input").removeClass("failedValidation")},500);
   }
 }
 
@@ -58,7 +58,7 @@ function postData(data){
   $.ajax({
       type: "post",
       dataType: 'JSON',
-      data: data
+      data: {"data":data},
   }).done(function(res) {
     console.log("Post Compelete: ", res);
   })
