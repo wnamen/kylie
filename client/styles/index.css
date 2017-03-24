@@ -277,7 +277,7 @@ img {
   #integrations-bar {
     display: none !important;
   }
- 
+
   #integrations-view {
     margin: 5vh 0;
   }
@@ -355,6 +355,20 @@ img {
   margin-top: 3vh;
   font-size: 18px;
 }
+
+@media only screen and (max-width: 1000px) {
+  #demo-form {
+    width: 70% !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #demo-form {
+    width: 85% !important;
+  }
+}
+
+/*FOOTER*/
 
 #footer-container {
   margin: 10vh auto;
