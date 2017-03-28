@@ -28,11 +28,6 @@
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400|Open+Sans:300,400,500" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="../../node_modules/materialize-css/dist/css/materialize.css" rel="stylesheet">
-  <link href="../styles/buttons.css" rel="stylesheet">
-  <link href="../styles/styles.css" rel="stylesheet">
-  <link href="../styles/forms.css" rel="stylesheet">
-  <link href="../styles/nav.css" rel="stylesheet">
-  <link href="../styles/footer.css" rel="stylesheet">
   <link href="../styles/signup.css" rel="stylesheet">
 
   <!-- SCRIPTS -->
@@ -47,7 +42,7 @@
   <div class="nav-bar">
     <a class="nav nav-list" href="./index.html">
       <img class="nav-logo" src="../../public/images/favicon.ico/favicon-96x96.png" />
-      <span class="nav-title"> Kylie.ai<span>
+      <span class="nav-title"> Kylie.ai</span>
     </a>
     <ul class="nav nav-list hide-on-small-and-down">
       <li><a class="black-font">How it works</a></li>
@@ -60,35 +55,149 @@
     </ul>
   </div>
 
-  <!-- SIGN UP FORM -->
-  <div id="signup-container">
-    <div class="col s12 m12 l12">
-      <h4>Tell us about yourself!</h4>
+  <!-- GENERAL INFO FORM -->
+  <div id="signup-container"  class="row">
 
-      <div class="input-field">
-        <input id="name" type="text" name="name" class="validate" placeholder="Full Name" required>
+    <div class="col hide-on-small-only m2 l2 ">
+      <ul class="section table-of-contents pinned">
+        <li><a href="#general-information">General Information</a></li>
+        <li><a href="#deal-structure">Deal Structure</a></li>
+        <li><a href="#payment-information">Payment Information</a></li>
+        <li><a href="#tos">Terms of Service</a></li>
+      </ul>
+    </div>
+
+    <form id="signup-form" class="col s12 m6 l6 offset-m2 offset-l2">
+      <div id="general-information">
+        <h4>Tell us about yourself!</h4>
+
+        <div class="input-field">
+          <input id="name" type="text" name="name" class="validate" placeholder="Full Name" required />
+        </div>
+        <div class="input-field">
+          <input id="email" type="email" name="email" class="validate" placeholder="Email Address" required />
+        </div>
+        <div class="input-field">
+          <input id="phone" type="text" name="phone" class="validate" placeholder="Phone Number" required />
+        </div>
+        <div class="input-field">
+          <input id="company-name" type="text" name="company-name" class="validate" placeholder="Company Name" required />
+        </div>
+        <div class="input-field">
+          <input id="company-department" type="text" name="company-department" class="validate" placeholder="Department" required />
+        </div>
+        <div class="input-field">
+          <input id="company-street-address" type="text" name="company-street-address" class="validate" placeholder="Company Street Address" required />
+        </div>
+        <div class="form-break">
+          <div class="input-field">
+            <input id="company-city" type="text" name="company-city" class="validate" placeholder="Company City" required />
+          </div>
+          <div class="input-field">
+            <input id="company-state" type="text" name="company-state" class="validate" placeholder="Company State" required />
+          </div>
+          <div class="input-field">
+            <input id="company-zip-code" type="text" name="company-zip-code" class="validate" placeholder="Company Zip Code" required />
+          </div>
+        </div>
+        <div class="input-field">
+          <input id="password" type="password" name="password" class="validate" placeholder="Password" required />
+        </div>
+        <div class="input-field">
+          <input id="password" type="password" name="password-confirm" class="validate" placeholder="Confirm Password" required />
+        </div>
       </div>
-      <div class="input-field">
-        <input id="email" type="email" name="email" class="validate" placeholder="Email Address" required>
+
+      <div id="deal-structure">
+        <h4>Let's talk details...</h4>
+
+        <div class="deal-text-container">
+
+          <div>
+            <p><strong>Total Seats Requested:  </strong></p>
+            <p>50</p>
+          </div>
+          <div>
+            <p><strong>Total Models Requested: </strong></p>
+            <p>2</p>
+          </div>
+          <div>
+            <p><strong>Total Weekly Drafts Requested: </strong></p>
+            <p>150</p>
+          </div>
+          <div>
+            <p><strong>Total Integrations Requested: </strong></p>
+            <p>1</p>
+          </div>
+          <div>
+            <p><strong>Average Weekly Ticket Volume: </strong></p>
+            <p>2,200</p>
+          </div>
+          <div>
+            <p><strong>Total Global Permissions: </strong></p>
+            <p>5</p>
+          </div>
+          <div>
+            <p><strong>Payment Cycle: </strong></p>
+            <p>Quarterly</p>
+          </div>
+          <div>
+            <p><strong>Payment Discount: </strong></p>
+            <p>None</p>
+          </div>
+          <div>
+            <p><strong>Cost: </strong></p>
+            <p>$50,000.00</p>
+          </div>
+        </div>
+
       </div>
-      <div class="input-field">
-        <input id="phone" type="text" name="phone" class="validate" placeholder="Phone Number" required>
+
+      <div id="payment-information">
+        <h4>Wait... did you think I was free?</h4>
+
+        <div class="input-field">
+          <input id="cc-name" type="text" name="cc-name" class="validate" placeholder="Name On Card" required />
+        </div>
+        <div class="input-field">
+          <input id="cc-number" type="text" name="cc-number" class="validate" placeholder="Card Number" required />
+        </div>
+        <div class="form-break">
+          <div class="input-field">
+            <input id="cc-exp" type="text" name="cc-exp" class="validate" placeholder="MM/YY" required />
+          </div>
+          <div class="input-field">
+            <input id="cc-cvv" type="text" name="cc-cvv" class="validate" placeholder="CVV Number" required />
+          </div>
+          <div class="input-field">
+            <input id="cc-zip" type="text" name="cc-zip" class="validate" placeholder="Zip Code" required />
+          </div>
+        </div>
       </div>
-      <div class="input-field">
-        <input id="company-name" type="text" name="company-name" class="validate" placeholder="Company Name" required>
-      </div>
-      <div class="input-field">
-        <input id="password" type="password" name="password" class="validate" placeholder="Password" required>
-      </div>
-      <div class="input-field">
-        <input id="password" type="password" name="password-confirm" class="validate" placeholder="Confirm Password" required>
+
+      <div id="tos">
+        <h4>One last thing...</h4>
+
+        <div class="tos-text-container">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+
+        <div class="input-field">
+          <input id="tos-confirm" type="checkbox" name="tos-confirm" class="validate" required />
+          <label for="tos-confirm">I agree to the Terms of Service provided above.</label>
+        </div>
+
       </div>
 
       <div class="btns">
-        <a type="button" class="btn waves-effect waves-light waves-ripple modal-close">Sign In</a>
+        <a type="button" class="btn waves-effect waves-light waves-ripple modal-close">Submit</a>
       </div>
-    </div>
+    </form>
   </div>
+
+
+
+
 
   <!-- REQUEST DEMO MODAL -->
   <div id="demo-form" class="modal">
@@ -96,16 +205,16 @@
       <h4>Tell us about yourself!</h4>
 
       <div class="input-field">
-        <input id="name" type="text" name="name" class="validate" placeholder="Name" required>
+        <input id="name" type="text" name="name" class="validate" placeholder="Name" required />
       </div>
       <div class="input-field">
-        <input id="email" type="text" name="email" class="validate" placeholder="Email Address" required>
+        <input id="email" type="text" name="email" class="validate" placeholder="Email Address" required />
       </div>
       <div class="input-field">
-        <input id="phone-number" type="text" name="phone-number" class="validate" placeholder="Phone Number" required>
+        <input id="phone-number" type="text" name="phone-number" class="validate" placeholder="Phone Number" required />
       </div>
       <div class="input-field">
-        <input id="company-name" type="text" name="company-name" class="validate" placeholder="Company Name" required>
+        <input id="company-name" type="text" name="company-name" class="validate" placeholder="Company Name" required />
       </div>
       <div class="input-field">
         <select required>
@@ -152,10 +261,10 @@
       <h4>Welcome Back!</h4>
 
       <div class="input-field">
-        <input id="email" type="email" name="email" class="validate" placeholder="Email Address" required>
+        <input id="email" type="email" name="email" class="validate" placeholder="Email Address" required />
       </div>
       <div class="input-field">
-        <input id="password" type="password" name="password" class="validate" placeholder="Password" required>
+        <input id="password" type="password" name="password" class="validate" placeholder="Password" required />
       </div>
 
       <div class="btns">
