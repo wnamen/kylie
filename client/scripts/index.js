@@ -28,7 +28,7 @@ $(document).ready(function() {
     }
   }
 
-  $('#integrations-bar img').click(handleIntegrationsClick)
+  // $('#integrations-bar img').click(handleIntegrationsClick)
 
   $(".dropdown-button").dropdown();
   $('.modal').modal();
@@ -39,19 +39,19 @@ function welcomeRedirect(){
   location.href = "./welcome.html";
 }
 
-function handleIntegrationsClick() {
-  $('#integrations-view').children().fadeOut("slow");
-
-  var newView = $(this).data('view');
-  var newImg = integrationImgs[newView];
-  var newText = integrationTexts[newView];
-
-  setTimeout(function() {
-    $('#view-img').attr('src', newImg);
-    $('#view-text').html(newText);
-    $('#integrations-view').children().fadeIn("slow")
-  }, 700);
-}
+// function handleIntegrationsClick() {
+//   $('#integrations-view').children().fadeOut("slow");
+//
+//   var newView = $(this).data('view');
+//   var newImg = integrationImgs[newView];
+//   var newText = integrationTexts[newView];
+//
+//   setTimeout(function() {
+//     $('#view-img').attr('src', newImg);
+//     $('#view-text').html(newText);
+//     $('#integrations-view').children().fadeIn("slow")
+//   }, 700);
+// }
 
 function animateIntegrations(position) {
   var current = position || 'zendesk',
