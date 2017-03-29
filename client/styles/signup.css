@@ -104,6 +104,10 @@ body {
   display: block;
 }
 
+.no-left label {
+  left: 0;
+}
+
 /*TOS*/
 
 #tos {
