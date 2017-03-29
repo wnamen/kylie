@@ -157,7 +157,7 @@
       <div id="payment-information">
         <h4>Wait... did you think I was free?</h4>
 
-        <div id="payment-selector">
+        <div id="payment-selector" class="animated">
           <div data-payment-option="card" class="payment-card waves-effect waves-ripple waves-purple">
             <a>Pay by Credit Card</a>
           </div>
@@ -167,8 +167,10 @@
           </div>
         </div>
 
-        <div id="card-form">
-          <div class="input-field">
+        <div id="card-form" class="animated">
+          <h5 data-form="card" class="form-close red-font">X</h5>
+
+          <div class="clear-both input-field">
             <input id="cc-name" type="text" name="cc-name" class="validate" placeholder="Name On Card" required />
           </div>
           <div class="input-field">
@@ -187,12 +189,13 @@
           </div>
         </div>
 
-        <div id="invoice-form">
-          <div class="no-left input-field">
+        <div id="invoice-form" class="animated">
+          <h5 data-form="invoice" class="form-close red-font">X</h5>
+
+          <div class="no-left clear-both input-field">
             <input id="same-invoice-info" type="checkbox" name="same-invoice-info" class="validate" required />
             <label for="same-invoice-info">Use the same information from above.</label>
           </div>
-
           <div class="input-field">
             <input id="name" type="text" name="name" class="validate" placeholder="Full Name" required />
           </div>

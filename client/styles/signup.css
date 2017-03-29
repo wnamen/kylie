@@ -104,8 +104,19 @@ body {
   display: block;
 }
 
+.clear-both {
+  clear: both;
+}
+
 .no-left label {
   left: 0;
+}
+
+.form-close {
+  float: right;
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 /*TOS*/
