@@ -27,6 +27,7 @@
   <!-- STYLES -->
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400|Open+Sans:300,400,500" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../../node_modules/animate.css/animate.min.css" rel="stylesheet" >
   <link href="../../node_modules/materialize-css/dist/css/materialize.css" rel="stylesheet">
   <link href="../styles/signup.css" rel="stylesheet">
 
@@ -156,23 +157,68 @@
       <div id="payment-information">
         <h4>Wait... did you think I was free?</h4>
 
-        <div class="input-field">
-          <input id="cc-name" type="text" name="cc-name" class="validate" placeholder="Name On Card" required />
-        </div>
-        <div class="input-field">
-          <input id="cc-number" type="text" name="cc-number" class="validate" placeholder="Card Number" required />
-        </div>
-        <div class="form-break">
-          <div class="input-field">
-            <input id="cc-exp" type="text" name="cc-exp" class="validate" placeholder="MM/YY" required />
+        <div id="payment-selector">
+          <div data-payment-option="card" class="payment-card waves-effect waves-ripple waves-purple">
+            <a>Pay by Credit Card</a>
           </div>
-          <div class="input-field">
-            <input id="cc-cvv" type="text" name="cc-cvv" class="validate" placeholder="CVV Number" required />
-          </div>
-          <div class="input-field">
-            <input id="cc-zip" type="text" name="cc-zip" class="validate" placeholder="Zip Code" required />
+
+          <div data-payment-option="invoice" class="payment-card waves-effect waves-ripple waves-purple">
+            <a>Pay by Invoice</a>
           </div>
         </div>
+
+        <div id="card-form">
+          <div class="input-field">
+            <input id="cc-name" type="text" name="cc-name" class="validate" placeholder="Name On Card" required />
+          </div>
+          <div class="input-field">
+            <input id="cc-number" type="text" name="cc-number" class="validate" placeholder="Card Number" required />
+          </div>
+          <div class="form-break">
+            <div class="input-field">
+              <input id="cc-exp" type="text" name="cc-exp" class="validate" placeholder="MM/YY" required />
+            </div>
+            <div class="input-field">
+              <input id="cc-cvv" type="text" name="cc-cvv" class="validate" placeholder="CVV Number" required />
+            </div>
+            <div class="input-field">
+              <input id="cc-zip" type="text" name="cc-zip" class="validate" placeholder="Zip Code" required />
+            </div>
+          </div>
+        </div>
+
+        <div id="invoice-form">
+          <div class="input-field">
+            <input id="name" type="text" name="name" class="validate" placeholder="Full Name" required />
+          </div>
+          <div class="input-field">
+            <input id="email" type="email" name="email" class="validate" placeholder="Email Address" required />
+          </div>
+          <div class="input-field">
+            <input id="phone" type="text" name="phone" class="validate" placeholder="Phone Number" required />
+          </div>
+          <div class="input-field">
+            <input id="company-name" type="text" name="company-name" class="validate" placeholder="Company Name" required />
+          </div>
+          <div class="input-field">
+            <input id="company-department" type="text" name="company-department" class="validate" placeholder="Department" required />
+          </div>
+          <div class="input-field">
+            <input id="company-street-address" type="text" name="company-street-address" class="validate" placeholder="Company Street Address" required />
+          </div>
+          <div class="form-break">
+            <div class="input-field">
+              <input id="company-city" type="text" name="company-city" class="validate" placeholder="Company City" required />
+            </div>
+            <div class="input-field">
+              <input id="company-state" type="text" name="company-state" class="validate" placeholder="Company State" required />
+            </div>
+            <div class="input-field">
+              <input id="company-zip-code" type="text" name="company-zip-code" class="validate" placeholder="Company Zip Code" required />
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <div id="tos">

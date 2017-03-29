@@ -56,6 +56,54 @@ body {
   justify-content: space-between;
 }
 
+/*PAYMENT*/
+
+#payment-selector {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
+}
+
+#payment-selector.hide {
+  display: none;
+}
+
+.payment-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #7f5dfc;
+  background-color: white;
+  height: 10vw;
+  width: 45%;
+  cursor: pointer;
+}
+
+.payment-card:hover {
+  /*background-color: #7f5dfc;*/
+  color: white;
+  transform: scale(1.1);
+}
+
+.payment-card a {
+  color: #7f5dfc;
+  outline:0;
+  text-transform: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#card-form, #invoice-form {
+  display: none;
+}
+
+#card-form.show, #invoice-form.show {
+  display: block;
+}
+
 /*TOS*/
 
 #tos {
