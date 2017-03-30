@@ -306,6 +306,14 @@ img {
   line-height: 0;
 }
 
+.bullet {
+  list-style-type: disc !important;
+}
+
+.indented {
+  margin-left: 30px;
+}
+
 /*REQUEST DEMO MODAL AND FORM*/
 
 .modal {
