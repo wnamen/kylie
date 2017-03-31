@@ -49,18 +49,17 @@
       <span class="nav-title"> Kylie.ai</span>
     </a>
     <ul class="nav nav-list hide-on-small-and-down">
-      <li><a class="black-font">How it works</a></li>
-      <li><a class="black-font">Features</a></li>
-      <li><a class="black-font">Integrations</a></li>
-      <li><a class="black-font">Security</a></li>
-      <li><a class="black-font">FAQ</a></li>
+      <li><a data-link="how-it-works" href="#how-it-works" class="black-font nav-link">How it works</a></li>
+      <li><a data-link="features" href="#features" class="black-font nav-link">Features</a></li>
+      <li><a data-link="integrations" href="#integrations" class="black-font nav-link">Integrations</a></li>
+      <li><a data-link="security" href="#security" class="black-font nav-link">Security</a></li>
       <li><a data-target="demo-form" class="btn waves-effect waves-light waves-ripple">Request Demo</a></li>
       <li><a data-target="sign-in-form" class="black-font">Sign In</a></li>
     </ul>
   </div>
 
     <!-- INTRO MESSAGE AND HERO IMAGE  -->
-    <div id="intro-container" class="row">
+    <div id="intro" class="row">
       <div class="col s12 m5 l5 push-m7 push-l7">
         <img src="../../public/images/Final_production_hero_image.png">
       </div>
@@ -73,8 +72,9 @@
       </div>
     </div>
 
-    <!-- INTRO BAR  -->
-    <div id="intro-bar-container" class="row dark-grey-background">
+    <!-- HOW IT WORKS  -->
+    <a name="how-it-works"></a>
+    <div id="how-it-works" class="row dark-grey-background">
       <div class="col s12 m12 l12">
         <div>
           <a class="mustard-font" href><h3>Connect</h3></a>
@@ -92,8 +92,9 @@
     </div>
 
     <!-- FEATURES -->
-    <div id="features-container" class="container">
-      <div class="features row">
+    <a name="features"></a>
+    <div id="features" class="container">
+      <div class="features-container row">
         <div class="col m4 l4 offset-m1 offset-l1 feature-images">
           <img class="features-img" src="../../public/images/Final_production_draft_image.png">
         </div>
@@ -105,7 +106,7 @@
         </div>
       </div>
 
-      <div class="features row">
+      <div class="features-container row">
         <div class="col m4 l4 offset-l1 offset-m1  push-m6 push-l6 feature-images">
           <img class="features-img" src="../../public/images/Final_production_24hr_image.png">
         </div>
@@ -117,7 +118,7 @@
         </div>
       </div>
 
-      <div class="features row">
+      <div class="features-container row">
         <div class="col m4 l4 offset-l1 offset-m1  feature-images">
           <img class="features-img" src="../../public/images/Final_production_autopilot_image.png">
         </div>
@@ -131,12 +132,13 @@
     </div>
 
   <!-- INTEGRATIONS  -->
-  <div id="integrations-container" class="row trans-green-background">
+  <a name="integrations"></a>
+  <div id="integrations" class="row trans-green-background">
     <div class="col s12 m12 l12">
       <h3>Some of our popular integrations</h3>
       <div id="integrations-view">
-        <img id="view-img" src="../images/zendesk.svg" />
-        <p id="view-text">With Kylie, empower your help desk with automated replies, tagging, and all the wonderful routing your heart desires.</p>
+        <img id="view-img" src="../images/zendesk.png" />
+        <!-- <p id="view-text">With Kylie, empower your help desk with automated replies, tagging, and all the wonderful routing your heart desires.</p> -->
       </div>
       <div id="integrations-bar">
         <img data-view="zendesk" src="../images/zendesk.svg" />
@@ -153,7 +155,8 @@
   </div>
 
   <!-- SECURITY  -->
-  <div id="security-container" class="row">
+  <a name="security"></a>
+  <div id="security" class="row">
     <div class="col s12 m12 l12">
       <h3>Security</h3>
 
@@ -206,7 +209,7 @@
   </div>
 
   <!-- DEMO REQUEST FORM  -->
-  <div id="demo-request-container" class="row dark-grey-background">
+  <div id="demo-request" class="row dark-grey-background">
     <div class="col s12 m7 l7">
       <h5 class="mustard-font">Enhance your customer experience and retention.</h5>
       <ul>

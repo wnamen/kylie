@@ -12,24 +12,24 @@ img {
 
 /*INTRO MESSAGE AND HERO IMAGE*/
 
-#intro-container {
+#intro {
   padding: 20vh 8vw 15vh 8vw;
 }
 
 @media only screen and (max-width: 600px) {
-  #intro-container, .feature-text h3, .feature-text p {
+  #intro, .feature-text h3, .feature-text p {
     text-align: center;
   }
 }
 
-#intro-container div h5 {
+#intro div h5 {
   font-size: 2em;
   font-family: 'Open Sans', helvetica, sans-serif;
   font-weight: 300;
   margin: 7.5vh auto;
 }
 
-#intro-container div a {
+#intro div a {
   font-size: 1.5em;
   font-family: 'Open Sans', helvetica, sans-serif;
   font-weight: 300;
@@ -40,17 +40,17 @@ img {
 
 /*INTRO-BAR */
 
-#intro-bar-container {
+#how-it-works {
   height: 100%;
   display: flex;
   align-items: center;
 }
 
-#intro-bar-container div {
+#how-it-works div {
   display: flex;
 }
 
-#intro-bar-container div div {
+#how-it-works div div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,24 +59,20 @@ img {
   margin: 3vw;
 }
 
-#intro-bar-container, #demo-request-container div p {
+#how-it-works, #demo-request div p {
   font-family: 'Open Sans', helvetica, sans-serif;
   font-weight: 300;
 }
 
-#intro-bar-container div div h3 {
+#how-it-works div div h3 {
   font-family: 'Merriweather', garamond, serif;
   font-weight: 300;
 
 }
 
-#intro-bar-container div div h3:hover {
-  transform: scale(1.2);
-}
-
 
 @media only screen and (max-width: 830px) {
-  #intro-bar-container div {
+  #how-it-works div {
     display: flex;
     flex-direction: column;
   }
@@ -84,18 +80,18 @@ img {
 
 /*SECURITY BAR*/
 
-#security-container > div {
+#security > div {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 3vw auto;
 }
 
-#security-container div > img {
+#security div > img {
   align-self: center;
 }
 
-#security-container div > div {
+#security div > div {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -111,13 +107,17 @@ img {
   font-weight: 300;
 }
 
+.security-row h6 {
+  font-family: 'Merriweather', garamond, serif;
+}
+
 @media only screen and (max-width: 600px) {
-  #security-container div {
+  #security div {
     display: flex;
     flex-direction: column !important;
   }
 
-  #security-container div div {
+  #security div div {
     margin: 10vh 0;
   }
 
@@ -131,11 +131,11 @@ img {
 }
 
 /*FEATURES*/
-#features-container {
+#features {
   margin: 10vh auto;
 }
 
-.features {
+.features-container {
   padding: 6em 0;
 }
 
@@ -164,18 +164,18 @@ img {
 
 /*INTEGRATIONS*/
 
-#integrations-container {
+#integrations {
   padding: 10vh 0;
 }
 
-#integrations-container div {
+#integrations div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-#integrations-container div #integrations-bar, #integrations-container div #integrations-view {
+#integrations div #integrations-bar, #integrations div #integrations-view {
   display: inline-flex;
   flex-direction: row;
   justify-content: center;
@@ -183,34 +183,37 @@ img {
 
 #integrations-view {
   height: 25vw;
+  overflow: hidden
 }
 
-#integrations-view img, #integrations-view p {
+#integrations-view img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}
+
+/*#integrations-view img, #integrations-view p {
   margin: 1em;
 }
 
 #integrations-view img {
   max-width: 20%;
   max-height: 70%;
-}
+}*/
 
-#integrations-view p {
+/*#integrations-view p {
   font-size: 2.2vw;
   font-family: 'Open Sans', helvetica, sans-serif;
   font-weight: 300;
   max-width: 25%;
 
-}
+}*/
 
 #integrations-bar img {
   margin: 1em;
   padding: 1em;
   width: 7.5%;
   height: 100%;
-}
-
-#integrations-bar img:hover, #integrate-anywhere:hover {
-  transform: scale(1.2);
 }
 
 #integrate-anywhere {
@@ -238,7 +241,7 @@ img {
 }
 
 @media only screen and (max-width: 700px) {
-  #integrations-container div h3 {
+  #integrations div h3 {
     font-size: 5vw;
   }
   #integrations-bar img {
@@ -261,44 +264,44 @@ img {
   #integrations-view {
     margin: 5vh 0;
   }
-  #integrations-view img, #integrations-view p {
-    max-width: 50%;
-  }
-  #integrations-view img {
-    max-height: 80%;
-  }
-  #integrations-view p {
+
+  /*#integrations-view img {
+    max-width: 100%;
+    max-height: 100%;
+  }*/
+
+  /*#integrations-view p {
     font-size: 3.6vw;
-  }
+  }*/
 }
 
 /*DEMO REQUEST FORM*/
 
-#demo-request-container {
+#demo-request {
   padding: 12vh 5vw;
   color: white;
 }
 
-#demo-request-container div h5{
+#demo-request div h5{
   font-size: 1.75em;
 }
 
-#demo-request-container div p {
+#demo-request div p {
   font-size: 1.5em;
   color: white;
 
 }
 
-#demo-request-container div .input-field input {
+#demo-request div .input-field input {
   background-color: white;
   border: none;
 }
 
-#demo-request-container div .input-field .select-wrapper .caret {
+#demo-request div .input-field .select-wrapper .caret {
   z-index: 9999999;
 }
 
-#demo-request-container div .btns .btn {
+#demo-request div .btns .btn {
   margin-top: 1em;
   width: 100%;
   font-size: 1.5em;
