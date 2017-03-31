@@ -37,6 +37,7 @@
   <!-- SCRIPTS -->
   <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="../../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+  <script type="text/javascript" src="../scripts/forms.js"></script>
   <script type="text/javascript" src="../scripts/index.js"></script>
 
 </head>
@@ -53,7 +54,7 @@
       <li><a data-link="features" href="#features" class="black-font nav-link">Features</a></li>
       <li><a data-link="integrations" href="#integrations" class="black-font nav-link">Integrations</a></li>
       <li><a data-link="security" href="#security" class="black-font nav-link">Security</a></li>
-      <li><a data-target="demo-form" class="btn waves-effect waves-light waves-ripple">Request Demo</a></li>
+      <li><a data-target="demo-modal" class="btn waves-effect waves-light waves-ripple">Request Demo</a></li>
       <li><a data-target="sign-in-form" class="black-font">Sign In</a></li>
     </ul>
   </div>
@@ -67,7 +68,7 @@
       <div class="col m6 pull-m5 l6 pull-l5 s12">
         <h3 >Customer Support, Solved!</h3>
         <h5 >Kylie analyzes customer support messages to provide agents with automated responses.</h5>
-        <a data-target="demo-form" class="btn waves-effect waves-light waves-ripple">Request demo</a>
+        <a data-target="demo-modal" class="btn waves-effect waves-light waves-ripple">Request demo</a>
         <!-- <a class="btn btn-inverse waves-effect waves-light waves-ripple">Try it now</a> -->
       </div>
     </div>
@@ -220,7 +221,7 @@
       </ul>
       <p>Request a demo and see how Kylie can help your business.</p>
     </div>
-    <div class="col s12 m4 l4 offset-m1 offset-l1">
+    <div class="demo-form col s12 m4 l4 offset-m1 offset-l1">
       <div class="input-field">
         <input id="name" type="text" name="name" class="validate" placeholder="Name" required>
       </div>
@@ -234,7 +235,7 @@
         <input id="company-name" type="text" name="company-name" class="validate" placeholder="Company Name" required>
       </div>
       <div class="input-field">
-        <select required>
+        <select name="platform" required>
           <option value="" disabled selected>Choose your platform</option>
           <option value="Salesforce">Salesforce</option>
           <option value="Zendesk">Zendesk</option>
@@ -253,7 +254,7 @@
         </select>
       </div>
       <div class="input-field">
-        <select required>
+        <select name="team-size" required>
           <option value="" disabled selected>Choose your team size</option>
           <option value="1-10">1-10</option>
           <option value="11-50">11-50</option>
@@ -272,7 +273,7 @@
   </div>
 
   <!-- REQUEST DEMO MODAL -->
-  <div id="demo-form" class="modal">
+  <div id="demo-modal" class="modal">
     <div class="modal-content">
       <h4>Tell us about yourself!</h4>
 
@@ -289,7 +290,7 @@
         <input id="company-name" type="text" name="company-name" class="validate" placeholder="Company Name" required>
       </div>
       <div class="input-field">
-        <select required>
+        <select name="platform" required>
           <option value="" disabled selected>Choose your platform</option>
           <option value="Salesforce">Salesforce</option>
           <option value="Zendesk">Zendesk</option>
@@ -308,7 +309,7 @@
         </select>
       </div>
       <div class="input-field">
-        <select required>
+        <select name="team-size" required>
           <option value="" disabled selected>Choose your team size</option>
           <option value="1-10">1-10</option>
           <option value="11-50">11-50</option>
@@ -326,9 +327,9 @@
     </div>
   </div>
 
-  <!-- REQUEST DEMO MODAL -->
+  <!-- SIGN IN MODAL -->
   <div id="sign-in-form" class="modal">
-    <div class="modal-content">
+    <div class="sign-in modal-content">
       <h4>Welcome Back!</h4>
 
       <div class="input-field">

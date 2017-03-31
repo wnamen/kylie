@@ -38,6 +38,7 @@
   <!-- SCRIPTS -->
   <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="../../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+  <script type="text/javascript" src="../scripts/forms.js"></script>
   <script type="text/javascript" src="../scripts/privacy.js"></script>
 
 </head>
@@ -51,7 +52,7 @@
     </a>
     <ul class="nav nav-list hide-on-small-and-down">
 
-      <li><a data-target="demo-form" class="btn waves-effect waves-light waves-ripple">Request Demo</a></li>
+      <li><a data-target="demo-modal" class="btn waves-effect waves-light waves-ripple">Request Demo</a></li>
       <li><a data-target="sign-in-form" class="black-font">Sign In</a></li>
     </ul>
   </div>
@@ -157,7 +158,7 @@
   </div>
 
   <!-- REQUEST DEMO MODAL -->
-  <div id="demo-form" class="modal">
+  <div id="demo-modal" class="modal">
     <div class="modal-content">
       <h4>Tell us about yourself!</h4>
 
@@ -174,7 +175,7 @@
         <input id="company-name" type="text" name="company-name" class="validate" placeholder="Company Name" required>
       </div>
       <div class="input-field">
-        <select required>
+        <select name="platform" required>
           <option value="" disabled selected>Choose your platform</option>
           <option value="Salesforce">Salesforce</option>
           <option value="Zendesk">Zendesk</option>
@@ -193,7 +194,7 @@
         </select>
       </div>
       <div class="input-field">
-        <select required>
+        <select name="team-size" required>
           <option value="" disabled selected>Choose your team size</option>
           <option value="1-10">1-10</option>
           <option value="11-50">11-50</option>

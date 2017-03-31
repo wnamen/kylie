@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kylie.ai</title>
+
+  <!-- FAVICON -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../../public/images/favicon.ico/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../../public/images/favicon.ico/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../../public/images/favicon.ico/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../../public/images/favicon.ico/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../../public/images/favicon.ico/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../../public/images/favicon.ico/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../../public/images/favicon.ico/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../../public/images/favicon.ico/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../public/images/favicon.ico/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="../../public/images/favicon.ico/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../public/images/favicon.ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../../public/images/favicon.ico/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../public/images/favicon.ico/favicon-16x16.png">
+  <link rel="manifest" href="../../public/images/favicon.ico/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff ">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff ">
+
+  <!-- STYLES -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400|Open+Sans:300,400,500" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../../node_modules/materialize-css/dist/css/materialize.css" rel="stylesheet">
+  <link href="../styles/buttons.css" rel="stylesheet">
+  <link href="../styles/styles.css" rel="stylesheet">
+  <link href="../styles/forms.css" rel="stylesheet">
+  <link href="../styles/footer.css" rel="stylesheet">
+  <link href="../styles/dashboard.css" rel="stylesheet">
+
+  <!-- SCRIPTS -->
+  <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="../../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+  <script type="text/javascript" src="../scripts/dashboard.js"></script>
+
+</head>
+
+<body>
+  <div class="row">
+
+    <div id="side-navbar" class="dark-grey-background">
+      <div class="nav-options">
+        <img class="nav-logo" src="../../public/images/favicon.ico/favicon-96x96.png" />
+        <i data-view="manager" class="fa fa-user fa-2x" aria-hidden="true"></i>
+        <i data-view="statistics" class="fa fa-bar-chart fa-2x" aria-hidden="true"></i>
+        <i data-view="settings" class="fa fa-cog fa-2x" aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <div id="dash-view" class="col s8 m11 l11 offset-s3 offset-m1 offset-l1">
+      <div id="manager-view" class="">
+        <div class="dash-title">
+          <h3>Ai Manager - </h3>
+          <h3 class="current ">Zendesk</h3>
+        </div>
+
+        <div class="manager-view-selector">
+          <div data-view="zendesk" class="grey-background">
+            <img src="../images/zendesk.png" />
+          </div>
+          <div data-view="twitter" class="grey-background">
+            <img src="../images/twitter.png" />
+          </div>
+          <div class="add-selector grey-border">
+            <a class="grey-font">&#43;</a>
+          </div>
+        </div>
+
+        <div class="manager-stats">
+          <div>
+            <p>Drafts Created:</p>
+            <p id="drafts-created-results">104</p>
+          </div>
+          <div>
+            <p>Messages Automatically Sent:</p>
+            <p id="messages-auto-sent">305</p>
+          </div>
+        </div>
+
+        <div class="manager-cards">
+          <div class="manager-card">
+            <div class="grey-border">
+              <img class="card-logo" src="../../public/images/favicon.ico/favicon-96x96.png" />
+            </div>
+
+            <p>support@rogers.com</p>
+          </div>
+
+          <div class="manager-card">
+            <div class="grey-border">
+              <img class="card-logo" src="../../public/images/favicon.ico/favicon-96x96.png" />
+            </div>
+
+            <p>@rogersSupport</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="settings-view" class="active">
+        <div class="dash-title">
+          <h3>Settings</h3>
+        </div>
+
+        <div id="settings-container">
+          <div class="settings-options">
+            <h5>Roles</h5>
+            <h5>Users</h5>
+            <h5>Security</h5>
+            <h5>Privacy</h5>
+            <h5>Billing</h5>
+          </div>
+          <div class="settings-controller grey-border">
+            <div class="settings-header">
+              <p>Roles</p>
+
+              <div>
+                <p>Add</p>
+                <p>Delete</p>
+              </div>
+            </div>
+
+            <div id="controller-cards">
+              <div>
+              </div>
+              <div>
+              </div>
+            </div>
+          </div>
+          <div class="settings-editor grey-border">
+            <div class="settings-header">
+              <input value="Manager"></input>
+              <p>Permissions</p>
+
+              <div>
+                <p>Save</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <center><footer id="footer-container" class="medium-padding-top">
+        <img src="../../public/images/Final_production_hi5_image.png">
+        <div>
+          <a class="green-font" href="./tos.html">Terms of Service</a> |
+          <a class="green-font" href="./privacy.html">Privacy Policy</a>
+        </div>
+        <div>
+          Copyright © 2016-2017 Tier5International, Inc.
+        </div>
+      </footer></center>
+
+
+    </div>
+  </div>
+
+
+</body>
+</html>

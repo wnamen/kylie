@@ -10,8 +10,16 @@
   color: #647382;
 }
 
+.light-grey-font {
+  color: #f8f8f8;
+}
+
+.grey-font {
+  color: #ECECEC;
+}
+
 .dark-grey-font {
-  color: #647382
+  color: #647382;
 }
 
 .green-font {
@@ -43,6 +51,10 @@
   background-color: #f8f8f8;
 }
 
+.grey-background{
+  background-color: #ECECEC;
+  }
+
 .dark-grey-background {
   background-color: #647382;
 }
@@ -53,6 +65,14 @@
 
 .purple-border {
   border: 2px solid #7f5dfc;
+}
+
+.light-grey-border {
+  border: 2px solid  #f8f8f8;
+}
+
+.grey-border {
+  border: 2px solid #ECECEC;
 }
 
 .no-margins {
@@ -92,7 +112,7 @@
 }
 
 ::selection {
-   background-color: #d3f1ed ;
+  background-color: #d3f1ed ;
 }
 
 .trans-green-background {

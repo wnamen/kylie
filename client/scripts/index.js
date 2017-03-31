@@ -30,16 +30,10 @@ $(document).ready(function() {
 
   $('.nav-link').click(scrollToAnchor);
 
-  // $('#integrations-bar img').click(handleIntegrationsClick)
-
-  $(".dropdown-button").dropdown();
   $('.modal').modal();
   $('select').material_select();
+  // $('#integrations-bar img').click(handleIntegrationsClick)
 });
-
-function welcomeRedirect(){
-  location.href = "./welcome.html";
-}
 
 // function handleIntegrationsClick() {
 //   $('#integrations-view').children().fadeOut("slow");
@@ -54,6 +48,8 @@ function welcomeRedirect(){
 //     $('#integrations-view').children().fadeIn("slow")
 //   }, 700);
 // }
+
+// THESE FUNCTIONS HANDLE THE INTEGRATION ANIMATION ON MOBILE
 
 function animateIntegrations(position) {
   var current = position || 'zendesk',
@@ -85,11 +81,12 @@ function isSmall() {
   if ($(window).width() <= 600) {
     return true;
   }
-
   return false;
 }
 
-function scrollToAnchor(){
+// THIS METHOD HANDLES THE SCROLLING ANIMATION
+
+function scrollToAnchor() {
     var destination = $(this).data('link');
     var aTag = $("a[name='"+ destination +"']");
     $('html,body').animate({scrollTop: aTag.offset().top},'slow');

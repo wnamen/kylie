@@ -1,0 +1,173 @@
+/* GENERAL STYLING */
+
+body {
+  background-color: #fefdfb;
+  font-family: 'Merriweather', garamond, serif;
+}
+
+/*SIDE NAV*/
+
+#side-navbar {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  height: 100%;
+  width: 6%;
+}
+
+.nav-logo {
+  width: 50%;
+}
+
+.nav-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white
+}
+
+.nav-options i, .nav-options img {
+  margin: 2vh 0 5vh 0;
+}
+
+.nav-options i {
+  cursor: pointer;
+}
+
+/*DASH-VIEW*/
+
+#dash-view {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 3vw 5vw;
+}
+
+#manager-view, #statistics-view, #settings-view {
+  display: none;
+}
+
+.dash-title {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1vw;
+}
+
+.active {
+  display: block !important;
+}
+
+.manager-view-selector {
+  display: flex;
+  flex-direction: row;
+}
+
+.manager-view-selector div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1vw;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+
+.manager-view-selector div img {
+  width: 70%;
+}
+
+.add-selector a {
+  font-size: 3.5em;
+  font-weight: 300;
+}
+
+.manager-stats {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
+  width: 30%;
+  margin: 5vw 0;
+  padding: 0 !important;
+}
+
+.manager-stats div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.manager-cards {
+  display: flex;
+  flex-direction: row;
+}
+
+.manager-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5vw;
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
+}
+
+.manager-card div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  padding: 1vw;
+}
+
+.manager-card div img {
+  width: 70%;
+
+}
+
+/*SETTINGS*/
+
+#settings-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.settings-options, .settings-controller, .settings-editor {
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
+  margin-right: 3vw;
+}
+
+.settings-controller, .settings-editor {
+  width: 35vw;
+  height: 70vh;
+  padding: 0.4vw 1vw;
+}
+
+.settings-options h5 {
+  margin: 0 0 2vw 0;
+}
+
+.settings-header p {
+  margin: 0;
+  padding-bottom: 1vh;
+}
+
+.settings-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 2px solid #ECECEC;
+}
+
+.settings-header div {
+  display: inline-flex;
+  flex-direction: row;
+}
+
+.settings-header div p {
+  margin-left: 1vw;
+}
