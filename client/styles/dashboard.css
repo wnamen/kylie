@@ -171,3 +171,20 @@ body {
 .settings-header div p {
   margin-left: 1vw;
 }
+
+.controller-card {
+  margin-bottom: 2vw;
+}
+
+.controller-title {
+  
+}
+
+.controller-description {
+  margin-left: 2vw;
+  font-size: 0.9em;
+}
+
+.description-title {
+  font-weight: 500;
+}
