@@ -143,17 +143,17 @@ body {
 
 .settings-controller, .settings-editor {
   width: 35vw;
-  height: 70vh;
   padding: 0.4vw 1vw;
 }
 
 .settings-options h5 {
   margin: 0 0 2vw 0;
+  font-weight: 300;
+  cursor: pointer;
 }
 
 .settings-header p {
   margin: 0;
-  padding-bottom: 1vh;
 }
 
 .settings-header {
@@ -161,23 +161,48 @@ body {
   flex-direction: row;
   justify-content: space-between;
   border-bottom: 2px solid #ECECEC;
+  margin-bottom: 1vw;
 }
 
 .settings-header div {
   display: inline-flex;
   flex-direction: row;
+  padding-bottom: 1vh;
+}
+
+.settings-header div input {
+  border: 1px solid #ECECEC;
+  height: 100%;
+  width: 30%;
+  text-align: center;
+  margin: 0;
 }
 
 .settings-header div p {
   margin-left: 1vw;
+  cursor: pointer;
+}
+
+#controller-cards {
+  overflow-y: scroll;
+  height: 60vh;
 }
 
 .controller-card {
-  margin-bottom: 2vw;
+  margin-bottom: 1vw;
+  padding: 0.5vw;
+}
+
+.controller-card:hover {
+  background-color: #ECECEC;
+}
+
+.active-card {
+  background-color: #ECECEC;
 }
 
 .controller-title {
-  
+  margin-top: 0;
 }
 
 .controller-description {
@@ -187,4 +212,31 @@ body {
 
 .description-title {
   font-weight: 500;
+}
+
+#editor-options {
+  display: flex;
+  flex-direction: column;
+}
+
+#editor-options .input-field label{
+  height: 2em;
+}
+
+#saved-notification {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  float: right;
+  width: 15%;
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
+  padding: 1vh;
+  margin: 3vw;
+}
+
+#saved-notification p {
+  margin: 0;
+  color: white;
 }

@@ -120,32 +120,87 @@
               <p>Roles</p>
 
               <div>
-                <p>Add</p>
+                <p data-target="add-role-modal">Add</p>
                 <p>Delete</p>
               </div>
             </div>
 
             <div id="controller-cards">
-              <div class="controller-card">
+              <div id="admin-card" data-role="admin" class="controller-card active-card">
                 <p class="controller-title">Admin</p>
-                <p class="controller-description">An <span class="description-title">Admin</span> can create, edit, & delete other roles, as well as manage permissions for Admins and all other roles.
+                <p class="controller-description">An <span class="description-title">Admin</span> can create, edit, & delete other roles, as well as manage permissions for Admins and all other roles.</p>
               </div>
-              <div class="controller-card">
+              <div id="manager-card" data-role="manager" class="controller-card">
                 <p class="controller-title">Manager</p>
-                <p class="controller-description">A <span class="description-title">Manager</span> can create, edit, & delete other roles, as well as manage permissions for Admins and all other roles.
+                <p class="controller-description">A <span class="description-title">Manager</span> can create, edit, & delete other roles, as well as manage permissions for Admins and all other roles.</p>
               </div>
+
             </div>
           </div>
           <div class="settings-editor grey-border">
             <div class="settings-header">
-              <input value="Manager"></input>
-              <p>Permissions</p>
+              <div>
+                <input value="Manager"></input>
+                <p>Permissions</p>
+              </div>
 
               <div>
                 <p>Save</p>
               </div>
             </div>
+
+            <div id="editor-options">
+              <div>
+                <input type="checkbox" name="create-user" class="validate"/>
+                <label for="create-user">Create User</label>
+              </div>
+              <div>
+                <input type="checkbox" name="edit-user" class="validate"/>
+                <label for="edit-user">Edit User</label>
+              </div>
+              <div>
+                <input type="checkbox" name="delete-user" class="validate"/>
+                <label for="delete-user">Delete User</label>
+              </div>
+              <div>
+                <input type="checkbox" name="assign-user-roles" class="validate"/>
+                <label for="assign-user-roles">Assign User Roles</label>
+              </div>
+              <div>
+                <input type="checkbox" name="set-global-permissions" class="validate"/>
+                <label for="set-global-permissions">Set Global Permissions</label>
+              </div>
+              <div>
+                <input type="checkbox" name="change-role-permissions" class="validate"/>
+                <label for="change-role-permissions">Change Role Permissions</label>
+              </div>
+              <div>
+                <input type="checkbox" name="assign-models" class="validate"/>
+                <label for="assign-models">Assign Models</label>
+              </div>
+              <div>
+                <input type="checkbox" name="create-models" class="validate"/>
+                <label for="create-models">Create Models</label>
+              </div>
+              <div>
+                <input type="checkbox" name="merge-models" class="validate"/>
+                <label for="merge-models">Merge Models</label>
+              </div>
+              <div>
+                <input type="checkbox" name="add-integrations" class="validate"/>
+                <label for="add-integrations">Add Integrations</label>
+              </div>
+              <div>
+                <input type="checkbox" name="adjust-confidence-thresholds" class="validate"/>
+                <label for="adjust-confidence-thresholds">Adjust Confidence Thresholds</label>
+              </div>
+            </div>
           </div>
+        </div>
+
+        <div id="saved-notification" class="dark-grey-background">
+          <i class="fa fa-circle fa-1x green-font" aria-hidden="true"></i>
+          <p>Changes Saved</p>
         </div>
       </div>
 
@@ -163,6 +218,24 @@
 
 
     </div>
+  </div>
+
+  <!-- ADD ROLE MODAL -->
+  <div id="add-role-modal" class="modal">
+    <form class="modal-content">
+      <h3>Complete the fields below to create a new role</h3>
+
+      <div class="input-field">
+        <input id="role-name" type="text" name="role-name" class="validate" placeholder="Role Name" required>
+      </div>
+      <div class="input-field">
+        <input id="role-description" type="text" name="role-description" class="validate" placeholder="Role Description" required>
+      </div>
+
+      <div class="btns">
+        <a type="button" class="btn waves-effect waves-light waves-ripple modal-close">Create</a>
+      </div>
+    </form>
   </div>
 
 
