@@ -54,7 +54,7 @@ body {
   margin-bottom: 1vw;
 }
 
-.active {
+.active-block {
   display: block !important;
 }
 
@@ -183,6 +183,10 @@ body {
   cursor: pointer;
 }
 
+#roles-container, #users-container, #security-container, #privacy-container, #billing-container {
+  display: none;
+}
+
 #controller-cards {
   overflow-y: scroll;
   height: 60vh;
@@ -224,7 +228,7 @@ body {
 }
 
 #saved-notification {
-  display: flex;
+  display: none;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
@@ -239,4 +243,8 @@ body {
 #saved-notification p {
   margin: 0;
   color: white;
+}
+
+.active-flex {
+  display: flex !important;
 }

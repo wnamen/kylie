@@ -54,17 +54,17 @@
     </div>
 
     <div id="dash-view" class="col s8 m11 l11 offset-s3 offset-m1 offset-l1">
-      <div id="manager-view" class="">
+      <div id="manager-view" class="active-block">
         <div class="dash-title">
-          <h3>Ai Manager - </h3>
-          <h3 class="current ">Zendesk</h3>
+          <h3>Ai Manager -&nbsp;</h3>
+          <h3 class="current-integration">Zendesk</h3>
         </div>
 
         <div class="manager-view-selector">
-          <div data-view="zendesk" class="grey-background">
+          <div data-integration="Zendesk" class="grey-background">
             <img src="../images/zendesk.png" />
           </div>
-          <div data-view="twitter" class="grey-background">
+          <div data-integration="Twitter" class="grey-background">
             <img src="../images/twitter.png" />
           </div>
           <div class="add-selector grey-border">
@@ -102,103 +102,116 @@
         </div>
       </div>
 
-      <div id="settings-view" class="active">
+      <div id="settings-view" class="">
         <div class="dash-title">
           <h3>Settings</h3>
         </div>
 
         <div id="settings-container">
           <div class="settings-options">
-            <h5>Roles</h5>
-            <h5>Users</h5>
-            <h5>Security</h5>
-            <h5>Privacy</h5>
-            <h5>Billing</h5>
+            <h5 data-settings-view="roles" class="settings-option">Roles</h5>
+            <h5 data-settings-view="users" class="settings-option">Users</h5>
+            <h5 data-settings-view="security" class="settings-option">Security</h5>
+            <h5 data-settings-view="privacy" class="settings-option">Privacy</h5>
+            <h5 data-settings-view="billing" class="settings-option">Billing</h5>
           </div>
-          <div class="settings-controller grey-border">
-            <div class="settings-header">
-              <p>Roles</p>
 
-              <div>
-                <p data-target="add-role-modal">Add</p>
-                <p>Delete</p>
+          <!-- ROLES -->
+          <div id="roles-container" class="active-flex">
+            <div class="settings-controller grey-border">
+              <div class="settings-header">
+                <p>Roles</p>
+
+                <div>
+                  <p data-target="add-role-modal">Add</p>
+                  <p class="delete-card">Delete</p>
+                </div>
+              </div>
+
+              <div id="controller-cards">
+                <div id="admin-card" data-role="Admin" class="controller-card active-card">
+                  <p class="controller-title">Admin</p>
+                  <p class="controller-description">An <span class="description-title">Admin</span> can create, edit, & delete other roles, as well as manage permissions for Admins and all other roles.</p>
+                </div>
+                <div id="manager-card" data-role="Manager" class="controller-card">
+                  <p class="controller-title">Manager</p>
+                  <p class="controller-description">A <span class="description-title">Manager</span> can create, edit, & delete other roles, as well as manage permissions for Admins and all other roles.</p>
+                </div>
+
               </div>
             </div>
+            <div class="settings-editor grey-border">
+              <div class="settings-header">
+                <div>
+                  <input id="editor-input" value="Admin"></input>
+                  <p>Permissions</p>
+                </div>
 
-            <div id="controller-cards">
-              <div id="admin-card" data-role="admin" class="controller-card active-card">
-                <p class="controller-title">Admin</p>
-                <p class="controller-description">An <span class="description-title">Admin</span> can create, edit, & delete other roles, as well as manage permissions for Admins and all other roles.</p>
-              </div>
-              <div id="manager-card" data-role="manager" class="controller-card">
-                <p class="controller-title">Manager</p>
-                <p class="controller-description">A <span class="description-title">Manager</span> can create, edit, & delete other roles, as well as manage permissions for Admins and all other roles.</p>
+                <div>
+                  <p class="save-btn">Save</p>
+                </div>
               </div>
 
+              <div id="editor-options">
+                <div>
+                  <input type="checkbox" name="create-user" class="validate"/>
+                  <label for="create-user">Create User</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="edit-user" class="validate"/>
+                  <label for="edit-user">Edit User</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="delete-user" class="validate"/>
+                  <label for="delete-user">Delete User</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="assign-user-roles" class="validate"/>
+                  <label for="assign-user-roles">Assign User Roles</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="set-global-permissions" class="validate"/>
+                  <label for="set-global-permissions">Set Global Permissions</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="change-role-permissions" class="validate"/>
+                  <label for="change-role-permissions">Change Role Permissions</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="assign-models" class="validate"/>
+                  <label for="assign-models">Assign Models</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="create-models" class="validate"/>
+                  <label for="create-models">Create Models</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="merge-models" class="validate"/>
+                  <label for="merge-models">Merge Models</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="add-integrations" class="validate"/>
+                  <label for="add-integrations">Add Integrations</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="adjust-confidence-thresholds" class="validate"/>
+                  <label for="adjust-confidence-thresholds">Adjust Confidence Thresholds</label>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="settings-editor grey-border">
-            <div class="settings-header">
-              <div>
-                <input value="Manager"></input>
-                <p>Permissions</p>
-              </div>
 
-              <div>
-                <p>Save</p>
-              </div>
-            </div>
-
-            <div id="editor-options">
-              <div>
-                <input type="checkbox" name="create-user" class="validate"/>
-                <label for="create-user">Create User</label>
-              </div>
-              <div>
-                <input type="checkbox" name="edit-user" class="validate"/>
-                <label for="edit-user">Edit User</label>
-              </div>
-              <div>
-                <input type="checkbox" name="delete-user" class="validate"/>
-                <label for="delete-user">Delete User</label>
-              </div>
-              <div>
-                <input type="checkbox" name="assign-user-roles" class="validate"/>
-                <label for="assign-user-roles">Assign User Roles</label>
-              </div>
-              <div>
-                <input type="checkbox" name="set-global-permissions" class="validate"/>
-                <label for="set-global-permissions">Set Global Permissions</label>
-              </div>
-              <div>
-                <input type="checkbox" name="change-role-permissions" class="validate"/>
-                <label for="change-role-permissions">Change Role Permissions</label>
-              </div>
-              <div>
-                <input type="checkbox" name="assign-models" class="validate"/>
-                <label for="assign-models">Assign Models</label>
-              </div>
-              <div>
-                <input type="checkbox" name="create-models" class="validate"/>
-                <label for="create-models">Create Models</label>
-              </div>
-              <div>
-                <input type="checkbox" name="merge-models" class="validate"/>
-                <label for="merge-models">Merge Models</label>
-              </div>
-              <div>
-                <input type="checkbox" name="add-integrations" class="validate"/>
-                <label for="add-integrations">Add Integrations</label>
-              </div>
-              <div>
-                <input type="checkbox" name="adjust-confidence-thresholds" class="validate"/>
-                <label for="adjust-confidence-thresholds">Adjust Confidence Thresholds</label>
-              </div>
-            </div>
+          <div id="users-container" class="">
+          </div>
+          <div id="security-container" class="">
+          </div>
+          <div id="privacy-container" class="">
+          </div>
+          <div id="billing-container" class="">
           </div>
         </div>
 
-        <div id="saved-notification" class="dark-grey-background">
+        <div id="saved-notification" class="dark-grey-background animated">
           <i class="fa fa-circle fa-1x green-font" aria-hidden="true"></i>
           <p>Changes Saved</p>
         </div>
