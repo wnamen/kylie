@@ -1,0 +1,422 @@
+/* GENERAL STYLING */
+
+body {
+  background-color: #fefdfb;
+  font-family: 'Merriweather', garamond, serif;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/*INTRO MESSAGE AND HERO IMAGE*/
+
+#intro {
+  padding: 20vh 8vw 15vh 8vw;
+}
+
+@media only screen and (max-width: 600px) {
+  #intro, .feature-text h3, .feature-text p {
+    text-align: center;
+  }
+}
+
+#intro div h5 {
+  font-size: 2em;
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
+  margin: 7.5vh auto;
+}
+
+#intro div a {
+  font-size: 1.5em;
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
+  height: 2em;
+  line-height: 2em;
+  margin: 0.5em auto;
+}
+
+/*INTRO-BAR */
+
+#how-it-works {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#how-it-works div {
+  display: flex;
+}
+
+#how-it-works div div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 3vw;
+}
+
+#how-it-works, #demo-request div p {
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
+}
+
+#how-it-works div div h3 {
+  font-family: 'Merriweather', garamond, serif;
+  font-weight: 300;
+
+}
+
+
+@media only screen and (max-width: 830px) {
+  #how-it-works div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/*SECURITY BAR*/
+
+#security > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3vw auto;
+}
+
+#security div > img {
+  align-self: center;
+}
+
+#security div > div {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 3vw;
+}
+
+.security-row {
+  display: flex;
+  flex-direction: row !important;
+  align-items: initial;
+  margin: 3vw;
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
+}
+
+.security-row h6 {
+  font-family: 'Merriweather', garamond, serif;
+}
+
+@media only screen and (max-width: 600px) {
+  #security div {
+    display: flex;
+    flex-direction: column !important;
+  }
+
+  #security div div {
+    margin: 10vh 0;
+  }
+
+  .security-row {
+    margin: 0 !important;
+  }
+
+  .security-row div {
+    padding: 0 15vw !important;
+  }
+}
+
+/*FEATURES*/
+#features {
+  margin: 10vh auto;
+}
+
+.features-container {
+  padding: 6em 0;
+}
+
+.feature-text {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.feature-text p {
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
+  font-size: 1.3em;
+}
+
+.feat-left {
+  text-align: right;
+}
+
+.feat-right {
+  text-align: left;
+}
+
+.fa-star {
+  color: #28c3b5;
+}
+
+/*INTEGRATIONS*/
+
+#integrations {
+  padding: 10vh 0;
+}
+
+#integrations div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#integrations div #integrations-bar, #integrations div #integrations-view {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#integrations-view {
+  height: 25vw;
+  overflow: hidden
+}
+
+#integrations-view img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%
+}
+
+/*#integrations-view img, #integrations-view p {
+  margin: 1em;
+}
+
+#integrations-view img {
+  max-width: 20%;
+  max-height: 70%;
+}*/
+
+/*#integrations-view p {
+  font-size: 2.2vw;
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
+  max-width: 25%;
+
+}*/
+
+#integrations-bar img {
+  margin: 1em;
+  padding: 1em;
+  width: 7.5%;
+  height: 100%;
+}
+
+#integrate-anywhere {
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
+}
+
+#integrate-anywhere span {
+  font-size: 3em;
+}
+
+#integrate-anywhere p {
+  margin: 0;
+}
+
+.integration-highlight {
+  background-color: white;
+}
+
+@media only screen and (max-width: 900px) {
+  #integrations-bar img {
+    margin: 0;
+    width: 10.5%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #integrations div h3 {
+    font-size: 5vw;
+  }
+  #integrations-bar img {
+    margin: 0;
+    width: 14.5%;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  #integrations-view {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #integrations-bar {
+    display: none !important;
+  }
+
+  #integrations-view {
+    margin: 5vh 0;
+  }
+
+  /*#integrations-view img {
+    max-width: 100%;
+    max-height: 100%;
+  }*/
+
+  /*#integrations-view p {
+    font-size: 3.6vw;
+  }*/
+}
+
+/*DEMO REQUEST FORM*/
+
+#demo-request {
+  padding: 12vh 5vw;
+  color: white;
+}
+
+#demo-request div h5{
+  font-size: 1.75em;
+}
+
+#demo-request div p {
+  font-size: 1.5em;
+  color: white;
+
+}
+
+#demo-request div .input-field input {
+  background-color: white;
+  border: none;
+}
+
+#demo-request div .input-field .select-wrapper .caret {
+  z-index: 9999999;
+}
+
+#demo-request div .btns .btn {
+  margin-top: 1em;
+  width: 100%;
+  font-size: 1.5em;
+  padding: 1.5em 0;
+  line-height: 0;
+}
+
+.bullet {
+  list-style-type: disc !important;
+}
+
+.indented {
+  margin-left: 30px;
+}
+
+/*REQUEST DEMO MODAL AND FORM*/
+
+.modal {
+  width: 48%;
+  max-height: 100%;
+}
+#demo-modal {
+  top: 5% !important;
+}
+
+#demo-modal .modal-content {
+  text-align: center;
+  padding: 7vh 7vw;
+}
+
+#demo-modal .modal-content h3 {
+  margin-bottom: 10vw
+}
+
+#demo-modal .modal-content .input-field {
+  margin: 2vh;
+}
+
+#demo-modal .modal-content .input-field input{
+  width: 100%;
+  margin: 0;
+}
+
+#demo-modal .modal-content .btns {
+  margin: 5vh 2vh;
+}
+
+#demo-modal .modal-content .btns a {
+  width: 100%;
+  height: 3em;
+  line-height: 3em;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 1000px) {
+  #demo-modal {
+    width: 70% !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #demo-modal {
+    width: 85% !important;
+  }
+}
+
+/* SIGN IN MODAL AND FORM*/
+
+#sign-in-form .modal-content {
+  text-align: center;
+  padding: 7vh 7vw;
+}
+
+#sign-in-form .modal-content h3 {
+  margin-bottom: 10vw;
+}
+
+#sign-in-form .modal-content .input-field {
+  margin: 2vh;
+}
+
+#sign-in-form .modal-content .input-field input{
+  width: 100%;
+  margin: 0;
+}
+
+#sign-in-form .modal-content .btns {
+  margin: 5vh 2vh;
+}
+
+#sign-in-form .modal-content .btns a {
+  width: 100%;
+  height: 3em;
+  line-height: 3em;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 1000px) {
+  #sign-in-form {
+    width: 70% !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #sign-in-form {
+    width: 85% !important;
+  }
+}
+
+/*FOOTER*/
+
+#footer-container {
+  margin: 10vh auto;
+}
+
+#footer-container img {
+  width: 15%;
+}
