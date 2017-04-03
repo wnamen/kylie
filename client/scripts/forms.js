@@ -1,7 +1,30 @@
 $(document).ready(function() {
-  $('.demo-form .btn').click(handleFormRequest);
-  $('.modal-content .btn').click(handleModalRequest);
-  $('#sign-in-form .btn').click(handleSignInRequest);
+
+  $('.demo-form').validate({
+    submitHandler: function() {
+
+      $('.demo-form button').text("Thank you - a sales representative will contact you shortly");
+      $('.demo-form button').addClass("demo-form-submit")
+      handleFormRequest();
+    }
+  });
+
+  $('#demo-modal-form').validate({
+    submitHandler: function() {
+      $('#demo-modal-form button').text("Thank you - a sales representative will contact you shortly");
+      $('#demo-modal-form button').addClass("demo-modal-submit")
+
+      handleModalRequest();
+    }
+  });
+
+  $('#signin-form').validate({
+    submitHandler: function() {
+      $('#sign-in-modal').modal('close');
+      handleSignInRequest();
+    }
+  });
+
 });
 
 // THIS METHOD HANDLE THE SIGN IN REQUEST
@@ -20,7 +43,6 @@ function handleFormRequest() {
   var $inputs = $('.demo-form :input');
   var values = captureFormData($inputs);
   var url;
-
   // submitRequest(values, url);
 }
 
