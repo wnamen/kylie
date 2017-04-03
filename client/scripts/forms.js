@@ -1,8 +1,15 @@
 $(document).ready(function() {
 
   $('.demo-form').validate({
+    errorClass: 'error failedValidation',
+    validClass: 'success',
+    highlight: function(element, errorClass, validClass) {
+      $(element).closest('.validate').addClass(errorClass).removeClass(validClass);
+    },
+    unhighlight: function(element, errorClass, validClass) {
+      $(element).closest('.validate').addClass(validClass).removeClass(errorClass);
+    },
     submitHandler: function() {
-
       $('.demo-form button').text("Thank you - a sales representative will contact you shortly");
       $('.demo-form button').addClass("demo-form-submit")
       handleFormRequest();
@@ -10,6 +17,14 @@ $(document).ready(function() {
   });
 
   $('#demo-modal-form').validate({
+    errorClass: 'error failedValidation',
+    validClass: 'success',
+    highlight: function(element, errorClass, validClass) {
+      $(element).closest('.validate').addClass(errorClass).removeClass(validClass);
+    },
+    unhighlight: function(element, errorClass, validClass) {
+      $(element).closest('.validate').addClass(validClass).removeClass(errorClass);
+    },
     submitHandler: function() {
       $('#demo-modal-form button').text("Thank you - a sales representative will contact you shortly");
       $('#demo-modal-form button').addClass("demo-modal-submit")
@@ -19,6 +34,14 @@ $(document).ready(function() {
   });
 
   $('#signin-form').validate({
+    errorClass: 'error failedValidation',
+    validClass: 'success',
+    highlight: function(element, errorClass, validClass) {
+      $(element).closest('.validate').addClass(errorClass).removeClass(validClass);
+    },
+    unhighlight: function(element, errorClass, validClass) {
+      $(element).closest('.validate').addClass(validClass).removeClass(errorClass);
+    },
     submitHandler: function() {
       $('#sign-in-modal').modal('close');
       handleSignInRequest();
