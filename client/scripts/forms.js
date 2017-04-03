@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
   $('.demo-form').validate({
     errorClass: 'error failedValidation',
     validClass: 'success',
