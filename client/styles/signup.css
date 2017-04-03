@@ -28,7 +28,11 @@ body {
   margin-bottom: 5vw;
 }
 
-#signup-form .btns a {
+#signup-form form .input-field input {
+  margin: 20px 0 0 0;
+}
+
+#signup-form .btns button {
   width: 100%;
   height: 3em;
   line-height: 3em;
@@ -38,6 +42,11 @@ body {
 .form-break {
   display: flex;
   justify-content: space-between;
+}
+
+.form-break .input-field {
+  display: flex;
+  flex-direction: column;
 }
 
 /*DEAL STRUCTURE*/
@@ -123,7 +132,6 @@ body {
 #tos {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 #tos .tos-text-container {
@@ -133,6 +141,10 @@ body {
   border: 1px solid #7f5dfc;
   font-family: 'Open Sans', helvetica, sans-serif;
   font-weight: 300;
+}
+
+#tos-form {
+  margin: 20px 0;
 }
 
 /*REQUEST DEMO MODAL AND FORM*/
@@ -227,4 +239,61 @@ body {
   #sign-in-form {
     width: 85% !important;
   }
+}
+
+/*VALIDATION*/
+
+.demo-modal-submit {
+  font-size: 1em !important;
+  line-height: 1em !important;
+  padding: 1em !important;
+  height: 4em !important;
+}
+
+#general-information .input-field label, #card-form .input-field label, #invoice-form .input-field label, #tos-form .input-field label {
+  position: relative;
+  color: #fb615d;
+  top: 0;
+  left:0;
+}
+
+#demo-modal .modal-content form .input-field label {
+  position: relative;
+  color: #fb615d;
+  top: 0;
+  left:0;
+}
+
+#sign-in-modal .modal-content form .input-field label {
+  position: relative;
+  color: #fb615d;
+  top: 0;
+  left:0;
+}
+
+@keyframes failedValidation {
+  0%, 100%{
+    border-color:#36b7ea;
+  }
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+    border-color:#fb615d;
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.failedValidation{
+  animation: failedValidation 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
 }

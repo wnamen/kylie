@@ -33,6 +33,7 @@
 
   <!-- SCRIPTS -->
   <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="../../node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
   <script type="text/javascript" src="../../node_modules/materialize-css/dist/js/materialize.min.js"></script>
   <script type="text/javascript" src="../scripts/forms.js"></script>
   <script type="text/javascript" src="../scripts/signup.js"></script>
@@ -48,7 +49,7 @@
     </a>
     <ul class="nav nav-list hide-on-small-and-down">
       <li><a data-target="demo-modal" class="btn waves-effect waves-light waves-ripple">Request Demo</a></li>
-      <li><a data-target="sign-in-form" class="black-font">Sign In</a></li>
+      <li><a data-target="sign-in-modal" class="black-font">Sign In</a></li>
     </ul>
   </div>
 
@@ -69,84 +70,47 @@
         <h4>Tell us about yourself!</h4>
 
         <div class="input-field">
-          <input id="name" type="text" name="name" class="validate" placeholder="Full Name" required />
+          <input id="general-name" type="text" name="general-name" class="validate" placeholder="Full Name" required />
         </div>
         <div class="input-field">
-          <input id="email" type="email" name="email" class="validate" placeholder="Email Address" required />
+          <input id="general-email" type="email" name="general-email" class="validate" placeholder="Email Address" required />
         </div>
         <div class="input-field">
-          <input id="phone" type="text" name="phone" class="validate" placeholder="Phone Number" required />
+          <input id="general-phone" type="text" name="general-phone" class="validate" placeholder="Phone Number" required />
         </div>
         <div class="input-field">
-          <input id="company-name" type="text" name="company-name" class="validate" placeholder="Company Name" required />
+          <input id="general-company-name" type="text" name="general-company-name" class="validate" placeholder="Company Name" required />
         </div>
         <div class="input-field">
-          <input id="company-department" type="text" name="company-department" class="validate" placeholder="Department" required />
+          <input id="general-company-department" type="text" name="general-company-department" class="validate" placeholder="Department" required />
         </div>
         <div class="input-field">
-          <input id="company-street-address" type="text" name="company-street-address" class="validate" placeholder="Company Street Address" required />
+          <input id="general-company-street-address" type="text" name="general-company-street-address" class="validate" placeholder="Company Street Address" required />
         </div>
         <div class="form-break">
           <div class="input-field">
-            <input id="company-city" type="text" name="company-city" class="validate" placeholder="Company City" required />
+            <input id="general-company-city" type="text" name="general-company-city" class="validate" placeholder="Company City" required />
           </div>
           <div class="input-field">
-            <input id="company-state" type="text" name="company-state" class="validate" placeholder="Company State" required />
+            <input id="general-company-state" type="text" name="general-company-state" class="validate" placeholder="Company State" required />
           </div>
           <div class="input-field">
-            <input id="company-zip-code" type="text" name="company-zip-code" class="validate" placeholder="Company Zip Code" required />
+            <input id="general-company-zip-code" type="text" name="general-company-zip-code" class="validate" placeholder="Company Zip Code" required />
           </div>
         </div>
         <div class="input-field">
           <input id="password" type="password" name="password" class="validate" placeholder="Password" required />
         </div>
         <div class="input-field">
-          <input id="password" type="password" name="password-confirm" class="validate" placeholder="Confirm Password" required />
+          <input id="password-confirm" type="password" name="password-confirm" class="validate" placeholder="Confirm Password" required />
         </div>
+        <button class="submit-button" type="submit" style="display:none" ></button>
       </form>
 
       <div id="deal-structure">
         <h4>Let's talk details...</h4>
 
-        <div class="deal-text-container">
-
-          <div>
-            <p><strong>Total Seats Requested:  </strong></p>
-            <p>50</p>
-          </div>
-          <div>
-            <p><strong>Total Models Requested: </strong></p>
-            <p>2</p>
-          </div>
-          <div>
-            <p><strong>Total Weekly Drafts Requested: </strong></p>
-            <p>150</p>
-          </div>
-          <div>
-            <p><strong>Total Integrations Requested: </strong></p>
-            <p>1</p>
-          </div>
-          <div>
-            <p><strong>Average Weekly Ticket Volume: </strong></p>
-            <p>2,200</p>
-          </div>
-          <div>
-            <p><strong>Total Global Permissions: </strong></p>
-            <p>5</p>
-          </div>
-          <div>
-            <p><strong>Payment Cycle: </strong></p>
-            <p>Quarterly</p>
-          </div>
-          <div>
-            <p><strong>Payment Discount: </strong></p>
-            <p>None</p>
-          </div>
-          <div>
-            <p><strong>Cost: </strong></p>
-            <p>$50,000.00</p>
-          </div>
-        </div>
+        <div class="deal-text-container"></div>
 
       </div>
 
@@ -183,44 +147,48 @@
               <input id="cc-zip" type="text" name="cc-zip" class="validate" placeholder="Zip Code" required />
             </div>
           </div>
+          <button class="submit-button" type="submit" style="display:none" ></button>
+          <button class="reset-button" type="reset" style="display:none" ></button>
         </form>
 
         <form id="invoice-form" class="animated">
           <h5 data-form="invoice" class="form-close red-font">&times;</h5>
 
           <div class="no-left clear-both input-field">
-            <input id="same-invoice-info" type="checkbox" name="same-invoice-info" class="validate" required />
-            <label for="same-invoice-info">Use the same information from above.</label>
+            <input id="same-invoice-info" type="checkbox" name="same-invoice-info" class="validate" />
+            <label for="same-invoice-info" style="color:#7f5dfc">Use the same information from above.</label>
           </div>
           <div class="input-field">
-            <input id="name" type="text" name="name" class="validate" placeholder="Full Name" required />
+            <input id="invoice-name" type="text" name="invoice-name" class="validate" placeholder="Full Name" required />
           </div>
           <div class="input-field">
-            <input id="email" type="email" name="email" class="validate" placeholder="Email Address" required />
+            <input id="invoice-email" type="email" name="invoice-email" class="validate" placeholder="Email Address" required />
           </div>
           <div class="input-field">
-            <input id="phone" type="text" name="phone" class="validate" placeholder="Phone Number" required />
+            <input id="invoice-phone" type="text" name="invoice-phone" class="validate" placeholder="Phone Number" required />
           </div>
           <div class="input-field">
-            <input id="company-name" type="text" name="company-name" class="validate" placeholder="Company Name" required />
+            <input id="invoice-company-name" type="text" name="invoice-company-name" class="validate" placeholder="Company Name" required />
           </div>
           <div class="input-field">
-            <input id="company-department" type="text" name="company-department" class="validate" placeholder="Department" required />
+            <input id="invoice-company-department" type="text" name="invoice-company-department" class="validate" placeholder="Department" required />
           </div>
           <div class="input-field">
-            <input id="company-street-address" type="text" name="company-street-address" class="validate" placeholder="Company Street Address" required />
+            <input id="invoice-company-street-address" type="text" name="invoice-company-street-address" class="validate" placeholder="Company Street Address" required />
           </div>
           <div class="form-break">
             <div class="input-field">
-              <input id="company-city" type="text" name="company-city" class="validate" placeholder="Company City" required />
+              <input id="invoice-company-city" type="text" name="invoice-company-city" class="validate" placeholder="Company City" required />
             </div>
             <div class="input-field">
-              <input id="company-state" type="text" name="company-state" class="validate" placeholder="Company State" required />
+              <input id="invoice-company-state" type="text" name="invoice-company-state" class="validate" placeholder="Company State" required />
             </div>
             <div class="input-field">
-              <input id="company-zip-code" type="text" name="company-zip-code" class="validate" placeholder="Company Zip Code" required />
+              <input id="invoice-company-zip-code" type="text" name="invoice-company-zip-code" class="validate" placeholder="Company Zip Code" required />
             </div>
           </div>
+          <button class="submit-button" type="submit" style="display:none" ></button>
+          <button class="reset-button" type="reset" style="display:none" ></button>
         </form>
 
       </div>
@@ -232,15 +200,18 @@
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </div>
 
-        <div class="input-field">
-          <input id="tos-confirm" type="checkbox" name="tos-confirm" class="validate" required />
-          <label for="tos-confirm">I agree to the Terms of Service provided above.</label>
-        </div>
+        <form id="tos-form">
+          <div class="input-field">
+            <input id="tos-confirm" type="checkbox" name="tos-confirm" class="validate" required />
+            <label for="tos-confirm" style="color:#7f5dfc">I agree to the Terms of Service provided above.</label>
+          </div>
+          <button class="submit-button" type="submit" style="display:none" ></button>
+        </form>
 
       </div>
 
       <div class="btns">
-        <a type="button" class="btn waves-effect waves-light waves-ripple modal-close">Submit</a>
+        <button type="submit" class="btn waves-effect waves-light waves-ripple modal-close">Submit</button>
       </div>
     </div>
   </div>
@@ -250,72 +221,75 @@
     <div class="modal-content">
       <h4>Tell us about yourself!</h4>
 
-      <div class="input-field">
-        <input id="name" type="text" name="name" class="validate" placeholder="Name" required />
-      </div>
-      <div class="input-field">
-        <input id="email" type="text" name="email" class="validate" placeholder="Email Address" required />
-      </div>
-      <div class="input-field">
-        <input id="phone-number" type="text" name="phone-number" class="validate" placeholder="Phone Number" required />
-      </div>
-      <div class="input-field">
-        <input id="company-name" type="text" name="company-name" class="validate" placeholder="Company Name" required />
-      </div>
-      <div class="input-field">
-        <select name="platform" required>
-          <option value="" disabled selected>Choose your platform</option>
-          <option value="Salesforce">Salesforce</option>
-          <option value="Zendesk">Zendesk</option>
-          <option value="Sparkcentral">Sparkcentral</option>
-          <option value="Desk">Desk</option>
-          <option value="Oracle">Oracle</option>
-          <option value="Verint / Kana">Verint / Kana</option>
-          <option value="Conversocial">Conversocial</option>
-          <option value="Lithium">Lithium</option>
-          <option value="Freshdesk">Freshdesk</option>
-          <option value="Avaya">Avaya</option>
-          <option value="SAP">SAP</option>
-          <option value="Microsoft">Microsoft</option>
-          <option value="Genesys">Genesys</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-      <div class="input-field">
-        <select name="team-size" required>
-          <option value="" disabled selected>Choose your team size</option>
-          <option value="1-10">1-10</option>
-          <option value="11-50">11-50</option>
-          <option value="51-100">51-100</option>
-          <option value="101-300">101-300</option>
-          <option value="301-500">301-500</option>
-          <option value="501-1000">501-1000</option>
-          <option value="1001-3000">1001-3000</option>
-          <option value="3000+">3000+</option>
-        </select>
-      </div>
-      <div class="btns">
-        <a type="button" class="btn waves-effect waves-light waves-ripple modal-close">Request Demo</a>
-      </div>
+      <form id="demo-modal-form">
+        <div class="input-field">
+          <input id="modal-name" type="text" name="modal-name" class="validate" placeholder="Name*" required>
+        </div>
+        <div class="input-field">
+          <input id="modal-email" type="email" name="modal-email" class="validate" placeholder="Email Address*" required>
+        </div>
+        <div class="input-field">
+          <input id="modal-phone-number" type="text" name="modal-phone-number" class="validate" placeholder="Phone Number*" required>
+        </div>
+        <div class="input-field">
+          <input id="modal-company-name" type="text" name="modal-company-name" class="validate" placeholder="Company Name*" required>
+        </div>
+        <div class="input-field">
+          <select id="modal-platform" name="modal-platform" required>
+            <option value="">Choose your platform*</option>
+            <option value="Salesforce">Salesforce</option>
+            <option value="Zendesk">Zendesk</option>
+            <option value="Sparkcentral">Sparkcentral</option>
+            <option value="Desk">Desk</option>
+            <option value="Oracle">Oracle</option>
+            <option value="Verint / Kana">Verint / Kana</option>
+            <option value="Conversocial">Conversocial</option>
+            <option value="Lithium">Lithium</option>
+            <option value="Freshdesk">Freshdesk</option>
+            <option value="Avaya">Avaya</option>
+            <option value="SAP">SAP</option>
+            <option value="Microsoft">Microsoft</option>
+            <option value="Genesys">Genesys</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="input-field">
+          <select id="modal-team-size" name="modal-team-size" required>
+            <option value="">Choose your team size*</option>
+            <option value="1-10">1-10</option>
+            <option value="11-50">11-50</option>
+            <option value="51-100">51-100</option>
+            <option value="101-300">101-300</option>
+            <option value="301-500">301-500</option>
+            <option value="501-1000">501-1000</option>
+            <option value="1001-3000">1001-3000</option>
+            <option value="3000+">3000+</option>
+          </select>
+        </div>
+        <div class="btns">
+          <button type="submit" class="btn waves-effect waves-light waves-ripple">Request Demo</button>
+        </div>
+      </form>
     </div>
   </div>
 
-
   <!-- SIGN IN MODAL -->
-  <div id="sign-in-form" class="modal">
-    <div class="modal-content">
+  <div id="sign-in-modal" class="modal">
+    <div class="sign-in modal-content">
       <h4>Welcome Back!</h4>
 
-      <div class="input-field">
-        <input id="email" type="email" name="email" class="validate" placeholder="Email Address" required />
-      </div>
-      <div class="input-field">
-        <input id="password" type="password" name="password" class="validate" placeholder="Password" required />
-      </div>
+      <form id="signin-form">
+        <div class="input-field">
+          <input id="signin-email" type="email" name="signin-email" class="validate" placeholder="Email Address*" required>
+        </div>
+        <div class="input-field">
+          <input id="signin-password" type="password" name="signin-password" class="validate" placeholder="Password*" required>
+        </div>
 
-      <div class="btns">
-        <a type="button" class="btn waves-effect waves-light waves-ripple modal-close">Sign In</a>
-      </div>
+        <div class="btns">
+          <button type="submit" class="btn waves-effect waves-light waves-ripple">Sign In</button>
+        </div>
+      </form>
     </div>
   </div>
 

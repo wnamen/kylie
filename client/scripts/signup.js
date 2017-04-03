@@ -1,10 +1,32 @@
 var paymentSelection;
 
-var deal = {
-  generalInfo: {
+var formState = {
+  general: false,
+  tos: false,
+  invoice: false,
+  card: false
+}
 
-  },
-  details: [
+var signUpData = {
+  generalInfo: [
+    {
+      name: "name",
+      value: "John Smith"
+    },
+    {
+      name: "email",
+      value: "john.smith@gmail.com"
+    },
+    {
+      name: "phone",
+      value: "9043146488"
+    },
+    {
+      name: "company-name",
+      value: "A Company, Inc."
+    }
+  ],
+  dealInfo: [
     {
       name: "Total Seats Requested:",
       value: "50"
@@ -45,6 +67,8 @@ var deal = {
 }
 
 $(document).ready(function() {
+  getSignUpData();
+
   $('.scrollspy').scrollSpy();
   $('.modal').modal();
   $('select').material_select();
@@ -65,8 +89,102 @@ $(document).ready(function() {
   $('.payment-card').click(handlePaymentSelection)
   $('.form-close').click(handleFormClose)
 
-  $('#signup-form .btn').click(handleSignUpRequest);
+  $('#general-information').validate({
+    errorClass: 'error failedValidation',
+    validClass: 'success',
+    highlight: function(element, errorClass, validClass) {
+      $(element).closest('.validate').addClass(errorClass).removeClass(validClass);
+    },
+    unhighlight: function(element, errorClass, validClass) {
+      $(element).closest('.validate').addClass(validClass).removeClass(errorClass);
+    },
+    submitHandler: function() {
+      formState.general = true;
+    }
+  });
+
+  $('#card-form').validate({
+    errorClass: 'error failedValidation',
+    validClass: 'success',
+    highlight: function(element, errorClass, validClass) {
+      $(element).closest('.validate').addClass(errorClass).removeClass(validClass);
+    },
+    unhighlight: function(element, errorClass, validClass) {
+      $(element).closest('.validate').addClass(validClass).removeClass(errorClass);
+    },
+    submitHandler: function() {
+      formState.card = true;
+    }
+  });
+
+  $('#card-form .reset-button').on('click', function () {
+    $("#card-form").validate().resetForm();  // clear out the validation errors
+  });
+
+  $('#invoice-form').validate({
+    errorClass: 'error failedValidation',
+    validClass: 'success',
+    highlight: function(element, errorClass, validClass) {
+      $(element).closest('.validate').addClass(errorClass).removeClass(validClass);
+    },
+    unhighlight: function(element, errorClass, validClass) {
+      $(element).closest('.validate').addClass(validClass).removeClass(errorClass);
+    },
+    submitHandler: function() {
+      formState.invoice = true;
+    }
+  });
+
+  $('#invoice-form .reset-button').on('click', function () {
+    $("#invoice-form").validate().resetForm();  // clear out the validation errors
+  });
+
+  $('#tos-form').validate({
+    errorClass: 'error failedValidation',
+    validClass: 'success',
+    errorPlacement: function(error, element) {},
+    highlight: function(element, errorClass, validClass) {
+      $(element).closest('.validate').addClass(errorClass).removeClass(validClass);
+    },
+    unhighlight: function(element, errorClass, validClass) {
+      $(element).closest('.validate').addClass(validClass).removeClass(errorClass);
+    },
+    submitHandler: function() {
+      formState.tos = true;
+    }
+  });
+
+  $('#signup-form .btn').click(handleValidation);
 });
+
+function getSignUpData() {
+  // fetch(url)
+  // .then(function(res){ return res.json(); })
+  // .then(function(data){ JSON.stringify( data )})
+  // .then(function(data){
+  //   loadGeneralInfo(data.generalInfo);
+  //   loadDealStructure(data.dealInfo)
+  // })
+  // .catch(function (error){ console.log('Request failed', error)});
+
+  loadGeneralInfo(signUpData.generalInfo);
+  loadDealStructure(signUpData.dealInfo)
+}
+
+function loadGeneralInfo(data) {
+  data.forEach(function(detail) {
+    $('#general-' + detail.name).val(detail.value);
+  })
+}
+
+function loadDealStructure(data) {
+  var $parent = $('.deal-text-container');
+
+  data.forEach(function(detail) {
+    $parent.append("<div><p><strong>" + detail.name + ":</strong></p><p>" + detail.value + "</p></div>");
+  });
+
+}
 
 function handlePaymentSelection() {
   // CAPTURE SELECTION VARIABLES
@@ -115,6 +233,7 @@ function handleFormClose() {
   if (paymentSelection === 'card') {
     // FADE OUT THE FORM
     $(selectedID).toggleClass('fadeOutLeft');
+    $(selectedID + " .reset-button").trigger('click');
 
     // FADE IN THE SELECTOR AFTER THE FORM IS FADED OUT
     setTimeout(function() {
@@ -126,6 +245,8 @@ function handleFormClose() {
 } else if (paymentSelection === 'invoice') {
     // FADE OUT THE FORM
     $(selectedID).toggleClass('fadeOutRight');
+    $(selectedID + " .reset-button").trigger('click');
+
 
     // FADE IN THE SELECTOR AFTER THE FORM IS FADED OUT
     setTimeout(function() {
@@ -135,21 +256,44 @@ function handleFormClose() {
   }
 }
 
-// THIS METHOD HANDLE THE SIGN UP REQUEST
+// THESE METHODS HANDLE THE SIGN UP REQUEST
+
+function formStateChecker() {
+  var generalValidated = formState.general;
+  var tosValidated = formState.tos;
+  var cardValidated = formState.card;
+  var invoiceValidated = formState.invoice;
+
+  if ((generalValidated) && (tosValidated) && (cardValidated || invoiceValidated)) {
+    return true;
+  }
+  return false;
+}
+
+function handleValidation() {
+  var selectedID = '#' + paymentSelection + '-form';
+
+  $('#general-information .submit-button').trigger('click');
+  $('#tos-form .submit-button').trigger('click');
+  $(selectedID + " .submit-button").trigger('click');
+
+  if (formStateChecker()) {
+    handleSignUpRequest();
+  }
+}
 
 function handleSignUpRequest() {
   var selectedID = '#' + paymentSelection + '-form';
+
   var generalInfo = $('#general-information').serializeArray();
   var paymentInfo = $(selectedID).serializeArray();
   paymentInfo.type = selectedID;
 
   var values = {generalInfo, paymentInfo}
 
-  // var url;
-  // submitRequest(values, url)
+  var url;
+  submitRequest(values, url)
 }
-
-//
 
 function submitRequest(data, url) {
   var payload = new FormData();
