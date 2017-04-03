@@ -27,12 +27,11 @@ body {
 }
 
 #demo-modal .modal-content {
-  text-align: center;
   padding: 7vh 7vw;
 }
 
-#demo-modal .modal-content h3 {
-  margin-bottom: 5vh
+#demo-modal .modal-content h4 {
+  text-align: center;
 }
 
 #demo-modal .modal-content .input-field {
@@ -48,7 +47,7 @@ body {
   margin: 5vh 2vh;
 }
 
-#demo-modal .modal-content .btns a {
+#demo-modal .modal-content .btns button {
   width: 100%;
   height: 3em;
   line-height: 3em;
@@ -69,29 +68,28 @@ body {
 
 /* SIGN IN MODAL AND FORM*/
 
-#sign-in-form .modal-content {
-  text-align: center;
+#sign-in-modal .modal-content {
   padding: 7vh 7vw;
 }
 
-#sign-in-form .modal-content h3 {
-  margin-bottom: 10vw;
+#sign-in-modal .modal-content h4 {
+  text-align: center;
 }
 
-#sign-in-form .modal-content .input-field {
+#sign-in-modal .modal-content .input-field {
   margin: 2vh;
 }
 
-#sign-in-form .modal-content .input-field input{
+#sign-in-modal .modal-content .input-field input{
   width: 100%;
   margin: 0;
 }
 
-#sign-in-form .modal-content .btns {
+#sign-in-modal .modal-content .btns {
   margin: 5vh 2vh;
 }
 
-#sign-in-form .modal-content .btns a {
+#sign-in-modal .modal-content .btns button {
   width: 100%;
   height: 3em;
   line-height: 3em;
@@ -99,13 +97,13 @@ body {
 }
 
 @media only screen and (max-width: 1000px) {
-  #sign-in-form {
+  #sign-in-modal {
     width: 70% !important;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  #sign-in-form {
+  #sign-in-modal {
     width: 85% !important;
   }
 }

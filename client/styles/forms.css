@@ -236,6 +236,36 @@ select:disabled {
   height: 18px;
 }
 
+/*VALIDATION*/
+
+.demo-form-submit {
+  font-size: 1em !important;
+  height: 5em !important;
+  line-height: 1em !important;
+  padding: 1.5em !important;
+}
+
+.demo-modal-submit {
+  font-size: 1em !important;
+  line-height: 1em !important;
+  padding: 1em !important;
+  height: 4em !important;
+}
+
+#demo-modal .modal-content form .input-field label {
+  position: relative;
+  color: #fb615d;
+  top: 0;
+  left:0;
+}
+
+#sign-in-modal .modal-content form .input-field label {
+  position: relative;
+  color: #fb615d;
+  top: 0;
+  left:0;
+}
+
 @keyframes failedValidation {
   0%, 100%{
     border-color:#36b7ea;

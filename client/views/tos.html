@@ -37,6 +37,7 @@
 
   <!-- SCRIPTS -->
   <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="../../node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
   <script type="text/javascript" src="../../node_modules/materialize-css/dist/js/materialize.min.js"></script>
   <script type="text/javascript" src="../scripts/forms.js"></script>
   <script type="text/javascript" src="../scripts/tos.js"></script>
@@ -52,7 +53,7 @@
     </a>
     <ul class="nav nav-list hide-on-small-and-down">
       <li><a data-target="demo-modal" class="btn waves-effect waves-light waves-ripple">Request Demo</a></li>
-      <li><a data-target="sign-in-form" class="black-font">Sign In</a></li>
+      <li><a data-target="sign-in-modal" class="black-font">Sign In</a></li>
     </ul>
   </div>
 
@@ -228,76 +229,79 @@
     </div>
   </div>
 
-  <!-- REQUEST DEMO MODAL -->
   <div id="demo-modal" class="modal">
     <div class="modal-content">
       <h4>Tell us about yourself!</h4>
 
-      <div class="input-field">
-        <input id="name" type="text" name="name" class="validate" placeholder="Name" required>
-      </div>
-      <div class="input-field">
-        <input id="email" type="text" name="email" class="validate" placeholder="Email Address" required>
-      </div>
-      <div class="input-field">
-        <input id="phone-number" type="text" name="phone-number" class="validate" placeholder="Phone Number" required>
-      </div>
-      <div class="input-field">
-        <input id="company-name" type="text" name="company-name" class="validate" placeholder="Company Name" required>
-      </div>
-      <div class="input-field">
-        <select name="platform" required>
-          <option value="" disabled selected>Choose your platform</option>
-          <option value="Salesforce">Salesforce</option>
-          <option value="Zendesk">Zendesk</option>
-          <option value="Sparkcentral">Sparkcentral</option>
-          <option value="Desk">Desk</option>
-          <option value="Oracle">Oracle</option>
-          <option value="Verint / Kana">Verint / Kana</option>
-          <option value="Conversocial">Conversocial</option>
-          <option value="Lithium">Lithium</option>
-          <option value="Freshdesk">Freshdesk</option>
-          <option value="Avaya">Avaya</option>
-          <option value="SAP">SAP</option>
-          <option value="Microsoft">Microsoft</option>
-          <option value="Genesys">Genesys</option>
-          <option value="Other">Other</option>
-        </select>
-      </div>
-      <div class="input-field">
-        <select name="team-size" required>
-          <option value="" disabled selected>Choose your team size</option>
-          <option value="1-10">1-10</option>
-          <option value="11-50">11-50</option>
-          <option value="51-100">51-100</option>
-          <option value="101-300">101-300</option>
-          <option value="301-500">301-500</option>
-          <option value="501-1000">501-1000</option>
-          <option value="1001-3000">1001-3000</option>
-          <option value="3000+">3000+</option>
-        </select>
-      </div>
-      <div class="btns">
-        <a type="button" class="btn waves-effect waves-light waves-ripple modal-close">Request Demo</a>
-      </div>
+      <form id="demo-modal-form">
+        <div class="input-field">
+          <input id="modal-name" type="text" name="name" class="validate" placeholder="Name*" required>
+        </div>
+        <div class="input-field">
+          <input id="modal-email" type="text" name="email" class="validate" placeholder="Email Address*" required>
+        </div>
+        <div class="input-field">
+          <input id="modal-phone-number" type="text" name="phone-number" class="validate" placeholder="Phone Number*" required>
+        </div>
+        <div class="input-field">
+          <input id="modal-company-name" type="text" name="company-name" class="validate" placeholder="Company Name*" required>
+        </div>
+        <div class="input-field">
+          <select id="modal-platform" name="platform" required>
+            <option value="">Choose your platform*</option>
+            <option value="Salesforce">Salesforce</option>
+            <option value="Zendesk">Zendesk</option>
+            <option value="Sparkcentral">Sparkcentral</option>
+            <option value="Desk">Desk</option>
+            <option value="Oracle">Oracle</option>
+            <option value="Verint / Kana">Verint / Kana</option>
+            <option value="Conversocial">Conversocial</option>
+            <option value="Lithium">Lithium</option>
+            <option value="Freshdesk">Freshdesk</option>
+            <option value="Avaya">Avaya</option>
+            <option value="SAP">SAP</option>
+            <option value="Microsoft">Microsoft</option>
+            <option value="Genesys">Genesys</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="input-field">
+          <select id="modal-team-size" name="team-size" required>
+            <option value="">Choose your team size*</option>
+            <option value="1-10">1-10</option>
+            <option value="11-50">11-50</option>
+            <option value="51-100">51-100</option>
+            <option value="101-300">101-300</option>
+            <option value="301-500">301-500</option>
+            <option value="501-1000">501-1000</option>
+            <option value="1001-3000">1001-3000</option>
+            <option value="3000+">3000+</option>
+          </select>
+        </div>
+        <div class="btns">
+          <button type="submit" class="btn waves-effect waves-light waves-ripple">Request Demo</button>
+        </div>
+      </form>
     </div>
   </div>
 
-  <!-- REQUEST DEMO MODAL -->
-  <div id="sign-in-form" class="modal">
-    <div class="modal-content">
+  <!-- SIGN IN MODAL -->
+  <div id="sign-in-modal" class="modal">
+    <div class="sign-in modal-content">
       <h4>Welcome Back!</h4>
 
-      <div class="input-field">
-        <input id="email" type="email" name="email" class="validate" placeholder="Email Address" required>
-      </div>
-      <div class="input-field">
-        <input id="password" type="password" name="password" class="validate" placeholder="Password" required>
-      </div>
+      <form id="signin-form">
+        <div class="input-field">
+          <input id="signin-email" type="email" name="email" class="validate" placeholder="Email Address*" required>
+        </div>
+        <div class="input-field">
+          <input id="signin-password" type="password" name="password" class="validate" placeholder="Password*" required>
+        </div>
 
-      <div class="btns">
-        <a type="button" class="btn waves-effect waves-light waves-ripple modal-close">Sign In</a>
-      </div>
+        <div class="btns">
+          <button type="submit" class="btn waves-effect waves-light waves-ripple">Sign In</button>
+        </div>
+      </form>
     </div>
   </div>
 
