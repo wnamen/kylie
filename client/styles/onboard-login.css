@@ -1,0 +1,82 @@
+/* GENERAL STYLING */
+
+body {
+  background-color: #fefdfb;
+  font-family: 'Merriweather', garamond, serif;
+}
+
+/*SIDE NAV*/
+
+#side-navbar {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  height: 100%;
+  width: 6%;
+}
+
+.nav-logo {
+  width: 50%;
+}
+
+.nav-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white
+}
+
+.nav-options i, .nav-options img {
+  margin: 2vh 0 5vh 0;
+}
+
+.nav-options i {
+  cursor: pointer;
+}
+
+/*DASH-VIEW*/
+
+#dash-view {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 3vw 5vw;
+}
+
+#login-container {
+  padding: 3vh 3vw;
+  box-shadow: 2px 2px 2px 2px #ECECEC;
+  border: 1px solid #ECECEC;
+}
+
+#login-form {
+  padding: 5vw;
+}
+
+.active-block {
+  display: block !important;
+}
+
+.active-flex {
+  display: flex !important;
+}
+
+
+#saved-notification {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  float: right;
+  width: 15%;
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
+  padding: 1vh;
+  margin: 3vw;
+}
+
+#saved-notification p {
+  margin: 0;
+  color: white;
+}

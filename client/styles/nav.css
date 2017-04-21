@@ -4,12 +4,12 @@
   margin: auto 3vw;
 }
 
-.nav li a:hover {
+.nav-list li a:hover {
   background: none;
   text-decoration: underline;
 }
 
-.nav-list {
+.nav-list, .banner-list {
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
@@ -20,6 +20,30 @@
   font-weight: 300;
   padding:0 1vw;
   cursor: pointer;
+}
+
+.banner-list li a {
+  padding: 0.7vw 3vw;
+  cursor: pointer;
+}
+
+.nav-banner {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.nav-banner p {
+  font-size: 1.5em;
+}
+
+.banner-hide {
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
 }
 
 .nav-bar {

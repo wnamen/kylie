@@ -28,6 +28,9 @@ $(document).ready(function() {
     }
   }
 
+  // BANNER HIDE ACTION
+  $('.banner-hide').click(hideBanner)
+
   $('.nav-link').click(scrollToAnchor);
 
   $('.modal').modal();
@@ -61,6 +64,12 @@ $(document).ready(function() {
 //     $('#integrations-view').children().fadeIn("slow")
 //   }, 700);
 // }
+
+// THIS HIDES THE BANNER
+
+function hideBanner() {
+  $('.nav-banner').addClass('hide');
+}
 
 // THESE FUNCTIONS HANDLE THE INTEGRATION ANIMATION ON MOBILE
 
