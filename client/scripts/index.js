@@ -28,8 +28,14 @@ $(document).ready(function() {
     }
   }
 
+  // BANNER SLIDER
+  $('.nav-banner').slideDown('slow', function() {
+    $('.nav-banner').css('display','flex');
+    $('.nav-banner').append('<a class="white-font banner-hide">&times;</a>')
+  })
+
   // BANNER HIDE ACTION
-  $('.banner-hide').click(hideBanner)
+  $('.nav-banner').on('click', '.banner-hide', hideBanner)
 
   $('.nav-link').click(scrollToAnchor);
 
