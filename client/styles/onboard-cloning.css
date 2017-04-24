@@ -47,7 +47,7 @@ body {
   height: 90vh;
 }
 
-#training-container {
+#cloning-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,12 +58,12 @@ body {
   font-weight: 300;
 }
 
-#training-container i {
+#cloning-container i {
   font-size: 6em;
   padding-bottom: 5vh;
 }
 
-#training-container h4, p {
+#cloning-container h4, p {
   margin: 0;
   font-weight: 300;
   text-align: center;
