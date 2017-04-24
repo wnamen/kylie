@@ -1,0 +1,93 @@
+/* GENERAL STYLING */
+
+body {
+  background-color: #fefdfb;
+  font-family: 'Merriweather', garamond, serif;
+}
+
+/*SIDE NAV*/
+
+#side-navbar {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  height: 100%;
+  width: 6%;
+}
+
+.nav-logo {
+  width: 50%;
+}
+
+.nav-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white
+}
+
+.nav-options i, .nav-options img {
+  margin: 2vh 0 5vh 0;
+}
+
+.nav-options i {
+  cursor: pointer;
+}
+
+/*DASH-VIEW*/
+
+#dash-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 3vw 3vw;
+  height: 90vh;
+}
+
+#integration-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2vh 2vw;
+  box-shadow: 5px 5px 5px 0px #ECECEC;
+  border: 1px solid #ECECEC;
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
+}
+
+#integration-container h4 {
+  font-weight: 300;
+  text-align: center;
+}
+
+#integration-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 30vh;
+  width: 17.5vw;
+  padding: 2vh 0;
+  margin: 5vh 5vw 10vh 5vw;
+}
+
+#integration-box img {
+  width: 35%;
+}
+
+#integration-box button {
+  border-radius: 50px;
+  padding: 0 2.5em;
+  font-size: 1.3em;
+}
+
+.active-block {
+  display: block !important;
+}
+
+.active-flex {
+  display: flex !important;
+}
