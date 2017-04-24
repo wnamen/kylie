@@ -5,8 +5,6 @@ var currentCard = 'admin';
 
 $(document).ready(function() {
 
-  $('.nav-options i').click(handleViewChange);
-  $('.manager-view-selector div').click(handleIntegrationView);
   $('.settings-option').click(handleSettingsView);
   $('#controller-cards').on('click', '.controller-card', handleCardSelection);
   $('.delete-card').click(handleDeleteCard);
@@ -16,32 +14,6 @@ $(document).ready(function() {
   $('.modal').modal();
   $('select').material_select();
 });
-
-function handleViewChange() {
-  var newView = $(this).data('view');
-
-  if (newView === currentView) {
-    return
-  } else {
-    var newId = '#' + newView + '-view';
-    var currentId = '#' + currentView + '-view';
-
-    $(newId).toggleClass('active-block');
-    $(currentId).toggleClass('active-block');
-  }
-  currentView = newView;
-}
-
-function handleIntegrationView() {
-  var newIntegration = $(this).data('integration');
-
-  if (newIntegration === currentIntegration) {
-    return
-  } else {
-    $('.current-integration').html(newIntegration);
-    currentIntegration = newIntegration
-  }
-}
 
 function handleSettingsView() {
   var newSettingsView = $(this).data('settings-view');

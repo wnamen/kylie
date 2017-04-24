@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kylie.ai</title>
+
+  <!-- FAVICON -->
+  <link rel="apple-touch-icon" sizes="57x57" href="../images/favicon.ico/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../images/favicon.ico/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../images/favicon.ico/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../images/favicon.ico/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../images/favicon.ico/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../images/favicon.ico/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../images/favicon.ico/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../images/favicon.ico/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon.ico/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="../images/favicon.ico/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../images/favicon.ico/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.ico/favicon-16x16.png">
+  <link rel="manifest" href="../images/favicon.ico/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff ">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff ">
+
+  <!-- STYLES -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400|Open+Sans:300,400,500" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="../../node_modules/materialize-css/dist/css/materialize.css" rel="stylesheet">
+  <link href="../styles/buttons.css" rel="stylesheet">
+  <link href="../styles/styles.css" rel="stylesheet">
+  <link href="../styles/forms.css" rel="stylesheet">
+  <link href="../styles/footer.css" rel="stylesheet">
+  <link href="../styles/dashboard-manager.css" rel="stylesheet">
+
+  <!-- SCRIPTS -->
+  <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="../../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+  <script type="text/javascript" src="../scripts/dashboard.js"></script>
+
+</head>
+
+<body>
+  <div class="row">
+
+    <div id="side-navbar" class="dark-grey-background">
+      <div class="nav-options">
+        <img class="nav-logo" src="../images/favicon.ico/favicon-96x96.png" />
+        <i data-view="manager" class="material-icons">&#xE871;</i>
+        <i data-view="settings" class="material-icons">&#xE8B8;</i>
+      </div>
+    </div>
+
+    <div id="dash-view" class="col s8 m11 l11 offset-s3 offset-m1 offset-l1">
+      <div id="manager-view" class="active-block">
+        <div class="dash-title">
+          <h3>Zendesk</h3>
+          <!-- <div class="manager-view-selector">
+            <div class="add-selector grey-dashed-border">
+              <a class="grey-font">&#43;</a>
+            </div>
+          </div> -->
+        </div>
+
+
+        <div id="manager-stats">
+          <div class="manager-stats-card">
+            <p class="purple-font no-margins"><span id="stat-time-saved">4</span> hrs <span>36</span> mins</p>
+            <p class="black-font no-margin-bottom">Avg. Time Saved</p>
+          </div>
+
+          <div class="manager-stats-card">
+            <p class="purple-font no-margins"><span id="stat-response-time">4</span> hrs <span>36</span> mins</p>
+            <p class="black-font no-margin-bottom">Avg. Response Time</p>
+          </div>
+
+          <div class="manager-stats-card">
+            <p class="purple-font no-margins"><span id="stat-generated-drafts">0</span> /52,000</p>
+            <p class="black-font no-margin-bottom"># of Generated Drafts</p>
+          </div>
+
+        </div>
+
+        <div id="manager-controls">
+          <div id="assignment-manager">
+            <div id="assignment-search-bar">
+              <div>
+                <p class="black-font no-margins">Human Agents</p>
+                <i class="material-icons black-font">&#xE8B6;</i>
+              </div>
+              <div class="switch">
+                <label>
+                  <input type="checkbox">
+                  <span class="lever"></span>
+                </label>
+              </div>
+            </div>
+            <div id="assignment-switch-container" class="">
+              <div class="assignment-row">
+                <p class="black-font">Jamasen Rodriguez</p>
+                <div class="switch">
+                  <label>
+                    <input type="checkbox">
+                    <span class="lever"></span>
+                  </label>
+                </div>
+              </div>
+              <hr>
+
+              <div class="assignment-row">
+                <p class="black-font">Jamasen Rodriguez</p>
+                <div class="switch">
+                  <label>
+                    <input type="checkbox">
+                    <span class="lever"></span>
+                  </label>
+                </div>
+              </div>
+              <hr>
+
+              <div class="assignment-row">
+                <p class="black-font">Jamasen Rodriguez</p>
+                <div class="switch">
+                  <label>
+                    <input type="checkbox">
+                    <span class="lever"></span>
+                  </label>
+                </div>
+              </div>
+              <hr>
+
+              <div class="assignment-row">
+                <p class="black-font">Jamasen Rodriguez</p>
+                <div class="switch">
+                  <label>
+                    <input type="checkbox">
+                    <span class="lever"></span>
+                  </label>
+                </div>
+              </div>
+              <hr>
+
+              <div class="assignment-row">
+                <p class="black-font">Jamasen Rodriguez</p>
+                <div class="switch">
+                  <label>
+                    <input type="checkbox">
+                    <span class="lever"></span>
+                  </label>
+                </div>
+              </div>
+              <hr>
+
+              <div class="assignment-row">
+                <p class="black-font">Jamasen Rodriguez</p>
+                <div class="switch">
+                  <label>
+                    <input type="checkbox">
+                    <span class="lever"></span>
+                  </label>
+                </div>
+              </div>
+              <hr>
+
+              <div class="assignment-row">
+                <p class="black-font">Jamasen Rodriguez</p>
+                <div class="switch">
+                  <label>
+                    <input type="checkbox">
+                    <span class="lever"></span>
+                  </label>
+                </div>
+              </div>
+              <hr>
+
+              <div class="assignment-row">
+                <p class="black-font">Jamasen Rodriguez</p>
+                <div class="switch">
+                  <label>
+                    <input type="checkbox">
+                    <span class="lever"></span>
+                  </label>
+                </div>
+              </div>
+              <hr>
+
+              <div class="assignment-row">
+                <p class="black-font">Jamasen Rodriguez</p>
+                <div class="switch">
+                  <label>
+                    <input type="checkbox">
+                    <span class="lever"></span>
+                  </label>
+                </div>
+              </div>
+              <hr>
+            </div>
+          </div>
+
+          <div id="clone-manager">
+            <div id="clone-title-bar">
+              <p class="black-font no-margins">Kylie.ai Clone</p>
+            </div>
+
+            <div id="clone-slide-container" class="">
+              <p class="black-font center-align">Learning From</p>
+
+              <div id="clone-stats">
+                <div class="clone-stat">
+                  <p class="purple-font no-margins">305</p>
+                  <p class="black-font no-margin-top">Agents</p>
+                </div>
+
+                <div class="clone-stat">
+                  <p class="purple-font no-margins">40,175</p>
+                  <p class="black-font no-margin-top">Conversations</p>
+                </div>
+              </div>
+
+              <form id="clone-sliders">
+                <div class="clone-slider-row">
+                  <p class="black-font no-margin-bottom">Draft Confidence Level</p>
+                  <p class="range-field no-margin-top">
+                    <input type="range" id="test5" min="0" max="100" />
+                  </p>
+                </div>
+
+                <div class="clone-slider-row">
+                  <p class="black-font no-margin-bottom">Autosend Confidence Level</p>
+                  <p class="range-field no-margin-top">
+                    <input type="range" id="test5" min="0" max="100" />
+                  </p>
+                </div>
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div id="saved-notification" class="dark-grey-background animated">
+        <i class="fa fa-circle fa-1x green-font" aria-hidden="true"></i>
+        <p>Changes Saved</p>
+      </div>
+    </div>
+
+    </div>
+
+  <!-- ADD ROLE MODAL -->
+  <div id="add-role-modal" class="modal">
+    <form class="modal-content">
+      <h3>Complete the fields below to create a new role</h3>
+
+      <div class="input-field">
+        <input id="role-name" type="text" name="role-name" class="validate" placeholder="Role Name" required>
+      </div>
+      <div class="input-field">
+        <input id="role-description" type="text" name="role-description" class="validate" placeholder="Role Description" required>
+      </div>
+
+      <div class="btns">
+        <a type="button" class="btn waves-effect waves-light waves-ripple modal-close">Create</a>
+      </div>
+    </form>
+  </div>
+
+
+</body>
+</html>

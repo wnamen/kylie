@@ -83,6 +83,10 @@
   border: 2px solid  #f8f8f8;
 }
 
+.grey-dashed-border {
+  border: 1px dashed #ECECEC;
+}
+
 .grey-border {
   border: 1px solid #ECECEC;
 }
@@ -129,4 +133,8 @@
 
 .trans-green-background {
   background-color: rgba(40, 195, 181,0.3);
+}
+
+.center-align {
+  text-align: center;
 }

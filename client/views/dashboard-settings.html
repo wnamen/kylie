@@ -27,6 +27,7 @@
   <!-- STYLES -->
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400|Open+Sans:300,400,500" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="../../node_modules/materialize-css/dist/css/materialize.css" rel="stylesheet">
   <link href="../styles/buttons.css" rel="stylesheet">
   <link href="../styles/styles.css" rel="stylesheet">
@@ -47,30 +48,22 @@
     <div id="side-navbar" class="dark-grey-background">
       <div class="nav-options">
         <img class="nav-logo" src="../images/favicon.ico/favicon-96x96.png" />
-        <i data-view="manager" class="fa fa-user fa-2x" aria-hidden="true"></i>
-        <i data-view="statistics" class="fa fa-bar-chart fa-2x" aria-hidden="true"></i>
-        <i data-view="settings" class="fa fa-cog fa-2x" aria-hidden="true"></i>
+        <i data-view="manager" class="material-icons">&#xE871;</i>
+        <i data-view="settings" class="material-icons">&#xE8B8;</i>
       </div>
     </div>
 
     <div id="dash-view" class="col s8 m11 l11 offset-s3 offset-m1 offset-l1">
       <div id="manager-view" class="active-block">
         <div class="dash-title">
-          <h3>Ai Manager -&nbsp;</h3>
-          <h3 class="current-integration">Zendesk</h3>
+          <h3>Zendesk</h3>
+          <!-- <div class="manager-view-selector">
+            <div class="add-selector grey-dashed-border">
+              <a class="grey-font">&#43;</a>
+            </div>
+          </div> -->
         </div>
 
-        <div class="manager-view-selector">
-          <div data-integration="Zendesk" class="grey-background">
-            <img src="../images/zendesk.png" />
-          </div>
-          <div data-integration="Twitter" class="grey-background">
-            <img src="../images/twitter.png" />
-          </div>
-          <div class="add-selector grey-border">
-            <a class="grey-font">&#43;</a>
-          </div>
-        </div>
 
         <div class="manager-stats">
           <div>
@@ -216,19 +209,6 @@
           <p>Changes Saved</p>
         </div>
       </div>
-
-      <!-- FOOTER -->
-      <center><footer id="footer-container" class="medium-padding-top">
-        <img src="../images/Final_production_hi5_image.png">
-        <div>
-          <a class="green-font" href="./tos.html">Terms of Service</a> |
-          <a class="green-font" href="./privacy.html">Privacy Policy</a>
-        </div>
-        <div>
-          Copyright © 2016-2017 Tier5International, Inc.
-        </div>
-      </footer></center>
-
 
     </div>
   </div>
