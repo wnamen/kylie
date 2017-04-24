@@ -33,7 +33,7 @@
   <link href="../styles/styles.css" rel="stylesheet">
   <link href="../styles/forms.css" rel="stylesheet">
   <link href="../styles/footer.css" rel="stylesheet">
-  <link href="../styles/dashboard.css" rel="stylesheet">
+  <link href="../styles/settings-roles.css" rel="stylesheet">
 
   <!-- SCRIPTS -->
   <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script>
@@ -48,65 +48,24 @@
     <div id="side-navbar" class="dark-grey-background">
       <div class="nav-options">
         <img class="nav-logo" src="../images/favicon.ico/favicon-96x96.png" />
-        <i data-view="manager" class="material-icons">&#xE871;</i>
-        <i data-view="settings" class="material-icons">&#xE8B8;</i>
+        <a href="./dashboard-manager.html"><i data-view="manager" class="material-icons">&#xE871;</i></a>
+        <a href="./settings-roles.html"><i data-view="settings" class="material-icons">&#xE8B8;</i></a>
       </div>
     </div>
 
     <div id="dash-view" class="col s8 m11 l11 offset-s3 offset-m1 offset-l1">
-      <div id="manager-view" class="active-block">
-        <div class="dash-title">
-          <h3>Zendesk</h3>
-          <!-- <div class="manager-view-selector">
-            <div class="add-selector grey-dashed-border">
-              <a class="grey-font">&#43;</a>
-            </div>
-          </div> -->
-        </div>
-
-
-        <div class="manager-stats">
-          <div>
-            <p>Drafts Created:</p>
-            <p id="drafts-created-results">104</p>
-          </div>
-          <div>
-            <p>Messages Automatically Sent:</p>
-            <p id="messages-auto-sent">305</p>
-          </div>
-        </div>
-
-        <div class="manager-cards">
-          <div class="manager-card">
-            <div class="grey-border">
-              <img class="card-logo" src="../images/favicon.ico/favicon-96x96.png" />
-            </div>
-
-            <p>support@rogers.com</p>
-          </div>
-
-          <div class="manager-card">
-            <div class="grey-border">
-              <img class="card-logo" src="../images/favicon.ico/favicon-96x96.png" />
-            </div>
-
-            <p>@rogersSupport</p>
-          </div>
-        </div>
-      </div>
-
-      <div id="settings-view" class="">
+      <div id="settings-view" class="active-block">
         <div class="dash-title">
           <h3>Settings</h3>
         </div>
 
         <div id="settings-container">
           <div class="settings-options">
-            <h5 data-settings-view="roles" class="settings-option">Roles</h5>
-            <h5 data-settings-view="users" class="settings-option">Users</h5>
-            <h5 data-settings-view="security" class="settings-option">Security</h5>
-            <h5 data-settings-view="privacy" class="settings-option">Privacy</h5>
-            <h5 data-settings-view="billing" class="settings-option">Billing</h5>
+            <a href="./settings-roles.html"><h5 data-settings-view="roles" class="settings-option">Roles</h5></a>
+            <a href="./settings-users.html"><h5 data-settings-view="users" class="settings-option">Users</h5></a>
+            <a href="./settings-security.html"><h5 data-settings-view="security" class="settings-option">Security</h5></a>
+            <a href="./settings-privacy.html"><h5 data-settings-view="privacy" class="settings-option">Privacy</h5></a>
+            <a href="./settings-billing.html"><h5 data-settings-view="billing" class="settings-option">Billing</h5></a>
           </div>
 
           <!-- ROLES -->
@@ -147,60 +106,51 @@
 
               <div id="editor-options">
                 <div>
-                  <input type="checkbox" name="create-user" class="validate"/>
+                  <input type="checkbox" id="create-user" class="validate"/>
                   <label for="create-user">Create User</label>
                 </div>
                 <div>
-                  <input type="checkbox" name="edit-user" class="validate"/>
+                  <input type="checkbox" id="edit-user" class="validate"/>
                   <label for="edit-user">Edit User</label>
                 </div>
                 <div>
-                  <input type="checkbox" name="delete-user" class="validate"/>
+                  <input type="checkbox" id="delete-user" class="validate"/>
                   <label for="delete-user">Delete User</label>
                 </div>
                 <div>
-                  <input type="checkbox" name="assign-user-roles" class="validate"/>
+                  <input type="checkbox" id="assign-user-roles" class="validate"/>
                   <label for="assign-user-roles">Assign User Roles</label>
                 </div>
                 <div>
-                  <input type="checkbox" name="set-global-permissions" class="validate"/>
+                  <input type="checkbox" id="set-global-permissions" class="validate"/>
                   <label for="set-global-permissions">Set Global Permissions</label>
                 </div>
                 <div>
-                  <input type="checkbox" name="change-role-permissions" class="validate"/>
+                  <input type="checkbox" id="change-role-permissions" class="validate"/>
                   <label for="change-role-permissions">Change Role Permissions</label>
                 </div>
                 <div>
-                  <input type="checkbox" name="assign-models" class="validate"/>
+                  <input type="checkbox" id="assign-models" class="validate"/>
                   <label for="assign-models">Assign Models</label>
                 </div>
                 <div>
-                  <input type="checkbox" name="create-models" class="validate"/>
+                  <input type="checkbox" id="create-models" class="validate"/>
                   <label for="create-models">Create Models</label>
                 </div>
                 <div>
-                  <input type="checkbox" name="merge-models" class="validate"/>
+                  <input type="checkbox" id="merge-models" class="validate"/>
                   <label for="merge-models">Merge Models</label>
                 </div>
                 <div>
-                  <input type="checkbox" name="add-integrations" class="validate"/>
+                  <input type="checkbox" id="add-integrations" class="validate"/>
                   <label for="add-integrations">Add Integrations</label>
                 </div>
                 <div>
-                  <input type="checkbox" name="adjust-confidence-thresholds" class="validate"/>
+                  <input type="checkbox" id="adjust-confidence-thresholds" class="validate"/>
                   <label for="adjust-confidence-thresholds">Adjust Confidence Thresholds</label>
                 </div>
               </div>
             </div>
-          </div>
-
-          <div id="users-container" class="">
-          </div>
-          <div id="security-container" class="">
-          </div>
-          <div id="privacy-container" class="">
-          </div>
-          <div id="billing-container" class="">
           </div>
         </div>
 
@@ -219,7 +169,7 @@
       <h3>Complete the fields below to create a new role</h3>
 
       <div class="input-field">
-        <input id="role-name" type="text" name="role-name" class="validate" placeholder="Role Name" required>
+        <input id="role-id" type="text" name="role-name" class="validate" placeholder="Role Name" required>
       </div>
       <div class="input-field">
         <input id="role-description" type="text" name="role-description" class="validate" placeholder="Role Description" required>

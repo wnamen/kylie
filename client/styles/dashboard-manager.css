@@ -28,12 +28,13 @@ body {
   color: white
 }
 
-.nav-options i, .nav-options img {
+.nav-options a i, .nav-options img {
   margin: 2vh 0 5vh 0;
 }
 
-.nav-options i {
+.nav-options a i {
   cursor: pointer;
+  color: white
 }
 
 /*DASH-VIEW*/

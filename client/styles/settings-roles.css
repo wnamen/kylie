@@ -1,0 +1,178 @@
+/* GENERAL STYLING */
+
+body {
+  background-color: #fefdfb;
+  font-family: 'Merriweather', garamond, serif;
+}
+
+/*SIDE NAV*/
+
+#side-navbar {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  height: 100%;
+  width: 6%;
+}
+
+.nav-logo {
+  width: 50%;
+}
+
+.nav-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white
+}
+
+.nav-options a, .nav-options img {
+  margin: 2vh 0 5vh 0;
+}
+
+.nav-options a {
+  cursor: pointer;
+  color: white
+}
+
+/*DASH-VIEW*/
+
+#dash-view {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 3vw 5vw;
+}
+
+.dash-title {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1vw;
+}
+
+.active-block {
+  display: block !important;
+}
+
+/*SETTINGS*/
+
+#settings-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.settings-options, .settings-controller, .settings-editor {
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
+  margin-right: 3vw;
+}
+
+.settings-controller, .settings-editor {
+  width: 35vw;
+  padding: 0.4vw 1vw;
+}
+
+.settings-options h5 {
+  margin: 0 0 2vw 0;
+  font-weight: 300;
+  cursor: pointer;
+  color: black;
+}
+
+.settings-header p {
+  margin: 0;
+}
+
+.settings-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 2px solid #ECECEC;
+  margin-bottom: 1vw;
+}
+
+.settings-header div {
+  display: inline-flex;
+  flex-direction: row;
+  padding-bottom: 1vh;
+}
+
+.settings-header div input {
+  border: 1px solid #ECECEC;
+  height: 100%;
+  width: 30%;
+  text-align: center;
+  margin: 0;
+}
+
+.settings-header div p {
+  margin-left: 1vw;
+  cursor: pointer;
+}
+
+#roles-container, #users-container, #security-container, #privacy-container, #billing-container {
+  display: none;
+}
+
+#controller-cards {
+  overflow-y: scroll;
+  height: 60vh;
+}
+
+.controller-card {
+  margin-bottom: 1vw;
+  padding: 0.5vw;
+}
+
+.controller-card:hover {
+  background-color: #ECECEC;
+}
+
+.active-card {
+  background-color: #ECECEC;
+}
+
+.controller-title {
+  margin-top: 0;
+}
+
+.controller-description {
+  margin-left: 2vw;
+  font-size: 0.9em;
+}
+
+.description-title {
+  font-weight: 500;
+}
+
+#editor-options {
+  display: flex;
+  flex-direction: column;
+}
+
+#editor-options .input-field label{
+  height: 2em;
+}
+
+#saved-notification {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  float: right;
+  width: 15%;
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
+  padding: 1vh;
+  margin: 3vw;
+}
+
+#saved-notification p {
+  margin: 0;
+  color: white;
+}
+
+.active-flex {
+  display: flex !important;
+}

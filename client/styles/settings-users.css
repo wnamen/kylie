@@ -28,12 +28,13 @@ body {
   color: white
 }
 
-.nav-options i, .nav-options img {
+.nav-options a, .nav-options img {
   margin: 2vh 0 5vh 0;
 }
 
-.nav-options i {
+.nav-options a {
   cursor: pointer;
+  color: white
 }
 
 /*DASH-VIEW*/
@@ -44,10 +45,6 @@ body {
   padding: 3vw 5vw;
 }
 
-#manager-view, #statistics-view, #settings-view {
-  display: none;
-}
-
 .dash-title {
   display: flex;
   flex-direction: row;
@@ -56,76 +53,6 @@ body {
 
 .active-block {
   display: block !important;
-}
-
-.manager-view-selector {
-  display: flex;
-  flex-direction: row;
-}
-
-.manager-view-selector div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 1vw;
-  height: 50px;
-  width: 50px;
-  cursor: pointer;
-}
-
-.manager-view-selector div img {
-  width: 70%;
-}
-
-.add-selector a {
-  font-size: 3.5em;
-  font-weight: 300;
-}
-
-.manager-stats {
-  display: flex;
-  flex-direction: column;
-  font-family: 'Open Sans', helvetica, sans-serif;
-  font-weight: 300;
-  width: 30%;
-  margin: 5vw 0;
-  padding: 0 !important;
-}
-
-.manager-stats div {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.manager-cards {
-  display: flex;
-  flex-direction: row;
-}
-
-.manager-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-right: 5vw;
-  font-family: 'Open Sans', helvetica, sans-serif;
-  font-weight: 300;
-}
-
-.manager-card div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 200px;
-  height: 200px;
-  padding: 1vw;
-}
-
-.manager-card div img {
-  width: 70%;
-
 }
 
 /*SETTINGS*/
@@ -150,6 +77,7 @@ body {
   margin: 0 0 2vw 0;
   font-weight: 300;
   cursor: pointer;
+  color: black;
 }
 
 .settings-header p {
@@ -192,6 +120,10 @@ body {
   height: 60vh;
 }
 
+#controller-cards div {
+  margin: 1vh 0;
+}
+
 .controller-card {
   margin-bottom: 1vw;
   padding: 0.5vw;
@@ -225,6 +157,15 @@ body {
 
 #editor-options .input-field label{
   height: 2em;
+}
+
+[type="checkbox"] + label:before, [type="checkbox"]:not(.filled-in) + label:after {
+  border: 1px solid #28c3b5;
+}
+
+[type="checkbox"]:checked + label:before {
+  border-right-color: #28c3b5;
+  border-bottom-color: #28c3b5;
 }
 
 #saved-notification {
