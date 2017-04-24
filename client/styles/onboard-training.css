@@ -1,0 +1,78 @@
+/* GENERAL STYLING */
+
+body {
+  background-color: #fefdfb;
+  font-family: 'Merriweather', garamond, serif;
+}
+
+/*SIDE NAV*/
+
+#side-navbar {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  height: 100%;
+  width: 6%;
+}
+
+.nav-logo {
+  width: 50%;
+}
+
+.nav-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white
+}
+
+.nav-options i, .nav-options img {
+  margin: 2vh 0 5vh 0;
+}
+
+.nav-options i {
+  cursor: pointer;
+}
+
+/*DASH-VIEW*/
+
+#dash-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 3vw 3vw;
+  height: 90vh;
+}
+
+#training-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15vh 10vw;
+  box-shadow: 5px 5px 5px 0px #ECECEC;
+  border: 1px solid #ECECEC;
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
+}
+
+#training-container i {
+  font-size: 6em;
+  padding-bottom: 5vh;
+}
+
+#training-container h4, p {
+  margin: 0;
+  font-weight: 300;
+  text-align: center;
+}
+
+.active-block {
+  display: block !important;
+}
+
+.active-flex {
+  display: flex !important;
+}
