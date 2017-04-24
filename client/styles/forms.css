@@ -236,6 +236,32 @@ select:disabled {
   height: 18px;
 }
 
+/*SWITCHES*/
+
+.switch label .lever {
+  border: 1px solid #7f5dfc;
+  height: 13px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.switch label .lever:after {
+  width: 15px;
+  height: 15px;
+  box-shadow: none;
+  top: -2px;
+  background-color:  #28c3b5;
+}
+
+.switch label input[type=checkbox]:checked + .lever {
+  background-color: #d4f3f0;
+}
+
+.switch label input[type=checkbox]:checked + .lever:after {
+  background-color:  #28c3b5;
+}
+
+
 /*VALIDATION*/
 
 .demo-form-submit {
