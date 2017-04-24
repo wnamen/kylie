@@ -33,7 +33,7 @@
   <link href="../styles/styles.css" rel="stylesheet">
   <link href="../styles/forms.css" rel="stylesheet">
   <link href="../styles/footer.css" rel="stylesheet">
-  <link href="../styles/settings-users.css" rel="stylesheet">
+  <link href="../styles/settings-security.css" rel="stylesheet">
 
   <!-- SCRIPTS -->
   <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script>
@@ -71,28 +71,51 @@
           <div id="roles-container" class="active-flex">
             <div class="settings-controller grey-border">
               <div class="settings-header">
-                <p>Users</p>
-
-                <div>
-                  <p data-target="add-role-modal">Add</p>
-                  <p data-target="edit-role-modal">Edit</p>
-                  <p class="delete-card">Delete</p>
-                </div>
+                <p class="no-margin-bottom">Security</p>
               </div>
 
-              <div id="controller-cards">
-                <div>
-                  <input type="checkbox" id="create-user" class="validate"/>
-                  <label class="black-font" for="create-user">Jamasen Rodriguez <span>(Admin)</span></label>
-                </div>
-                <div>
-                  <input type="checkbox" id="edit-user" class="validate"/>
-                  <label class="black-font" for="edit-user">Sinan Ozdemir <span>(Admin)</span></label>
-                </div>
-                <div>
-                  <input type="checkbox" id="delete-user" class="validate"/>
-                  <label class="black-font" for="delete-user">William Namen <span>(Manager)</span></label>
-                </div>
+              <div id="security-fields">
+                <form id="confidential-topics">
+                  <p class="no-margin-bottom">Confidential Topics</p>
+                  <div class="input-field">
+                    <input type="text" />
+                    <div class="btns">
+                      <button class="btn waves-effect waves-light waves-ripple">Save</button>
+                    </div>
+                  </div>
+                </form>
+
+                <form id="login-key" class="medium-margin-top">
+                  <p class="no-margin-bottom">Login Key</p>
+                  <div class="input-field">
+                    <input type="text" disabled/>
+                  </div>
+                </form>
+
+                <form id="email-change" class="medium-margin-top">
+                  <p class="no-margin-bottom">Email</p>
+                  <div class="input-field">
+                    <input type="text" />
+                    <div class="btns">
+                      <button class="btn waves-effect waves-light waves-ripple">Save</button>
+                    </div>
+                  </div>
+                </form>
+
+                <form id="password-change">
+                  <p class="no-margin-bottom">Old Password</p>
+                  <div class="input-field">
+                    <input type="text" />
+                  </div>
+                  <p class="no-margin-bottom">New Password</p>
+                  <div class="input-field">
+                    <input type="text" />
+                    <div class="btns">
+                      <button class="btn waves-effect waves-light waves-ripple">Save</button>
+                    </div>
+                  </div>
+                </form>
+
               </div>
             </div>
           </div>
@@ -100,31 +123,12 @@
 
         <div id="saved-notification" class="dark-grey-background animated">
           <i class="fa fa-circle fa-1x green-font" aria-hidden="true"></i>
-          <p>Changes Saved</p>
+          <p class="no-margin-bottom">Changes Saved</p>
         </div>
       </div>
 
     </div>
   </div>
-
-  <!-- ADD ROLE MODAL -->
-  <div id="add-role-modal" class="modal">
-    <form class="modal-content">
-      <h3>Complete the fields below to create a new role</h3>
-
-      <div class="input-field">
-        <input id="role-name" type="text" name="role-name" class="validate" placeholder="Role Name" required>
-      </div>
-      <div class="input-field">
-        <input id="role-description" type="text" name="role-description" class="validate" placeholder="Role Description" required>
-      </div>
-
-      <div class="btns">
-        <a type="button" class="btn waves-effect waves-light waves-ripple modal-close">Create</a>
-      </div>
-    </form>
-  </div>
-
 
 </body>
 </html>
