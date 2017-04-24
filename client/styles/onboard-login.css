@@ -39,19 +39,44 @@ body {
 /*DASH-VIEW*/
 
 #dash-view {
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  padding: 3vw 5vw;
+  padding: 3vw 3vw;
+  height: 90vh;
 }
 
 #login-container {
-  padding: 3vh 3vw;
-  box-shadow: 2px 2px 2px 2px #ECECEC;
+  padding: 2vh 1vw;
+  box-shadow: 5px 5px 5px 0px #ECECEC;
   border: 1px solid #ECECEC;
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
 }
 
 #login-form {
-  padding: 5vw;
+  padding: 0 15vw;
+}
+
+#login-form h4 {
+  font-weight: 300;
+  text-align: center;
+}
+
+#login-input-container {
+  padding: 5vh 0;
+  padding-bottom: 15vh;
+}
+
+#login-input-container input {
+  margin: 0;
+  height: 2em;
+  border-color: #28c3b5;
+}
+
+#login-container .btns {
+  float: right;
 }
 
 .active-block {
