@@ -138,6 +138,9 @@ function handleSelectAllAssignments() {
       k++
     }
   }
+
+  availableSeats = customerData.totalSeats - assignments.length;
+  $('#available-seats').text(availableSeats);
 }
 
 function handleSelectedAssignments(e) {
