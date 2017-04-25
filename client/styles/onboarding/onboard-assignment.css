@@ -21,7 +21,7 @@ body, p {
   height: 90vh;
 }
 
-#assignment-container {
+#assignment-form {
   padding: 2vh 1vw;
   box-shadow: 5px 5px 5px 0px #ECECEC;
   border: 1px solid #ECECEC;
@@ -29,15 +29,15 @@ body, p {
   font-weight: 300;
 }
 
-#assignment-form {
+#assignment-container {
   padding: 0 7vw;
 }
 
-#assignment-form h4 {
+#assignment-container h4 {
   margin-bottom: 0;
 }
 
-#assignment-form h4, #assignment-form p {
+#assignment-container h4, #assignment-container p {
   font-weight: 300;
   text-align: center;
 }
@@ -80,6 +80,6 @@ body, p {
   font-size: 1em;
 }
 
-#assignment-container .btns {
+#assignment-form .btns {
   float: right;
 }
