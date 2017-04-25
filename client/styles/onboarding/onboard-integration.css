@@ -1,39 +1,12 @@
+@import url("../buttons.css");
+@import url("../styles.css");
+@import url("../dashboard/side-nav.css");
+
 /* GENERAL STYLING */
 
 body {
   background-color: #fefdfb;
   font-family: 'Merriweather', garamond, serif;
-}
-
-/*SIDE NAV*/
-
-#side-navbar {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  position: fixed;
-  height: 100%;
-  width: 6%;
-}
-
-.nav-logo {
-  width: 50%;
-}
-
-.nav-options {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white
-}
-
-.nav-options i, .nav-options img {
-  margin: 2vh 0 5vh 0;
-}
-
-.nav-options i {
-  cursor: pointer;
 }
 
 /*DASH-VIEW*/
@@ -43,7 +16,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 3vw 3vw;
+  padding: 2vh 5vw;
   height: 90vh;
 }
 

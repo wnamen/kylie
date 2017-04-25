@@ -42,7 +42,7 @@ body {
 #dash-view {
   display: inline-flex;
   flex-direction: column;
-  padding: 3vw 5vw;
+  padding: 2vh 5vw;
 }
 
 #manager-view, #statistics-view, #settings-view {

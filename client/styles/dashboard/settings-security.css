@@ -42,7 +42,7 @@ body {
 #dash-view {
   display: inline-flex;
   flex-direction: column;
-  padding: 3vw 5vw;
+  padding: 2vh 5vw;
 }
 
 .dash-title {
@@ -115,21 +115,35 @@ body {
   display: none;
 }
 
-#billing-data {
+#security-fields {
+  overflow-y: scroll;
+  height: 60vh;
+}
+
+#security-fields form {
   display: flex;
   flex-direction: column;
 }
 
-.billing-data-row {
+#security-fields .input-field {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
 }
 
-#billing-status {
-  text-align: center;
-  font-size: 2em;
+#security-fields input {
+  margin: 0;
+  height: 2em;
+  border-color: #28c3b5;
+}
+
+#security-fields input, #security-fields button {
+  margin-right: 1vw;
+}
+
+#security-fields .btns .btn {
+  height: 32px;
+  line-height: 32px;
 }
 
 .controller-card {

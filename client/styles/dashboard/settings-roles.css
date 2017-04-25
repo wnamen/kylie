@@ -42,7 +42,7 @@ body {
 #dash-view {
   display: inline-flex;
   flex-direction: column;
-  padding: 3vw 5vw;
+  padding: 2vh 5vw;
 }
 
 .dash-title {
@@ -120,10 +120,6 @@ body {
   height: 60vh;
 }
 
-#controller-cards div {
-  margin: 1vh 0;
-}
-
 .controller-card {
   margin-bottom: 1vw;
   padding: 0.5vw;
@@ -157,15 +153,6 @@ body {
 
 #editor-options .input-field label{
   height: 2em;
-}
-
-[type="checkbox"] + label:before, [type="checkbox"]:not(.filled-in) + label:after {
-  border: 1px solid #28c3b5;
-}
-
-[type="checkbox"]:checked + label:before {
-  border-right-color: #28c3b5;
-  border-bottom-color: #28c3b5;
 }
 
 #saved-notification {

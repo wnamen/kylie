@@ -1,0 +1,54 @@
+@import url("../buttons.css");
+@import url("../styles.css");
+@import url("../forms.css");
+@import url("../dashboard/side-nav.css");
+
+/* GENERAL STYLING */
+
+body {
+  background-color: #fefdfb;
+  font-family: 'Merriweather', garamond, serif;
+}
+
+/*DASH-VIEW*/
+
+#dash-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2vh 5vw;
+  height: 90vh;
+}
+
+#login-form {
+  padding: 2vh 1vw;
+  box-shadow: 5px 5px 5px 0px #ECECEC;
+  border: 1px solid #ECECEC;
+  font-family: 'Open Sans', helvetica, sans-serif;
+  font-weight: 300;
+}
+
+#login-container {
+  padding: 0 13vw;
+}
+
+#login-container h4 {
+  font-weight: 300;
+  text-align: center;
+}
+
+#login-input-container {
+  padding: 5vh 0;
+  padding-bottom: 15vh;
+}
+
+#login-input-container input {
+  margin: 0;
+  height: 2em;
+  border-color: #28c3b5;
+}
+
+#login-form .btns {
+  float: right;
+}

@@ -42,7 +42,7 @@ body {
 #dash-view {
   display: inline-flex;
   flex-direction: column;
-  padding: 3vw 5vw;
+  padding: 2vh 5vw;
 }
 
 .dash-title {
@@ -115,35 +115,13 @@ body {
   display: none;
 }
 
-#security-fields {
+#controller-cards {
   overflow-y: scroll;
   height: 60vh;
 }
 
-#security-fields form {
-  display: flex;
-  flex-direction: column;
-}
-
-#security-fields .input-field {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-#security-fields input {
-  margin: 0;
-  height: 2em;
-  border-color: #28c3b5;
-}
-
-#security-fields input, #security-fields button {
-  margin-right: 1vw;
-}
-
-#security-fields .btns .btn {
-  height: 32px;
-  line-height: 32px;
+#controller-cards div {
+  margin: 1vh 0;
 }
 
 .controller-card {
@@ -181,6 +159,15 @@ body {
   height: 2em;
 }
 
+[type="checkbox"] + label:before, [type="checkbox"]:not(.filled-in) + label:after {
+  border: 1px solid #28c3b5;
+}
+
+[type="checkbox"]:checked + label:before {
+  border-right-color: #28c3b5;
+  border-bottom-color: #28c3b5;
+}
+
 #saved-notification {
   display: none;
   flex-direction: row;
@@ -201,8 +188,4 @@ body {
 
 .active-flex {
   display: flex !important;
-}
-
-.medium-margin-top {
-  margin-top: 2vh;
 }

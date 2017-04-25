@@ -1,39 +1,13 @@
+@import url("../buttons.css");
+@import url("../styles.css");
+@import url("../forms.css");
+@import url("../dashboard/side-nav.css");
+
 /* GENERAL STYLING */
 
 body {
   background-color: #fefdfb;
   font-family: 'Merriweather', garamond, serif;
-}
-
-/*SIDE NAV*/
-
-#side-navbar {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  position: fixed;
-  height: 100%;
-  width: 6%;
-}
-
-.nav-logo {
-  width: 50%;
-}
-
-.nav-options {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white
-}
-
-.nav-options i, .nav-options img {
-  margin: 2vh 0 5vh 0;
-}
-
-.nav-options i {
-  cursor: pointer;
 }
 
 /*DASH-VIEW*/
@@ -43,7 +17,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 3vw 3vw;
+  padding: 2vh 5vw;
   height: 90vh;
 }
 
@@ -60,7 +34,7 @@ body {
   text-align: center;
 }
 
-#topics-box {
+#topics-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,12 +42,12 @@ body {
   margin-bottom: 10vh;
 }
 
-#topics-box img {
+#topics-form img {
   width: 12.5%;
   margin: 4vh 0;
 }
 
-#topics-box .input-field {
+#topics-form .input-field {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -81,17 +55,17 @@ body {
   margin-bottom: 2vh;
 }
 
-#topics-box input, p {
+#topics-form input, p {
   margin: 0;
 }
 
-#topics-box input {
+#topics-form input {
   height: 2em;
   width: 160%;
   border-color: #28c3b5;
 }
 
-#topics-box button {
+#topics-form button {
   border-radius: 50px;
   padding: 0 2.5em;
   font-size: 1.3em;
@@ -101,18 +75,11 @@ body {
   display: flex;
   align-items: center;
   float: right;
+  cursor: pointer;
 }
 
 #topics-skip i {
   font-size: 2em;
   font-weight: 200;
   margin-left: 10px;
-}
-
-.active-block {
-  display: block !important;
-}
-
-.active-flex {
-  display: flex !important;
 }

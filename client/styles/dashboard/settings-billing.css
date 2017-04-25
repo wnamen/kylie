@@ -42,7 +42,7 @@ body {
 #dash-view {
   display: inline-flex;
   flex-direction: column;
-  padding: 3vw 5vw;
+  padding: 2vh 5vw;
 }
 
 .dash-title {
@@ -115,9 +115,21 @@ body {
   display: none;
 }
 
-#controller-cards {
-  overflow-y: scroll;
-  height: 60vh;
+#billing-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.billing-data-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#billing-status {
+  text-align: center;
+  font-size: 2em;
 }
 
 .controller-card {
@@ -175,4 +187,8 @@ body {
 
 .active-flex {
   display: flex !important;
+}
+
+.medium-margin-top {
+  margin-top: 2vh;
 }

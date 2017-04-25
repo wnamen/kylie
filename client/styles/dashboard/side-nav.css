@@ -1,0 +1,31 @@
+/*SIDE NAV*/
+
+#side-navbar {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  height: 100%;
+  width: 6%;
+}
+
+.nav-logo {
+  width: 50%;
+}
+
+.nav-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white
+}
+
+.nav-options a i, .nav-options img {
+  margin: 2vh 0 5vh 0;
+}
+
+.nav-options a i {
+  cursor: pointer;
+  color: white
+}
