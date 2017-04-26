@@ -50,6 +50,7 @@ var loaders = ['training', 'agents', 'cloning'];
 $(document).ready(function() {
 
   loadAssignmentData()
+  $('#agent-search-toggle').click(handleAgentSearchToggle);
   $('.assignment-row').on('click', 'input', handleAssignment);
   $('#select-all input').click(handleSelectAllAssignments);
   $('#assignment-form').submit(handleSelectedAssignments);
@@ -97,6 +98,10 @@ function loadAssignmentData() {
   customerData.agents.forEach(function(agent) {
     $('#assignment-switch-container').append('<div class="assignment-row"><p class="black-font">' + agent.name + '</p><div class="switch"><label><input type="checkbox" value="' + agent.name + 'id' + agent.id + '"><span class="lever"></span></label></div></div><hr>')
   })
+}
+
+function handleAgentSearchToggle() {
+  $(this).siblings('.input-field').fadeToggle().toggleClass('hide')
 }
 
 function handleAssignment() {

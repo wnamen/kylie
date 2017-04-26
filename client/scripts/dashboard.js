@@ -126,6 +126,7 @@ $(document).ready(function() {
   loadBillingData();
 
   // MANAGER DASHBOARD FUNCTIONALITY
+  $('#agent-search-toggle').click(handleAgentSearchToggle);
   $('.assignment-row').on('click', 'input', handleAssignment);
   $('#select-all input').click(handleSelectAllAssignments);
   $('#draft-confidence').on('change', captureSliderChange);
@@ -194,6 +195,10 @@ function loadBillingData() {
 }
 
 // MANAGER DASHBOARD FUNCTIONALITY
+
+function handleAgentSearchToggle() {
+  $(this).siblings('.input-field').fadeToggle().toggleClass('hide');
+}
 
 function handleAssignment() {
   var value = ($(this).val()).split('id');
@@ -290,6 +295,7 @@ function handleCardSelection() {
 
     if (newCard === 'Admin') {
       $('#editor-input').prop('disabled', true);
+
     } else {
       $('#editor-input').prop('disabled', false);
     }

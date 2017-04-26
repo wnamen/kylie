@@ -51,6 +51,11 @@
 
     <div id="dash-view" class="col s8 m11 l11 offset-s3 offset-m1 offset-l1">
       <div id="manager-view">
+        <div id="saved-notification" class="dark-grey-background animated">
+          <i class="fa fa-circle fa-1x green-font" aria-hidden="true"></i>
+          <p>Changes Saved</p>
+        </div>
+
         <div class="dash-title">
           <h3>Zendesk</h3>
           <!-- <div class="integration-creator">
@@ -59,7 +64,6 @@
             </div>
           </div> -->
         </div>
-
 
         <div id="manager-stats">
           <div class="manager-stats-card">
@@ -84,7 +88,10 @@
             <div id="assignment-search-bar">
               <div>
                 <p class="black-font no-margins">Human Agents</p>
-                <i class="material-icons black-font">&#xE8B6;</i>
+                <i id="agent-search-toggle" class="material-icons black-font">&#xE8B6;</i>
+                <div class="input-field hide">
+                  <input type="text" id="agent-search" />
+                </div>
               </div>
               <div id="select-all" class="switch">
                 <label>
@@ -139,10 +146,6 @@
 
       </div>
 
-    </div>
-    <div id="saved-notification" class="dark-grey-background animated">
-      <i class="fa fa-circle fa-1x green-font" aria-hidden="true"></i>
-      <p>Changes Saved</p>
     </div>
   </div>
 

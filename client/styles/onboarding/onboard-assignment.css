@@ -57,8 +57,14 @@ body, p {
 }
 
 #assignment-search-bar i {
+  cursor: pointer;
   font-size: 1em;
   margin-left: 1vw;
+}
+
+#agent-search {
+  margin: 0 0 0 1em;
+  height: 1.3em;
 }
 
 #assignment-switch-container {
@@ -82,4 +88,8 @@ body, p {
 
 #assignment-form .btns {
   float: right;
+}
+
+.hide {
+  display: none !important;
 }
