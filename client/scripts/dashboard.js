@@ -133,6 +133,7 @@ $(document).ready(function() {
 
   // SETTINGS ROLES FUNCTIONALITY
   $('#controller-cards').on('click', '.controller-card', handleCardSelection);
+  $('#editor-input').on('change', handleRoleEditor);
   $('.delete-card').click(handleDeleteCard);
   $('#add-role-modal form .btn').click(handleAddNewRole);
   $('.save-btn').click(handleSaveAction);
@@ -191,6 +192,8 @@ function loadBillingData() {
   }
 
 }
+
+// MANAGER DASHBOARD FUNCTIONALITY
 
 function handleAssignment() {
   var value = ($(this).val()).split('id');
@@ -280,12 +283,30 @@ function handleCardSelection() {
     var newId = '#' + newCard.toLowerCase() + '-card';
     var currentId = '#' + currentCard + '-card';
 
-    $('#editor-input').val(newCard);
-
     $(newId).toggleClass('active-card');
     $(currentId).toggleClass('active-card');
+
+    $('#editor-input').val(newCard);
+
+    if (newCard === 'Admin') {
+      $('#editor-input').prop('disabled', true);
+    } else {
+      $('#editor-input').prop('disabled', false);
+    }
   }
   currentCard = newCard.toLowerCase();
+}
+
+function handleRoleEditor() {
+  var value = $(this).val();
+  var $this = '#' + currentCard + '-card';
+
+  $($this).data('role', value);
+  $($this + ' .controller-title').text(value);
+  $($this + ' .description-title').text(value);
+  $($this).attr('id', value.toLowerCase() + '-card');
+
+  currentCard = value.toLowerCase();
 }
 
 function handleDeleteCard() {
