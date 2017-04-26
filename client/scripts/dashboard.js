@@ -138,9 +138,10 @@ $(document).ready(function() {
   $('.save-btn').click(handleSaveAction);
 
   // SETTINGS USERS FUNCTIONALITY
-  $('#add-users-modal modal-content').submit(handleAddUser);
-  $('#edit-users-modal modal-content').submit(handleEditUserRole);
-  $('.delete-card').submit(handleRemoveUser);
+  $('.user-card').on('click', 'input', handleSelectedUser);
+  $('#add-users-modal form').submit(handleAddUser);
+  $('#edit-users-modal form').submit(handleEditUser);
+  $('.delete-user-card').click(handleRemoveUser);
 
   // SETTINGS SECURITY FUNCTIONALITY
   $('#confidential-topics-form').submit(handleTopicsUpdate);
@@ -167,7 +168,7 @@ function loadManagerData() {
 
 function loadUsersData() {
   usersData.users.forEach(function(user) {
-    $('#users-container #controller-cards').append('<div><input type="checkbox" id="' + user.name + '" class="validate"/><label class="black-font" for="' + user.name + '">' + user.name + ' <span>(' + user.role + ')</span></label></div>')
+    $('#users-container #controller-cards').append('<div id="' + user.name + ' card" class="user-card"><input type="checkbox" id="' + user.name + '" value="' + user.name + '" class="validate"/><label class="black-font" for="' + user.name + '">' + user.name + ' <span id="' + user.name + ' role" >(' + user.role + ')</span></label></div>')
   });
 }
 
@@ -268,7 +269,7 @@ function captureSliderChange() {
   handleSaveAction();
 }
 
-// SETTINGS USERS FUNCTIONALITY
+// SETTINGS ROLES FUNCTIONALITY
 
 function handleCardSelection() {
   var newCard = $(this).data('role');
@@ -287,9 +288,8 @@ function handleCardSelection() {
   currentCard = newCard.toLowerCase();
 }
 
-
 function handleDeleteCard() {
-  if ((currentCard === 'admin') || (currentCard === 'manager')) {
+  if (currentCard === 'admin') {
     return alert('You cannot delete this card.')
   } else {
     var currentId = '#' + currentCard.toLowerCase() + '-card';
@@ -334,6 +334,74 @@ function captureFormData(inputs) {
   });
   return values;
 }
+
+// SETTINGS USERS FUNCTIONALITY
+function handleSelectedUser() {
+  var value = $(this).val();
+
+  if (currentlySelected(value)) {
+    removeSelected(value);
+  } else {
+    addSelected(value);
+  }
+}
+
+function currentlySelected(name) {
+  if (selectedUsers.length <= 0) {
+    return false;
+  }
+  for(var k in selectedUsers) {
+    if (selectedUsers[k].name === name) {
+      return true;
+    }
+  }
+  return false
+}
+
+function removeSelected(name) {
+  for(var k in selectedUsers) {
+    if (selectedUsers[k].name === name) {
+      selectedUsers.splice(k, 1);
+    }
+  }
+}
+
+function addSelected(name) {
+  selectedUsers.push({
+    name: name
+  })
+}
+
+function handleAddUser(e) {
+  e.preventDefault();
+  var newUser = $(this).serializeArray();
+  createNewUser(newUser)
+}
+
+function createNewUser(data) {
+  var userName = findDataPoint(data, 'user-name'),
+      userRole = findDataPoint(data, 'user-role'),
+      $newUserCard = $('<div id="' + userName + ' card" class="user-card"><input type="checkbox" id="' + userName + '" value="' + userName + '"  class="validate"/><label class="black-font" for="' + userName + '">' + userName + ' <span id="' + userName + ' role" >(' + userRole + ')</span></label></div>');
+
+  $('#users-container #controller-cards').append($newUserCard);
+}
+
+function handleEditUser(e) {
+  e.preventDefault();
+  var value = $('#edit-users-modal form input').val();
+  selectedUsers.forEach(function(user) {
+    document.getElementById(user.name + ' role').innerHTML = '(' + value + ')';
+  })
+}
+
+function handleRemoveUser(e) {
+  e.preventDefault();
+  selectedUsers.forEach(function(user) {
+    document.getElementById(user.name + ' card').remove();
+  })
+}
+
+// SETTINGS SECURITY FUNCTIONALITY
 
 function handleTopicsUpdate(e) {
   e.preventDefault();
