@@ -18,7 +18,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white
+  color: white;
 }
 
 .nav-options a i, .nav-options img {
@@ -26,6 +26,7 @@
 }
 
 .nav-options a i {
+  font-size: 2em;
   cursor: pointer;
-  color: white
+  color: white;
 }

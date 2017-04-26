@@ -66,7 +66,20 @@ $(document).ready(function() {
     }
   });
 
-  $('#integration-connect').click(handleIntegration);
+  $('#integration-form').validate({
+    errorClass: 'error failedValidation',
+    validClass: 'success',
+    highlight: function(element, errorClass, validClass) {
+      $(element).closest('.validate').addClass(errorClass).removeClass(validClass);
+    },
+    unhighlight: function(element, errorClass, validClass) {
+      $(element).closest('.validate').addClass(validClass).removeClass(errorClass);
+    },
+    submitHandler: function() {
+      handleIntegration();
+    }
+  });
+
   $('#topics-submit').click(handleIgnoreTopics);
   $('#topics-skip').click(handleSkipTopics);
 

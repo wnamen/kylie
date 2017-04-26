@@ -63,33 +63,20 @@
             <a href="./settings-billing.html"><h5 data-settings-view="billing" class="settings-option">Billing</h5></a>
           </div>
 
-          <!-- ROLES -->
-          <div id="roles-container">
+          <!-- USERS -->
+          <div id="users-container">
             <div class="settings-controller grey-border">
               <div class="settings-header">
                 <p>Users</p>
 
                 <div>
-                  <p data-target="add-role-modal">Add</p>
-                  <p data-target="edit-role-modal">Edit</p>
+                  <p data-target="add-users-modal">Add</p>
+                  <p data-target="edit-users-modal">Edit</p>
                   <p class="delete-card">Delete</p>
                 </div>
               </div>
 
-              <div id="controller-cards">
-                <div>
-                  <input type="checkbox" id="create-user" class="validate"/>
-                  <label class="black-font" for="create-user">Jamasen Rodriguez <span>(Admin)</span></label>
-                </div>
-                <div>
-                  <input type="checkbox" id="edit-user" class="validate"/>
-                  <label class="black-font" for="edit-user">Sinan Ozdemir <span>(Admin)</span></label>
-                </div>
-                <div>
-                  <input type="checkbox" id="delete-user" class="validate"/>
-                  <label class="black-font" for="delete-user">William Namen <span>(Manager)</span></label>
-                </div>
-              </div>
+              <div id="controller-cards"></div>
             </div>
           </div>
         </div>
@@ -103,8 +90,8 @@
     </div>
   </div>
 
-  <!-- ADD ROLE MODAL -->
-  <div id="add-role-modal" class="modal">
+  <!-- ADD USER MODAL -->
+  <div id="add-users-modal" class="modal">
     <form class="modal-content">
       <h3>Create A New User</h3>
 
@@ -117,6 +104,21 @@
 
       <div class="btns">
         <button type="button" class="btn waves-effect waves-light waves-ripple modal-close">Create</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- EDIT USER MODAL -->
+  <div id="edit-users-modal" class="modal">
+    <form class="modal-content">
+      <h3>Edit User(s) Role</h3>
+
+      <div class="input-field">
+        <input id="user-role" type="text" name="user-role" class="validate" placeholder="User Role" required>
+      </div>
+
+      <div class="btns">
+        <button type="button" class="btn waves-effect waves-light waves-ripple modal-close">Save</button>
       </div>
     </form>
   </div>

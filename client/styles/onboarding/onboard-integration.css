@@ -1,4 +1,5 @@
 @import url("../buttons.css");
+@import url("../forms.css");
 @import url("../styles.css");
 @import url("../side-nav.css");
 
@@ -36,22 +37,27 @@ body {
   text-align: center;
 }
 
-#integration-box {
+#integration-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  height: 30vh;
   width: 17.5vw;
   padding: 2vh 0;
   margin: 5vh 5vw 10vh 5vw;
 }
 
-#integration-box img {
+#integration-form img {
   width: 35%;
 }
 
-#integration-box button {
+#integration-form input {
+  margin: 3vh 0;
+  height: 2em;
+  border-color: #28c3b5;
+}
+
+#integration-form button {
   border-radius: 50px;
   padding: 0 2.5em;
   font-size: 1.3em;

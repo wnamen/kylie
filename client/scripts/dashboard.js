@@ -1,5 +1,5 @@
 // THIS IS A FAKE OBJECT USED FOR TESTING DATA
-var customerData = {
+var managerData = {
   totalAgents: 305,
   totalConversations: 40175,
   totalSeats: 25,
@@ -42,6 +42,23 @@ var customerData = {
       id: 9,
       name: "Helen Keller"
     },
+  ]
+}
+
+var usersData = {
+  users: [
+    {
+      name: 'Jamasen Rodriguez',
+      role: 'Admin'
+    },
+    {
+      name: 'Sinan Ozdemir',
+      role: 'Admin'
+    },
+    {
+      name: 'William Namen',
+      role: 'Manager'
+    }
   ]
 }
 
@@ -98,25 +115,32 @@ var selectAll = false;
 var availableSeats;
 var assignments = [];
 var currentCard = 'admin';
+var selectedUsers = [];
 
 $(document).ready(function() {
 
   // PAGE DATA LOADERS
   loadManagerData();
+  loadUsersData();
   loadSecurityData();
   loadBillingData();
 
   // MANAGER DASHBOARD FUNCTIONALITY
   $('.assignment-row').on('click', 'input', handleAssignment);
   $('#select-all input').click(handleSelectAllAssignments);
-  $('#draft-confidence').on('change', captureSliderChange)
-  $('#autosend-confidence').on('change', captureSliderChange)
+  $('#draft-confidence').on('change', captureSliderChange);
+  $('#autosend-confidence').on('change', captureSliderChange);
 
   // SETTINGS ROLES FUNCTIONALITY
   $('#controller-cards').on('click', '.controller-card', handleCardSelection);
   $('.delete-card').click(handleDeleteCard);
   $('#add-role-modal form .btn').click(handleAddNewRole);
-  $('.save-btn').click(handleSaveAction)
+  $('.save-btn').click(handleSaveAction);
+
+  // SETTINGS USERS FUNCTIONALITY
+  $('#add-users-modal modal-content').submit(handleAddUser);
+  $('#edit-users-modal modal-content').submit(handleEditUserRole);
+  $('.delete-card').submit(handleRemoveUser);
 
   // SETTINGS SECURITY FUNCTIONALITY
   $('#confidential-topics-form').submit(handleTopicsUpdate);
@@ -129,16 +153,22 @@ $(document).ready(function() {
 });
 
 function loadManagerData() {
-  availableSeats = customerData.totalSeats;
+  availableSeats = managerData.totalSeats;
 
-  customerData.agents.forEach(function(agent) {
+  managerData.agents.forEach(function(agent) {
     $('#assignment-switch-container').append('<div class="assignment-row"><p class="black-font">' + agent.name + '</p><div class="switch"><label><input type="checkbox" value="' + agent.name + 'id' + agent.id + '"><span class="lever"></span></label></div></div><hr>')
   })
 
-  $('#agents-stat').text(Number(customerData.totalAgents).toLocaleString());
-  $('#conversations-stat').text(Number(customerData.totalConversations).toLocaleString());
-  $('#draft-confidence').val(Number(customerData.currentDraftConfidence));
-  $('#autosend-confidence').val(Number(customerData.currentAutosendConfidence));
+  $('#agents-stat').text(Number(managerData.totalAgents).toLocaleString());
+  $('#conversations-stat').text(Number(managerData.totalConversations).toLocaleString());
+  $('#draft-confidence').val(Number(managerData.currentDraftConfidence));
+  $('#autosend-confidence').val(Number(managerData.currentAutosendConfidence));
+}
+
+function loadUsersData() {
+  usersData.users.forEach(function(user) {
+    $('#users-container #controller-cards').append('<div><input type="checkbox" id="' + user.name + '" class="validate"/><label class="black-font" for="' + user.name + '">' + user.name + ' <span>(' + user.role + ')</span></label></div>')
+  });
 }
 
 function loadSecurityData() {
@@ -210,8 +240,8 @@ function handleSelectAllAssignments() {
   assignments = [];
   if (selectAll) {
     var k = 0;
-    while ((k < availableSeats) && (k < customerData.agents.length)) {
-      addAssigned(customerData.agents[k].name, customerData.agents[k].id);
+    while ((k < availableSeats) && (k < managerData.agents.length)) {
+      addAssigned(managerData.agents[k].name, managerData.agents[k].id);
       k++
     }
   }
@@ -305,19 +335,28 @@ function captureFormData(inputs) {
   return values;
 }
 
-function handleTopicsUpdate() {
+function handleTopicsUpdate(e) {
+  e.preventDefault();
   var $inputs = $('#confidential-topics-form :input');
   var values = captureFormData($inputs);
+  handleSaveAction();
+
 }
 
-function handleEmailUpdate() {
+function handleEmailUpdate(e) {
+  e.preventDefault();
   var $inputs = $('#email-form :input');
   var values = captureFormData($inputs);
+  handleSaveAction();
+
 }
 
-function handlePasswordUpdate() {
+function handlePasswordUpdate(e) {
+  e.preventDefault();
   var $inputs = $('#password-form :input');
   var values = captureFormData($inputs);
+  handleSaveAction();
+
 }
 
 function handleSaveAction() {

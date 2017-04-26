@@ -49,12 +49,15 @@
     <div id="dash-view">
       <div id="integration-container" class="col s8 m8 l7 offset-s3 offset-m1 offset-l1">
         <h4 class="black-font">Connect to Zendesk</h4>
-        <div id="integration-box" class="grey-border">
+        <form id="integration-form" class="grey-border">
           <img src="../../images/zendesk.png" />
+          <div class="input-field">
+            <input id="integration-subdomain" type="text" name="subdomain" class="validate" placeholder="Subdomain" required>
+          </div>
           <div class="btns">
             <button type="submit" id="integration-connect" class="btn waves-effect waves-light waves-ripple modal-close">Connect</button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
