@@ -41,9 +41,11 @@ var customerData = {
   ]
 }
 
+// THESE VARIABLES ESTABLISH THE STATE OF THE DASHBOARD
 var selectAll = false;
 var availableSeats;
 var assignments = [];
+var loaders = ['training', 'agents', 'cloning'];
 
 $(document).ready(function() {
 
@@ -82,6 +84,8 @@ $(document).ready(function() {
 
   $('#topics-submit').click(handleIgnoreTopics);
   $('#topics-skip').click(handleSkipTopics);
+
+  animateLoader('agents');
 
 });
 
@@ -163,7 +167,6 @@ function selectAllToggle(inputs, status) {
 
 function handleSelectedAssignments(e) {
   e.preventDefault()
-  console.log(assignments);
   window.location = '../dashboard/dashboard-manager.html'
 }
 
@@ -178,15 +181,14 @@ function handleIntegration() {
   window.location = './onboard-topics.html'
 }
 
-function handleIgnoreTopics() {
+function handleIgnoreTopics(e) {
+  e.preventDefault();
   var $inputs = $('#topics-form :input');
   var values = captureFormData($inputs);
-  console.log(values);
-  // window.location = './onboard-integration.html'
+  window.location = './onboard-loading.html'
 }
 function handleSkipTopics() {
-  console.log('click');
-  // window.location = './onboard-topics.html'
+  window.location = './onboard-loading.html'
 }
 
 function captureFormData(inputs) {
@@ -195,4 +197,21 @@ function captureFormData(inputs) {
       values[this.name] = $(this).val();
   });
   return values;
+}
+
+function animateLoader(position) {
+  var current = position || 'training',
+      currentView = $('#' + current + '-container'),
+      next = loaders[loaders.indexOf(current) + 1];
+
+  setTimeout(function() {
+    $('#dash-view').fadeOut('slow');
+
+    setTimeout(function() {
+      $('#dash-view').children().removeClass('active-flex');
+      $(currentView).addClass('active-flex');
+      $('#dash-view').fadeIn("slow")
+      return animateLoader(next)
+    }, 700);
+  }, 3000);
 }

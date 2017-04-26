@@ -28,11 +28,13 @@
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400|Open+Sans:300,400,500" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="../../../node_modules/materialize-css/dist/css/materialize.css" rel="stylesheet">
-  <link href="../../styles/onboarding/onboard-agents.css" rel="stylesheet">
+  <link href="../../styles/onboarding/onboard-loading.css" rel="stylesheet">
 
   <!-- SCRIPTS -->
   <script type="text/javascript" src="../../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="../../../node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
   <script type="text/javascript" src="../../../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+  <script type="text/javascript" src="../../scripts/onboard.js"></script>
 
 </head>
 
@@ -45,6 +47,17 @@
     </div>
 
     <div id="dash-view">
+      <div id="training-container" class="col s8 m8 l7 offset-s3 offset-m1 offset-l1 active-flex">
+        <i class="material-icons purple-font">&#xE8BA;</i>
+        <h4 class="black-font">Training Your Model</h4>
+        <p class="black-font">(This may take a while)</p>
+      </div>
+
+      <div id="cloning-container" class="col s8 m8 l7 offset-s3 offset-m1 offset-l1">
+        <i class="material-icons purple-font">&#xE7EE;</i>
+        <h4 class="black-font">Cloning Your Organization</h4>
+      </div>
+
       <div id="agents-container" class="col s8 m8 l7 offset-s3 offset-m1 offset-l1">
         <div>
           <div class="icon-top">
@@ -62,6 +75,5 @@
       </div>
     </div>
   </div>
-
 </body>
 </html>
