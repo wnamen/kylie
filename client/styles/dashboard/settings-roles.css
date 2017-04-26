@@ -1,40 +1,13 @@
+@import url("../buttons.css");
+@import url("../styles.css");
+@import url("../forms.css");
+@import url("../side-nav.css");
+
 /* GENERAL STYLING */
 
 body {
   background-color: #fefdfb;
   font-family: 'Merriweather', garamond, serif;
-}
-
-/*SIDE NAV*/
-
-#side-navbar {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  position: fixed;
-  height: 100%;
-  width: 6%;
-}
-
-.nav-logo {
-  width: 50%;
-}
-
-.nav-options {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white
-}
-
-.nav-options a, .nav-options img {
-  margin: 2vh 0 5vh 0;
-}
-
-.nav-options a {
-  cursor: pointer;
-  color: white
 }
 
 /*DASH-VIEW*/
@@ -49,10 +22,6 @@ body {
   display: flex;
   flex-direction: row;
   margin-bottom: 1vw;
-}
-
-.active-block {
-  display: block !important;
 }
 
 /*SETTINGS*/
@@ -111,10 +80,6 @@ body {
   cursor: pointer;
 }
 
-#roles-container, #users-container, #security-container, #privacy-container, #billing-container {
-  display: none;
-}
-
 #controller-cards {
   overflow-y: scroll;
   height: 60vh;
@@ -165,7 +130,6 @@ body {
   font-family: 'Open Sans', helvetica, sans-serif;
   font-weight: 300;
   padding: 1vh;
-  margin: 3vw;
 }
 
 #saved-notification p {

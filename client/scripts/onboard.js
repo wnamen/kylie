@@ -48,7 +48,6 @@ var assignments = [];
 $(document).ready(function() {
 
   loadAssignmentData()
-
   $('.assignment-row').on('click', 'input', handleAssignment);
   $('#select-all input').click(handleSelectAllAssignments);
   $('#assignment-form').submit(handleSelectedAssignments);
@@ -143,9 +142,16 @@ function handleSelectAllAssignments() {
   $('#available-seats').text(availableSeats);
 }
 
+function selectAllToggle(inputs, status) {
+  inputs.each(function() {
+      $(this).prop({checked: status});
+  });
+}
+
 function handleSelectedAssignments(e) {
   e.preventDefault()
   console.log(assignments);
+  window.location = '../dashboard/dashboard-manager.html'
 }
 
 function handleCreateLogin() {
@@ -176,10 +182,4 @@ function captureFormData(inputs) {
       values[this.name] = $(this).val();
   });
   return values;
-}
-
-function selectAllToggle(inputs, status) {
-  inputs.each(function() {
-      $(this).prop({checked: status});
-  });
 }

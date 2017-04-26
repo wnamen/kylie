@@ -1,40 +1,13 @@
+@import url("../buttons.css");
+@import url("../styles.css");
+@import url("../forms.css");
+@import url("../side-nav.css");
+
 /* GENERAL STYLING */
 
 body {
   background-color: #fefdfb;
   font-family: 'Merriweather', garamond, serif;
-}
-
-/*SIDE NAV*/
-
-#side-navbar {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  position: fixed;
-  height: 100%;
-  width: 6%;
-}
-
-.nav-logo {
-  width: 50%;
-}
-
-.nav-options {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white
-}
-
-.nav-options a i, .nav-options img {
-  margin: 2vh 0 5vh 0;
-}
-
-.nav-options a i {
-  cursor: pointer;
-  color: white
 }
 
 /*DASH-VIEW*/
@@ -45,26 +18,18 @@ body {
   padding: 2vh 5vw;
 }
 
-#manager-view, #statistics-view, #settings-view {
-  display: none;
-}
-
 .dash-title {
   display: flex;
   flex-direction: row;
   padding: 1vw
 }
 
-.active-block {
-  display: block !important;
-}
-
-.manager-view-selector {
+.integration-creator {
   display: flex;
   flex-direction: row;
 }
 
-.manager-view-selector div {
+.integration-creator div {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,11 +39,7 @@ body {
   cursor: pointer;
 }
 
-.manager-view-selector div img {
-  width: 70%;
-}
-
-.add-selector a {
+.integration-creator a {
   font-size: 3.5em;
   font-weight: 300;
 }
@@ -110,7 +71,7 @@ body {
   flex-direction: row;
 }
 
-#assignment-manager, #clone-manager {
+#assignment-form, #clone-manager {
   width: 50%;
   padding: 1vw;
 }
@@ -181,7 +142,6 @@ body {
   font-family: 'Open Sans', helvetica, sans-serif;
   font-weight: 300;
   padding: 1vh;
-  margin: 3vw;
 }
 
 #saved-notification p {

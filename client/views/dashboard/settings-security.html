@@ -6,20 +6,20 @@
   <title>Kylie.ai</title>
 
   <!-- FAVICON -->
-  <link rel="apple-touch-icon" sizes="57x57" href="../images/favicon.ico/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="../images/favicon.ico/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="../images/favicon.ico/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="../images/favicon.ico/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="../images/favicon.ico/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="../images/favicon.ico/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="../images/favicon.ico/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="../images/favicon.ico/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="../images/favicon.ico/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="../images/favicon.ico/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.ico/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="../images/favicon.ico/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon.ico/favicon-16x16.png">
-  <link rel="manifest" href="../images/favicon.ico/manifest.json">
+  <link rel="apple-touch-icon" sizes="57x57" href="../../images/favicon.ico/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="../../images/favicon.ico/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../../images/favicon.ico/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="../../images/favicon.ico/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../../images/favicon.ico/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="../../images/favicon.ico/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../../images/favicon.ico/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="../../images/favicon.ico/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../images/favicon.ico/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="../../images/favicon.ico/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon.ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="../../images/favicon.ico/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon.ico/favicon-16x16.png">
+  <link rel="manifest" href="../../images/favicon.ico/manifest.json">
   <meta name="msapplication-TileColor" content="#ffffff ">
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff ">
@@ -28,33 +28,28 @@
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400|Open+Sans:300,400,500" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="../../node_modules/materialize-css/dist/css/materialize.css" rel="stylesheet">
-  <link href="../styles/buttons.css" rel="stylesheet">
-  <link href="../styles/styles.css" rel="stylesheet">
-  <link href="../styles/forms.css" rel="stylesheet">
-  <link href="../styles/footer.css" rel="stylesheet">
-  <link href="../styles/settings-security.css" rel="stylesheet">
+  <link href="../../../node_modules/materialize-css/dist/css/materialize.css" rel="stylesheet">
+  <link href="../../styles/dashboard/settings-security.css" rel="stylesheet">
 
   <!-- SCRIPTS -->
-  <script type="text/javascript" src="../../node_modules/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="../../node_modules/materialize-css/dist/js/materialize.min.js"></script>
-  <script type="text/javascript" src="../scripts/dashboard.js"></script>
+  <script type="text/javascript" src="../../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="../../../node_modules/materialize-css/dist/js/materialize.min.js"></script>
+  <script type="text/javascript" src="../../scripts/dashboard.js"></script>
 
 </head>
 
 <body>
   <div class="row">
-
     <div id="side-navbar" class="dark-grey-background">
       <div class="nav-options">
-        <img class="nav-logo" src="../images/favicon.ico/favicon-96x96.png" />
+        <img class="nav-logo" src="../../images/favicon.ico/favicon-96x96.png" />
         <a href="./dashboard-manager.html"><i data-view="manager" class="material-icons">&#xE871;</i></a>
         <a href="./settings-roles.html"><i data-view="settings" class="material-icons">&#xE8B8;</i></a>
       </div>
     </div>
 
     <div id="dash-view" class="col s8 m11 l11 offset-s3 offset-m1 offset-l1">
-      <div id="settings-view" class="active-block">
+      <div id="settings-view">
         <div class="dash-title">
           <h3>Settings</h3>
         </div>
@@ -68,7 +63,7 @@
           </div>
 
           <!-- ROLES -->
-          <div id="roles-container" class="active-flex">
+          <div id="roles-container">
             <div class="settings-controller grey-border">
               <div class="settings-header">
                 <p class="no-margin-bottom">Security</p>
@@ -89,13 +84,16 @@
                   <p class="no-margin-bottom">Login Key</p>
                   <div class="input-field">
                     <input type="text" disabled/>
+                    <div class="btns" style="visibility: hidden">
+                      <button class="btn waves-effect waves-light waves-ripple">Save</button>
+                    </div>
                   </div>
                 </form>
 
                 <form id="email-change" class="medium-margin-top">
                   <p class="no-margin-bottom">Email</p>
                   <div class="input-field">
-                    <input type="text" />
+                    <input type="email" />
                     <div class="btns">
                       <button class="btn waves-effect waves-light waves-ripple">Save</button>
                     </div>
@@ -105,11 +103,14 @@
                 <form id="password-change">
                   <p class="no-margin-bottom">Old Password</p>
                   <div class="input-field">
-                    <input type="text" />
+                    <input type="password" />
+                    <div class="btns" style="visibility: hidden">
+                      <button class="btn waves-effect waves-light waves-ripple">Save</button>
+                    </div>
                   </div>
                   <p class="no-margin-bottom">New Password</p>
                   <div class="input-field">
-                    <input type="text" />
+                    <input type="password" />
                     <div class="btns">
                       <button class="btn waves-effect waves-light waves-ripple">Save</button>
                     </div>
@@ -121,12 +122,12 @@
           </div>
         </div>
 
-        <div id="saved-notification" class="dark-grey-background animated">
-          <i class="fa fa-circle fa-1x green-font" aria-hidden="true"></i>
-          <p class="no-margin-bottom">Changes Saved</p>
-        </div>
       </div>
 
+    </div>
+    <div id="saved-notification" class="dark-grey-background animated">
+      <i class="fa fa-circle fa-1x green-font" aria-hidden="true"></i>
+      <p class="no-margin-bottom">Changes Saved</p>
     </div>
   </div>
 
