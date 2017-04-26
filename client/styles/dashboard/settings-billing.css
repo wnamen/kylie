@@ -101,29 +101,8 @@ body {
   display: none;
 }
 
-#saved-notification {
-  display: none;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  float: right;
-  width: 15%;
-  font-family: 'Open Sans', helvetica, sans-serif;
-  font-weight: 300;
-  padding: 1vh;
-}
-
-#saved-notification p {
-  margin: 0;
-  color: white;
-}
-
 .active-block {
   display: block !important;
-}
-
-.active-flex {
-  display: flex !important;
 }
 
 .medium-margin-top {
