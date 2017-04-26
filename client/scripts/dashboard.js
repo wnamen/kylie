@@ -45,6 +45,12 @@ var customerData = {
   ]
 }
 
+var securityData = {
+  key: '8FSD97F87S7HK324JKH',
+  email: 'testuser@kylieai.com',
+  password: 'testuser'
+}
+
 var billingData = {
   paid: true,
   dealInfo: [
@@ -95,8 +101,12 @@ var currentCard = 'admin';
 
 $(document).ready(function() {
 
-  // MANAGER DASHBOARD FUNCTIONALITY
+  // PAGE DATA LOADERS
   loadManagerData();
+  loadSecurityData();
+  loadBillingData();
+
+  // MANAGER DASHBOARD FUNCTIONALITY
   $('.assignment-row').on('click', 'input', handleAssignment);
   $('#select-all input').click(handleSelectAllAssignments);
   $('#draft-confidence').on('change', captureSliderChange)
@@ -108,7 +118,10 @@ $(document).ready(function() {
   $('#add-role-modal form .btn').click(handleAddNewRole);
   $('.save-btn').click(handleSaveAction)
 
-  loadBillingData();
+  // SETTINGS SECURITY FUNCTIONALITY
+  $('#confidential-topics-form').submit(handleTopicsUpdate);
+  $('#email-form').submit(handleEmailUpdate);
+  $('#password-form').submit(handlePasswordUpdate);
 
   // REQUIRED MATERIALIZE FUNCTIONALITY
   $('.modal').modal();
@@ -126,6 +139,11 @@ function loadManagerData() {
   $('#conversations-stat').text(Number(customerData.totalConversations).toLocaleString());
   $('#draft-confidence').val(Number(customerData.currentDraftConfidence));
   $('#autosend-confidence').val(Number(customerData.currentAutosendConfidence));
+}
+
+function loadSecurityData() {
+  $('#login-key').val(securityData.key);
+  $('#email').val(securityData.email);
 }
 
 function loadBillingData() {
@@ -277,6 +295,29 @@ function findDataPoint(data, point) {
   });
 
   return locatedPoint;
+}
+
+function captureFormData(inputs) {
+  var values = {};
+  inputs.each(function() {
+      values[this.name] = $(this).val();
+  });
+  return values;
+}
+
+function handleTopicsUpdate() {
+  var $inputs = $('#confidential-topics-form :input');
+  var values = captureFormData($inputs);
+}
+
+function handleEmailUpdate() {
+  var $inputs = $('#email-form :input');
+  var values = captureFormData($inputs);
+}
+
+function handlePasswordUpdate() {
+  var $inputs = $('#password-form :input');
+  var values = captureFormData($inputs);
 }
 
 function handleSaveAction() {

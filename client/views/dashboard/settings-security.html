@@ -62,57 +62,57 @@
             <a href="./settings-billing.html"><h5 data-settings-view="billing" class="settings-option">Billing</h5></a>
           </div>
 
-          <!-- ROLES -->
-          <div id="roles-container">
+          <!-- SECURITY -->
+          <div id="security-container">
             <div class="settings-controller grey-border">
               <div class="settings-header">
                 <p class="no-margin-bottom">Security</p>
               </div>
 
               <div id="security-fields">
-                <form id="confidential-topics">
+                <form id="confidential-topics-form">
                   <p class="no-margin-bottom">Confidential Topics</p>
                   <div class="input-field">
-                    <input type="text" />
+                    <input type="text" id="confidential-topics" />
                     <div class="btns">
-                      <button class="btn waves-effect waves-light waves-ripple">Save</button>
+                      <button type="submit" class="btn waves-effect waves-light waves-ripple">Save</button>
                     </div>
                   </div>
                 </form>
 
-                <form id="login-key" class="medium-margin-top">
+                <form id="login-key-form" class="medium-margin-top">
                   <p class="no-margin-bottom">Login Key</p>
                   <div class="input-field">
-                    <input type="text" disabled/>
+                    <input type="text" id="login-key" disabled/>
                     <div class="btns" style="visibility: hidden">
-                      <button class="btn waves-effect waves-light waves-ripple">Save</button>
+                      <button class="btn" disabled>Save</button>
                     </div>
                   </div>
                 </form>
 
-                <form id="email-change" class="medium-margin-top">
+                <form id="email-form" class="medium-margin-top">
                   <p class="no-margin-bottom">Email</p>
                   <div class="input-field">
-                    <input type="email" />
+                    <input type="email" id="email" />
                     <div class="btns">
-                      <button class="btn waves-effect waves-light waves-ripple">Save</button>
+                      <button type="submit" class="btn waves-effect waves-light waves-ripple">Save</button>
                     </div>
                   </div>
                 </form>
 
-                <form id="password-change">
+                <form id="password-form">
                   <p class="no-margin-bottom">Old Password</p>
                   <div class="input-field">
-                    <input type="password" />
+                    <input type="password" id="old-password" />
                     <div class="btns" style="visibility: hidden">
-                      <button class="btn waves-effect waves-light waves-ripple">Save</button>
+                      <button class="btn" disabled>Save</button>
                     </div>
                   </div>
                   <p class="no-margin-bottom">New Password</p>
                   <div class="input-field">
-                    <input type="password" />
+                    <input type="password" id="new-password" />
                     <div class="btns">
-                      <button class="btn waves-effect waves-light waves-ripple">Save</button>
+                      <button type="submit" class="btn waves-effect waves-light waves-ripple">Save</button>
                     </div>
                   </div>
                 </form>
