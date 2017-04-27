@@ -4,76 +4,138 @@ var customerData = {
 }
 
 // THESE VARIABLES ESTABLISH THE STATE OF THE DASHBOARD
+var currentLocation;
 var selectAll = false;
 var availableSeats;
 var assignments = [];
 var loaders = ['training', 'agents', 'cloning'];
 
 $(document).ready(function() {
+  currentLocation = $('#dash-view').data('location');
 
-  loadAssignmentData()
-  $('#agent-search-toggle').click(handleAgentSearchToggle);
-  $('#agent-search').on('keyup keypress', handleAgentSearch);
-  $('.assignment-row').on('click', 'input', handleAssignment);
-  $('#select-all input').click(handleSelectAllAssignments);
-  $('#assignment-form').submit(handleSelectedAssignments);
+  if (currentLocation === 'assignment') {
+    loadAssignmentData()
+    $('#agent-search-toggle').click(handleAgentSearchToggle);
+    $('#agent-search').on('keyup keypress', handleAgentSearch);
+    $('.assignment-row').on('click', 'input', handleAssignment);
+    $('#select-all input').click(handleSelectAllAssignments);
+    $('#assignment-form').submit(handleSelectedAssignments);
 
-  $('#assignment-form').on('keyup keypress', function(e) {
-    var keyCode = e.keyCode || e.which;
-    if (keyCode === 13) {
-      e.preventDefault();
-      return false;
-    }
-  });
-
-  $('#login-form').validate({
-    errorClass: 'error failedValidation',
-    validClass: 'success',
-    highlight: function(element, errorClass, validClass) {
-      $(element).closest('.validate').addClass(errorClass).removeClass(validClass);
-    },
-    unhighlight: function(element, errorClass, validClass) {
-      $(element).closest('.validate').addClass(validClass).removeClass(errorClass);
-    },
-    submitHandler: function() {
-      handleCreateLogin();
-    }
-  });
-
-  // $.validator.addMethod("integrationSubdomainRegex", function(value, element) {
-  //         return this.optional(element) || /^[a-z0-9\-]+$/i.test(value);
-  //     }, "Username must contain only letters, numbers, or dashes.");
-
-  $.validator.methods.pattern = function(value, element) {
-    return (this.optional(element) || new RegExp(element.pattern).test(value));
-  };
-
-  $.validator.messages.pattern = "Invalid input entered.";
-
-  $('#integration-form').validate({
-    errorClass: 'error failedValidation',
-    validClass: 'success',
-    highlight: function(element, errorClass, validClass) {
-      $(element).closest('.validate').addClass(errorClass).removeClass(validClass);
-    },
-    unhighlight: function(element, errorClass, validClass) {
-      $(element).closest('.validate').addClass(validClass).removeClass(errorClass);
-    },
-    submitHandler: function() {
-      handleIntegration();
-    }
-  });
-
-  $('#topics-submit').click(handleIgnoreTopics);
-  $('#topics-skip').click(handleSkipTopics);
-
-  if ($('#dash-view').data('location') === 'loader') {
-    animateLoader('agents');
+    $('#assignment-form').on('keyup keypress', function(e) {
+      var keyCode = e.keyCode || e.which;
+      if (keyCode === 13) {
+        e.preventDefault();
+        return false;
+      }
+    });
   }
 
-  $('.tooltipped').tooltip({delay: 50});
+  if (currentLocation === 'login') {
+    $('#login-form').validate({
+      errorClass: 'error failedValidation',
+      validClass: 'success',
+      highlight: function(element, errorClass, validClass) {
+        $(element).closest('.validate').addClass(errorClass).removeClass(validClass);
+      },
+      unhighlight: function(element, errorClass, validClass) {
+        $(element).closest('.validate').addClass(validClass).removeClass(errorClass);
+      },
+      submitHandler: function() {
+        handleCreateLogin();
+      }
+    });
+  }
 
+  if (currentLocation === 'integration') {
+    $.validator.methods.pattern = function(value, element) {
+      return (this.optional(element) || new RegExp(element.pattern).test(value));
+    };
+
+    $.validator.messages.pattern = "Invalid input entered.";
+
+    $('#integration-form').validate({
+      errorClass: 'error failedValidation',
+      validClass: 'success',
+      highlight: function(element, errorClass, validClass) {
+        $(element).closest('.validate').addClass(errorClass).removeClass(validClass);
+      },
+      unhighlight: function(element, errorClass, validClass) {
+        $(element).closest('.validate').addClass(validClass).removeClass(errorClass);
+      },
+      submitHandler: function() {
+        handleIntegration();
+      }
+    });
+  }
+
+  if (currentLocation === 'topics') {
+    $('#topics-submit').click(handleIgnoreTopics);
+    $('#topics-skip').click(handleSkipTopics);
+    $('.tooltipped').tooltip({delay: 50});
+  }
+
+  if (currentLocation === 'loader') {
+    animateLoader('agents');
+  }
 });
+
+// THIS FUNCTION HANDLES THE LOGIN PAGE
+
+function handleCreateLogin() {
+  var $inputs = $('#login-form :input');
+  var values = captureFormData($inputs);
+
+  // submitRequest(values, url)
+
+  window.location = './onboard-integration.html'
+}
+
+// THIS FUNCTION HANDLES THE INTEGRATION PAGE
+
+function handleIntegration() {
+  var $inputs = $('#login-form :input');
+  var values = captureFormData($inputs);
+
+  // submitRequest(values, url)
+
+  window.location = './onboard-topics.html'
+}
+
+// THESE FUNCTIONS HANDLE THE TOPICS PAGE
+
+function handleIgnoreTopics(e) {
+  e.preventDefault();
+  var $inputs = $('#topics-form :input');
+  var values = captureFormData($inputs);
+  // submitRequest(values, url)
+
+  window.location = './onboard-loading.html'
+}
+
+function handleSkipTopics() {
+  window.location = './onboard-loading.html'
+}
+
+// THESE FUNCTIONS HANDLE THE LOADING PAGE
+
+function animateLoader(position) {
+  var current = position || 'training',
+      currentView = $('#' + current + '-container'),
+      next = loaders[loaders.indexOf(current) + 1];
+
+  setTimeout(function() {
+    $('#dash-view').fadeOut('slow');
+
+    setTimeout(function() {
+      $('#dash-view').children().removeClass('active-flex');
+      $(currentView).addClass('active-flex');
+      $('#dash-view').fadeIn("slow")
+      return animateLoader(next)
+    }, 700);
+  }, 3000);
+}
+
+// THESE FUNCTIONS HANDLE THE AGENT ASSIGNMENT PAGE
 
 function loadAssignmentData() {
   availableSeats = customerData.totalSeats;
@@ -163,29 +225,12 @@ function selectAllToggle(inputs, status) {
 
 function handleSelectedAssignments(e) {
   e.preventDefault()
+  // submitRequest(assignments, url)
+
   window.location = '../dashboard/dashboard-manager.html'
 }
 
-function handleCreateLogin() {
-  var $inputs = $('#login-form :input');
-  var values = captureFormData($inputs);
-
-  window.location = './onboard-integration.html'
-}
-
-function handleIntegration() {
-  window.location = './onboard-topics.html'
-}
-
-function handleIgnoreTopics(e) {
-  e.preventDefault();
-  var $inputs = $('#topics-form :input');
-  var values = captureFormData($inputs);
-  window.location = './onboard-loading.html'
-}
-function handleSkipTopics() {
-  window.location = './onboard-loading.html'
-}
+// SINAN - THESE ARE HELPER FUNCTIONS
 
 function captureFormData(inputs) {
   var values = {};
@@ -195,19 +240,16 @@ function captureFormData(inputs) {
   return values;
 }
 
-function animateLoader(position) {
-  var current = position || 'training',
-      currentView = $('#' + current + '-container'),
-      next = loaders[loaders.indexOf(current) + 1];
+function submitRequest(data, url) {
+  var payload = new FormData();
+  payload.append( "json", JSON.stringify( data ) );
 
-  setTimeout(function() {
-    $('#dash-view').fadeOut('slow');
-
-    setTimeout(function() {
-      $('#dash-view').children().removeClass('active-flex');
-      $(currentView).addClass('active-flex');
-      $('#dash-view').fadeIn("slow")
-      return animateLoader(next)
-    }, 700);
-  }, 3000);
+  fetch(url,
+  {
+      method: "POST",
+      body: payload
+  })
+  .then(function(res){ return res.json(); })
+  .then(function(data){ alert( JSON.stringify( data ))})
+  .catch(function (error){ console.log('Request failed', error)});
 }

@@ -420,3 +420,18 @@ function handleSaveAction() {
     $('#saved-notification').removeClass('active-flex')
   },2000)
 }
+
+
+function submitRequest(data, url) {
+  var payload = new FormData();
+  payload.append( "json", JSON.stringify( data ) );
+
+  fetch(url,
+  {
+      method: "POST",
+      body: payload
+  })
+  .then(function(res){ return res.json(); })
+  .then(function(data){ alert( JSON.stringify( data ))})
+  .catch(function (error){ console.log('Request failed', error)});
+}
