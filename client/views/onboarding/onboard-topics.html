@@ -28,6 +28,7 @@
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400|Open+Sans:300,400,500" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="../../../node_modules/materialize-css/dist/css/materialize.css" rel="stylesheet">
   <link href="../../styles/onboarding/onboard-topics.css" rel="stylesheet">
 
@@ -49,7 +50,7 @@
 
     <div id="dash-view">
       <div id="topics-container" class="col s8 m8 l7 offset-s3 offset-m1 offset-l1">
-        <h4 class="black-font">Which Topics Should Kylie Ignore?</h4>
+        <h4 class="black-font">Which Topics Should Kylie Ignore? <a class="tooltipped" data-position="right" data-delay="50" data-tooltip="For your security, Kylie ignores all communication that contains sensitive information. Add any words to this list to keep Kylie from accidentally disclosing private information."><i class="material-icons">&#xE88E;</i></a></h4>
         <form id="topics-form" >
           <img src="../../images/lock.png" />
           <div class="input-field">
@@ -60,7 +61,7 @@
             <button type="submit" id="topics-submit" class="btn waves-effect waves-light waves-ripple modal-close">Save</button>
           </div>
         </form>
-        
+
         <div id="topics-skip">
           <a class="green-font">Skip</a>
           <i class="zmdi zmdi-long-arrow-right green-font"></i>

@@ -86,7 +86,11 @@ $(document).ready(function() {
   $('#topics-submit').click(handleIgnoreTopics);
   $('#topics-skip').click(handleSkipTopics);
 
-  animateLoader('agents');
+  if ($('#dash-view').data('location') === 'loader') {
+    animateLoader('agents');
+  }
+
+  $('.tooltipped').tooltip({delay: 50});
 
 });
 

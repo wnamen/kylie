@@ -4,68 +4,7 @@ var managerData = {
   totalConversations: 40175,
   totalSeats: 25,
   currentDraftConfidence: 73,
-  currentAutosendConfidence: 84,
-  agents: [
-    {
-      id: 1,
-      name: "Jamasen Rodriguez"
-    },
-    {
-      id: 2,
-      name: "Sinan Ozdemir"
-    },
-    {
-      id: 3,
-      name: "William Namen"
-    },
-    {
-      id: 4,
-      name: "Kathleen Quillian"
-    },
-    {
-      id: 5,
-      name: "Andrew Jackson"
-    },
-    {
-      id: 6,
-      name: "Phil Bartelli"
-    },
-    {
-      id: 7,
-      name: "Sarah Palin"
-    },
-    {
-      id: 8,
-      name: "Andrew Jackson"
-    },
-    {
-      id: 9,
-      name: "Helen Keller"
-    },
-  ]
-}
-
-var usersData = {
-  users: [
-    {
-      name: 'Jamasen Rodriguez',
-      role: 'Admin'
-    },
-    {
-      name: 'Sinan Ozdemir',
-      role: 'Admin'
-    },
-    {
-      name: 'William Namen',
-      role: 'Manager'
-    }
-  ]
-}
-
-var securityData = {
-  key: '8FSD97F87S7HK324JKH',
-  email: 'testuser@kylieai.com',
-  password: 'testuser'
+  currentAutosendConfidence: 84
 }
 
 var billingData = {
@@ -121,12 +60,11 @@ $(document).ready(function() {
 
   // PAGE DATA LOADERS
   loadManagerData();
-  loadUsersData();
-  loadSecurityData();
   loadBillingData();
 
   // MANAGER DASHBOARD FUNCTIONALITY
   $('#agent-search-toggle').click(handleAgentSearchToggle);
+  $('#agent-search').on('change', handleAgentSearch);
   $('.assignment-row').on('click', 'input', handleAssignment);
   $('#select-all input').click(handleSelectAllAssignments);
   $('#draft-confidence').on('change', captureSliderChange);
@@ -153,30 +91,16 @@ $(document).ready(function() {
   // REQUIRED MATERIALIZE FUNCTIONALITY
   $('.modal').modal();
   $('select').material_select();
+  $('.tooltipped').tooltip({delay: 50});
 });
 
 function loadManagerData() {
   availableSeats = managerData.totalSeats;
 
-  managerData.agents.forEach(function(agent) {
-    $('#assignment-switch-container').append('<div class="assignment-row"><p class="black-font">' + agent.name + '</p><div class="switch"><label><input type="checkbox" value="' + agent.name + 'id' + agent.id + '"><span class="lever"></span></label></div></div><hr>')
-  })
-
   $('#agents-stat').text(Number(managerData.totalAgents).toLocaleString());
   $('#conversations-stat').text(Number(managerData.totalConversations).toLocaleString());
   $('#draft-confidence').val(Number(managerData.currentDraftConfidence));
   $('#autosend-confidence').val(Number(managerData.currentAutosendConfidence));
-}
-
-function loadUsersData() {
-  usersData.users.forEach(function(user) {
-    $('#users-container #controller-cards').append('<div id="' + user.name + ' card" class="user-card"><input type="checkbox" id="' + user.name + '" value="' + user.name + '" class="validate"/><label class="black-font" for="' + user.name + '">' + user.name + ' <span id="' + user.name + ' role" >(' + user.role + ')</span></label></div>')
-  });
-}
-
-function loadSecurityData() {
-  $('#login-key').val(securityData.key);
-  $('#email').val(securityData.email);
 }
 
 function loadBillingData() {
@@ -198,6 +122,17 @@ function loadBillingData() {
 
 function handleAgentSearchToggle() {
   $(this).siblings('.input-field').fadeToggle().toggleClass('hide');
+}
+
+function handleAgentSearch() {
+  var value = $(this).val().toLowerCase();
+
+  $('.assignment-row p').each(function(index) {
+    var agent = $(this).text().toLowerCase();
+    if (agent.search(value) !== -1) {
+      console.log(value, agent);
+    }
+  })
 }
 
 function handleAssignment() {
@@ -411,6 +346,8 @@ function createNewUser(data) {
       $newUserCard = $('<div id="' + userName + ' card" class="user-card"><input type="checkbox" id="' + userName + '" value="' + userName + '"  class="validate"/><label class="black-font" for="' + userName + '">' + userName + ' <span id="' + userName + ' role" >(' + userRole + ')</span></label></div>');
 
   $('#users-container #controller-cards').append($newUserCard);
+
+  handleSaveAction();
 }
 
 function handleEditUser(e) {
@@ -419,6 +356,7 @@ function handleEditUser(e) {
   selectedUsers.forEach(function(user) {
     document.getElementById(user.name + ' role').innerHTML = '(' + value + ')';
   })
+  handleSaveAction();
 }
 
 function handleRemoveUser(e) {
@@ -426,6 +364,9 @@ function handleRemoveUser(e) {
   selectedUsers.forEach(function(user) {
     document.getElementById(user.name + ' card').remove();
   })
+
+  handleSaveAction();
+
 }
 
 // SETTINGS SECURITY FUNCTIONALITY
@@ -435,7 +376,6 @@ function handleTopicsUpdate(e) {
   var $inputs = $('#confidential-topics-form :input');
   var values = captureFormData($inputs);
   handleSaveAction();
-
 }
 
 function handleEmailUpdate(e) {
