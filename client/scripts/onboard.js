@@ -40,6 +40,16 @@ $(document).ready(function() {
     }
   });
 
+  // $.validator.addMethod("integrationSubdomainRegex", function(value, element) {
+  //         return this.optional(element) || /^[a-z0-9\-]+$/i.test(value);
+  //     }, "Username must contain only letters, numbers, or dashes.");
+
+  $.validator.methods.pattern = function(value, element) {
+    return (this.optional(element) || new RegExp(element.pattern).test(value));
+  };
+
+  $.validator.messages.pattern = "Invalid input entered.";
+
   $('#integration-form').validate({
     errorClass: 'error failedValidation',
     validClass: 'success',

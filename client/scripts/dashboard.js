@@ -64,7 +64,7 @@ $(document).ready(function() {
 
   // MANAGER DASHBOARD FUNCTIONALITY
   $('#agent-search-toggle').click(handleAgentSearchToggle);
-  $('#agent-search').on('change', handleAgentSearch);
+  $('#agent-search').on('keyup keypress', handleAgentSearch);
   $('.assignment-row').on('click', 'input', handleAssignment);
   $('#select-all input').click(handleSelectAllAssignments);
   $('#draft-confidence').on('change', captureSliderChange);
@@ -121,58 +121,75 @@ function loadBillingData() {
 // MANAGER DASHBOARD FUNCTIONALITY
 
 function handleAgentSearchToggle() {
-  $(this).siblings('.input-field').fadeToggle().toggleClass('hide');
+  $(this).siblings('.input-field').fadeToggle().toggleClass('hide')
+  $('.assignment-row').removeClass('hide');
 }
 
 function handleAgentSearch() {
   var value = $(this).val().toLowerCase();
+  $('.assignment-row').removeClass('hide');
 
   $('.assignment-row p').each(function(index) {
     var agent = $(this).text().toLowerCase();
-    if (agent.search(value) !== -1) {
-      console.log(value, agent);
+    if (agent.search(value) === -1) {
+      $(this).parent().addClass('hide');
+    }
+  })
+}
+
+
+function handleAgentSearchToggle() {
+  $(this).siblings('.input-field').fadeToggle().toggleClass('hide')
+  $('.assignment-row').removeClass('hide');
+}
+
+function handleAgentSearch() {
+  var value = $(this).val().toLowerCase();
+  $('.assignment-row').removeClass('hide');
+
+  $('.assignment-row p').each(function(index) {
+    var agent = $(this).text().toLowerCase();
+    if (agent.search(value) === -1) {
+      $(this).parent().addClass('hide');
     }
   })
 }
 
 function handleAssignment() {
-  var value = ($(this).val()).split('id');
-  var name = value[0];
-  var id = value[1];
+  var name = $(this).val();
 
-  if (currentlyAssigned(name, id)) {
-    removeAssigned(name, id);
+  if (currentlyAssigned(name)) {
+    removeAssigned(name);
   } else {
-    addAssigned(name, id);
+    addAssigned(name);
   }
 
-  handleSaveAction();
+  availableSeats = managerData.totalSeats - assignments.length;
 }
 
-function currentlyAssigned(name, id) {
+function currentlyAssigned(name) {
   if (assignments.length <= 0) {
     return false;
   }
   for(var k in assignments) {
-    if ((assignments[k].name === name) && (Number(assignments[k].id) === Number(id))) {
+    if (assignments[k].name === name) {
       return true;
     }
   }
   return false
 }
 
-function removeAssigned(name, id) {
+function removeAssigned(name) {
   for(var k in assignments) {
-    if ((assignments[k].name === name) && (Number(assignments[k].id) === Number(id))) {
+    if (assignments[k].name === name) {
       assignments.splice(k, 1);
     }
   }
 }
 
-function addAssigned(name, id) {
+function addAssigned(name) {
   assignments.push({
-    name: name,
-    id: Number(id)
+    name: name
   })
 }
 
@@ -184,13 +201,13 @@ function handleSelectAllAssignments() {
   assignments = [];
   if (selectAll) {
     var k = 0;
-    while ((k < availableSeats) && (k < managerData.agents.length)) {
-      addAssigned(managerData.agents[k].name, managerData.agents[k].id);
+    while ((k < availableSeats) && (k < $('.assignment-row').length)) {
+      addAssigned($inputs[k].value)
       k++
     }
   }
 
-  handleSaveAction();
+  availableSeats = managerData.totalSeats - assignments.length;
 }
 
 function selectAllToggle(inputs, status) {

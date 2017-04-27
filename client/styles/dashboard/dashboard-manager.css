@@ -114,10 +114,11 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid black;
 }
 
 .assignment-row p {
-  margin: 1vh 0;
+  margin: 1.5vh 0;
   font-size: 1em;
 }
 

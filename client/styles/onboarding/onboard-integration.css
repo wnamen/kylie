@@ -43,7 +43,7 @@ body {
   align-items: center;
   justify-content: space-around;
   width: 17.5vw;
-  padding: 2vh 0;
+  padding: 2vh;
   margin: 5vh 5vw 10vh 5vw;
 }
 
@@ -51,10 +51,21 @@ body {
   width: 35%;
 }
 
-#integration-form input {
+#integration-form .input-field {
   margin: 3vh 0;
+}
+
+#integration-form input {
+  margin: 0;
   height: 2em;
   border-color: #28c3b5;
+}
+
+#integration-form label {
+  position: relative;
+  color: #fb615d;
+  top: 0;
+  left:0;
 }
 
 #integration-form button {

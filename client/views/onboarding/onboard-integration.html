@@ -52,7 +52,7 @@
         <form id="integration-form" class="grey-border">
           <img src="../../images/zendesk.png" />
           <div class="input-field">
-            <input id="integration-subdomain" type="text" name="subdomain" class="validate" placeholder="Subdomain" required>
+            <input id="integration-subdomain" type="text" pattern="^\w+$" name="subdomain" class="validate" placeholder="Subdomain" required>
           </div>
           <div class="btns">
             <button type="submit" id="integration-connect" class="btn waves-effect waves-light waves-ripple modal-close">Connect</button>

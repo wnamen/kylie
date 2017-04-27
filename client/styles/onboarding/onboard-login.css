@@ -49,6 +49,13 @@ body {
   border-color: #28c3b5;
 }
 
+#login-input-container label {
+  position: relative;
+  color: #fb615d;
+  top: 0;
+  left:0;
+}
+
 #login-form .btns {
   float: right;
 }
