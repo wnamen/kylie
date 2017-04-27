@@ -102,6 +102,13 @@ body {
   border-color: #28c3b5;
 }
 
+#security-fields label {
+  position: relative;
+  color: #fb615d;
+  top: 0;
+  left:0;
+}
+
 #security-fields input, #security-fields button {
   margin-right: 1vw;
 }

@@ -33,6 +33,7 @@
 
   <!-- SCRIPTS -->
   <script type="text/javascript" src="../../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="../../../node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
   <script type="text/javascript" src="../../../node_modules/materialize-css/dist/js/materialize.min.js"></script>
   <script type="text/javascript" src="../../scripts/dashboard.js"></script>
 
@@ -48,7 +49,7 @@
       </div>
     </div>
 
-    <div id="dash-view" class="col s8 m11 l11 offset-s3 offset-m1 offset-l1">
+    <div id="dash-view" data-location="settings-security" class="col s8 m11 l11 offset-s3 offset-m1 offset-l1">
       <div id="settings-view">
         <div id="saved-notification" class="dark-grey-background animated">
           <i class="fa fa-circle fa-1x green-font" aria-hidden="true"></i>
@@ -98,7 +99,7 @@
                 <form id="email-form" class="medium-margin-top">
                   <p class="no-margin-bottom">Email</p>
                   <div class="input-field">
-                    <input type="email" id="email" />
+                    <input type="email" id="email" required/>
                     <div class="btns">
                       <button type="submit" class="btn waves-effect waves-light waves-ripple">Save</button>
                     </div>
@@ -108,14 +109,14 @@
                 <form id="password-form">
                   <p class="no-margin-bottom">Old Password</p>
                   <div class="input-field">
-                    <input type="password" id="old-password" />
+                    <input type="password" id="old-password" required/>
                     <div class="btns" style="visibility: hidden">
                       <button class="btn" disabled>Save</button>
                     </div>
                   </div>
                   <p class="no-margin-bottom">New Password</p>
                   <div class="input-field">
-                    <input type="password" id="new-password" />
+                    <input type="password" id="new-password" required/>
                     <div class="btns">
                       <button type="submit" class="btn waves-effect waves-light waves-ripple">Save</button>
                     </div>

@@ -9,93 +9,96 @@ var managerData = {
 
 var billingData = {
   paid: true,
-  dealInfo: [
-    {
-      name: "Total Seats Requested:",
-      value: "50"
-    },
-    {
-      name: "Total Models Requested",
-      value: "2"
-    },
-    {
-      name: "Total Weekly Drafts Requested",
-      value: "150"
-    },
-    {
-      name: "Total Integrations Requested",
-      value: "1"
-    },
-    {
-      name: "Average Weekly Ticket Volume",
-      value: "2,200"
-    },
-    {
-      name: "Total Global Permissions",
-      value: "5"
-    },
-    {
-      name: "Payment Cycle",
-      value: "Quarterly"
-    },
-    {
-      name: "Payment Discount",
-      value: "None"
-    },
-    {
-      name: "Cost",
-      value: "$50,000.00"
-    }
-  ]
 }
 
 // THESE VARIABLES ESTABLISH THE STATE OF THE DASHBOARD
 var selectAll = false;
+var currentLocation;
 var availableSeats;
 var assignments = [];
 var currentCard = 'admin';
 var selectedUsers = [];
 
 $(document).ready(function() {
-
-  // PAGE DATA LOADERS
-  loadManagerData();
-  loadBillingData();
+  currentLocation = $('#dash-view').data('location');
 
   // MANAGER DASHBOARD FUNCTIONALITY
-  $('#agent-search-toggle').click(handleAgentSearchToggle);
-  $('#agent-search').on('keyup keypress', handleAgentSearch);
-  $('.assignment-row').on('click', 'input', handleAssignment);
-  $('#select-all input').click(handleSelectAllAssignments);
-  $('#draft-confidence').on('change', captureSliderChange);
-  $('#autosend-confidence').on('change', captureSliderChange);
+  if (currentLocation === 'dashboard-manager') {
+    loadManagerData();
+    $('#agent-search-toggle').click(handleAgentSearchToggle);
+    $('#agent-search').on('keyup keypress', handleAgentSearch);
+    $('.assignment-row').on('click', 'input', handleAssignment);
+    $('#select-all input').click(handleSelectAllAssignments);
+    $('#draft-confidence').on('change', captureSliderChange);
+    $('#autosend-confidence').on('change', captureSliderChange);
+  }
 
   // SETTINGS ROLES FUNCTIONALITY
-  $('#controller-cards').on('click', '.controller-card', handleCardSelection);
-  $('#editor-input').on('change', handleRoleEditor);
-  $('.delete-card').click(handleDeleteCard);
-  $('#add-role-modal form .btn').click(handleAddNewRole);
-  $('.save-btn').click(handleSaveAction);
+  if (currentLocation === 'settings-roles') {
+    $('#controller-cards').on('click', '.controller-card', handleCardSelection);
+    $('#editor-input').on('change', handleRoleEditor);
+    $('.delete-card').click(handleDeleteCard);
+    $('#add-role-modal form .btn').click(handleAddNewRole);
+    $('.save-btn').click(handleSaveAction);
+    $('.modal').modal();
+  }
 
   // SETTINGS USERS FUNCTIONALITY
-  $('.user-card').on('click', 'input', handleSelectedUser);
-  $('#add-users-modal form').submit(handleAddUser);
-  $('#edit-users-modal form').submit(handleEditUser);
-  $('.delete-user-card').click(handleRemoveUser);
+  if (currentLocation === 'settings-users') {
+    $('.user-card').on('click', 'input', handleSelectedUser);
+    $('#add-users-modal form').submit(handleAddUser);
+    $('#edit-users-modal form').submit(handleEditUser);
+    $('.delete-user-card').click(handleRemoveUser);
+    $('.modal').modal();
+  }
 
   // SETTINGS SECURITY FUNCTIONALITY
-  $('#confidential-topics-form').submit(handleTopicsUpdate);
-  $('#email-form').submit(handleEmailUpdate);
-  $('#password-form').submit(handlePasswordUpdate);
+  if (currentLocation === 'settings-security') {
+    console.log(currentLocation);
+    $('#confidential-topics-form').submit(handleTopicsUpdate);
 
-  // REQUIRED MATERIALIZE FUNCTIONALITY
-  $('.modal').modal();
-  $('select').material_select();
-  $('.tooltipped').tooltip({delay: 50});
+    $('#email-form').validate({
+      errorClass: 'error failedValidation',
+      validClass: 'success',
+      highlight: function(element, errorClass, validClass) {
+        $(element).closest('.validate').addClass(errorClass).removeClass(validClass);
+      },
+      unhighlight: function(element, errorClass, validClass) {
+        $(element).closest('.validate').addClass(validClass).removeClass(errorClass);
+      },
+      submitHandler: function() {
+        handleEmailUpdate();
+      }
+    });
+
+    $('#password-form').validate({
+      errorClass: 'error failedValidation',
+      validClass: 'success',
+      highlight: function(element, errorClass, validClass) {
+        $(element).closest('.validate').addClass(errorClass).removeClass(validClass);
+      },
+      unhighlight: function(element, errorClass, validClass) {
+        $(element).closest('.validate').addClass(validClass).removeClass(errorClass);
+      },
+      submitHandler: function() {
+        handlePasswordUpdate();
+      }
+    });
+
+    $('.tooltipped').tooltip({delay: 50});
+  }
+
+  // SETTINGS BILLING FUNCTIONALITY
+  if (currentLocation === 'settings-billing') {
+    loadBillingData();
+  }
+
 });
 
 function loadManagerData() {
   availableSeats = managerData.totalSeats;
+  $('#available-seats').text(availableSeats);
+  $('#total-seats').text(managerData.totalSeats);
 
   $('#agents-stat').text(Number(managerData.totalAgents).toLocaleString());
   $('#conversations-stat').text(Number(managerData.totalConversations).toLocaleString());
@@ -104,18 +107,11 @@ function loadManagerData() {
 }
 
 function loadBillingData() {
-  var $parent = $('#billing-data');
-
-  billingData.dealInfo.forEach(function(detail) {
-    $parent.append('<div class="billing-data-row"><p class="black-font no-margin-bottom">' + detail.name + ':</p><p class="black-font no-margin-bottom">' + detail.value + '</p></div>');
-  });
-
   if (billingData.paid) {
     $('#billing-paid').addClass('active-block');
   } else {
     $('#billing-overdue').addClass('active-block');
   }
-
 }
 
 // MANAGER DASHBOARD FUNCTIONALITY
@@ -165,6 +161,7 @@ function handleAssignment() {
   }
 
   availableSeats = managerData.totalSeats - assignments.length;
+  $('#available-seats').text(availableSeats);
 }
 
 function currentlyAssigned(name) {
@@ -208,6 +205,7 @@ function handleSelectAllAssignments() {
   }
 
   availableSeats = managerData.totalSeats - assignments.length;
+  $('#available-seats').text(availableSeats);
 }
 
 function selectAllToggle(inputs, status) {
