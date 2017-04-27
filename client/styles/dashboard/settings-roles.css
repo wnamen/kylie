@@ -88,6 +88,7 @@ body {
 .controller-card {
   margin-bottom: 1vw;
   padding: 0.5vw;
+  cursor: pointer;
 }
 
 .controller-card:hover {

@@ -79,6 +79,8 @@ body, p {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid black;
+  margin-bottom: 1vh;
 }
 
 .assignment-row p {

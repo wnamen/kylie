@@ -1,44 +1,6 @@
 // THIS IS A FAKE OBJECT USED FOR TESTING DATA
 var customerData = {
-  totalSeats: 25,
-  agents: [
-    {
-      id: 1,
-      name: "Jamasen Rodriguez"
-    },
-    {
-      id: 2,
-      name: "Sinan Ozdemir"
-    },
-    {
-      id: 3,
-      name: "William Namen"
-    },
-    {
-      id: 4,
-      name: "Kathleen Quillian"
-    },
-    {
-      id: 5,
-      name: "Andrew Jackson"
-    },
-    {
-      id: 6,
-      name: "Phil Bartelli"
-    },
-    {
-      id: 7,
-      name: "Sarah Palin"
-    },
-    {
-      id: 8,
-      name: "Andrew Jackson"
-    },
-    {
-      id: 9,
-      name: "Helen Keller"
-    },
-  ]
+  totalSeats: 25
 }
 
 // THESE VARIABLES ESTABLISH THE STATE OF THE DASHBOARD
@@ -51,9 +13,18 @@ $(document).ready(function() {
 
   loadAssignmentData()
   $('#agent-search-toggle').click(handleAgentSearchToggle);
+  $('#agent-search').on('keyup keypress', handleAgentSearch);
   $('.assignment-row').on('click', 'input', handleAssignment);
   $('#select-all input').click(handleSelectAllAssignments);
   $('#assignment-form').submit(handleSelectedAssignments);
+
+  $('#assignment-form').on('keyup keypress', function(e) {
+    var keyCode = e.keyCode || e.which;
+    if (keyCode === 13) {
+      e.preventDefault();
+      return false;
+    }
+  });
 
   $('#login-form').validate({
     errorClass: 'error failedValidation',
@@ -98,55 +69,61 @@ function loadAssignmentData() {
   availableSeats = customerData.totalSeats;
   $('#available-seats').text(availableSeats);
   $('#total-seats').text(customerData.totalSeats);
-
-  customerData.agents.forEach(function(agent) {
-    $('#assignment-switch-container').append('<div class="assignment-row"><p class="black-font">' + agent.name + '</p><div class="switch"><label><input type="checkbox" value="' + agent.name + 'id' + agent.id + '"><span class="lever"></span></label></div></div><hr>')
-  })
 }
 
 function handleAgentSearchToggle() {
   $(this).siblings('.input-field').fadeToggle().toggleClass('hide')
+  $('.assignment-row').removeClass('hide');
+}
+
+function handleAgentSearch() {
+  var value = $(this).val().toLowerCase();
+  $('.assignment-row').removeClass('hide');
+
+  $('.assignment-row p').each(function(index) {
+    var agent = $(this).text().toLowerCase();
+    if (agent.search(value) === -1) {
+      $(this).parent().addClass('hide');
+    }
+  })
 }
 
 function handleAssignment() {
-  var value = ($(this).val()).split('id');
-  var name = value[0];
-  var id = value[1];
+  var name = $(this).val();
 
-  if (currentlyAssigned(name, id)) {
-    removeAssigned(name, id);
+  if (currentlyAssigned(name)) {
+    removeAssigned(name);
   } else {
-    addAssigned(name, id);
+    addAssigned(name);
   }
 
   availableSeats = customerData.totalSeats - assignments.length;
   $('#available-seats').text(availableSeats);
 }
 
-function currentlyAssigned(name, id) {
+function currentlyAssigned(name) {
   if (assignments.length <= 0) {
     return false;
   }
   for(var k in assignments) {
-    if ((assignments[k].name === name) && (Number(assignments[k].id) === Number(id))) {
+    if (assignments[k].name === name) {
       return true;
     }
   }
   return false
 }
 
-function removeAssigned(name, id) {
+function removeAssigned(name) {
   for(var k in assignments) {
-    if ((assignments[k].name === name) && (Number(assignments[k].id) === Number(id))) {
+    if (assignments[k].name === name) {
       assignments.splice(k, 1);
     }
   }
 }
 
-function addAssigned(name, id) {
+function addAssigned(name) {
   assignments.push({
-    name: name,
-    id: Number(id)
+    name: name
   })
 }
 
@@ -158,8 +135,8 @@ function handleSelectAllAssignments() {
   assignments = [];
   if (selectAll) {
     var k = 0;
-    while ((k < availableSeats) && (k < customerData.agents.length)) {
-      addAssigned(customerData.agents[k].name, customerData.agents[k].id)
+    while ((k < availableSeats) && (k < $('.assignment-row').length)) {
+      addAssigned($inputs[k].value)
       k++
     }
   }
