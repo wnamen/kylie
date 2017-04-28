@@ -99,6 +99,7 @@ body {
 #agent-search {
   margin: 0 0 0 1em;
   height: 1.3em;
+  background-color: white;
 }
 
 #select-all p {

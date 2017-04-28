@@ -165,9 +165,15 @@ function handleAssignment() {
 
   if (currentlyAssigned(name)) {
     removeAssigned(name);
-  } else {
+  } else if ((!currentlyAssigned(name)) && (availableSeats > 0)) {
     addAssigned(name);
-  }
+  } else {
+    $(this).prop({checked: false});
+    $('#available-seats').parent().addClass('failedValidation');
+    setTimeout(function() {
+      $('#available-seats').parent().removeClass('failedValidation');
+    }, 1000)
+  };
 
   availableSeats = customerData.totalSeats - assignments.length;
   $('#available-seats').text(availableSeats);
@@ -202,25 +208,28 @@ function addAssigned(name) {
 function handleSelectAllAssignments() {
   selectAll = !selectAll;
   var $inputs = $('#assignment-form #assignment-switch-container :input');
-  selectAllToggle($inputs, selectAll);
 
-  assignments = [];
   if (selectAll) {
     var k = 0;
-    while ((k < availableSeats) && (k < $('.assignment-row').length)) {
-      addAssigned($inputs[k].value)
-      k++
+    var tracker = 0;
+    while ((tracker < availableSeats) && (k < $('.assignment-row').length)) {
+      if ($($inputs[k]).prop('checked') === false) {
+        addAssigned($inputs[k].value)
+        switchToggle($inputs[k], selectAll);
+        tracker++;
+      }
+      k++;
     }
+  } else {
+    assignments = [];
+    switchToggle($inputs, selectAll);
   }
-
   availableSeats = customerData.totalSeats - assignments.length;
   $('#available-seats').text(availableSeats);
 }
 
-function selectAllToggle(inputs, status) {
-  inputs.each(function() {
-      $(this).prop({checked: status});
-  });
+function switchToggle(input, status) {
+  $(input).prop({checked: status});
 }
 
 function handleSelectedAssignments(e) {

@@ -117,25 +117,8 @@ function loadBillingData() {
 // MANAGER DASHBOARD FUNCTIONALITY
 
 function handleAgentSearchToggle() {
-  $(this).siblings('.input-field').fadeToggle().toggleClass('hide')
-  $('.assignment-row').removeClass('hide');
-}
-
-function handleAgentSearch() {
-  var value = $(this).val().toLowerCase();
-  $('.assignment-row').removeClass('hide');
-
-  $('.assignment-row p').each(function(index) {
-    var agent = $(this).text().toLowerCase();
-    if (agent.search(value) === -1) {
-      $(this).parent().addClass('hide');
-    }
-  })
-}
-
-
-function handleAgentSearchToggle() {
-  $(this).siblings('.input-field').fadeToggle().toggleClass('hide')
+  $(this).siblings('.input-field').fadeToggle().toggleClass('hide');
+  $('#select-all p').fadeToggle().toggleClass('hide');
   $('.assignment-row').removeClass('hide');
 }
 
@@ -156,9 +139,15 @@ function handleAssignment() {
 
   if (currentlyAssigned(name)) {
     removeAssigned(name);
-  } else {
+  } else if ((!currentlyAssigned(name)) && (availableSeats > 0)) {
     addAssigned(name);
-  }
+  } else {
+    $(this).prop({checked: false});
+    $('#select-all p').addClass('failedValidation');
+    setTimeout(function() {
+      $('#select-all p').removeClass('failedValidation');
+    }, 1000)
+  };
 
   availableSeats = managerData.totalSeats - assignments.length;
   $('#available-seats').text(availableSeats);
@@ -193,25 +182,29 @@ function addAssigned(name) {
 function handleSelectAllAssignments() {
   selectAll = !selectAll;
   var $inputs = $('#assignment-form #assignment-switch-container :input');
-  selectAllToggle($inputs, selectAll);
 
-  assignments = [];
   if (selectAll) {
     var k = 0;
-    while ((k < availableSeats) && (k < $('.assignment-row').length)) {
-      addAssigned($inputs[k].value)
-      k++
+    var tracker = 0;
+    while ((tracker < availableSeats) && (k < $('.assignment-row').length)) {
+      if ($($inputs[k]).prop('checked') === false) {
+        addAssigned($inputs[k].value)
+        switchToggle($inputs[k], selectAll);
+        tracker++;
+      }
+      k++;
     }
+  } else {
+    assignments = [];
+    switchToggle($inputs, selectAll);
   }
 
   availableSeats = managerData.totalSeats - assignments.length;
   $('#available-seats').text(availableSeats);
 }
 
-function selectAllToggle(inputs, status) {
-  inputs.each(function() {
-    $(this).prop({checked: status});
-  });
+function switchToggle(input, status) {
+  $(input).prop({checked: status});
 }
 
 function captureSliderChange() {
