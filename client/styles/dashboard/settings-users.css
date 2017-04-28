@@ -89,41 +89,6 @@ body {
   margin: 1vh 0;
 }
 
-.controller-card {
-  margin-bottom: 1vw;
-  padding: 0.5vw;
-}
-
-.controller-card:hover {
-  background-color: #ECECEC;
-}
-
-.active-card {
-  background-color: #ECECEC;
-}
-
-.controller-title {
-  margin-top: 0;
-}
-
-.controller-description {
-  margin-left: 2vw;
-  font-size: 0.9em;
-}
-
-.description-title {
-  font-weight: 500;
-}
-
-#editor-options {
-  display: flex;
-  flex-direction: column;
-}
-
-#editor-options .input-field label{
-  height: 2em;
-}
-
 [type="checkbox"] + label:before, [type="checkbox"]:not(.filled-in) + label:after {
   border: 1px solid #28c3b5;
 }
@@ -131,6 +96,13 @@ body {
 [type="checkbox"]:checked + label:before {
   border-right-color: #28c3b5;
   border-bottom-color: #28c3b5;
+}
+
+.modal .modal-content  label {
+  position: relative;
+  color: #fb615d;
+  top: 0;
+  left:0;
 }
 
 #saved-notification {

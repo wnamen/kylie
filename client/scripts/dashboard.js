@@ -45,11 +45,39 @@ $(document).ready(function() {
 
   // SETTINGS USERS FUNCTIONALITY
   if (currentLocation === 'settings-users') {
-    $('.user-card').on('click', 'input', handleSelectedUser);
-    $('#add-users-modal form').submit(handleAddUser);
-    $('#edit-users-modal form').submit(handleEditUser);
+    $('#controller-cards').on('click', '.user-card input', handleSelectedUser);
     $('.delete-user-card').click(handleRemoveUser);
     $('.modal').modal();
+
+    $('#add-users-form').validate({
+      errorClass: 'error failedValidation',
+      validClass: 'success',
+      highlight: function(element, errorClass, validClass) {
+        $(element).closest('.validate').addClass(errorClass).removeClass(validClass);
+      },
+      unhighlight: function(element, errorClass, validClass) {
+        $(element).closest('.validate').addClass(validClass).removeClass(errorClass);
+      },
+      submitHandler: function() {
+        $('#add-users-modal').modal('close');
+        handleAddUser();
+      }
+    });
+
+    $('#edit-users-form').validate({
+      errorClass: 'error failedValidation',
+      validClass: 'success',
+      highlight: function(element, errorClass, validClass) {
+        $(element).closest('.validate').addClass(errorClass).removeClass(validClass);
+      },
+      unhighlight: function(element, errorClass, validClass) {
+        $(element).closest('.validate').addClass(validClass).removeClass(errorClass);
+      },
+      submitHandler: function() {
+        $('#edit-users-modal').modal('close');
+        handleEditUser();
+      }
+    });
   }
 
   // SETTINGS SECURITY FUNCTIONALITY
@@ -216,7 +244,6 @@ function captureSliderChange() {
   } else if (type === "autosend-confidence") {
 
   }
-  handleSaveAction();
 }
 
 // SETTINGS ROLES FUNCTIONALITY
@@ -237,9 +264,12 @@ function handleCardSelection() {
 
     if (newCard === 'Admin') {
       $('#editor-input').prop('disabled', true);
-
+      $('#editor-options input').prop('checked', true);
+      $('#editor-options input').prop('disabled', true);
     } else {
       $('#editor-input').prop('disabled', false);
+      $('#editor-options input').prop('checked', false);
+      $('#editor-options input').prop('disabled', false);
     }
   }
   currentCard = newCard.toLowerCase();
@@ -267,6 +297,9 @@ function handleDeleteCard() {
     $(currentId).remove();
     $(newId).toggleClass('active-card');
     $('#editor-input').val('Admin');
+    $('#editor-input').prop('disabled', true);
+    $('#editor-options input').prop('checked', true);
+    $('#editor-options input').prop('disabled', true);
     currentCard = 'admin'
   }
 }
@@ -283,25 +316,6 @@ function createNewRole(data) {
 
   var $newRoleCard = $("<div id='" + roleName.toLowerCase() + "-card' data-role='" + roleName + "' class='controller-card'><p class='controller-title'>" + roleName + "</p><p class='controller-description'>A <span class='description-title'>" + roleName + "</span> can " + roleDescription + "</p></div>")
   $('#controller-cards').append($newRoleCard);
-}
-
-function findDataPoint(data, point) {
-  var locatedPoint;
-  data.forEach(function(datapoint) {
-    if (datapoint.name === point) {
-      locatedPoint = datapoint.value;
-    }
-  });
-
-  return locatedPoint;
-}
-
-function captureFormData(inputs) {
-  var values = {};
-  inputs.each(function() {
-      values[this.name] = $(this).val();
-  });
-  return values;
 }
 
 // SETTINGS USERS FUNCTIONALITY
@@ -342,8 +356,7 @@ function addSelected(name) {
 }
 
 function handleAddUser(e) {
-  e.preventDefault();
-  var newUser = $(this).serializeArray();
+  var newUser = $('#add-users-form').serializeArray();
   createNewUser(newUser)
 }
 
@@ -353,27 +366,22 @@ function createNewUser(data) {
       $newUserCard = $('<div id="' + userName + ' card" class="user-card"><input type="checkbox" id="' + userName + '" value="' + userName + '"  class="validate"/><label class="black-font" for="' + userName + '">' + userName + ' <span id="' + userName + ' role" >(' + userRole + ')</span></label></div>');
 
   $('#users-container #controller-cards').append($newUserCard);
-
-  handleSaveAction();
+  // submitRequest(selectedUsers, url);
 }
 
 function handleEditUser(e) {
-  e.preventDefault();
   var value = $('#edit-users-modal form input').val();
   selectedUsers.forEach(function(user) {
     document.getElementById(user.name + ' role').innerHTML = '(' + value + ')';
   })
-  handleSaveAction();
+  // submitRequest(selectedUsers, url);
 }
 
 function handleRemoveUser(e) {
-  e.preventDefault();
   selectedUsers.forEach(function(user) {
     document.getElementById(user.name + ' card').remove();
   })
-
-  handleSaveAction();
-
+  // submitRequest(selectedUsers, url);
 }
 
 // SETTINGS SECURITY FUNCTIONALITY
@@ -382,28 +390,24 @@ function handleTopicsUpdate(e) {
   e.preventDefault();
   var $inputs = $('#confidential-topics-form :input');
   var values = captureFormData($inputs);
-  handleSaveAction();
+  // submitRequest(values, url);
 }
 
 function handleEmailUpdate(e) {
   e.preventDefault();
   var $inputs = $('#email-form :input');
   var values = captureFormData($inputs);
-  handleSaveAction();
-
+  // submitRequest(values, url);
 }
 
 function handlePasswordUpdate(e) {
   e.preventDefault();
   var $inputs = $('#password-form :input');
   var values = captureFormData($inputs);
-  handleSaveAction();
-
+  // submitRequest(values, url);
 }
 
 function handleSaveAction() {
-  console.log('activated');
-
   $('#saved-notification').addClass('active-flex')
 
   setTimeout(function(){
@@ -411,6 +415,24 @@ function handleSaveAction() {
   },2000)
 }
 
+function findDataPoint(data, point) {
+  var locatedPoint;
+  data.forEach(function(datapoint) {
+    if (datapoint.name === point) {
+      locatedPoint = datapoint.value;
+    }
+  });
+
+  return locatedPoint;
+}
+
+function captureFormData(inputs) {
+  var values = {};
+  inputs.each(function() {
+      values[this.name] = $(this).val();
+  });
+  return values;
+}
 
 function submitRequest(data, url) {
   var payload = new FormData();
@@ -421,7 +443,9 @@ function submitRequest(data, url) {
       method: "POST",
       body: payload
   })
-  .then(function(res){ return res.json(); })
-  .then(function(data){ alert( JSON.stringify( data ))})
+  .then(function(res){
+    handleSaveAction();
+    return res.json();
+  })
   .catch(function (error){ console.log('Request failed', error)});
 }

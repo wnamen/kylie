@@ -33,6 +33,7 @@
 
   <!-- SCRIPTS -->
   <script type="text/javascript" src="../../../node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="../../../node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
   <script type="text/javascript" src="../../../node_modules/materialize-css/dist/js/materialize.min.js"></script>
   <script type="text/javascript" src="../../scripts/dashboard.js"></script>
 
@@ -94,7 +95,7 @@
 
   <!-- ADD USER MODAL -->
   <div id="add-users-modal" class="modal">
-    <form class="modal-content">
+    <form id="add-users-form" class="modal-content">
       <h3>Create A New User</h3>
 
       <div class="input-field">
@@ -105,14 +106,14 @@
       </div>
 
       <div class="btns">
-        <button type="submit" class="btn waves-effect waves-light waves-ripple modal-close">Create</button>
+        <button type="submit" class="btn waves-effect waves-light waves-ripple">Create</button>
       </div>
     </form>
   </div>
 
   <!-- EDIT USER MODAL -->
   <div id="edit-users-modal" class="modal">
-    <form class="modal-content">
+    <form id="edit-users-form" class="modal-content">
       <h3>Edit User(s) Role</h3>
 
       <div class="input-field">
@@ -120,7 +121,7 @@
       </div>
 
       <div class="btns">
-        <button type="submit" class="btn waves-effect waves-light waves-ripple modal-close">Save</button>
+        <button type="submit" class="btn waves-effect waves-light waves-ripple">Save</button>
       </div>
     </form>
   </div>
