@@ -54,7 +54,6 @@ $(document).ready(function() {
 
   // SETTINGS SECURITY FUNCTIONALITY
   if (currentLocation === 'settings-security') {
-    console.log(currentLocation);
     $('#confidential-topics-form').submit(handleTopicsUpdate);
 
     $('#email-form').validate({
