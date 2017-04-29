@@ -90,10 +90,18 @@ body {
   flex-direction: column;
 }
 
-#security-fields .input-field {
+#security-fields .row-wrapper {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
+}
+
+#security-fields .spacing {
+  margin-right: 1vw;
+}
+
+#security-fields #password-form .input-field, #security-fields #email-form .input-field {
+  width: 72%;
 }
 
 #security-fields input {
@@ -107,10 +115,6 @@ body {
   color: #fb615d;
   top: 0;
   left:0;
-}
-
-#security-fields input, #security-fields button {
-  margin-right: 1vw;
 }
 
 #security-fields .btns .btn {

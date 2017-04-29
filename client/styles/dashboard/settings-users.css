@@ -98,6 +98,18 @@ body {
   border-bottom-color: #28c3b5;
 }
 
+.modal {
+  padding: 5vh 9vw;
+}
+
+.modal h3 {
+  text-align: center;
+}
+
+.modal .btns button {
+  width: 100%;
+}
+
 .modal .modal-content  label {
   position: relative;
   color: #fb615d;

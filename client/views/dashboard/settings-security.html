@@ -78,9 +78,9 @@
               <div id="security-fields">
                 <form id="confidential-topics-form">
                   <p class="no-margin-bottom">Confidential Topics <a class="tooltipped" data-position="right" data-delay="50" data-tooltip="For your security, Kylie ignores all communication that contains sensitive information. Add any words to this list to keep Kylie from accidentally disclosing private information."><i class="material-icons">&#xE88E;</i></a></p>
-                  <div class="input-field">
-                    <input type="text" id="confidential-topics" />
-                    <div class="btns">
+                  <div class="input-field row-wrapper">
+                    <input type="text" id="confidential-topics" class=" spacing" />
+                    <div class="btns spacing">
                       <button type="submit" class="btn waves-effect waves-light waves-ripple">Save</button>
                     </div>
                   </div>
@@ -88,9 +88,9 @@
 
                 <form id="login-key-form" class="medium-margin-top">
                   <p class="no-margin-bottom">Login Key <a class="tooltipped" data-position="right" data-delay="50" data-tooltip="This is your unique login key that you give to your agents to access Kylie inside of your Zendesk application."><i class="material-icons">&#xE88E;</i></a></p>
-                  <div class="input-field">
-                    <input type="text" id="login-key" disabled/>
-                    <div class="btns" style="visibility: hidden">
+                  <div class="input-field row-wrapper">
+                    <input type="text" id="login-key" class=" spacing" disabled/>
+                    <div class="btns spacing" style="visibility: hidden">
                       <button class="btn" disabled>Save</button>
                     </div>
                   </div>
@@ -98,9 +98,11 @@
 
                 <form id="email-form" class="medium-margin-top">
                   <p class="no-margin-bottom">Email</p>
-                  <div class="input-field">
-                    <input type="email" id="email" required/>
-                    <div class="btns">
+                  <div class="row-wrapper">
+                    <div class="input-field spacing">
+                      <input type="email" id="email" required/>
+                    </div>
+                    <div class="btns spacing">
                       <button type="submit" class="btn waves-effect waves-light waves-ripple">Save</button>
                     </div>
                   </div>
@@ -108,15 +110,19 @@
 
                 <form id="password-form">
                   <p class="no-margin-bottom">Old Password</p>
-                  <div class="input-field">
-                    <input type="password" id="old-password" required/>
+                  <div class="row-wrapper">
+                    <div class="input-field spacing">
+                      <input type="password" name="old-password" id="old-password" required/>
+                    </div>
                     <div class="btns" style="visibility: hidden">
                       <button class="btn" disabled>Save</button>
                     </div>
                   </div>
                   <p class="no-margin-bottom">New Password</p>
-                  <div class="input-field">
-                    <input type="password" id="new-password" required/>
+                  <div class="row-wrapper">
+                    <div class="input-field spacing">
+                      <input type="password" name="new-password" id="new-password" required/>
+                    </div>
                     <div class="btns">
                       <button type="submit" class="btn waves-effect waves-light waves-ripple">Save</button>
                     </div>

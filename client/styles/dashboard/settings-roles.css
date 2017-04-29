@@ -121,6 +121,18 @@ body {
   height: 2em;
 }
 
+.modal {
+  padding: 5vh 9vw;
+}
+
+.modal h3 {
+  text-align: center;
+}
+
+.modal .btns button {
+  width: 100%;
+}
+
 #saved-notification {
   display: none;
   flex-direction: row;

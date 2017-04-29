@@ -38,9 +38,24 @@ $(document).ready(function() {
     $('#controller-cards').on('click', '.controller-card', handleCardSelection);
     $('#editor-input').on('change', handleRoleEditor);
     $('.delete-card').click(handleDeleteCard);
-    $('#add-role-modal form .btn').click(handleAddNewRole);
     $('.save-btn').click(handleSaveAction);
     $('.modal').modal();
+
+    $('#add-role-form').validate({
+      errorClass: 'error failedValidation',
+      validClass: 'success',
+      highlight: function(element, errorClass, validClass) {
+        $(element).closest('.validate').addClass(errorClass).removeClass(validClass);
+      },
+      unhighlight: function(element, errorClass, validClass) {
+        $(element).closest('.validate').addClass(validClass).removeClass(errorClass);
+      },
+      submitHandler: function() {
+        $('#add-role-modal').modal('close');
+        handleAddNewRole();
+      }
+    });
+
   }
 
   // SETTINGS USERS FUNCTIONALITY
@@ -305,9 +320,9 @@ function handleDeleteCard() {
 }
 
 function handleAddNewRole() {
-  var newRole = $('#add-role-modal form').serializeArray();
-
+  var newRole = $('#add-role-form').serializeArray();
   createNewRole(newRole)
+  $('#add-role-form').trigger('reset');
 }
 
 function createNewRole(data) {
@@ -358,6 +373,7 @@ function addSelected(name) {
 function handleAddUser(e) {
   var newUser = $('#add-users-form').serializeArray();
   createNewUser(newUser)
+  $('#add-users-form').trigger('reset');
 }
 
 function createNewUser(data) {
@@ -375,6 +391,7 @@ function handleEditUser(e) {
     document.getElementById(user.name + ' role').innerHTML = '(' + value + ')';
   })
   // submitRequest(selectedUsers, url);
+  $('#edit-users-form').trigger('reset');
 }
 
 function handleRemoveUser(e) {
