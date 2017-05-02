@@ -82,11 +82,11 @@
               </div>
 
               <div id="controller-cards">
-                <div id="admin-card" data-role="Admin" class="controller-card active-card">
+                <div id="admin-card" data-role="Admin" data-permissions="create-user,edit-user,delete-user,assign-user-roles,set-global-permissions,change-role-permissions,assign-models,create-models,merge-models,add-integrations,adjust-confidence-thresholds" class="controller-card active-card">
                   <p class="controller-title">Admin</p>
-                  <p class="controller-description">An <span class="description-title">Admin</span> can create, edit, & delete other roles, as well as manage permissions for Admins and all other roles.</p>
+                  <p class="controller-description">An <span class="description-title">Admin</span> can create,edit, & delete other roles, as well as manage permissions for Admins and all other roles.</p>
                 </div>
-                <div id="manager-card" data-role="Manager" class="controller-card">
+                <div id="manager-card" data-role="Manager" data-permissions="" class="controller-card">
                   <p class="controller-title">Manager</p>
                   <p class="controller-description">A <span class="description-title">Manager</span> can create, edit, & delete other roles, as well as manage permissions for Admins and all other roles.</p>
                 </div>
@@ -107,47 +107,47 @@
 
               <div id="editor-options">
                 <div>
-                  <input type="checkbox" id="create-user" class="validate" checked disabled/>
+                  <input type="checkbox" id="create-user" name="create-user" class="validate" checked disabled/>
                   <label class="heavy-black-font" for="create-user">Create User</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="edit-user" class="validate" checked disabled/>
+                  <input type="checkbox" id="edit-user" name="edit-user" class="validate" checked disabled/>
                   <label class="heavy-black-font" for="edit-user">Edit User</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="delete-user" class="validate" checked disabled/>
+                  <input type="checkbox" id="delete-user" name="delete-user" class="validate" checked disabled/>
                   <label class="heavy-black-font" for="delete-user">Delete User</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="assign-user-roles" class="validate" checked disabled/>
+                  <input type="checkbox" id="assign-user-roles" name="assign-user-roles" class="validate" checked disabled/>
                   <label class="heavy-black-font" for="assign-user-roles">Assign User Roles</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="set-global-permissions" class="validate" checked disabled/>
+                  <input type="checkbox" id="set-global-permissions" name="set-global-permissions" class="validate" checked disabled/>
                   <label class="heavy-black-font" for="set-global-permissions">Set Global Permissions</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="change-role-permissions" class="validate" checked disabled/>
+                  <input type="checkbox" id="change-role-permissions" name="change-role-permissions" class="validate" checked disabled/>
                   <label class="heavy-black-font" for="change-role-permissions">Change Role Permissions</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="assign-models" class="validate" checked disabled/>
+                  <input type="checkbox" id="assign-models" name="assign-models" class="validate" checked disabled/>
                   <label class="heavy-black-font" for="assign-models">Assign Models</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="create-models" class="validate" checked disabled/>
+                  <input type="checkbox" id="create-models" name="create-models" class="validate" checked disabled/>
                   <label class="heavy-black-font" for="create-models">Create Models</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="merge-models" class="validate" checked disabled/>
+                  <input type="checkbox" id="merge-models" name="merge-models" class="validate" checked disabled/>
                   <label class="heavy-black-font" for="merge-models">Merge Models</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="add-integrations" class="validate" checked disabled/>
+                  <input type="checkbox" id="add-integrations" name="add-integrations" class="validate" checked disabled/>
                   <label class="heavy-black-font" for="add-integrations">Add Integrations</label>
                 </div>
                 <div>
-                  <input type="checkbox" id="adjust-confidence-thresholds" class="validate" checked disabled/>
+                  <input type="checkbox" id="adjust-confidence-thresholds" name="adjust-confidence-thresholds" class="validate" checked disabled/>
                   <label class="heavy-black-font" for="adjust-confidence-thresholds">Adjust Confidence Thresholds</label>
                 </div>
               </div>

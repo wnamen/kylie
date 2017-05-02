@@ -11,13 +11,24 @@ var billingData = {
   paid: true,
 }
 
-// THESE VARIABLES ESTABLISH THE STATE OF THE DASHBOARD
-var selectAll = false;
+// THESE VARIABLES ESTABLISH THE STATE OF THE DASHBOARD APPLICATION
 var currentLocation;
-var availableSeats;
-var assignments = [];
-var currentCard = 'admin';
-var selectedUsers = [];
+
+var managerState = {
+  selectAll: false,
+  availableSeats: 0,
+  assignments: []
+}
+
+var roleState = {
+  currentCard: 'admin',
+  cardName: 'admin',
+  cardPermissions: ['create-user', 'edit-user', 'delete-user', 'assign-user-roles', 'set-global-permissions', 'change-role-permissions', 'assign-models', 'create-models', 'merge-models', 'add-integrations', 'adjust-confidence-thresholds']
+}
+
+var userState = {
+  selectedUsers: [],
+}
 
 $(document).ready(function() {
   currentLocation = $('#dash-view').data('location');
@@ -36,9 +47,8 @@ $(document).ready(function() {
   // SETTINGS ROLES FUNCTIONALITY
   if (currentLocation === 'settings-roles') {
     $('#controller-cards').on('click', '.controller-card', handleCardSelection);
-    $('#editor-input').on('change', handleRoleEditor);
     $('.delete-card').click(handleDeleteCard);
-    $('.save-btn').click(handleSaveAction);
+    $('.save-btn').click(saveRoleChanges);
     $('.modal').modal();
 
     $('#add-role-form').validate({
@@ -138,8 +148,8 @@ $(document).ready(function() {
 });
 
 function loadManagerData() {
-  availableSeats = managerData.totalSeats;
-  $('#available-seats').text(availableSeats);
+  managerState.availableSeats = managerData.totalSeats;
+  $('#available-seats').text(managerState.availableSeats);
   $('#total-seats').text(managerData.totalSeats);
 
   $('#agents-stat').text(Number(managerData.totalAgents).toLocaleString());
@@ -181,7 +191,7 @@ function handleAssignment() {
 
   if (currentlyAssigned(name)) {
     removeAssigned(name);
-  } else if ((!currentlyAssigned(name)) && (availableSeats > 0)) {
+  } else if ((!currentlyAssigned(name)) && (managerState.availableSeats > 0)) {
     addAssigned(name);
   } else {
     $(this).prop({checked: false});
@@ -191,16 +201,16 @@ function handleAssignment() {
     }, 1000)
   };
 
-  availableSeats = managerData.totalSeats - assignments.length;
-  $('#available-seats').text(availableSeats);
+  managerState.availableSeats = managerData.totalSeats - managerState.assignments.length;
+  $('#available-seats').text(managerState.availableSeats);
 }
 
 function currentlyAssigned(name) {
-  if (assignments.length <= 0) {
+  if (managerState.assignments.length <= 0) {
     return false;
   }
-  for(var k in assignments) {
-    if (assignments[k].name === name) {
+  for(var k in managerState.assignments) {
+    if (managerState.assignments[k].name === name) {
       return true;
     }
   }
@@ -208,41 +218,41 @@ function currentlyAssigned(name) {
 }
 
 function removeAssigned(name) {
-  for(var k in assignments) {
-    if (assignments[k].name === name) {
-      assignments.splice(k, 1);
+  for(var k in managerState.assignments) {
+    if (managerState.assignments[k].name === name) {
+      managerState.assignments.splice(k, 1);
     }
   }
 }
 
 function addAssigned(name) {
-  assignments.push({
+  managerState.assignments.push({
     name: name
   })
 }
 
 function handleSelectAllAssignments() {
-  selectAll = !selectAll;
+  managerState.selectAll = !managerState.selectAll;
   var $inputs = $('#assignment-form #assignment-switch-container :input');
 
-  if (selectAll) {
+  if (managerState.selectAll) {
     var k = 0;
     var tracker = 0;
-    while ((tracker < availableSeats) && (k < $('.assignment-row').length)) {
+    while ((tracker < managerState.availableSeats) && (k < $('.assignment-row').length)) {
       if ($($inputs[k]).prop('checked') === false) {
         addAssigned($inputs[k].value)
-        switchToggle($inputs[k], selectAll);
+        switchToggle($inputs[k], managerState.selectAll);
         tracker++;
       }
       k++;
     }
   } else {
-    assignments = [];
-    switchToggle($inputs, selectAll);
+    managerState.assignments = [];
+    switchToggle($inputs, managerState.selectAll);
   }
 
-  availableSeats = managerData.totalSeats - assignments.length;
-  $('#available-seats').text(availableSeats);
+  managerState.availableSeats = managerData.totalSeats - managerState.assignments.length;
+  $('#available-seats').text(managerState.availableSeats);
 }
 
 function switchToggle(input, status) {
@@ -266,11 +276,12 @@ function captureSliderChange() {
 function handleCardSelection() {
   var newCard = $(this).data('role');
 
-  if (newCard === currentCard) {
+  if (newCard === roleState.currentCard) {
     return
   } else {
     var newId = '#' + newCard.toLowerCase() + '-card';
-    var currentId = '#' + currentCard + '-card';
+    var currentId = '#' + roleState.currentCard + '-card';
+    var newPermissions = $(this).data('permissions');
 
     $(newId).toggleClass('active-card');
     $(currentId).toggleClass('active-card');
@@ -286,27 +297,28 @@ function handleCardSelection() {
       $('#editor-options input').prop('checked', false);
       $('#editor-options input').prop('disabled', false);
     }
+
+    roleState.currentCard = newCard.toLowerCase();
+    roleState.cardName = newCard.toLowerCase();
+    roleState.cardPermissions = [];
+
+    if (newPermissions.length > 0) {
+      newPermissions.split(",").forEach(function(permission) {
+        if (permission !== "") {
+          $('#' + permission).prop('checked', true);
+          roleState.cardPermissions.push(permission);
+        }
+      })
+    }
   }
-  currentCard = newCard.toLowerCase();
-}
-
-function handleRoleEditor() {
-  var value = $(this).val();
-  var $this = '#' + currentCard + '-card';
-
-  $($this).data('role', value);
-  $($this + ' .controller-title').text(value);
-  $($this + ' .description-title').text(value);
-  $($this).attr('id', value.toLowerCase() + '-card');
-
-  currentCard = value.toLowerCase();
+  console.log(roleState);
 }
 
 function handleDeleteCard() {
-  if (currentCard === 'admin') {
+  if (roleState.currentCard === 'admin') {
     return alert('You cannot delete this card.')
   } else {
-    var currentId = '#' + currentCard.toLowerCase() + '-card';
+    var currentId = '#' + roleState.currentCard.toLowerCase() + '-card';
     var newId = '#admin-card';
 
     $(currentId).remove();
@@ -315,7 +327,8 @@ function handleDeleteCard() {
     $('#editor-input').prop('disabled', true);
     $('#editor-options input').prop('checked', true);
     $('#editor-options input').prop('disabled', true);
-    currentCard = 'admin'
+    roleState.currentCard = 'admin';
+    roleState.cardName = 'admin';
   }
 }
 
@@ -331,6 +344,35 @@ function createNewRole(data) {
 
   var $newRoleCard = $("<div id='" + roleName.toLowerCase() + "-card' data-role='" + roleName + "' class='controller-card'><p class='controller-title'>" + roleName + "</p><p class='controller-description'>A <span class='description-title'>" + roleName + "</span> can " + roleDescription + "</p></div>")
   $('#controller-cards').append($newRoleCard);
+}
+
+function saveRoleChanges() {
+  var value = $('#editor-input').val();
+  var $this = '#' + roleState.currentCard + '-card';
+
+  $($this).data('role', value);
+  $($this + ' .controller-title').text(value);
+  $($this + ' .description-title').text(value);
+  $($this).attr('id', value.toLowerCase() + '-card');
+
+  roleState.cardName = value;
+  roleState.currentCard = value;
+  roleState.cardPermissions = [];
+
+  var permissions = "";
+  $('#editor-options :input').each(function() {
+    if (this.checked === true) {
+      roleState.cardPermissions.push(this.name);
+      permissions = permissions + this.name + ",";
+    }
+  })
+
+  $($this).data('permissions', permissions);
+
+  // submitRequest(roleState, url);
+  console.log(roleState);
+
+  handleSaveAction();
 }
 
 // SETTINGS USERS FUNCTIONALITY
