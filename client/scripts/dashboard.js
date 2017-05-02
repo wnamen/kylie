@@ -311,12 +311,11 @@ function handleCardSelection() {
       })
     }
   }
-  console.log(roleState);
 }
 
 function handleDeleteCard() {
   if (roleState.currentCard === 'admin') {
-    return alert('You cannot delete this card.')
+    return
   } else {
     var currentId = '#' + roleState.currentCard.toLowerCase() + '-card';
     var newId = '#admin-card';
@@ -342,7 +341,7 @@ function createNewRole(data) {
   var roleName = findDataPoint(data, 'role-name');
   var roleDescription = findDataPoint(data, 'role-description');
 
-  var $newRoleCard = $("<div id='" + roleName.toLowerCase() + "-card' data-role='" + roleName + "' class='controller-card'><p class='controller-title'>" + roleName + "</p><p class='controller-description'>A <span class='description-title'>" + roleName + "</span> can " + roleDescription + "</p></div>")
+  var $newRoleCard = $("<div id='" + roleName.toLowerCase() + "-card' data-role='" + roleName + "' data-permissions='' class='controller-card'><p class='controller-title'>" + roleName + "</p><p class='controller-description'>A <span class='description-title'>" + roleName + "</span> can " + roleDescription + "</p></div>")
   $('#controller-cards').append($newRoleCard);
 }
 
@@ -370,7 +369,6 @@ function saveRoleChanges() {
   $($this).data('permissions', permissions);
 
   // submitRequest(roleState, url);
-  console.log(roleState);
 
   handleSaveAction();
 }
@@ -387,11 +385,11 @@ function handleSelectedUser() {
 }
 
 function currentlySelected(name) {
-  if (selectedUsers.length <= 0) {
+  if (userState.selectedUsers.length <= 0) {
     return false;
   }
-  for(var k in selectedUsers) {
-    if (selectedUsers[k].name === name) {
+  for(var k in userState.selectedUsers) {
+    if (userState.selectedUsers[k].name === name) {
       return true;
     }
   }
@@ -399,15 +397,15 @@ function currentlySelected(name) {
 }
 
 function removeSelected(name) {
-  for(var k in selectedUsers) {
-    if (selectedUsers[k].name === name) {
-      selectedUsers.splice(k, 1);
+  for(var k in userState.selectedUsers) {
+    if (userState.selectedUsers[k].name === name) {
+      userState.selectedUsers.splice(k, 1);
     }
   }
 }
 
 function addSelected(name) {
-  selectedUsers.push({
+  userState.selectedUsers.push({
     name: name
   })
 }
@@ -424,23 +422,23 @@ function createNewUser(data) {
       $newUserCard = $('<div id="' + userName + ' card" class="user-card"><input type="checkbox" id="' + userName + '" value="' + userName + '"  class="validate"/><label class="black-font" for="' + userName + '">' + userName + ' <span id="' + userName + ' role" >(' + userRole + ')</span></label></div>');
 
   $('#users-container #controller-cards').append($newUserCard);
-  // submitRequest(selectedUsers, url);
+  // submitRequest(userState.selectedUsers, url);
 }
 
 function handleEditUser(e) {
   var value = $('#edit-users-modal form input').val();
-  selectedUsers.forEach(function(user) {
+  userState.selectedUsers.forEach(function(user) {
     document.getElementById(user.name + ' role').innerHTML = '(' + value + ')';
   })
-  // submitRequest(selectedUsers, url);
+  // submitRequest(userState.selectedUsers, url);
   $('#edit-users-form').trigger('reset');
 }
 
 function handleRemoveUser(e) {
-  selectedUsers.forEach(function(user) {
+  userState.selectedUsers.forEach(function(user) {
     document.getElementById(user.name + ' card').remove();
   })
-  // submitRequest(selectedUsers, url);
+  // submitRequest(userState.selectedUsers, url);
 }
 
 // SETTINGS SECURITY FUNCTIONALITY
